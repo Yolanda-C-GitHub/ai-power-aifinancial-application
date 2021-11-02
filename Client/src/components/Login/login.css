@@ -1,0 +1,12 @@
+.loginContainer{
+    min-height: 50vh;
+    max-width: 500px;
+    border-radius: 20px;
+    padding:20px;
+}
+.loginFormContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:30vh;
+}
