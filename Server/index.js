@@ -31,19 +31,19 @@ db.connect(function(err){
 
 
 
-// insert directly from back end = use this for manual testing
-app.get('/',(req,res) => {
-    const sqlInsert = "INSERT INTO devnv (id, username, password) VALUES( '1', 'firstuser', 'password1');"
-    db.query(sqlInsert,(err, result) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.send('working inserted')
-            console.log('console report working inserted')
-        }
-    })
+// // insert directly from back end = use this for manual testing
+// app.get('/',(req,res) => {
+//     const sqlInsert = "INSERT INTO devnv (id, username, password) VALUES( '1', 'firstuser', 'password1');"
+//     db.query(sqlInsert,(err, result) => {
+//         if(err){
+//             console.log(err)
+//         }else{
+//             res.send('working inserted')
+//             console.log('console report working inserted')
+//         }
+//     })
 
-})
+// })
 
 
 
