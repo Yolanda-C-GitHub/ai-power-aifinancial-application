@@ -4,28 +4,61 @@ const mysql = require('mysql');
 const cors =  require('cors');
 
 // middleware
-// app.use(cors())
+app.use(cors())
 app.use(express.json())
 
 
+
+
 // connect mySQL database
-const db = mysql.createConnection({
-    host:'192.168.75.82',
-    user: 'andy',
-    password: 'Andy@123',
-    database: 'servertesting',
-    port: '3306'
+// const db = mysql.createConnection({
+//     host:'192.168.75.82',
+//     user: 'andy',
+//     password: 'Andy@123',
+//     database: 'servertesting',
+//     port: '3306'
+// })
+
+// // report if connection was made
+// db.connect(function(err){
+//     if(err){
+//         console.log(err)
+//         process.exit(1)
+//         alert('server connection failed')
+//     }
+//     console.log('connected to mySQL database')
+// })
+
+
+
+
+app.post('/', (req, res)=> {
+    const username = req.body.userName;
+    const password = req.body.passWord;
+
+    const db = mysql.createConnection({
+        host:'192.168.75.82',
+        user: username,
+        password: password,
+        database: 'servertesting',
+        port: '3306'
+    })
+    
+    db.connect(function(err){
+        if(err){
+            console.log(err)
+            process.exit(1)
+            alert('server connection failed')
+       
+        }
+        console.log('connected to mySQL database')
+    })
+
+
+
 })
 
-// report if connection was made
-db.connect(function(err){
-    if(err){
-        console.log(err)
-        process.exit(1)
-        alert('server connection failed')
-    }
-    console.log('connected to mySQL database')
-})
+
 
 
 
