@@ -1,0 +1,48 @@
+.secondPartCard{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding:10px;
+}
+
+.secondPartFormGroupGender{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+    .secondPartFormGroupGenderLabel{
+        margin-top: 5px;
+        margin-right: 5px;
+        
+    }
+    .secondPartFormGroupGenderCheck{
+        margin-right: 5px;
+    }
+
+.secondPartFormGroupBirth{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 30px;  
+}
+    .secondPartFormGroupBirthLabel{
+        width: 170px;
+        margin-top: 10px;
+
+    }
+
+.secondPartFormGroupSin{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+    .secondPartFormGroupSinLabel{
+        width: 50px;
+        margin-top: 10px;
+        text-align: right;
+        margin-right: 5px;
+    }

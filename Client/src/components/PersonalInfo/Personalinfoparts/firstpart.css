@@ -1,0 +1,19 @@
+.firstPartCard{
+    padding: 10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.firstPartFormGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.firstPartFormLabel{
+    justify-self: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 10px;
+}
