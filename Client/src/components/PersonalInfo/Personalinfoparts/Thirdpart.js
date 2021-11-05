@@ -4,8 +4,8 @@ import './thridpart.css'
 
 export default function Thirdpart() {
     return (
-        <Card>
-            <Form.Select>
+        <Card className='thridPartCard'>
+             <Form.Select className='thirdPartSelector'>
                 <option>Living Status</option>
                 <option value='owner'>Owner</option>
                 <option value='rent'>Rent</option>
@@ -14,7 +14,7 @@ export default function Thirdpart() {
                 <option value='other'>Other</option>
             </Form.Select>
 
-            <Form.Select>
+            <Form.Select className='thirdPartSelector'>
                 <option>Marital Status</option>
                 <option value='married'>Married</option>
                 <option value='single'>Single</option>
@@ -25,7 +25,7 @@ export default function Thirdpart() {
                 <option value='other'>Other</option>
             </Form.Select>
 
-            <Form.Select>
+            <Form.Select className='thirdPartSelector'>
                 <option>Citizenship</option>
                 <option value='canadian'>Canadian</option>
                 <option value='chinese'>Chinese</option>
@@ -34,7 +34,7 @@ export default function Thirdpart() {
             </Form.Select>            
 
 
-            <Form.Select>
+            <Form.Select className='thirdPartSelector'>
                 <option>Tax Status</option>
                 <option value='canada'>Canada</option>
                 <option value='usa'>USA</option>

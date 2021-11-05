@@ -3,6 +3,7 @@ import {Card, Form, Button, Alert, FormGroup, Container} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
+import Fourthpart from './Personalinfoparts/Fourthpart'
 
 export default function Personalinfo() {
     return (
