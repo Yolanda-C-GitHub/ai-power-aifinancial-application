@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, Form, Button, Alert, FormGroup, Container} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
+import Thirdpart from './Personalinfoparts/Thirdpart'
 
 export default function Personalinfo() {
     return (
@@ -17,10 +18,7 @@ export default function Personalinfo() {
                     </div>
 
                     <div className ='row'>
-                        <div className='col border'>living status</div>
-                        <div className='col border'>Martial status</div>
-                        <div className='col border'>citizenship</div>
-                        <div className='col border'>tax status</div>
+                        <Thirdpart />
                     </div>
 
                     <div className='row'>
