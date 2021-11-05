@@ -23,12 +23,7 @@ export default function Personalinfo() {
                     </div>
 
                     <div className='row'>
-                        <div className ='col border'>house number</div>
-                        <div className ='col border'>current rez</div>
-                        <div className ='col border'> apt#</div>
-                        <div className ='col border'> province</div>
-                        <div className ='col border'> postal code</div>
-                        <div className ='col border'> since </div>
+                        <Fourthpart />
                     </div>
 
                     <div className='d-flex justify-content-end'>
