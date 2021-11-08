@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React from 'react'
 import {Card, Form} from 'react-bootstrap'
 import './secondpart.css' 
 
