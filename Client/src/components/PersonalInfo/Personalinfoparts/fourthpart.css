@@ -5,3 +5,15 @@
     padding:10px;
     flex-wrap: wrap;
 }
+.fourthPartSelector{
+    width:120px;
+}
+.fourthPartHouseNumber{
+    width: 142px
+}
+.fourthPartAptNum{
+    width:100px;
+}
+.fourthPartPostalCode{
+    width:120px;
+}

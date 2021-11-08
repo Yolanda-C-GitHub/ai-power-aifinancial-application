@@ -26,7 +26,7 @@ export default function Personalinfo() {
                         <Fourthpart />
                     </div>
 
-                    <div className='d-flex justify-content-end'>
+                    <div className='d-flex justify-content-end mt-2 mb-2'>
                       <Button type='submit'>Next</Button>
                     </div>
 

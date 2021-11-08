@@ -6,7 +6,7 @@ export default function Fourthpart() {
     return (
         <Card className='fourthPartCard'> 
 
-            <FloatingLabel label='House Number'>
+            <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
                 <Form.Control placeholder='house#' />
             </FloatingLabel>
 
@@ -14,11 +14,11 @@ export default function Fourthpart() {
                 <Form.Control placeholder='Address' />
             </FloatingLabel>
 
-            <FloatingLabel label='APT#'>
-                <Form.Control />
+            <FloatingLabel className='fourthPartAptNum' label='APT#'>
+                <Form.Control placeholder='apt#' />
             </FloatingLabel>
 
-            <Form.Select className=''>
+            <Form.Select className='fourthPartSelector'>
                 <option>Province</option>
                 <option value='ON'>ON</option>
                 <option value='AB'>AB</option>
@@ -35,7 +35,7 @@ export default function Fourthpart() {
                 <option value='YT'>YT</option>
             </Form.Select>            
 
-            <FloatingLabel label='Postal Code'>
+            <FloatingLabel className='fourthPartPostalCode' label='Postal Code'>
                 <Form.Control  placeholder='postal'/>
             </FloatingLabel>
 
