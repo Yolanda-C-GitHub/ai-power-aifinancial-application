@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import {Card, FloatingLabel,Form} from 'react-bootstrap'
 import './fourthpart.css'
+import moment from 'moment'
 
 export default function Fourthpart(params) {
     
@@ -21,32 +22,31 @@ export default function Fourthpart(params) {
     const[showRez2, setShowRez2]=useState(false);
 
     function addShowRez2(){
-        const today = new Date
-
-
-        numberDaysBetween()
-
+        const today = new Date()
 
         setShowRez2(!showRez2)
     }
 
 
+    function numberDaysBetween(){
+        const sinceDate = moment(rezSinceRef.current.value,"YYYY/MM/DD")
+        const todaysDate = moment(moment().startOf('day'),'YYYY/MM/DD')
+        const daysBetween = moment.duration(todaysDate.diff(sinceDate)).asDays()
+        console.log(daysBetween)
+        
+        if(daysBetween < 730){
+            setShowRez2(true)
+        }else{
+            params.personalInfoRez2.setRezSince2('')
+            
+            setShowRez2(false)
+        }
 
-
-
-    function numberDaysBetween(start, end){
-        const dateStart = new Date(start)
-        const dateEnd = new Date(end)
-        const oneDay = 1000*60*60*24;
-        const daysBetween = Math.round(
-            (dateEnd.getTime()-dateStart.getTime())/oneDay
-        )
-        return daysBetween
     }
 
     return (
         <Card className='fourthPartCard'> 
-            
+
              
             <Form.Group className='fourthPartFormGroup'>
                 <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
@@ -83,7 +83,12 @@ export default function Fourthpart(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Since'>
-                    <Form.Control type='date'  placeholder='date' ref={rezSinceRef} onChange={()=>params.personalInfoRez.setRezSince(rezSinceRef.current.value)}  />
+                    <Form.Control type='date'  placeholder='date' ref={rezSinceRef} 
+                        onChange={()=> {
+                            params.personalInfoRez.setRezSince(rezSinceRef.current.value)
+                            numberDaysBetween()
+                        }}  
+                    />
                 </FloatingLabel>
             </Form.Group>
 
@@ -95,7 +100,7 @@ export default function Fourthpart(params) {
                             <Form.Control placeholder='house#' ref={houseNumRef2} onChange={()=>params.personalInfoRez2.setHouseNum2(houseNumRef2.current.value)} />
                         </FloatingLabel>
 
-                        <FloatingLabel label='Current Residence'>
+                        <FloatingLabel label='Previous Resident'>
                             <Form.Control placeholder='Address' ref={currentRezRef2} onChange={()=>params.personalInfoRez2.setCurrentRez2(currentRezRef2.current.value)} />
                         </FloatingLabel>
 
