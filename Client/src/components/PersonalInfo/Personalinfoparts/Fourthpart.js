@@ -37,8 +37,12 @@ export default function Fourthpart(params) {
         if(daysBetween < 730){
             setShowRez2(true)
         }else{
+            params.personalInfoRez2.setHouseNum2('')
+            params.personalInfoRez2.setCurrentRez2('')
+            params.personalInfoRez2.setAptNum2('')
+            params.personalInfoRez2.setProvince2('')
+            params.personalInfoRez2.setPostalCode2('')
             params.personalInfoRez2.setRezSince2('')
-            
             setShowRez2(false)
         }
 
