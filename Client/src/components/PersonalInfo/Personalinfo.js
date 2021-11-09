@@ -4,7 +4,7 @@ import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
-
+import PartFive from './Personalinfoparts/Partfive'
 export default function Personalinfo() {
 
     // state control for 1st part
@@ -73,6 +73,10 @@ export default function Personalinfo() {
 
                     <div className='row'>
                         <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                    </div>
+
+                    <div className='row'>
+                        <PartFive />
                     </div>
 
                     <div className='d-flex justify-content-end mt-2 mb-2'>
