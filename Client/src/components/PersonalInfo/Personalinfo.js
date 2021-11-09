@@ -7,21 +7,35 @@ import Fourthpart from './Personalinfoparts/Fourthpart'
 
 export default function Personalinfo() {
 
+    // state control for 1st part
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
     const[englishName, setEnglishName] = useState()
     const personalInfoNames = {setLastName, setFirstName, setEnglishName}
     
+    // state control for 2nd part
     const[gender, setGender]= useState("Male")
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
     const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
+
+    // state control for 3rd part
+    const[livingStatus, setLivingStatus] = useState();
+    const[maritalStatus, setMaritalStatus]=useState();
+    const[citizenship, setCitizenship] = useState();
+    const[taxStatus, setTaxStatus]=useState();
+    const personalInfoStatus = {setLivingStatus, setMaritalStatus, setCitizenship, setTaxStatus}
+
+    // state control for 4th part
+    
+
     
     function handleSubmit(e){
         e.preventDefault()
         console.log('submit form button working')
         console.log(lastName, firstName, englishName)
         console.log(gender, birthDay, sinNum)
+        console.log(livingStatus, maritalStatus, citizenship, taxStatus)
     }
 
 
@@ -37,8 +51,8 @@ export default function Personalinfo() {
                         <Secondpart personalInfoOther={personalInfoOther} />
                     </div>
 
-                    <div className ='row'>
-                        <Thirdpart />
+                    <div className ='row' >
+                        <Thirdpart personalInfoStatus={personalInfoStatus}  />
                     </div>
 
                     <div className='row'>
