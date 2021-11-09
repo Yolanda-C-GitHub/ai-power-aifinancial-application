@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     padding:10px;
     flex-wrap: wrap;
+
 }
 .fourthPartSelector{
     width:120px;
@@ -16,4 +17,12 @@
 }
 .fourthPartPostalCode{
     width:120px;
+}
+.fourthPartFormGroup{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding:5px;
+    width:100%;
 }

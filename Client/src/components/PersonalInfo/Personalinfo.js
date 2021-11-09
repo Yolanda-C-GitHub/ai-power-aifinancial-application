@@ -35,6 +35,14 @@ export default function Personalinfo() {
     const[rezSince, setRezSince]=useState();
     const personalInfoRez = {setHouseNum, setCurrentRez, setAptNum, setProvince, setPostalCode, setRezSince}
 
+    const[houseNum2, setHouseNum2]=useState();
+    const[currentRez2, setCurrentRez2]=useState();
+    const[aptNum2, setAptNum2]=useState();
+    const[province2,setProvince2]=useState();
+    const[postalCode2, setPostalCode2] = useState();
+    const[rezSince2, setRezSince2]=useState();
+    const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
+
     
     function handleSubmit(e){
         e.preventDefault()
@@ -43,6 +51,7 @@ export default function Personalinfo() {
         console.log(gender, birthDay, sinNum)
         console.log(livingStatus, maritalStatus, citizenship, taxStatus)
         console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
+        console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
     }
 
 
@@ -63,7 +72,7 @@ export default function Personalinfo() {
                     </div>
 
                     <div className='row'>
-                        <Fourthpart personalInfoRez={personalInfoRez} />
+                        <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
                     </div>
 
                     <div className='d-flex justify-content-end mt-2 mb-2'>
