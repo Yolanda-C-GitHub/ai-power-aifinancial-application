@@ -12,10 +12,10 @@ export default function Personalinfo() {
     const[englishName, setEnglishName] = useState()
     const personalInfoNames = {setLastName, setFirstName, setEnglishName}
     
-    const[gender, setGender]= useState()
+    const[gender, setGender]= useState("Male")
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
-    const personalInfoOther = {setGender, setBirthday, setSinNum}
+    const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
     
     function handleSubmit(e){
         e.preventDefault()
