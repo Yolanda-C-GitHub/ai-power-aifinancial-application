@@ -4,7 +4,8 @@ import './secondpart.css'
 
 export default function Secondpart(params) {
 
-    const genderRef = useRef()
+    const genderFemaleRef = useRef()
+    const genderMaleRef=useRef();
     const birthdayRef = useRef()
     const sinRef = useRef()
 
@@ -14,22 +15,19 @@ export default function Secondpart(params) {
         <Card className='secondPartCard d-flex border' >
 
             <Form.Group className='secondPartFormGroupGender'>
-
                 <Form.Label className ='secondPartFormGroupGenderLabel'>Gender:</Form.Label>
                 <Form.Check className = 'secondPartFormGroupGenderCheck' name='genderselector' label='Male' type='radio' 
-                    ref={genderRef} 
-                    value="Male" 
-                    checked={params.personalInfoOther.gender === "Male"}     
-                    onChange={() => params.personalInfoOther.setGender(genderRef.current.value)}
+                    ref={genderMaleRef} 
+                    value="Male"  
+                    onChange={() => params.personalInfoOther.setGender(genderMaleRef.current.value)}
                     ></Form.Check>
 
-                <Form.Check className = 'secondPartFormGroupGenderCheck' name='genderselector' label='Female' type='radio' 
-                    ref={genderRef} 
+                <Form.Check inline className = 'secondPartFormGroupGenderCheck' name='genderselector' label='Female' type='radio' 
+                    ref={genderFemaleRef} 
                     value="Female" 
                     checked={params.personalInfoOther.gender === "Female"} 
-                    onChange={()=>params.personalInfoOther.setGender(genderRef.current.value)}
+                    onChange={()=>params.personalInfoOther.setGender(genderFemaleRef.current.value)}
                     ></Form.Check>
-
             </Form.Group>
 
             <Form.Group className='secondPartFormGroupBirth'>

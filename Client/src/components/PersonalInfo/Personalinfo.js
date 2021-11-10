@@ -14,7 +14,7 @@ export default function Personalinfo() {
     const personalInfoNames = {setLastName, setFirstName, setEnglishName}
     
     // state control for 2nd part
-    const[gender, setGender]= useState("Male")
+    const[gender, setGender]= useState()
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
     const personalInfoOther = {gender,setGender, setBirthday, setSinNum}

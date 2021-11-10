@@ -15,23 +15,26 @@ export default function Partfive(params) {
     const expiryDateRef=useRef();
     const verificationDateRef=useRef();
 
-
-
+    const issuingProvinceRef=useRef();
+    const commentRef=useRef();
+    const previousDeclaredRef = useRef();
+    const dischargeDateRef=useRef();
+    
 
     return (
         <Card className='partFiveCard'>
 
             <Form.Group className='formGroupEmail'>
                 <FloatingLabel className='partFiveEmail' label='Email'>
-                    <Form.Control type='email' ref={emailRef} placeholder='Email'/>
+                    <Form.Control type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoPartFive.setEmail(emailRef.current.value)}/>
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveCell' label='Cell Phone'>
-                    <Form.Control placeholder='cellphone'ref={cellNumRef} />
+                    <Form.Control placeholder='cellphone'ref={cellNumRef} onChange={()=>params.personalInfoPartFive.setCellNum(cellNumRef.current.value)}/>
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveHome' label='Home Phone'>
-                    <Form.Control placeholder='homephone' ref={homeNumRef} />
+                    <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoPartFive.setHomeNum} />
                 </FloatingLabel>
 
                 <FloatingLabel className = 'partFiveWork' label='Work Phone'>
@@ -70,7 +73,7 @@ export default function Partfive(params) {
 
             <Form.Group className='IdInfo'>
                 <FloatingLabel label='Issuing Province'>
-                    <Form.Select  className='issuingProvince' >
+                    <Form.Select  className='issuingProvince' ref={issuingProvinceRef} >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -88,18 +91,18 @@ export default function Partfive(params) {
                 </FloatingLabel>
 
                <FloatingLabel label='Comments'>
-                    <Form.Control type='textarea' placeholder='comment' />
+                    <Form.Control type='textarea' placeholder='comment' ref={commentRef} />
                </FloatingLabel>
     
                <FloatingLabel label='Have you previously Declared Bankruptcy?'>
-                    <Form.Select className='previouslyDeclared'>
+                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef}>
                         <option value='No'>No</option>
                         <option value='Yes'>Yes</option>
                     </Form.Select>  
                </FloatingLabel>
 
                <FloatingLabel label='Discharge Date'>
-                    <Form.Control type='date' placeholder='dateOfDischarge' />
+                    <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} />
                </FloatingLabel>
             </Form.Group>
 
