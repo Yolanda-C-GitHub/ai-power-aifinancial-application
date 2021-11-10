@@ -1,0 +1,33 @@
+.partFiveCard{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    padding:10px;
+    flex-wrap: wrap;
+}
+
+.formGroupEmail{
+    display: Flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
+
+.formGroupID{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top:10px;
+}
+.IdInfo{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top:10px;
+}
+
+.issuingProvince{
+    width: 200px;
+}
+.previouslyDeclared{
+    width: 350px;
+}
