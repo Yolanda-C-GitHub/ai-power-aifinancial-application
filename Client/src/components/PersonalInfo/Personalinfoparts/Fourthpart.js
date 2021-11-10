@@ -21,12 +21,6 @@ export default function Fourthpart(params) {
 
     const[showRez2, setShowRez2]=useState(false);
 
-    function addShowRez2(){
-        const today = new Date()
-
-        setShowRez2(!showRez2)
-    }
-
 
     function numberDaysBetween(){
         const sinceDate = moment(rezSinceRef.current.value,"YYYY/MM/DD")

@@ -63,6 +63,7 @@ export default function Personalinfo() {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const personalInfoPartFive ={
+        declared,
         setEmail,
         setCellNum,
         setHomeNum,

@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './partfive.css'
 
@@ -19,7 +19,12 @@ export default function Partfive(params) {
     const commentRef=useRef();
     const previousDeclaredRef = useRef();
     const dischargeDateRef=useRef();
+
+    const [showDischarge, setShowDischarge]=useState(false);
     
+    function toggleShowDischarge(){
+        params.personalInfoPartFive.declared==='No'? setShowDischarge(true):setShowDischarge(false)
+    }
 
     return (
         <Card className='partFiveCard'>
@@ -42,7 +47,7 @@ export default function Partfive(params) {
                 </FloatingLabel>
             </Form.Group> 
 
-            <Form.Group className='formGroupID'>
+            <Form.Group className='formGroupID'> 
                 <FloatingLabel label='ID Type'>
                     <Form.Select className='partFiveIDType' ref={idTypeRef} onChange={()=>params.personalInfoPartFive.setIdType(idTypeRef.current.value)}>
                         <option value='provincialDriversLicense'>Provincial Driver's License</option>
@@ -94,15 +99,21 @@ export default function Partfive(params) {
                </FloatingLabel>
     
                <FloatingLabel label='Have you previously Declared Bankruptcy?'>
-                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef} onChange={()=>params.personalInfoPartFive.setDeclared(previousDeclaredRef.current.value)} >
+                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef} 
+                    onChange={()=>{
+                        params.personalInfoPartFive.setDeclared(previousDeclaredRef.current.value)
+                        toggleShowDischarge()
+                    }}>
                         <option value='No'>No</option>
                         <option value='Yes'>Yes</option>
                     </Form.Select>  
                </FloatingLabel>
 
-               <FloatingLabel label='Discharge Date'>
-                    <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
-               </FloatingLabel>
+               {showDischarge===true?(
+                    <FloatingLabel label='Discharge Date'>
+                        <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
+                    </FloatingLabel>
+               ): null} 
             </Form.Group>
 
         </Card>
