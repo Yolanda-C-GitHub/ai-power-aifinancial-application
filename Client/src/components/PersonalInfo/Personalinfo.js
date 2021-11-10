@@ -79,6 +79,44 @@ export default function Personalinfo() {
         setDischargeDate,
     }
 
+    // state control family info
+    const[spouseFirstName, setSpouseFirstName]=useState();
+    const[spouseLastName, setSpouseLastName]=useState();
+    const[spouseBirth, setSpouseBirth]=useState();
+    const[child1Name, setChild1Name]=useState();
+    const[child2Name, setChild2Name]=useState();
+    const[child3Name, setChild3Name]=useState();
+    const[child4Name, setChild4Name]=useState();
+    const personalInfoFamilyMember={
+        setSpouseFirstName,
+        setSpouseLastName,
+        setSpouseBirth,
+        setChild1Name,
+        setChild2Name,
+        setChild3Name,
+        setChild4Name,
+    }
+
+
+    // state control employment info
+    const [employmentStatus, setEmploymentStatus]=useState();
+    const [annualIncome, setAnnualIncome]=useState();
+    const [employerName, setEmployername]=useState();
+    const [employerStreetNum, setEmployerStreetNum]=useState();
+    const [employerAddress, setEmployerAddress]=useState();
+    const [employerUnitNum, setEmployerUnitNum]=useState();
+    const [employerCity, setEmployerCity]=useState();
+    const [employerProvince, setEmployerProvince]=useState();
+    const [employerPostalCode, setEmployerPostalCode]=useState();
+    const [durationStart, setDurationStart]=useState();
+    const [durationEnd, setDurationEnd]=useState();
+    const [industry, setIndustry]=useState();
+    const [occupation, setOccupation]=useState();
+
+    
+
+
+
 
     function handleSubmit(e){
         e.preventDefault()
@@ -116,9 +154,15 @@ export default function Personalinfo() {
                         <PartFive personalInfoPartFive={personalInfoPartFive} />
                     </div>
 
+                    <div>
+                        
+                    </div>
+
                     <div className='d-flex justify-content-end mt-2 mb-2'>
                       <Button type='submit'>Next</Button>
                     </div>
+
+                   
 
                 </Form>
             </Container>
