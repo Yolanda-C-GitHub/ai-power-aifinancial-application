@@ -43,7 +43,38 @@ export default function Personalinfo() {
     const[rezSince2, setRezSince2]=useState();
     const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
 
-    
+
+    // state control part 5
+    const[email, setEmail]=useState();
+    const[cellNum, setCellNum]= useState();
+    const[homeNum, setHomeNum]=useState();
+    const[workNum, setWorkNum]=useState();
+    const[idType, setIdType]=useState();
+    const[idNum, setIdNum]=useState();
+    const[issueDate, setIssueDate]=useState();
+    const[expiryDate, setExpiryDate]=useState();
+    const[verificationDate, setVerificationDate]=useState();
+    const[issuingProvince, setIssuingProvince]=useState();
+    const[comments, setComments] = useState();
+    const[declared, setDeclared] = useState();
+    const[dischargeDate, setDischargeDate]= useState();
+    const personalInfoPartFive ={
+        setEmail,
+        setCellNum,
+        setHomeNum,
+        setWorkNum,
+        setIdType,
+        setIdNum,
+        setIssueDate,
+        setExpiryDate,
+        setVerificationDate,
+        setIssuingProvince,
+        setComments,
+        setDeclared,
+        setDischargeDate,
+    }
+
+
     function handleSubmit(e){
         e.preventDefault()
         console.log('submit form button working')
@@ -52,6 +83,7 @@ export default function Personalinfo() {
         console.log(livingStatus, maritalStatus, citizenship, taxStatus)
         console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
         console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
+        console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
     }
 
 
@@ -76,7 +108,7 @@ export default function Personalinfo() {
                     </div>
 
                     <div className='row'>
-                        <PartFive />
+                        <PartFive personalInfoPartFive={personalInfoPartFive} />
                     </div>
 
                     <div className='d-flex justify-content-end mt-2 mb-2'>

@@ -1,32 +1,47 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './partfive.css'
 
-export default function Partfive() {
+export default function Partfive(params) {
+
+    const emailRef = useRef();
+    const cellNumRef=useRef();
+    const homeNumRef=useRef();
+    const workNumRef=useRef();
+
+    const idTypeRef=useRef();
+    const idNumRef=useRef();
+    const issueDateRef=useRef();
+    const expiryDateRef=useRef();
+    const verificationDateRef=useRef();
+
+
+
+
     return (
         <Card className='partFiveCard'>
 
             <Form.Group className='formGroupEmail'>
                 <FloatingLabel className='partFiveEmail' label='Email'>
-                    <Form.Control type='email' placeholder='Email'/>
+                    <Form.Control type='email' ref={emailRef} placeholder='Email'/>
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveCell' label='Cell Phone'>
-                    <Form.Control placeholder='cellphone'/>
+                    <Form.Control placeholder='cellphone'ref={cellNumRef} />
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveHome' label='Home Phone'>
-                    <Form.Control placeholder='homephone' />
+                    <Form.Control placeholder='homephone' ref={homeNumRef} />
                 </FloatingLabel>
 
                 <FloatingLabel className = 'partFiveWork' label='Work Phone'>
-                    <Form.Control placeholder='workphone' />
+                    <Form.Control placeholder='workphone' ref={workNumRef} />
                 </FloatingLabel>
             </Form.Group> 
 
             <Form.Group className='formGroupID'>
                 <FloatingLabel label='ID Type'>
-                    <Form.Select className='partFiveIDType'>
+                    <Form.Select className='partFiveIDType' ref={idTypeRef} >
                         <option value='provincialDriversLicense'>Provincial Driver's License</option>
                         <option value="provincialPhotoID">Provincial Photo ID</option>
                         <option value="passport">Passport</option>
@@ -36,19 +51,19 @@ export default function Partfive() {
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                    <Form.Control placeholder='idNumber' />
+                    <Form.Control placeholder='idNumber' ref={idNumRef} />
                 </FloatingLabel>
 
                  <FloatingLabel label="Issue Date">
-                    <Form.Control placeholder='issueDate' type='date' />
+                    <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} />
                  </FloatingLabel>
 
                  <FloatingLabel label="Expiry Date">
-                    <Form.Control placeholder='expiryDate' type='date' />
+                    <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} />
                  </FloatingLabel>
 
                  <FloatingLabel label="Verification Date">
-                    <Form.Control placeholder='verificationDate' type='date' />
+                    <Form.Control placeholder='verificationDate' type='date' ref={verificationDateRef} />
                  </FloatingLabel>
             </Form.Group>
 
