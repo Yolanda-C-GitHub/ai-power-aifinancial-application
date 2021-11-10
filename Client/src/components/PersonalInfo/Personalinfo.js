@@ -5,6 +5,10 @@ import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
+
+
+
+ 
 export default function Personalinfo() {
 
     // state control for 1st part
@@ -20,17 +24,17 @@ export default function Personalinfo() {
     const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
 
     // state control for 3rd part
-    const[livingStatus, setLivingStatus] = useState();
-    const[maritalStatus, setMaritalStatus]=useState();
-    const[citizenship, setCitizenship] = useState();
-    const[taxStatus, setTaxStatus]=useState();
+    const[livingStatus, setLivingStatus] = useState('owner');
+    const[maritalStatus, setMaritalStatus]=useState('married');
+    const[citizenship, setCitizenship] = useState('canadian');
+    const[taxStatus, setTaxStatus]=useState('canada');
     const personalInfoStatus = {setLivingStatus, setMaritalStatus, setCitizenship, setTaxStatus}
 
     // state control for 4th part
     const[houseNum, setHouseNum]=useState();
     const[currentRez, setCurrentRez]=useState();
     const[aptNum, setAptNum]=useState();
-    const[province, setProvince]=useState();
+    const[province, setProvince]=useState('ON');
     const[postalCode, setPostalCode]=useState();
     const[rezSince, setRezSince]=useState();
     const personalInfoRez = {setHouseNum, setCurrentRez, setAptNum, setProvince, setPostalCode, setRezSince}
@@ -49,14 +53,14 @@ export default function Personalinfo() {
     const[cellNum, setCellNum]= useState();
     const[homeNum, setHomeNum]=useState();
     const[workNum, setWorkNum]=useState();
-    const[idType, setIdType]=useState();
+    const[idType, setIdType]=useState('provincialDriversLicense');
     const[idNum, setIdNum]=useState();
     const[issueDate, setIssueDate]=useState();
     const[expiryDate, setExpiryDate]=useState();
     const[verificationDate, setVerificationDate]=useState();
-    const[issuingProvince, setIssuingProvince]=useState();
+    const[issuingProvince, setIssuingProvince]=useState('ON');
     const[comments, setComments] = useState();
-    const[declared, setDeclared] = useState();
+    const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const personalInfoPartFive ={
         setEmail,

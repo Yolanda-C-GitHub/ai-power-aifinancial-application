@@ -34,17 +34,17 @@ export default function Partfive(params) {
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveHome' label='Home Phone'>
-                    <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoPartFive.setHomeNum} />
+                    <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoPartFive.setHomeNum(homeNumRef.current.value)} />
                 </FloatingLabel>
 
                 <FloatingLabel className = 'partFiveWork' label='Work Phone'>
-                    <Form.Control placeholder='workphone' ref={workNumRef} />
+                    <Form.Control placeholder='workphone' ref={workNumRef} onChange={()=>params.personalInfoPartFive.setWorkNum(workNumRef.current.value)} />
                 </FloatingLabel>
             </Form.Group> 
 
             <Form.Group className='formGroupID'>
                 <FloatingLabel label='ID Type'>
-                    <Form.Select className='partFiveIDType' ref={idTypeRef} >
+                    <Form.Select className='partFiveIDType' ref={idTypeRef} onChange={()=>params.personalInfoPartFive.setIdType(idTypeRef.current.value)}>
                         <option value='provincialDriversLicense'>Provincial Driver's License</option>
                         <option value="provincialPhotoID">Provincial Photo ID</option>
                         <option value="passport">Passport</option>
@@ -54,26 +54,25 @@ export default function Partfive(params) {
                 </FloatingLabel>
 
                 <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                    <Form.Control placeholder='idNumber' ref={idNumRef} />
+                    <Form.Control placeholder='idNumber' ref={idNumRef} onChange={()=>params.personalInfoPartFive.setIdNum(idNumRef.current.value)}/>
                 </FloatingLabel>
 
                  <FloatingLabel label="Issue Date">
-                    <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} />
+                    <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={()=>params.personalInfoPartFive.setIssueDate(issueDateRef.current.value)} />
                  </FloatingLabel>
 
                  <FloatingLabel label="Expiry Date">
-                    <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} />
+                    <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={()=>params.personalInfoPartFive.setExpiryDate(expiryDateRef.current.value)} />
                  </FloatingLabel>
 
                  <FloatingLabel label="Verification Date">
-                    <Form.Control placeholder='verificationDate' type='date' ref={verificationDateRef} />
+                    <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={()=>params.personalInfoPartFive.setVerificationDate(verificationDateRef.current.value)} />
                  </FloatingLabel>
             </Form.Group>
 
-
             <Form.Group className='IdInfo'>
                 <FloatingLabel label='Issuing Province'>
-                    <Form.Select  className='issuingProvince' ref={issuingProvinceRef} >
+                    <Form.Select  className='issuingProvince' ref={issuingProvinceRef} onChange={()=>params.personalInfoPartFive.setIssuingProvince(issuingProvinceRef.current.value)} >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -91,18 +90,18 @@ export default function Partfive(params) {
                 </FloatingLabel>
 
                <FloatingLabel label='Comments'>
-                    <Form.Control type='textarea' placeholder='comment' ref={commentRef} />
+                    <Form.Control type='textarea' placeholder='comment' ref={commentRef} onChange={()=>params.personalInfoPartFive.setComments(commentRef.current.value)} />
                </FloatingLabel>
     
                <FloatingLabel label='Have you previously Declared Bankruptcy?'>
-                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef}>
+                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef} onChange={()=>params.personalInfoPartFive.setDeclared(previousDeclaredRef.current.value)} >
                         <option value='No'>No</option>
                         <option value='Yes'>Yes</option>
                     </Form.Select>  
                </FloatingLabel>
 
                <FloatingLabel label='Discharge Date'>
-                    <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} />
+                    <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
                </FloatingLabel>
             </Form.Group>
 
