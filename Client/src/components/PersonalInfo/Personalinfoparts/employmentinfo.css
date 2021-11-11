@@ -8,7 +8,6 @@
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-
 }
 .employmentStatus{
     width: 175px
@@ -22,4 +21,10 @@
 
 .occupation{
     width:165px
+}
+
+.employerAddress{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
