@@ -75,6 +75,9 @@ export default function EmploymentInfo() {
                     <Form.Control placeholder='City' /> 
                 </FloatingLabel>
 
+            </Form.Group>
+
+            <Form.Group className='employerAddressProvince' >
                 <FloatingLabel label='Province'>
                     <Form.Select  className='employerAddressProvince'  >
                         <option value='ON'>ON</option>
@@ -96,9 +99,7 @@ export default function EmploymentInfo() {
                 <FloatingLabel label='Postal Code'>
                     <Form.Control placeholder='Postal Code' /> 
                 </FloatingLabel>
-
             </Form.Group>
-
 
 
 

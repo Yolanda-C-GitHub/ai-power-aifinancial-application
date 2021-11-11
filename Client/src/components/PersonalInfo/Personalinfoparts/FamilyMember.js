@@ -25,15 +25,7 @@ export default function FamilyMember(params) {
                 </FloatingLabel>
             </Form.Group>
 
-<<<<<<< Updated upstream
- 
-            <Form.Group>
-
-
-            </Form.Group>
- 
-=======
-
+    
             <Form.Group  className='formGroupChildInfo'>
                 <FloatingLabel label='Child 1'>
                     <Form.Control placeholder ='Child 1'/>
@@ -71,7 +63,6 @@ export default function FamilyMember(params) {
 
 
 
->>>>>>> Stashed changes
 
         </Card>
     )
