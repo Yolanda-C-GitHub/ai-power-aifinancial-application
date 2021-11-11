@@ -21,16 +21,57 @@ export default function FamilyMember(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Date of Birth'>
-                    <Form.Control type='date' placeholder ='Date if Birth' />
+                    <Form.Control type='date' placeholder ='Date of Birth' />
                 </FloatingLabel>
             </Form.Group>
 
+<<<<<<< Updated upstream
  
             <Form.Group>
 
 
             </Form.Group>
  
+=======
+
+            <Form.Group  className='formGroupChildInfo'>
+                <FloatingLabel label='Child 1'>
+                    <Form.Control placeholder ='Child 1'/>
+                </FloatingLabel>
+
+                <FloatingLabel label='Date of Birth'>
+                    <Form.Control type='date' placeholder ='Date of Birth'  />
+                </FloatingLabel>
+
+                <FloatingLabel label='Child 2'>
+                    <Form.Control placeholder ='Child 2' className = "name"/>
+                </FloatingLabel>
+
+                <FloatingLabel label='Date of Birth'>
+                    <Form.Control type='date' placeholder ='Date of Birth' />
+                </FloatingLabel>
+
+                <FloatingLabel label='Child 3'>
+                    <Form.Control placeholder ='Child 3' className = "name"/>
+                </FloatingLabel>
+
+                <FloatingLabel label='Date of Birth'>
+                    <Form.Control type='date' placeholder ='Date of Birth' />
+                </FloatingLabel>
+
+                <FloatingLabel label='Child 4'>
+                    <Form.Control placeholder ='Child 4' className = "name"/>
+                </FloatingLabel>
+
+                <FloatingLabel label='Date of Birth'>
+                    <Form.Control type='date' placeholder ='Date of Birth' />
+                </FloatingLabel>
+            </Form.Group>
+            
+
+
+
+>>>>>>> Stashed changes
 
         </Card>
     )
