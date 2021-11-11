@@ -16,6 +16,7 @@ export default function Thirdpart(params) {
 
             <FloatingLabel label='Living Status'>
                 <Form.Select className='thirdPartSelector' ref={livingStatusRef} onChange={()=>params.personalInfoStatus.setLivingStatus(livingStatusRef.current.value)}>
+                    <option placeholder='select' >Select</option>
                     <option value='owner'>Owner</option>
                     <option value='rent'>Rent</option>
                     <option value='with parent'>With Parent</option>
@@ -27,6 +28,7 @@ export default function Thirdpart(params) {
 
             <FloatingLabel label='Marital Status' >
                 <Form.Select className='thirdPartSelector' ref={maritalStatusRef} onChange={()=>params.personalInfoStatus.setMaritalStatus(maritalStatusRef.current.value)}>
+                    <option placeholder='select' >Select</option>
                     <option value='married'>Married</option>
                     <option value='single'>Single</option>
                     <option value='divorced'>Divorced</option>
@@ -39,6 +41,7 @@ export default function Thirdpart(params) {
 
             <FloatingLabel label='Citizenship' >
                 <Form.Select className='thirdPartSelector' ref={citizenshipRef} onChange={()=>params.personalInfoStatus.setCitizenship(citizenshipRef.current.value)} >
+                    <option placeholder='select' >Select</option>
                     <option value='canadian'>Canadian</option>
                     <option value='chinese'>Chinese</option>
                     <option value='pr'>PR</option>
@@ -46,8 +49,9 @@ export default function Thirdpart(params) {
                 </Form.Select>            
             </FloatingLabel>
 
-            <FloatingLabel label='Tax Status' >
+            <FloatingLabel label='Tax Status'>
                 <Form.Select className='thirdPartSelector' ref={taxStatusRef} onChange={()=>params.personalInfoStatus.setTaxStatus(taxStatusRef.current.value)}>
+                    <option placeholder='select' >Select</option>
                     <option value='canada'>Canada</option>
                     <option value='usa'>USA</option>
                     <option value='both'>Both</option>

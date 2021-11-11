@@ -5,7 +5,7 @@ import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
-
+import FamilyMember from './Personalinfoparts/FamilyMember'
 
 
  
@@ -24,10 +24,10 @@ export default function Personalinfo() {
     const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
 
     // state control for 3rd part
-    const[livingStatus, setLivingStatus] = useState('owner');
-    const[maritalStatus, setMaritalStatus]=useState('married');
-    const[citizenship, setCitizenship] = useState('canadian');
-    const[taxStatus, setTaxStatus]=useState('canada');
+    const[livingStatus, setLivingStatus] = useState('');
+    const[maritalStatus, setMaritalStatus]=useState('');
+    const[citizenship, setCitizenship] = useState('');
+    const[taxStatus, setTaxStatus]=useState('');
     const personalInfoStatus = {setLivingStatus, setMaritalStatus, setCitizenship, setTaxStatus}
 
     // state control for 4th part
@@ -112,7 +112,50 @@ export default function Personalinfo() {
     const [durationEnd, setDurationEnd]=useState();
     const [industry, setIndustry]=useState();
     const [occupation, setOccupation]=useState();
+    const personalInfoEmploymentInfo={
+        setEmploymentStatus,
+        setAnnualIncome,
+        setEmployername,
+        setEmployerStreetNum,
+        setEmployerAddress,
+        setEmployerUnitNum,
+        setEmployerCity,
+        setEmployerProvince,
+        setEmployerPostalCode,
+        setDurationStart,
+        setDurationEnd,
+        setIndustry,
+        setOccupation,
+    }
 
+    const [employmentStatus2, setEmploymentStatus2]=useState();
+    const [annualIncome2, setAnnualIncome2]=useState();
+    const [employerName2, setEmployername2]=useState();
+    const [employerStreetNum2, setEmployerStreetNum2]=useState();
+    const [employerAddress2, setEmployerAddress2]=useState();
+    const [employerUnitNum2, setEmployerUnitNum2]=useState();
+    const [employerCity2, setEmployerCity2]=useState();
+    const [employerProvince2, setEmployerProvince2]=useState();
+    const [employerPostalCode2, setEmployerPostalCode2]=useState();
+    const [durationStart2, setDurationStart2]=useState();
+    const [durationEnd2, setDurationEnd2]=useState();
+    const [industry2, setIndustry2]=useState();
+    const [occupation2, setOccupation2]=useState();
+    const personalInfoEmploymentInfo2={
+        setEmploymentStatus2,
+        setAnnualIncome2,
+        setEmployername2,
+        setEmployerStreetNum2,
+        setEmployerAddress2,
+        setEmployerUnitNum2,
+        setEmployerCity2,
+        setEmployerProvince2,
+        setEmployerPostalCode2,
+        setDurationStart2,
+        setDurationEnd2,
+        setIndustry2,
+        setOccupation2,
+    }
     
 
 
@@ -154,8 +197,8 @@ export default function Personalinfo() {
                         <PartFive personalInfoPartFive={personalInfoPartFive} />
                     </div>
 
-                    <div>
-                        
+                    <div className='row'>  
+                        <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember} />  
                     </div>
 
                     <div className='d-flex justify-content-end mt-2 mb-2'>
