@@ -7,6 +7,7 @@
 
 .familyInfoLabel{
     text-align: center;
+    margin-top: 15px;
 }
 
 .formGroupSpouseInfo{
@@ -25,6 +26,21 @@
     padding:10px;
 
 }
-.name{
-    margin-left: 10px;
+
+.inputGroupChild1{
+    width:auto;
 }
+
+.child1{
+    width:200px;
+}
+
+
+
+.otherChildInputGroup{
+    width:auto;
+}
+.otherChildName{
+    width:190px;
+}
+

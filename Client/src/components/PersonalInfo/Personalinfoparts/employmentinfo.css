@@ -2,15 +2,18 @@
 
 .employmentInfoLabel{
     text-align: center;
+    margin-top:15px;
+    margin-bottom: 10px;
 }
 
 .employerSection{
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 10px;
 }
 .employmentStatus{
-    width: 175px
+    width: 175px;
 }
 .annualIncome{
     width:165px
@@ -27,4 +30,13 @@
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.employerAddressProvince{
+    display:flex;
+    justify-content: space-evenly;
+}
+.province{
+    width:100px;
 }

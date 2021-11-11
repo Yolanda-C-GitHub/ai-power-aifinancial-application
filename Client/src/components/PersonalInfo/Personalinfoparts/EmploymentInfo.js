@@ -58,6 +58,7 @@ export default function EmploymentInfo() {
                 </FloatingLabel>
             </Form.Group>
 
+
             <Form.Group className='employerAddress'>
                 <FloatingLabel label='Street Number'>
                     <Form.Control placeholder='Street Number' /> 
@@ -74,12 +75,12 @@ export default function EmploymentInfo() {
                 <FloatingLabel label='City'>
                     <Form.Control placeholder='City' /> 
                 </FloatingLabel>
-
             </Form.Group>
+
 
             <Form.Group className='employerAddressProvince' >
                 <FloatingLabel label='Province'>
-                    <Form.Select  className='employerAddressProvince'  >
+                    <Form.Select  className='province'  >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -99,6 +100,15 @@ export default function EmploymentInfo() {
                 <FloatingLabel label='Postal Code'>
                     <Form.Control placeholder='Postal Code' /> 
                 </FloatingLabel>
+                
+                <FloatingLabel label='Start From'>
+                    <Form.Control type='date' placeholder='Start From' /> 
+                </FloatingLabel> 
+
+                <FloatingLabel label='To'>
+                    <Form.Control type='date' placeholder='To' /> 
+                </FloatingLabel> 
+
             </Form.Group>
 
 
