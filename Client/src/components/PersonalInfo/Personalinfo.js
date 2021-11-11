@@ -6,7 +6,7 @@ import Thirdpart from './Personalinfoparts/Thirdpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
-
+import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 
  
 export default function Personalinfo() {
@@ -161,6 +161,8 @@ export default function Personalinfo() {
 
 
 
+
+
     function handleSubmit(e){
         e.preventDefault()
         console.log('submit form button working')
@@ -171,6 +173,9 @@ export default function Personalinfo() {
         console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
         console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
     }
+
+
+
 
 
     return (
@@ -186,7 +191,7 @@ export default function Personalinfo() {
                     </div>
 
                     <div className ='row' >
-                        <Thirdpart personalInfoStatus={personalInfoStatus}  />
+                        <Thirdpart personalInfoStatus={personalInfoStatus} />
                     </div>
 
                     <div className='row'>
@@ -201,11 +206,14 @@ export default function Personalinfo() {
                         <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember} />  
                     </div>
 
+
+                    <div className='row'>
+                        <EmploymentInfo personalInfoEmploymentInfo={personalInfoEmploymentInfo} personalInfoEmploymentInfo2={personalInfoEmploymentInfo2} />
+                    </div>
+
                     <div className='d-flex justify-content-end mt-2 mb-2'>
                       <Button type='submit'>Next</Button>
                     </div>
-
-                   
 
                 </Form>
             </Container>

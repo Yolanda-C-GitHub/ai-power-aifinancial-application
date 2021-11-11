@@ -25,10 +25,14 @@ export default function FamilyMember(params) {
                 </FloatingLabel>
             </Form.Group>
 
-
+ 
             <Form.Group>
-                
+
+
             </Form.Group>
+ 
+
         </Card>
     )
 }
+

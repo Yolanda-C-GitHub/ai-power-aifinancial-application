@@ -1,0 +1,25 @@
+
+
+.employmentInfoLabel{
+    text-align: center;
+}
+
+.employerSection{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.employmentStatus{
+    width: 175px
+}
+.annualIncome{
+    width:165px
+}
+.industry{
+    width:165px
+}
+
+.occupation{
+    width:165px
+}

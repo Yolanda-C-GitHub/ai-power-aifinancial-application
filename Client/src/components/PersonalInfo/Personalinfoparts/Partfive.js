@@ -23,7 +23,6 @@ export default function Partfive(params) {
     const [showDischarge, setShowDischarge]=useState(false);
     
     function toggleShowDischarge(){
-        
         if(params.personalInfoPartFive.declared==='No'){
             setShowDischarge(true)   
         } else{
