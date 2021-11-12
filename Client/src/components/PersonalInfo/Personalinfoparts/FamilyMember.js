@@ -31,15 +31,15 @@ export default function FamilyMember(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Date of Birth'>
-                    <Form.Control type='date' placeholder ='Date of Birth' />
+                    <Form.Control type='date' placeholder ='Date of Birth' ref={spouseBirthdayRef} />
                 </FloatingLabel>
                 
                 <InputGroup className='inputGroupChild1'>
                     <FloatingLabel label='Child 1'>
-                        <Form.Control className='child1' placeholder ='Child 1'/>
+                        <Form.Control className='child1' placeholder ='Child 1' ref={child1NameRef} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
-                        <Form.Control type='date' placeholder ='Date of Birth'  />
+                        <Form.Control type='date' placeholder ='Date of Birth' ref={child1BirthdayRef} />
                     </FloatingLabel>
                 </InputGroup>
             </Form.Group>
@@ -48,16 +48,16 @@ export default function FamilyMember(params) {
             <Form.Group  className='formGroupChildInfo'>
                 <InputGroup className='otherChildInputGroup'>
                     <FloatingLabel label='Child 2'>
-                        <Form.Control placeholder='Child 2' className = "otherChildName"/>
+                        <Form.Control placeholder='Child 2' className = "otherChildName" ref={child2NameRef} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
-                        <Form.Control type='date' placeholder ='Date of Birth' />
+                        <Form.Control type='date' placeholder ='Date of Birth' ref={child2BirthdayRef} />
                     </FloatingLabel>
                 </InputGroup>
 
                 <InputGroup className='otherChildInputGroup'>
                     <FloatingLabel label='Child 3'>
-                        <Form.Control placeholder ='Child 3' className ="otherChildName" />
+                        <Form.Control placeholder ='Child 3' className ="otherChildName"  />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
                         <Form.Control type='date' placeholder ='Date of Birth' />
