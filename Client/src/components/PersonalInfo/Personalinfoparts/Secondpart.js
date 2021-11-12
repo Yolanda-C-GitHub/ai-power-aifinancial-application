@@ -1,5 +1,5 @@
 import React, {useRef} from 'react'
-import {Card, Form} from 'react-bootstrap'
+import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './secondpart.css' 
 
 export default function Secondpart(params) {
@@ -20,14 +20,16 @@ export default function Secondpart(params) {
                     ref={genderMaleRef} 
                     value="Male"  
                     onChange={() => params.personalInfoOther.setGender(genderMaleRef.current.value)}
-                    ></Form.Check>
+                >
+                </Form.Check>
 
                 <Form.Check inline className = 'secondPartFormGroupGenderCheck' name='genderselector' label='Female' type='radio' 
                     ref={genderFemaleRef} 
                     value="Female" 
                     checked={params.personalInfoOther.gender === "Female"} 
                     onChange={()=>params.personalInfoOther.setGender(genderFemaleRef.current.value)}
-                    ></Form.Check>
+                >
+                </Form.Check>
             </Form.Group>
 
             <Form.Group className='secondPartFormGroupBirth'>
@@ -36,11 +38,13 @@ export default function Secondpart(params) {
             </Form.Group>
 
             <Form.Group className='secondPartFormGroupSin'>
-                <Form.Label  className='secondPartFormGroupSinLabel' >SIN#:</Form.Label>
-                <Form.Control className='' ref={sinRef} onChange={()=>params.personalInfoOther.setSinNum(sinRef.current.value)}></Form.Control>
+                <FloatingLabel label='SIN#'>
+                    <Form.Control placeholder='SIN#' ref={sinRef} onChange={()=>params.personalInfoOther.setSinNum(sinRef.current.value)}></Form.Control>
+                </FloatingLabel>
             </Form.Group>
 
-        
+            
+ 
 
         </Card>
     )
