@@ -12,6 +12,7 @@ export default function FamilyMember(params) {
     const child2NameRef=useRef();
     const child2BirthdayRef=useRef();
     const child3NameRef=useRef();
+    const child3BirthdayRef=useRef();
     const child4NameRef=useRef();
     const child4BirthdayRef=useRef();
     
@@ -57,19 +58,19 @@ export default function FamilyMember(params) {
 
                 <InputGroup className='otherChildInputGroup'>
                     <FloatingLabel label='Child 3'>
-                        <Form.Control placeholder ='Child 3' className ="otherChildName"  />
+                        <Form.Control placeholder ='Child 3' className ="otherChildName" ref={child3NameRef} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
-                        <Form.Control type='date' placeholder ='Date of Birth' />
+                        <Form.Control type='date' placeholder ='Date of Birth' ref={child3BirthdayRef} />
                     </FloatingLabel>
                 </InputGroup>
 
                 <InputGroup className='otherChildInputGroup'>
                     <FloatingLabel label='Child 4'>
-                        <Form.Control placeholder ='Child 4' className = "otherChildName"/>
+                        <Form.Control placeholder ='Child 4' className = "otherChildName" ref={child4NameRef} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
-                        <Form.Control type='date' placeholder ='Date of Birth' />
+                        <Form.Control type='date' placeholder ='Date of Birth' ref={child4BirthdayRef} />
                     </FloatingLabel>
                 </InputGroup>
             </Form.Group>
