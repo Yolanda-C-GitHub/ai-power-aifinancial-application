@@ -84,9 +84,13 @@ export default function Personalinfo() {
     const[spouseLastName, setSpouseLastName]=useState();
     const[spouseBirth, setSpouseBirth]=useState();
     const[child1Name, setChild1Name]=useState();
+    const[child1Birth, setChild1Birth]=useState();
     const[child2Name, setChild2Name]=useState();
+    const[child2Birth, setChild2Birth]=useState();
     const[child3Name, setChild3Name]=useState();
+    const[child3Birth, setChild3Birth]= useState();
     const[child4Name, setChild4Name]=useState();
+    const[child4Birth, setChild4Birth]=useState();
     const personalInfoFamilyMember={
         setSpouseFirstName,
         setSpouseLastName,
@@ -95,6 +99,10 @@ export default function Personalinfo() {
         setChild2Name,
         setChild3Name,
         setChild4Name,
+        setChild1Birth,
+        setChild2Birth,
+        setChild3Birth,
+        setChild4Birth,
     }
 
 
@@ -172,6 +180,7 @@ export default function Personalinfo() {
         console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
         console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
         console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
+        console.log(spouseFirstName, spouseLastName, spouseBirth, child1Name,child1Birth, child2Name, child2Birth, child3Name, child3Birth, child4Name, child4Birth)
     }
 
 
