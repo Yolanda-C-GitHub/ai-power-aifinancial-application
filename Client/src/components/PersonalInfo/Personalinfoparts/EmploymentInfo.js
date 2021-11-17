@@ -4,7 +4,8 @@ import './employmentinfo.css'
 
 export default function EmploymentInfo(params) {
 
-    const [currentEmployer, setCurrentEmployer]=useState(false)
+    const [currentEmployer, setCurrentEmployer]=useState(true)
+
 
 
 
@@ -113,7 +114,7 @@ export default function EmploymentInfo(params) {
                 </FloatingLabel> 
 
 
-                <Form.Check type='checkbox' checked={currentEmployer} label='Current Employer' onChange={(e)=>{
+                <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={currentEmployer} label='Current Employer' onChange={(e)=>{
                     setCurrentEmployer(e.target.checked)
                     }}/>
                 
@@ -127,6 +128,17 @@ export default function EmploymentInfo(params) {
                
                 
             </Form.Group>
+    
+
+
+                
+
+
+
+
+
+
+
 
 
 

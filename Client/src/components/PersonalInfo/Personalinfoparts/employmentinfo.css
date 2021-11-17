@@ -40,3 +40,7 @@
 .province{
     width:100px;
 }
+
+.currentEmployerCheckBox{
+    align-self: center;
+}
