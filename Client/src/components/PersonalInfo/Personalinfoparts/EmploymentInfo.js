@@ -9,11 +9,17 @@ export default function EmploymentInfo(params) {
     const employerTo = useRef()
 
     const [currentEmployer, setCurrentEmployer]=useState(true)
-    const [showEmployer2, setShowEmployer2]=useState(true)
+    const [showEmployer2, setShowEmployer2]=useState(false)
 
 
     function displayPreviousEmploymentInfo(){
+        const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
+        const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
+        const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
         
+        
+        
+
     }
 
 
@@ -118,7 +124,13 @@ export default function EmploymentInfo(params) {
                 </FloatingLabel>
                 
                 <FloatingLabel label='Start From'>
-                    <Form.Control type='date' placeholder='Start From' ref={employerStartFrom} onChange={(e)=>params.personalInfoEmploymentInfo.setDurationStart(e.target.value)} /> 
+                    <Form.Control type='date' placeholder='Start From' ref={employerStartFrom} 
+                    onChange={(e)=>{
+                        params.personalInfoEmploymentInfo.setDurationStart(e.target.value);
+                        displayPreviousEmploymentInfo()
+
+                        }} 
+                    /> 
                 </FloatingLabel> 
 
 
