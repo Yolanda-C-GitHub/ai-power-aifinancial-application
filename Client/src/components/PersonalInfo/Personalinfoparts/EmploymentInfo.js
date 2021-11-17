@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './employmentinfo.css'
 
 export default function EmploymentInfo(params) {
+
+    const [currentEmployer, setCurrentEmployer]=useState(false)
 
 
 
@@ -34,6 +36,7 @@ export default function EmploymentInfo(params) {
 
                 <FloatingLabel label='Industry'>
                     <Form.Select className='industry' onChange={(e)=>params.personalInfoEmploymentInfo.setIndustry(e.target.value)} > 
+                        <option>Select</option>
                         <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                         <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
                         <option value="artsEntertainmentRecreationSports">Arts Entertainment Recreation Sports</option>
@@ -73,17 +76,17 @@ export default function EmploymentInfo(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Unit #'>
-                    <Form.Control placeholder='Unit Number' /> 
+                    <Form.Control placeholder='Unit Number' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerUnitNum(e.target.value)} /> 
                 </FloatingLabel>
 
                 <FloatingLabel label='City'>
-                    <Form.Control placeholder='City' /> 
+                    <Form.Control placeholder='City' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerCity(e.target.value) } /> 
                 </FloatingLabel>
             </Form.Group>
 
 
             <Form.Group className='employerAddressProvince' >
-                <FloatingLabel label='Province'>
+                <FloatingLabel label='Province' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)} >
                     <Form.Select  className='province'  >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
@@ -99,20 +102,30 @@ export default function EmploymentInfo(params) {
                         <option value='SK'>SK</option>
                         <option value='YT'>YT</option>
                     </Form.Select>  
-                </FloatingLabel>
+                </FloatingLabel>    
 
                 <FloatingLabel label='Postal Code'>
-                    <Form.Control placeholder='Postal Code' /> 
+                    <Form.Control placeholder='Postal Code' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerPostalCode(e.target.value)} /> 
                 </FloatingLabel>
                 
                 <FloatingLabel label='Start From'>
-                    <Form.Control type='date' placeholder='Start From' /> 
+                    <Form.Control type='date' placeholder='Start From' onChange={(e)=>params.personalInfoEmploymentInfo.setDurationStart(e.target.value)} /> 
                 </FloatingLabel> 
 
-                <FloatingLabel label='To'>
-                    <Form.Control type='date' placeholder='To' /> 
-                </FloatingLabel> 
 
+                <Form.Check type='checkbox' checked={currentEmployer} label='Current Employer' onChange={(e)=>{
+                    setCurrentEmployer(e.target.checked)
+                    }}/>
+                
+      
+                {currentEmployer===false? (
+                    <FloatingLabel label='To'>
+                        <Form.Control type='date' placeholder='To' onChange={(e)=>params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)} /> 
+                    </FloatingLabel> 
+                    ): null
+                }
+               
+                
             </Form.Group>
 
 

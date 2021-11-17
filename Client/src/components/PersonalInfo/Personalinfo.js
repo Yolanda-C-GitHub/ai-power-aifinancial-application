@@ -114,7 +114,7 @@ export default function Personalinfo() {
     const [employerAddress, setEmployerAddress]=useState();
     const [employerUnitNum, setEmployerUnitNum]=useState();
     const [employerCity, setEmployerCity]=useState();
-    const [employerProvince, setEmployerProvince]=useState();
+    const [employerProvince, setEmployerProvince]=useState('ON');
     const [employerPostalCode, setEmployerPostalCode]=useState();
     const [durationStart, setDurationStart]=useState();
     const [durationEnd, setDurationEnd]=useState();
