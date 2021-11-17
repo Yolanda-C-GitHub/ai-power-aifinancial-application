@@ -22,18 +22,28 @@ export default function EmploymentInfo(params) {
     const startFrom2Ref = useRef();
     const to2Ref = useRef();
 
-
-
-
     const [currentEmployer, setCurrentEmployer]=useState(true)
     const [showEmployer2, setShowEmployer2]=useState(false)
 
 
+
+
+
     function displayPreviousEmploymentInfo(){
+
+        if(currentEmployer===true){
+            console.log(currentEmployer)
+        }else if(currentEmployer===false){
+            console.log(currentEmployer)
+        }
+
+
+
+
+        
         const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
         const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
         const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
-        console.log(daysBetweenStartToday)
 
         if (daysBetweenStartToday < 730){
             console.log('its within 2 years')
