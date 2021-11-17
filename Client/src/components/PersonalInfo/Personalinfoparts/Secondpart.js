@@ -32,10 +32,10 @@ export default function Secondpart(params) {
                 </Form.Check>
             </Form.Group>
 
-            <Form.Group className='secondPartFormGroupBirth'>
-                <Form.Label  className='secondPartFormGroupBirthLabel' >Date of Birth:</Form.Label>
+         
+                <FloatingLabel  className='secondPartFormGroupBirthLabel' label='Date of Birth' >
                 <Form.Control type='date' className='' ref={birthdayRef} onChange={()=>params.personalInfoOther.setBirthday(birthdayRef.current.value)} ></Form.Control>
-            </Form.Group>
+                </FloatingLabel>
 
             <Form.Group className='secondPartFormGroupSin'>
                 <FloatingLabel label='SIN#'>

@@ -29,7 +29,6 @@
 }
     .secondPartFormGroupBirthLabel{
         width: 170px;
-        margin-top: 10px;
 
     }
 
@@ -38,11 +37,11 @@
     flex-direction: row;
     justify-content: center;
     margin-right: 30px;
+    align-items: center;
 }
 
     .secondPartFormGroupSinLabel{
         width: 50px;
-        margin-top: 10px;
         text-align: right;
         margin-right: 5px;
     }

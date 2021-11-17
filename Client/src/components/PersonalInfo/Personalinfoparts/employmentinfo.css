@@ -44,3 +44,11 @@
 .currentEmployerCheckBox{
     align-self: center;
 }
+
+/* employment info  2  */
+
+.employmentInfoLabel2{
+    text-align: center;
+    margin-top:15px;
+    margin-bottom: 10px;
+}
