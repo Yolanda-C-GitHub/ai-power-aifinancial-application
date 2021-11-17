@@ -30,41 +30,63 @@ export default function EmploymentInfo(params) {
 
 
     function displayPreviousEmploymentInfo(){
-
         if(currentEmployer===true){
             console.log(currentEmployer)
+            const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
+            const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
+            const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
+
+            if (daysBetweenStartToday < 730){
+                console.log('its within 2 years')
+                setShowEmployer2(true)
+            }else{
+                params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
+                params.personalInfoEmploymentInfo2.setAnnualIncome2('');
+                params.personalInfoEmploymentInfo2.setEmployername2('');
+                params.personalInfoEmploymentInfo2.setEmployerStreetNum2('');
+                params.personalInfoEmploymentInfo2.setEmployerAddress2('');
+                params.personalInfoEmploymentInfo2.setEmployerUnitNum2('');
+                params.personalInfoEmploymentInfo2.setEmployerCity2('');
+                params.personalInfoEmploymentInfo2.setEmployerProvince2('');
+                params.personalInfoEmploymentInfo2.setEmployerPostalCode2('');
+                params.personalInfoEmploymentInfo2.setDurationStart2('');
+                params.personalInfoEmploymentInfo2.setDurationEnd2('');
+                params.personalInfoEmploymentInfo2.setIndustry2('');
+                params.personalInfoEmploymentInfo2.setOccupation2('');
+                setShowEmployer2(false)
+            }
+
         }else if(currentEmployer===false){
             console.log(currentEmployer)
+            const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
+            const todaysDate = moment(employerTo.current.value, 'YYYY/MM/DD')
+            const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays();
+
+            if (daysBetweenStartToday < 730){
+                console.log('its within 2 years')
+                setShowEmployer2(true)
+            }else{
+                params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
+                params.personalInfoEmploymentInfo2.setAnnualIncome2('');
+                params.personalInfoEmploymentInfo2.setEmployername2('');
+                params.personalInfoEmploymentInfo2.setEmployerStreetNum2('');
+                params.personalInfoEmploymentInfo2.setEmployerAddress2('');
+                params.personalInfoEmploymentInfo2.setEmployerUnitNum2('');
+                params.personalInfoEmploymentInfo2.setEmployerCity2('');
+                params.personalInfoEmploymentInfo2.setEmployerProvince2('');
+                params.personalInfoEmploymentInfo2.setEmployerPostalCode2('');
+                params.personalInfoEmploymentInfo2.setDurationStart2('');
+                params.personalInfoEmploymentInfo2.setDurationEnd2('');
+                params.personalInfoEmploymentInfo2.setIndustry2('');
+                params.personalInfoEmploymentInfo2.setOccupation2('');
+                setShowEmployer2(false)
+            }
         }
 
-
-
-
-        
-        const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
-        const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
-        const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
-
-        if (daysBetweenStartToday < 730){
-            console.log('its within 2 years')
-            setShowEmployer2(true)
-        }else{
-            params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
-            params.personalInfoEmploymentInfo2.setAnnualIncome2('');
-            params.personalInfoEmploymentInfo2.setEmployername2('');
-            params.personalInfoEmploymentInfo2.setEmployerStreetNum2('');
-            params.personalInfoEmploymentInfo2.setEmployerAddress2('');
-            params.personalInfoEmploymentInfo2.setEmployerUnitNum2('');
-            params.personalInfoEmploymentInfo2.setEmployerCity2('');
-            params.personalInfoEmploymentInfo2.setEmployerProvince2('');
-            params.personalInfoEmploymentInfo2.setEmployerPostalCode2('');
-            params.personalInfoEmploymentInfo2.setDurationStart2('');
-            params.personalInfoEmploymentInfo2.setDurationEnd2('');
-            params.personalInfoEmploymentInfo2.setIndustry2('');
-            params.personalInfoEmploymentInfo2.setOccupation2('');
-            setShowEmployer2(false)
-        }
     }
+
+       
+    
 
 
     return (
