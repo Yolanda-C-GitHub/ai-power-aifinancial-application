@@ -2,14 +2,18 @@ import React from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './employmentinfo.css'
 
-export default function EmploymentInfo() {
+export default function EmploymentInfo(params) {
+
+
+
+
     return (
         <Card className='employmentInfoCard' >
             <h3 className='employmentInfoLabel'> Employment Info </h3>
 
             <Form.Group className='employerSection'>
                 <FloatingLabel label='Employment Status'>
-                    <Form.Select className='employmentStatus' >
+                    <Form.Select className='employmentStatus' onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} >
                         <option>Select</option>
                         <option value='employed' >Employed</option>
                         <option value="selfEmployed">Self Employed</option>
@@ -20,16 +24,16 @@ export default function EmploymentInfo() {
                     </Form.Select>
                 </FloatingLabel>
 
-                <FloatingLabel label='Annual Income'>
-                    <Form.Control className='annualIncome' placeholder='Annual Income' />
+                <FloatingLabel label='Annual Income' >
+                    <Form.Control className='annualIncome' placeholder='Annual Income' onChange={(e)=>params.personalInfoEmploymentInfo.setAnnualIncome(e.target.value)} />
                 </FloatingLabel>
 
                 <FloatingLabel label='Employer Name'>
-                    <Form.Control placeholder='Employer Name' /> 
+                    <Form.Control placeholder='Employer Name' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployername(e.target.value)} /> 
                 </FloatingLabel>
 
                 <FloatingLabel label='Industry'>
-                    <Form.Select className='industry'> 
+                    <Form.Select className='industry' onChange={(e)=>params.personalInfoEmploymentInfo.setIndustry(e.target.value)} > 
                         <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                         <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
                         <option value="artsEntertainmentRecreationSports">Arts Entertainment Recreation Sports</option>
@@ -54,18 +58,18 @@ export default function EmploymentInfo() {
                 </FloatingLabel>
 
                 <FloatingLabel label='Occupation'>
-                    <Form.Control className='occupation' placeholder='Occupation' /> 
+                    <Form.Control className='occupation' placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value) }  /> 
                 </FloatingLabel>
             </Form.Group>
 
 
             <Form.Group className='employerAddress'>
                 <FloatingLabel label='Street Number'>
-                    <Form.Control placeholder='Street Number' /> 
+                    <Form.Control placeholder='Street Number' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerStreetNum(e.target.value)} /> 
                 </FloatingLabel>
 
                 <FloatingLabel label='Address'>
-                    <Form.Control placeholder='Address' /> 
+                    <Form.Control placeholder='Address' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerAddress(e.target.value)} /> 
                 </FloatingLabel>
 
                 <FloatingLabel label='Unit #'>
