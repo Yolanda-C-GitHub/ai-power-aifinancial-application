@@ -77,8 +77,6 @@ export default function FamilyMember(params) {
 
 
 
-
-
         </Card>
     )
 }
