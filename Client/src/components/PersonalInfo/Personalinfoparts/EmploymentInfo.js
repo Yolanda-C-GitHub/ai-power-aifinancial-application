@@ -8,6 +8,23 @@ export default function EmploymentInfo(params) {
     const employerStartFrom = useRef();
     const employerTo = useRef()
 
+    const employermentStatus2Ref = useRef();
+    const annualIncome2Ref = useRef();
+    const employerName2Ref = useRef();
+    const industry2Ref = useRef();
+    const occupation2Ref=useRef();
+    const streetNum2Ref = useRef();
+    const address2Ref =useRef();
+    const unitNum2Ref = useRef();
+    const city2Ref = useRef();
+    const province2Ref =useRef();
+    const postalCode2Ref = useRef();
+    const startFrom2Ref = useRef();
+    const to2Ref = useRef();
+
+
+
+
     const [currentEmployer, setCurrentEmployer]=useState(true)
     const [showEmployer2, setShowEmployer2]=useState(false)
 
@@ -16,10 +33,27 @@ export default function EmploymentInfo(params) {
         const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
         const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
         const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
-        
-        
-        
+        console.log(daysBetweenStartToday)
 
+        if (daysBetweenStartToday < 730){
+            console.log('its within 2 years')
+            setShowEmployer2(true)
+        }else{
+            params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
+            params.personalInfoEmploymentInfo2.setAnnualIncome2('');
+            params.personalInfoEmploymentInfo2.setEmployername2('');
+            params.personalInfoEmploymentInfo2.setEmployerStreetNum2('');
+            params.personalInfoEmploymentInfo2.setEmployerAddress2('');
+            params.personalInfoEmploymentInfo2.setEmployerUnitNum2('');
+            params.personalInfoEmploymentInfo2.setEmployerCity2('');
+            params.personalInfoEmploymentInfo2.setEmployerProvince2('');
+            params.personalInfoEmploymentInfo2.setEmployerPostalCode2('');
+            params.personalInfoEmploymentInfo2.setDurationStart2('');
+            params.personalInfoEmploymentInfo2.setDurationEnd2('');
+            params.personalInfoEmploymentInfo2.setIndustry2('');
+            params.personalInfoEmploymentInfo2.setOccupation2('');
+            setShowEmployer2(false)
+        }
     }
 
 
@@ -101,8 +135,8 @@ export default function EmploymentInfo(params) {
 
 
             <Form.Group className='employerAddressProvince' >
-                <FloatingLabel label='Province' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)} >
-                    <Form.Select  className='province'  >
+                <FloatingLabel label='Province' >
+                    <Form.Select  className='province' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)}  >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -128,7 +162,7 @@ export default function EmploymentInfo(params) {
                     onChange={(e)=>{
                         params.personalInfoEmploymentInfo.setDurationStart(e.target.value);
                         displayPreviousEmploymentInfo()
-
+                        
                         }} 
                     /> 
                 </FloatingLabel> 
@@ -156,7 +190,7 @@ export default function EmploymentInfo(params) {
                     <h3 className='employmentInfoLabel2' >Previous Employment Info</h3>
                     <Form.Group className='employerSection'>
                         <FloatingLabel label='Employment Status'>
-                            <Form.Select className='employmentStatus' onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} >
+                            <Form.Select className='employmentStatus' ref={employermentStatus2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} >
                                 <option>Select</option>
                                 <option value='employed' >Employed</option>
                                 <option value="selfEmployed">Self Employed</option>
@@ -168,15 +202,15 @@ export default function EmploymentInfo(params) {
                         </FloatingLabel>
 
                         <FloatingLabel label='Annual Income' >
-                            <Form.Control className='annualIncome' placeholder='Annual Income' onChange={(e)=>params.personalInfoEmploymentInfo.setAnnualIncome(e.target.value)} />
+                            <Form.Control className='annualIncome' ref={annualIncome2Ref} placeholder='Annual Income' onChange={(e)=>params.personalInfoEmploymentInfo.setAnnualIncome(e.target.value)} />
                         </FloatingLabel>
 
                         <FloatingLabel label='Employer Name'>
-                            <Form.Control placeholder='Employer Name' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployername(e.target.value)} /> 
+                            <Form.Control placeholder='Employer Name' ref={employerName2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmployername(e.target.value)} /> 
                         </FloatingLabel>
 
                         <FloatingLabel label='Industry'>
-                            <Form.Select className='industry' onChange={(e)=>params.personalInfoEmploymentInfo.setIndustry(e.target.value)} > 
+                            <Form.Select className='industry' ref={industry2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setIndustry(e.target.value)} > 
                                 <option>Select</option>
                                 <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                                 <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
@@ -202,33 +236,33 @@ export default function EmploymentInfo(params) {
                         </FloatingLabel>
 
                         <FloatingLabel label='Occupation'>
-                            <Form.Control className='occupation' placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value) }  /> 
+                            <Form.Control className='occupation' ref={occupation2Ref}  placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value) }  /> 
                         </FloatingLabel>
                     </Form.Group>
 
 
                     <Form.Group className='employerAddress'>
                         <FloatingLabel label='Street Number'>
-                            <Form.Control placeholder='Street Number' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerStreetNum(e.target.value)} /> 
+                            <Form.Control placeholder='Street Number' ref={streetNum2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerStreetNum(e.target.value)} /> 
                         </FloatingLabel>
 
                         <FloatingLabel label='Address'>
-                            <Form.Control placeholder='Address' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerAddress(e.target.value)} /> 
+                            <Form.Control placeholder='Address' ref={address2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerAddress(e.target.value)} /> 
                         </FloatingLabel>
 
                         <FloatingLabel label='Unit #'>
-                            <Form.Control placeholder='Unit Number' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerUnitNum(e.target.value)} /> 
+                            <Form.Control placeholder='Unit Number' ref={unitNum2Ref} onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerUnitNum(e.target.value)} /> 
                         </FloatingLabel>
 
                         <FloatingLabel label='City'>
-                            <Form.Control placeholder='City' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerCity(e.target.value) } /> 
+                            <Form.Control placeholder='City' ref={city2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerCity(e.target.value) } /> 
                         </FloatingLabel>
                     </Form.Group>
 
 
                     <Form.Group className='employerAddressProvince' >
-                        <FloatingLabel label='Province' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)} >
-                            <Form.Select  className='province'  >
+                        <FloatingLabel label='Province' >
+                            <Form.Select  className='province' ref={province2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)}  >
                                 <option value='ON'>ON</option>
                                 <option value='AB'>AB</option>
                                 <option value='BC'>BC</option>
@@ -246,15 +280,15 @@ export default function EmploymentInfo(params) {
                         </FloatingLabel>    
 
                         <FloatingLabel label='Postal Code'>
-                            <Form.Control placeholder='Postal Code' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerPostalCode(e.target.value)} /> 
+                            <Form.Control placeholder='Postal Code' ref={postalCode2Ref} onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerPostalCode(e.target.value)} /> 
                         </FloatingLabel>
                         
                         <FloatingLabel label='Start From'>
-                            <Form.Control type='date' placeholder='Start From' onChange={(e)=>params.personalInfoEmploymentInfo.setDurationStart(e.target.value)} /> 
+                            <Form.Control type='date' placeholder='Start From' ref={startFrom2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setDurationStart(e.target.value)} /> 
                         </FloatingLabel> 
 
                         <FloatingLabel label='To'>
-                            <Form.Control type='date' placeholder='To' onChange={(e)=>params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)} /> 
+                            <Form.Control type='date' placeholder='To' ref={to2Ref} onChange={(e)=>params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)} /> 
                         </FloatingLabel> 
                 
                     </Form.Group>
