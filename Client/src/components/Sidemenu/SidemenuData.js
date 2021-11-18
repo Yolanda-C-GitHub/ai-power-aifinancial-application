@@ -6,6 +6,8 @@
  import MenuIcon from '@mui/icons-material/Menu';
  import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
  import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+ import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
 
  export const SidemenuData = [
     {
@@ -14,12 +16,17 @@
         link:'/home',
     },
     {
-        title: 'Personal Info',
-        icon: <ContactsIcon />,
+        title: 'Add File',
+        icon: <CreateNewFolderIcon />,
         link:'/personalinfo',
         iconClosed:<ArrowDropDownIcon />,
         iconOpened:<ArrowDropUpIcon />,
         subNav: [
+            {
+                title: 'Personal Info',
+                icon: <ContactsIcon />,
+                link:'/personalinfo',
+            },
             {
                 title: 'Employment Info',
                 icon: <WorkIcon />,
@@ -33,9 +40,9 @@
         ]
     },
     {
-        title: 'Other Info',
-        icon: <FamilyRestroomIcon />,
-        link:'/familyinfo',
+        title: 'Account Info',
+        icon: <ManageAccountsIcon />,
+        link:'/accoutinfo',
     },
    
  ]

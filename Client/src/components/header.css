@@ -1,14 +1,12 @@
 .headerText{
     font-weight: bold;
-    color:rgb(87, 87, 255);
+    color:white;
     font-size: 40px;
-    width: 250px;
-    margin-top: 10px;
-    padding-left: 7px;
+    padding-top:10px ;
+    text-align: center;
 }
 
 .headerContainer{
-    background: white;
+    background-color: #2F4050 ;
     height:  80px;
-    border: black 1px solid;
 }
