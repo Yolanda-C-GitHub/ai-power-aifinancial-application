@@ -64,7 +64,6 @@ export default function EmploymentInfo(params) {
 
             console.log(todaysDate, daysBetweenStartToday )
             if (daysBetweenStartToday < 730){
-                console.log('its within 2 years')
                 setShowEmployer2(true)
             }else{
                 params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
@@ -85,8 +84,7 @@ export default function EmploymentInfo(params) {
         }
         
     }
-
-       
+ 
     
 
 
