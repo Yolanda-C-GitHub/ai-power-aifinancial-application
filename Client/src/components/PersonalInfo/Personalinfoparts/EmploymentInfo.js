@@ -62,6 +62,7 @@ export default function EmploymentInfo(params) {
             const todaysDate = moment(employerTo.current.value, 'YYYY/MM/DD')
             const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays();
 
+            console.log(todaysDate, daysBetweenStartToday )
             if (daysBetweenStartToday < 730){
                 console.log('its within 2 years')
                 setShowEmployer2(true)
@@ -202,12 +203,17 @@ export default function EmploymentInfo(params) {
 
                 <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={currentEmployer} label='Current Employer' onChange={(e)=>{
                     setCurrentEmployer(e.target.checked)
+                    displayPreviousEmploymentInfo()
+
                     }}/>
                 
       
                 {currentEmployer===false? (
                     <FloatingLabel label='To'>
-                        <Form.Control type='date' placeholder='To' ref={employerTo} onChange={(e)=>params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)} /> 
+                        <Form.Control type='date' placeholder='To' ref={employerTo} onChange={(e)=>{
+                            params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)
+                            displayPreviousEmploymentInfo()
+                            }} /> 
                     </FloatingLabel> 
                     ): null
                 }
