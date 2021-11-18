@@ -3,3 +3,24 @@
     width: 250px;
     background-color: #2F4050 ;
 }
+
+.sidemenuList{
+    height:auto;
+    width: 100%;
+    padding: 0;
+    background-color: red;
+}
+
+.sidemenuItems{
+    width: 100%;
+    height: 50px;
+    background: rosybrown;
+    border: black solid  1px;
+    list-style-type: none;
+    margin: 0px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}

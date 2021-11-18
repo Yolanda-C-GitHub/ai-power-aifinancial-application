@@ -16,17 +16,17 @@
     {
         title: 'Personal Info',
         icon: <ContactsIcon />,
-        link:'/home',
+        link:'/personalinfo',
     },
     {
         title: 'Family Info',
         icon: <FamilyRestroomIcon />,
-        link:'/home',
+        link:'/familyinfo',
     },
     {
         title: 'Employment Info',
         icon: <WorkIcon />,
-        link:'/home',
+        link:'/employmentinfo',
     },
  ]
    
