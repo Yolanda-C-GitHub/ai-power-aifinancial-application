@@ -3,9 +3,9 @@
  import ContactsIcon from '@mui/icons-material/Contacts';
  import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
  import WorkIcon from '@mui/icons-material/Work';
-
-
-
+ import MenuIcon from '@mui/icons-material/Menu';
+ import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
+ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
  export const SidemenuData = [
     {
@@ -17,17 +17,27 @@
         title: 'Personal Info',
         icon: <ContactsIcon />,
         link:'/personalinfo',
+        iconClosed:<ArrowDropDownIcon />,
+        iconOpened:<ArrowDropUpIcon />,
+        subNav: [
+            {
+                title: 'Employment Info',
+                icon: <WorkIcon />,
+                link:'/employmentinfo',
+            },
+            {
+                title: 'Employment Info',
+                icon: <WorkIcon />,
+                link:'/employmentinfo',
+            },
+        ]
     },
     {
-        title: 'Family Info',
+        title: 'Other Info',
         icon: <FamilyRestroomIcon />,
         link:'/familyinfo',
     },
-    {
-        title: 'Employment Info',
-        icon: <WorkIcon />,
-        link:'/employmentinfo',
-    },
+   
  ]
    
  
