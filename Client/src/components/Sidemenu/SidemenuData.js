@@ -11,22 +11,22 @@
     {
         title: 'Home',
         icon: <HomeIcon />,
-        link:'/home'
+        link:'/home',
     },
     {
         title: 'Personal Info',
         icon: <ContactsIcon />,
-        link:'/home'
+        link:'/home',
     },
     {
         title: 'Family Info',
         icon: <FamilyRestroomIcon />,
-        link:'/home'
+        link:'/home',
     },
     {
         title: 'Employment Info',
         icon: <WorkIcon />,
-        link:'/home'
+        link:'/home',
     },
  ]
    
