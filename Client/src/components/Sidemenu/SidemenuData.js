@@ -28,9 +28,9 @@
                 link:'/personalinfo',
             },
             {
-                title: 'Employment Info',
-                icon: <WorkIcon />,
-                link:'/employmentinfo',
+                title: 'Family Info',
+                icon: <FamilyRestroomIcon />,
+                link:'/familyinfo',
             },
             {
                 title: 'Employment Info',

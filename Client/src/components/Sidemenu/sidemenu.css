@@ -42,3 +42,11 @@
 #sidemenuListItemActive{
     background: #293846 ;
 }
+
+
+.navBar{
+    background-color: #2F4050;
+    height: 80px;
+    text-align: center;
+    color:white;
+}
