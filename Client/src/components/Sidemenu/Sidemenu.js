@@ -11,9 +11,15 @@ export default function Sidemenu() {
             <ul className='sidemenuList'>
                 {SidemenuData.map((val, key) =>{
                     return (
-                        <li key={key} className='sidemenuItems' onClick={()=>{window.location.pathname=val.link}} >
-                            <div>{val.icon}</div>       
-                            <div>{val.title}</div>
+                        <li key={key} className='sidemenuItems' 
+                        onClick={(e)=>{
+                            e.preventDefault()
+                            window.location.pathname=val.link
+                        }}
+                        id={window.location.pathname === val.link ? 'sidemenuListItemActive':'' }
+                        >
+                            <div className='sidemenuItemsIcon'>{val.icon}</div>       
+                            <div className='sidemenuItemsTitle'>{val.title}</div>
                         </li>
                     )
                 }) }
@@ -21,3 +27,4 @@ export default function Sidemenu() {
         </div>
     )
 }
+ 

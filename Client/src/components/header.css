@@ -1,4 +1,14 @@
 .headerText{
     font-weight: bold;
-    color:rgb(87, 87, 255)
+    color:rgb(87, 87, 255);
+    font-size: 40px;
+    width: 250px;
+    margin-top: 10px;
+    padding-left: 7px;
+}
+
+.headerContainer{
+    background: white;
+    height:  80px;
+    border: black 1px solid;
 }

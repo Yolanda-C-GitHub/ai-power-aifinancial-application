@@ -8,19 +8,37 @@
     height:auto;
     width: 100%;
     padding: 0;
-    background-color: red;
 }
 
 .sidemenuItems{
     width: 100%;
     height: 50px;
-    background: rosybrown;
-    border: black solid  1px;
     list-style-type: none;
     margin: 0px;
     display:flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+    color: white;
+}
+.sidemenuItems:hover{
+    cursor:pointer;
+    background: #293846 ;
+}
+
+.sidemenuItemsIcon{
+    flex:30%;
+    /* display: flex; 
+    justify-content: center; */
+    /* just want to show it possible to use grid as well to center */
+    display:grid; 
+    place-items: center;
+
+}
+.sidemenuItemsTitle{
+    flex: 70%;
+}
+
+#sidemenuListItemActive{
+    background: #293846 ;
 }

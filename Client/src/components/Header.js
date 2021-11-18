@@ -5,10 +5,10 @@ import './header.css'
 
 export default function Header() {
     return (
-        <div>
-            <Container className = 'header d-flex justify-content-center'>
-                <h1 className='headerText d-flex justify-content-center align-item-center mb-5 mt-3 w-50'> AI Financial </h1>
-            </Container>
+        <div className='headerContainer'>
+           
+                <h1 className='headerText' > AI Financial </h1>
+
         </div>
     )
 }
