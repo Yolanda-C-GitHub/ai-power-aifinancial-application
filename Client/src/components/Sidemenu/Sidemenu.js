@@ -3,7 +3,7 @@ import './sidemenu.css'
 import styled from 'styled-components'
 import {SidemenuData} from './SidemenuData'
 import {Link} from 'react-router-dom'
-import {Navbar, Container} from 'react-bootstrap'
+import {Navbar} from 'react-bootstrap'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
