@@ -7,6 +7,9 @@
  import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
  import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
  import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
+ import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
+
+
 
  export const SidemenuData = [
     {
@@ -37,6 +40,11 @@
                 link:'/employmentinfo',
             },
         ]
+    },
+    {
+        title: 'Application',
+        icon: <DriveFileMoveIcon />,
+        link:'/accoutinfo',
     },
     {
         title: 'Account Info',

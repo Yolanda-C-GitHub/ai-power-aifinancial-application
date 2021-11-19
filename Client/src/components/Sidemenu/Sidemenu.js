@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 
-
+    // custom conditonal style for
     const SidemenuNav = styled.div`
     height: 100vh;
     width: 250px;
@@ -34,15 +34,15 @@ export default function Sidemenu() {
 
     return (
         <div>
-    
+
             <Navbar className ='navBar'>
                 <MenuIcon className='navBarMenuIcon' onClick={showSidemenu} />
                 <h1 className='navBarTitle'>AI Financial</h1>
             </Navbar>
 
-
             <SidemenuNav sidemenu={sidemenu} >
                 <CloseIcon className='closeIcon' onClick={showSidemenu} />
+
 
                 <ul className='sidemenuList'>
                     {SidemenuData.map((val, key) =>{
@@ -60,6 +60,9 @@ export default function Sidemenu() {
                         )
                     }) }
                 </ul>
+
+
+
             </SidemenuNav>
 
         </div>
