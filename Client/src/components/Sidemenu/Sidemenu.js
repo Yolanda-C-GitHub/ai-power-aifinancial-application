@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './sidemenu.css'
+import styled from 'styled-components'
 import {SidemenuData} from './SidemenuData'
 import {Link} from 'react-router-dom'
 import {Navbar, Container} from 'react-bootstrap'
@@ -8,8 +9,20 @@ import CloseIcon from '@mui/icons-material/Close';
 
 export default function Sidemenu() {
     
-    const [sidemenu, setSidemenu] = useState(false);
+    // Customer styled elements
+    const SidemenuNav = styled.div`
+        height: 100vh;
+        width: 250px;
+        background-color: #2F4050 ;
+    `
 
+
+
+
+
+
+    // State control and function for sidemenu toggle
+    const [sidemenu, setSidemenu] = useState(false);
     const showSidemenu = () => setSidemenu(!sidemenu)
 
 
@@ -26,10 +39,8 @@ export default function Sidemenu() {
 
 
 
-            <div className='sidemenu'>
-
+            <SidemenuNav>
                 <CloseIcon className='closeIcon' />
-
 
                 <ul className='sidemenuList'>
                     {SidemenuData.map((val, key) =>{
@@ -47,7 +58,7 @@ export default function Sidemenu() {
                         )
                     }) }
                 </ul>
-            </div>
+            </SidemenuNav>
 
         </div>
 
