@@ -3,7 +3,6 @@
  import ContactsIcon from '@mui/icons-material/Contacts';
  import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
  import WorkIcon from '@mui/icons-material/Work';
- import MenuIcon from '@mui/icons-material/Menu';
  import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
  import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
  import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
