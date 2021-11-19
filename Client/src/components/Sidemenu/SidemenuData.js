@@ -15,7 +15,7 @@
         link:'/home',
     },
     {
-        title: 'Add File',
+        title: 'Basic Info',
         icon: <CreateNewFolderIcon />,
         link:'/personalinfo',
         iconClosed:<ArrowDropDownIcon />,

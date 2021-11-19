@@ -7,23 +7,27 @@ import {Navbar, Container} from 'react-bootstrap'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
+
+
+    const SidemenuNav = styled.div`
+    height: 100vh;
+    width: 250px;
+    background-color: #2F4050 ;
+    position: fixed;
+    top:0;
+    transition: 0.5s;
+    left:${({ sidemenu }) => (sidemenu? '0' : '-250px')};
+    `;
+
+
+
 export default function Sidemenu() {
     
-    // Customer styled elements
-    const SidemenuNav = styled.div`
-        height: 100vh;
-        width: 250px;
-        background-color: #2F4050 ;
-    `
-
-
-
-
-
+   
 
     // State control and function for sidemenu toggle
-    const [sidemenu, setSidemenu] = useState(false);
-    const showSidemenu = () => setSidemenu(!sidemenu)
+    const [sidemenu, setSidemenu] = useState(true);
+    const showSidemenu = () => setSidemenu(!sidemenu);
 
 
 
@@ -37,10 +41,8 @@ export default function Sidemenu() {
             </Navbar>
 
 
-
-
-            <SidemenuNav>
-                <CloseIcon className='closeIcon' />
+            <SidemenuNav sidemenu={sidemenu} >
+                <CloseIcon className='closeIcon' onClick={showSidemenu} />
 
                 <ul className='sidemenuList'>
                     {SidemenuData.map((val, key) =>{

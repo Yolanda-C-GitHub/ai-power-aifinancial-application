@@ -1,8 +1,10 @@
 
+
 .sidemenuList{
     height:auto;
     width: 100%;
     padding: 0;
+    margin-top:15px;
 }
 
 .sidemenuItems{
@@ -20,7 +22,6 @@
     cursor:pointer;
     background: #293846 ;
 }
-
 .sidemenuItemsIcon{
     flex:30%;
     /* display: flex; 
@@ -28,7 +29,6 @@
     /* just want to show it possible to use grid as well to center */
     display:grid; 
     place-items: center;
-
 }
 .sidemenuItemsTitle{
     flex: 70%;
@@ -57,10 +57,24 @@
 .navBarMenuIcon{
     margin-left: 15px;
     transform: scale(1.3);
+    transition: 0.3s;
+}
+.navBarMenuIcon:hover{
+    cursor:pointer;
+    transform:scale(1.5);
+    transition: 0.3s;
 }
 
 .closeIcon{
     margin-left: 15px;
     color: white;
-    transform: scale(1.3);
+    transform: scale(1.5);
+    transition: 0.3s;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    
+}
+.closeIcon:hover{
+    cursor:pointer;
+    transition: 0.3s;
 }
