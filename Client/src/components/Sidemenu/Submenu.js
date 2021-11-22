@@ -1,16 +1,19 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom' 
+import { NavLink } from 'react-router-dom' 
 import styled from 'styled-components'
 import {SidemenuData} from './SidemenuData'
 
 
-const SidemenuLink = styled(Link)`
+const SidemenuLink = styled(NavLink)`
     display:flex;
     background-color: #2F4050;
     color:white;
     &:hover{
         transition: 0.1s;
-        border-left: 4px solid red;
+        border-left: 4px solid blue;
+    }
+        &.active{
+        border-left: 4px solid blue;
     }
 `;
 
@@ -18,7 +21,7 @@ const SidemenuLabel = styled.span`
     
 `;
 
-const DropdownLink = styled(Link)`
+const DropdownLink = styled(NavLink)`
     background-color: #2F4050;  
     height:60px;
     padding-left: 3rem;
@@ -34,6 +37,9 @@ const DropdownLink = styled(Link)`
         background: #293846 ;
         transition:0.1s;
     }
+    &.active{
+        border-left: 4px solid red;
+    }
 `;
 
 
@@ -41,16 +47,18 @@ const DropdownLink = styled(Link)`
 export default function Submenu( {item} ){
 
     const [subnav, setSubnav] = useState(false)
+    const [subNavActive, setSubNavActive] = useState(false)
 
 
     function toggleSubNav(e){
         e.preventDefault();
         setSubnav(!subnav);
+        
     }
 
     return (
         <>
-            <SidemenuLink className = 'sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
+            <SidemenuLink  activeClassName='active' classNam ='sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
 
                 <div className='sidemenuItems'>
                     <div className='sidemenuItemsIcon'>{item.icon}</div>
