@@ -6,7 +6,7 @@ import {Navbar} from 'react-bootstrap'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import {SidemenuData} from './SidemenuData'
-import {Submenu} from './Submenu'
+import Submenu from './Submenu';
 
 
 // custom conditonal style for sidemenu
@@ -33,7 +33,7 @@ export default function Sidemenu() {
     return (
         <div>
 
-            <Navbar className ='navBar'>
+            <Navbar className ='navBar' >
                 <MenuIcon className='navBarMenuIcon' onClick={showSidemenu} />
                 <h1 className='navBarTitle'>AI Financial</h1>
             </Navbar>
@@ -41,26 +41,9 @@ export default function Sidemenu() {
             <SidemenuNav sidemenu={sidemenu} >
                 <CloseIcon className='closeIcon' onClick={showSidemenu} />
 
-
-                <ul className='sidemenuList'>
-                    {SidemenuData.map((val, key) =>{
-
-                        return (
-                            <li key={key} className='sidemenuItems' 
-                            onClick={(e)=>{
-                                e.preventDefault()
-                                window.location.pathname=val.link
-                            }}
-                            id={window.location.pathname === val.link ? 'sidemenuListItemActive':'' }
-                            >
-                                <div className='sidemenuItemsIcon'>{val.icon}</div>       
-                                <div className='sidemenuItemsTitle'>{val.title}</div>
-                            </li>
-                        )
-
-                    }) }
-                </ul>
-
+                {SidemenuData.map((item, index)=>{
+                    return <Submenu item={item} key={index} />
+                })}
 
 
             </SidemenuNav>
@@ -70,3 +53,25 @@ export default function Sidemenu() {
     )
 }
   
+
+
+
+// <ul className='sidemenuList'>
+// {SidemenuData.map((val, key) =>{
+
+//     return (
+
+//         <li key={key}  className='sidemenuItems' onClick={(e)=>{
+//             e.preventDefault()
+//             window.location.pathname=val.link
+//             }}
+//             id={window.location.pathname === val.link ? 'sidemenuListItemActive':'' }
+//         >
+//             <div className='sidemenuItemsIcon'>{val.icon}</div>       
+//             <div className='sidemenuItemsTitle'>{val.title}</div>
+//         </li>
+
+//     )
+
+// }) }
+// </ul>
