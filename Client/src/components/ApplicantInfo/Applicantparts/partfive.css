@@ -6,8 +6,13 @@
     flex-wrap: wrap;
 }
 
-.OtherInfo{
+.applicationPartFiveFormGroup{
     display: Flex;
     flex-direction:row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.applicationPartFiveInCanadaSince{
+    width: 195px;
 }

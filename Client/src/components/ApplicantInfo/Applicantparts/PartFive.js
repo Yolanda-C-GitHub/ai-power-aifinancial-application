@@ -23,7 +23,7 @@ export default function Fifthpart(params) {
     return (
         <Card className='partFiveCard'>
 
-            <Form.Group className='OtherInfo'>
+            <Form.Group className='applicationPartFiveFormGroup'>
                <FloatingLabel label='Have you previously Declared Bankruptcy?'>
                     <Form.Select className='previouslyDeclared' ref={previousDeclaredRef} 
                     onChange={()=>{
@@ -43,7 +43,7 @@ export default function Fifthpart(params) {
                
 
                 <FloatingLabel label='Living in Canada Since'>
-                    <Form.Control type='date' placeholder='LivinginCanadaSince' ref={LivinginCanadaSince} onChange={()=>params.personalInfoPartFive.setLivinginCanadaSince(LivinginCanadaSince.current.value)} />
+                    <Form.Control className='applicationPartFiveInCanadaSince'    type='date' placeholder='LivinginCanadaSince' ref={LivinginCanadaSince} onChange={()=>params.personalInfoPartFive.setLivinginCanadaSince(LivinginCanadaSince.current.value)} />
                 </FloatingLabel>           
 
 
