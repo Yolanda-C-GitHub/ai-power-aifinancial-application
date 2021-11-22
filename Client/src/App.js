@@ -4,6 +4,7 @@ import Header from './components/Header'
 // import Login from './components/Login/Login'
 import Personalinfo from './components/PersonalInfo/Personalinfo' 
 import Sidemenu  from './components/Sidemenu/Sidemenu'
+import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
 
      
       {/* <Header /> */}
-      <Sidemenu />
+      {/* <Sidemenu /> */}
       {/* <Login /> */}
       {/* <Personalinfo /> */}
+      <ApplicantInfo/>
 
     </div>
   );

@@ -1,0 +1,13 @@
+.partFiveCard{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    padding:10px;
+    flex-wrap: wrap;
+}
+
+.OtherInfo{
+    display: Flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
