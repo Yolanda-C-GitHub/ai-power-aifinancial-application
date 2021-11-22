@@ -18,6 +18,7 @@ position: fixed;
 top:0;
 transition: 0.5s;
 left:${({ sidemenu }) => (sidemenu? '0' : '-250px')};
+z-index: 10;
 `;
 
 

@@ -1,4 +1,7 @@
 .App{
     width: 100vw;
     height: 100vh;
+    border: 50px black solid;
+    display: flex;
+    flex-direction: row;
 }

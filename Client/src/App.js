@@ -3,10 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
+import Sidemenu  from './components/Sidemenu/Sidemenu'
+import Home from  './components/Home/Home'
+import Personalinfo from './components/PersonalInfo/Personalinfo' 
+
 import Header from './components/Header'
 // import Login from './components/Login/Login'
-import Personalinfo from './components/PersonalInfo/Personalinfo' 
-import Sidemenu  from './components/Sidemenu/Sidemenu'
 import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 
 function App() {
@@ -15,7 +17,8 @@ function App() {
       <Sidemenu />
       
       <Routes>
-        <Route path='/home' element={<Personalinfo />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/basicinfo/personalinfo' element={<Personalinfo />} />
       </Routes>
 
 
