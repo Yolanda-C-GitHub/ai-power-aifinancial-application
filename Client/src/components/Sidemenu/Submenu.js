@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom' 
 import styled from 'styled-components'
 import {SidemenuData} from './SidemenuData'
@@ -8,12 +8,15 @@ const SidemenuLink = styled(NavLink)`
     display:flex;
     background-color: #2F4050;
     color:white;
+    text-decoration: none;
+    transition: 0.2s;
     &:hover{
-        transition: 0.1s;
-        border-left: 4px solid blue;
+        transition: 0.2s;
+        border-left: 4px solid  rgb(74, 185, 245);
     }
         &.active{
-        border-left: 4px solid blue;
+        border-left: 4px solid  rgb(74, 185, 245);
+        transition: 0.1s;
     }
 `;
 
@@ -23,7 +26,7 @@ const SidemenuLabel = styled.span`
 
 const DropdownLink = styled(NavLink)`
     background-color: #2F4050;  
-    height:60px;
+    height:50px;
     padding-left: 3rem;
     display:flex;
     align-items: center;
@@ -39,7 +42,9 @@ const DropdownLink = styled(NavLink)`
     }
     &.active{
         border-left: 4px solid red;
+        
     }
+
 `;
 
 
@@ -47,7 +52,14 @@ const DropdownLink = styled(NavLink)`
 export default function Submenu( {item} ){
 
     const [subnav, setSubnav] = useState(false)
-    const [subNavActive, setSubNavActive] = useState(false)
+
+    // drop down menu animation
+    const [animate, setAnimate] =  useState(false)
+     useEffect(() => {
+        setAnimate( true )
+      }, [subnav])
+    
+    
 
 
     function toggleSubNav(e){
@@ -71,10 +83,12 @@ export default function Submenu( {item} ){
 
 
             {subnav && item.subNav.map((item,index) => {
-                return <DropdownLink to={item.link} key={index}>
+                return (
+                    <DropdownLink className={animate? 'dropdownAnimation':null }  to={item.link} key={index}>
                         <div className='submenuIcon'>{item.icon}</div>
                         <SidemenuLabel className='subMenuTitle'>{item.title}</SidemenuLabel>
-                        </DropdownLink>
+                    </DropdownLink>
+                )
             } )}
 
 
