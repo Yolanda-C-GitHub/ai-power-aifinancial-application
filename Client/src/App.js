@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 import Header from './components/Header'
@@ -12,16 +12,21 @@ import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 function App() {
   return (
     <Router className="App">
-
-     
-      {/* <Header /> */}
       <Sidemenu />
-      {/* <Login /> */}
-      {/* <Personalinfo /> */}
-      {/* <ApplicantInfo/> */}
+      
+      <Routes>
+        <Route path='/home' element={<Personalinfo />} />
+      </Routes>
+
 
     </Router>
   );
 }
 
 export default App;
+
+
+ {/* <Header /> */}
+      {/* <Login /> */}
+      {/* <Personalinfo /> */}
+      {/* <ApplicantInfo/> */}

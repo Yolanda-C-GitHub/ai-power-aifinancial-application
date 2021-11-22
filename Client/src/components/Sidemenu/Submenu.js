@@ -26,9 +26,13 @@ const DropdownLink = styled(Link)`
     align-items: center;
     text-decoration:none;
     font-size:18px;
+    transition:0.1s;
 
-    $:hover{
+    &:hover{
         cursor: pointer;
+        border-left: 4px solid red;
+        background: #293846 ;
+        transition:0.1s;
     }
 `;
 
@@ -46,7 +50,7 @@ export default function Submenu( {item} ){
 
     return (
         <>
-            <SidemenuLink className = 'sidemenuList' to={item.link} onClick={toggleSubNav}> 
+            <SidemenuLink className = 'sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
 
                 <div className='sidemenuItems'>
                     <div className='sidemenuItemsIcon'>{item.icon}</div>
@@ -59,12 +63,10 @@ export default function Submenu( {item} ){
 
 
             {subnav && item.subNav.map((item,index) => {
-                return 
-                    <DropdownLink to={item.link} key={index}>
-                        {item.icon}
-                                <SidemenuLabel>{item.Title}</SidemenuLabel>
-                        
-                    </DropdownLink>
+                return <DropdownLink to={item.link} key={index}>
+                        <div className='submenuIcon'>{item.icon}</div>
+                        <SidemenuLabel className='subMenuTitle'>{item.title}</SidemenuLabel>
+                        </DropdownLink>
             } )}
 
 
