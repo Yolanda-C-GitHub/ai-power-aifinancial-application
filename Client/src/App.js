@@ -14,14 +14,13 @@ import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 function App() {
   return (
     <Router className="App">
-      <Sidemenu />
-      
-      <Routes>
-        <Route path='/home' element={<Home />} />
-        <Route path='/basicinfo/personalinfo' element={<Personalinfo />} />
-        
-      </Routes>
-
+      <div className = 'sideMenuRouteContainer'>
+        <Sidemenu/>
+        <Routes className = 'routes'>
+          <Route path='/home' element={<Home />} />
+          <Route path='/basicinfo/personalinfo' element={<Personalinfo />} />
+        </Routes>
+      </div>
 
     </Router>
   );
@@ -30,7 +29,7 @@ function App() {
 export default App;
 
 
- {/* <Header /> */}
+    {/* <Header /> */}
       {/* <Login /> */}
       {/* <Personalinfo /> */}
       {/* <ApplicantInfo/> */}

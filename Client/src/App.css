@@ -1,7 +1,18 @@
 .App{
     width: 100vw;
     height: 100vh;
-    border: 50px black solid;
+    display: flex;
+    flex-direction: row;
+}
+
+.sideMenuRouteContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: red;
+}
+
+.routes{
     display: flex;
     flex-direction: row;
 }

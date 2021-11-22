@@ -39,14 +39,12 @@ export default function Sidemenu() {
                 <h1 className='navBarTitle'>AI Financial</h1>
             </Navbar>
 
-            <SidemenuNav sidemenu={sidemenu} >
+            <SidemenuNav className='sidemenuList' sidemenu={sidemenu} >
                 <CloseIcon className='closeIcon' onClick={showSidemenu} />
 
                 {SidemenuData.map((item, index)=>{
                     return <Submenu item={item} key={index} />
                 })}
-
-            
 
             </SidemenuNav>
 

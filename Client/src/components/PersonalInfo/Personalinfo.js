@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './personalinfo.css'
 import {Form, Button, Container} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
@@ -216,7 +217,7 @@ export default function Personalinfo() {
 
 
     return (
-            <Container className=' border'>
+            <Container className='border personalInfoContainer'>
                 <h2 className='text-center'>Personal Info</h2>
                 <Form onSubmit={handleSubmit} > 
                     <div className='row'>
