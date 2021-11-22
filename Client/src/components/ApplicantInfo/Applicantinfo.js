@@ -86,6 +86,7 @@ export default function Applicantinfo() {
     const[dischargeDate, setDischargeDate]= useState();
     const [livinginCanadaSince,setLivinginCanadaSince]= useState();
     const personalInfoPartFive ={
+        declared,
         setDeclared,
         setDischargeDate,
         setLivinginCanadaSince
@@ -188,6 +189,10 @@ export default function Applicantinfo() {
         // console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
         console.log(cellNum, homeNum, workNum)
         // console.log(spouseFirstName, spouseLastName, spouseBirth, child1Name,child1Birth, child2Name, child2Birth, child3Name, child3Birth, child4Name, child4Birth)
+
+        console.log(dischargeDate)
+
+
 
     //     console.log(
     //         employmentStatus,

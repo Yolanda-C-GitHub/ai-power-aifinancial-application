@@ -15,8 +15,8 @@ export default function Fifthpart(params) {
         if(params.personalInfoPartFive.declared==='No'){
             setShowDischarge(true)   
         } else{
-            params.personalInfoPartFive.setDischargeDate('')
             setShowDischarge(false)
+            params.personalInfoPartFive.setDischargeDate('')
         }
     }
 
@@ -35,18 +35,19 @@ export default function Fifthpart(params) {
                     </Form.Select>  
                </FloatingLabel>
 
-               <FloatingLabel label='Living in Canada Since'>
-                    <Form.Control type='date' placeholder='LivinginCanadaSince' ref={LivinginCanadaSince} onChange={()=>params.personalInfoPartFive.setLivinginCanadaSince(LivinginCanadaSince.current.value)} />
-                </FloatingLabel>                                                
-
-
                {showDischarge===true?(
                     <FloatingLabel label='Discharge Date'>
                         <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
                     </FloatingLabel>
                ): null} 
                
-            
+
+                <FloatingLabel label='Living in Canada Since'>
+                    <Form.Control type='date' placeholder='LivinginCanadaSince' ref={LivinginCanadaSince} onChange={()=>params.personalInfoPartFive.setLivinginCanadaSince(LivinginCanadaSince.current.value)} />
+                </FloatingLabel>           
+
+
+
 
             </Form.Group>
 
