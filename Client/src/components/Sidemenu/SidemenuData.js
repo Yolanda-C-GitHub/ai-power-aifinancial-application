@@ -8,7 +8,7 @@
  import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
  import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
  import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
-
+ import CalculateIcon from '@mui/icons-material/Calculate';
 
 
  export const SidemenuData = [
@@ -39,6 +39,12 @@
                 icon: <WorkIcon />,
                 link:'/basicinfo/employmentinfo',
             },
+            {
+                title: 'Calculate TDSR',
+                icon: <CalculateIcon/>,
+                link:'/basicinfo/calculatetdsr'
+            },
+            
         ]
     },
     {
