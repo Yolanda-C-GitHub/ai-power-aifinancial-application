@@ -31,11 +31,17 @@
     place-items: center;
 }
 .sidemenuItemsTitle{
-    flex: 70%;
+    flex: 50%;
 }
 
 #sidemenuListItemActive{
     background: #293846 ;
+}
+
+.sidemenuItemsDropIcon{
+    flex:20%;
+    display:flex;
+    align-items: center;
 }
 
 

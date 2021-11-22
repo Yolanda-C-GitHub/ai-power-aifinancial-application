@@ -9,6 +9,7 @@ const SidemenuLink = styled(Link)`
     background-color: #2F4050;
     color:white;
     &:hover{
+        transition: 0.1s;
         border-left: 4px solid red;
     }
 `;
@@ -28,7 +29,6 @@ const DropdownLink = styled(Link)`
 
     $:hover{
         cursor: pointer;
-        
     }
 `;
 
@@ -36,27 +36,40 @@ const DropdownLink = styled(Link)`
 
 export default function Submenu( {item} ){
 
-    const {subnav, setSubnav} = useState(false)
-    const showSubNav = ()=> setSubnav(!subnav)
+    const [subnav, setSubnav] = useState(false)
 
- 
+
+    function toggleSubNav(e){
+        e.preventDefault();
+        setSubnav(!subnav);
+    }
+
     return (
         <>
-            <SidemenuLink className = 'sidemenuList' to={item.link} onClick = {item.subNav && showSubNav  } > 
+            <SidemenuLink className = 'sidemenuList' to={item.link} onClick={toggleSubNav}> 
 
                 <div className='sidemenuItems'>
                     <div className='sidemenuItemsIcon'>{item.icon}</div>
                     <SidemenuLabel className='sidemenuItemsTitle'>{item.title}</SidemenuLabel>
+                    
+                    <div className= 'sidemenuItemsDropIcon' > {item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}  </div>
                 </div>
-
-                <div>
-                    {item.subNav && subnav ? item.iconopened: item.subNav ? item.iconClosed:null}
-                </div>
+              
             </SidemenuLink>
+
+
             {subnav && item.subNav.map((item,index) => {
                 return 
-                    <DropdownLink to={item.link} key={index}> </DropdownLink>
+                    <DropdownLink to={item.link} key={index}>
+                        {item.icon}
+                                <SidemenuLabel>{item.Title}</SidemenuLabel>
+                        
+                    </DropdownLink>
             } )}
+
+
+
+
         </>
     );
 };

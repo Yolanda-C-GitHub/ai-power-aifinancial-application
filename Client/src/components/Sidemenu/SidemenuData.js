@@ -20,31 +20,31 @@
     {
         title: 'Basic Info',
         icon: <CreateNewFolderIcon />,
-        link:'/personalinfo',
+        link:'/basicinfo',
         iconClosed:<ArrowDropDownIcon />,
         iconOpened:<ArrowDropUpIcon />,
         subNav: [
             {
                 title: 'Personal Info',
                 icon: <ContactsIcon />,
-                link:'/personalinfo',
+                link:'/basicinfo/personalinfo',
             },
             {
                 title: 'Family Info',
                 icon: <FamilyRestroomIcon />,
-                link:'/familyinfo',
+                link:'/basicinfo/familyinfo',
             },
             {
                 title: 'Employment Info',
                 icon: <WorkIcon />,
-                link:'/employmentinfo',
+                link:'/basicinfo/employmentinfo',
             },
         ]
     },
     {
         title: 'Application',
         icon: <DriveFileMoveIcon />,
-        link:'/accoutinfo',
+        link:'/application',
     },
     {
         title: 'Account Info',
