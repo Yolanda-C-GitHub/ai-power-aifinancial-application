@@ -71,14 +71,12 @@ export default function Submenu( {item} ){
     return (
         <>
             <SidemenuLink  activeClassName='active' classNam ='sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
-
                 <div className='sidemenuItems'>
                     <div className='sidemenuItemsIcon'>{item.icon}</div>
                     <SidemenuLabel className='sidemenuItemsTitle'>{item.title}</SidemenuLabel>
                     
                     <div className= 'sidemenuItemsDropIcon' > {item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}  </div>
                 </div>
-              
             </SidemenuLink>
 
 
