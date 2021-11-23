@@ -12,10 +12,8 @@ import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 
 
 const PersonalInfoContainer = styled.div`
-
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
     transition: 0.5s;
-
 `;
 
 
