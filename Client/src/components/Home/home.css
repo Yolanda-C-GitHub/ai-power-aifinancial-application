@@ -1,4 +1,7 @@
 .homeContainer{
     text-align: center;
-    border: black solid 1px;
+    width:100vw;
+    height: 100%;
+    border: 5px black solid;
+    background-color: rgb(13, 201, 201);
 }
