@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './personalinfo.css'
+import styled from 'styled-components'
 import {Form, Button, Container} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
@@ -9,8 +10,18 @@ import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 
+
+const PersonalInfoContainer = styled.div`
+
+    padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
+    transition: 0.5s;
+
+`;
+
+
+
  
-export default function Personalinfo() {
+export default function Personalinfo({sidemenuState}) {
 
     // state control for 1st part
     const[lastName, setLastName] = useState()
@@ -23,7 +34,7 @@ export default function Personalinfo() {
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
     const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
-
+    
     // state control for 3rd part
     const[livingStatus, setLivingStatus] = useState('');
     const[maritalStatus, setMaritalStatus]=useState('');
@@ -168,6 +179,8 @@ export default function Personalinfo() {
 
     function handleSubmit(e){
         e.preventDefault()
+
+
         console.log('submit form button working')
         console.log(lastName, firstName, englishName)
         console.log(gender, birthDay, sinNum)
@@ -209,7 +222,6 @@ export default function Personalinfo() {
         )
 
 
-
     }
 
 
@@ -217,8 +229,8 @@ export default function Personalinfo() {
 
 
     return (
-            <Container className='border personalInfoContainer'>
-                <h2 className='text-center'>Personal Info</h2>
+            <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
+                <h2 className='personalinfoHeader'>Personal Info</h2>
                 <Form onSubmit={handleSubmit} > 
                     <div className='row'>
                         <Firstpart  personalInfoNames ={personalInfoNames} />
@@ -254,6 +266,6 @@ export default function Personalinfo() {
                     </div>
 
                 </Form>
-            </Container>
+            </PersonalInfoContainer>
     )
 }

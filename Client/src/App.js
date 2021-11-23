@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, {useState} from 'react'
 
 
 import Sidemenu  from './components/Sidemenu/Sidemenu'
@@ -12,13 +13,17 @@ import Header from './components/Header'
 import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 
 function App() {
+
+  const [sidemenu, setSidemenu] = useState(true);
+  const sidemenuState={sidemenu, setSidemenu}
+
   return (
     <Router className="App">
-      <div className = 'sideMenuRouteContainer'>
-        <Sidemenu/>
+      <div className='routeContainer'>
+        <Sidemenu sidemenuState={sidemenuState}/>
         <Routes className = 'routes'>
           <Route path='/home' element={<Home />} />
-          <Route path='/basicinfo/personalinfo' element={<Personalinfo />} />
+          <Route path='/basicinfo/personalinfo' element={<Personalinfo  sidemenuState={sidemenuState} />} />
         </Routes>
       </div>
 

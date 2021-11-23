@@ -15,7 +15,7 @@ const SidemenuLink = styled(NavLink)`
         border-left: 4px solid  rgb(74, 185, 245);
     }
         &.active{
-        border-left: 4px solid  rgb(74, 185, 245);
+        background: #293846 ;
         transition: 0.1s;
     }
 `;

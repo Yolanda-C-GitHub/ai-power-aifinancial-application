@@ -53,6 +53,7 @@
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
+    width:100vw;
 }
 
 .navBarTitle{

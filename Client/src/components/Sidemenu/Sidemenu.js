@@ -23,11 +23,11 @@ z-index: 10;
 
 
 
-export default function Sidemenu() {
+export default function Sidemenu({sidemenuState}) {
 
     // State control and function for sidemenu toggle
-    const [sidemenu, setSidemenu] = useState(true);
-    const showSidemenu = () => setSidemenu(!sidemenu);
+    // const [sidemenu, setSidemenu] = useState(true);
+    const showSidemenu = () => sidemenuState.setSidemenu(!sidemenuState.sidemenu);
 
 
  
@@ -39,7 +39,7 @@ export default function Sidemenu() {
                 <h1 className='navBarTitle'>AI Financial</h1>
             </Navbar>
 
-            <SidemenuNav className='sidemenuList' sidemenu={sidemenu} >
+            <SidemenuNav className='sidemenuList' sidemenu={sidemenuState.sidemenu} >
                 <CloseIcon className='closeIcon' onClick={showSidemenu} />
 
                 {SidemenuData.map((item, index)=>{
