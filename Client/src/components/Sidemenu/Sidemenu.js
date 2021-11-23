@@ -26,10 +26,9 @@ z-index: 10;
 export default function Sidemenu({sidemenuState}) {
 
     // State control and function for sidemenu toggle
-    // const [sidemenu, setSidemenu] = useState(true);
     const showSidemenu = () => sidemenuState.setSidemenu(!sidemenuState.sidemenu);
 
-
+    
  
     return (
         <div>
@@ -44,7 +43,7 @@ export default function Sidemenu({sidemenuState}) {
 
                 {SidemenuData.map((item, index)=>{
                     return <Submenu item={item} key={index} />
-                })}
+                })}s
 
             </SidemenuNav>
 

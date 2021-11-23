@@ -21,9 +21,11 @@ function App() {
     <Router className="App">
       <div className='routeContainer'>
         <Sidemenu sidemenuState={sidemenuState}/>
+        
         <Routes className = 'routes'>
           <Route path='/home' element={<Home sidemenuState={sidemenuState} />} />
           <Route path='/basicinfo/personalinfo' element={<Personalinfo  sidemenuState={sidemenuState} />} />
+          
         </Routes>
       </div>
 

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { NavLink } from 'react-router-dom' 
 import styled from 'styled-components'
-import {SidemenuData} from './SidemenuData'
+
 
 
 const SidemenuLink = styled(NavLink)`
@@ -70,7 +70,7 @@ export default function Submenu( {item} ){
 
     return (
         <>
-            <SidemenuLink  activeClassName='active' classNam ='sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
+            <SidemenuLink  activeClassName='active' className ='sidemenuList' to={item.link} onClick={item.subNav && toggleSubNav}> 
                 <div className='sidemenuItems'>
                     <div className='sidemenuItemsIcon'>{item.icon}</div>
                     <SidemenuLabel className='sidemenuItemsTitle'>{item.title}</SidemenuLabel>

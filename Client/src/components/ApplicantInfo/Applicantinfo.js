@@ -225,12 +225,10 @@ export default function Applicantinfo() {
         //     occupation2,  
         // )
 
-
-
     }
 
 
-
+    
 
 
     return (
