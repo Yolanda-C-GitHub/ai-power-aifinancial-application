@@ -15,7 +15,7 @@ export default function Home({sidemenuState}) {
 
     return (
         <HomeContainer className ='homeContainer'  sideMenuPush={sidemenuState.sidemenu}>
-            <h1>hello</h1>
+            <h1>hello Ron how are you today >:) ?</h1>
         </HomeContainer>
     )
 }

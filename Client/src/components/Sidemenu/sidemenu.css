@@ -31,6 +31,7 @@
 }
 .sidemenuItemsTitle{
     flex: 50%;
+    font-weight: bold;
 }
 
 #sidemenuListItemActive{
@@ -53,11 +54,12 @@
     flex-direction: row;
     justify-content: space-between;
     justify-items: center;
-    width:100vw;
+    width: 99.4vw;
 }
 
 .navBarTitle{
     flex:50%;
+    font-weight: bold;
 }
 
 .navBarMenuIcon{
@@ -94,6 +96,7 @@
     color: white;
     margin-left: 10px;
     transform: scale(0.9);
+    font-weight: bold;
 }
 
 

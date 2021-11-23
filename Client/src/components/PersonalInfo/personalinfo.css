@@ -1,12 +1,28 @@
 .personalInfoContainer{
-    width:100vw;
+    width: 99.4vw;
     height: 100vh;
 }
 .personalInfoNavbarContainer{
-    border: black 1px solid;
     display: flex;
     flex-direction: row;
     margin: 15px;
-    border-radius: 10px 100px / 120px;
+    border-radius:  30px;
+    background: #293846 ;
+    box-shadow: 10px 7px 23px -3px rgba(116,116,116,0.94);
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
+.navLinkApplicant{
+    font-weight: bolder;
+    color: white !important;
+}
+
+.navLinkCoApplicant{
+    font-weight: bolder;
+    color: white !important;;
+}
+.navBarBrand{
+    font-weight: bold;
+    color: white !important;;
 }

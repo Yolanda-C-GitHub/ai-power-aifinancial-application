@@ -231,11 +231,19 @@ export default function Personalinfo({sidemenuState}) {
                 <Navbar className='personalInfoNavbarContainer'>
              
                     <Nav className='me-auto'>
-                        <Nav.Link>Applicant</Nav.Link>
-                        <Nav.Link>Co-Applicant</Nav.Link>
+                        
+                        <Nav.Link className='navLinkApplicant'>
+                            Applicant
+                        </Nav.Link>
+
+
+                        <Nav.Link className='navLinkCoApplicant' >
+                            Co-Applicant
+                        </Nav.Link>
+
                     </Nav>
 
-                    <Navbar.Brand href="#home">Personal Information</Navbar.Brand>
+                    <Navbar.Brand className='navBarBrand'>Personal Information</Navbar.Brand>
                 </Navbar>
             
 
