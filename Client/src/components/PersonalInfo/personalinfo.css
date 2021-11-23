@@ -7,7 +7,7 @@
     flex-direction: row;
     margin: 15px;
     border-radius:  30px;
-    background: #293846 ;
+    background-color: #374c5f;
     box-shadow: 10px 7px 23px -3px rgba(116,116,116,0.94);
     padding-left: 10px;
     padding-right: 10px;
@@ -16,12 +16,25 @@
 .navLinkApplicant{
     font-weight: bolder;
     color: white !important;
+    border-radius: 20px;
+}
+.navLinkApplicant:hover{
+    background: #202c37 ;
+    transition: 0.1s;
 }
 
 .navLinkCoApplicant{
     font-weight: bolder;
-    color: white !important;;
+    color: white !important;
+    border-radius: 20px;
+   
 }
+.navLinkCoApplicant:hover{
+    background: #293846 ;
+    transition: 0.1s;
+}
+
+
 .navBarBrand{
     font-weight: bold;
     color: white !important;;

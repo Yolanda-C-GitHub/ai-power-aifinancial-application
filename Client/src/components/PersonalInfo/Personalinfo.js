@@ -246,7 +246,7 @@ export default function Personalinfo({sidemenuState}) {
                     <Navbar.Brand className='navBarBrand'>Personal Information</Navbar.Brand>
                 </Navbar>
             
-
+        
               
 
 
