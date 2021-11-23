@@ -1,10 +1,8 @@
 .personalInfoContainer{
     width:100vw;
     height: 100vh;
-    border: 5px black solid;
     background-color: rgb(13, 201, 201);
 }
-
-.personalinfoHeader{
-    text-align: center;
+.personalInfoNavbarContainer{
+    border: black 1px solid;
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './personalinfo.css'
 import styled from 'styled-components'
-import {Form, Button, Container} from 'react-bootstrap'
+import {Form, Button, Navbar} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
@@ -9,7 +9,6 @@ import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
-
 
 const PersonalInfoContainer = styled.div`
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
@@ -228,8 +227,23 @@ export default function Personalinfo({sidemenuState}) {
 
     return (
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
-                <h2 className='personalinfoHeader'>Personal Info</h2>
-                <Form onSubmit={handleSubmit} > 
+                
+                <Navbar className='personalInfoNavbarContainer'>
+                    <Navbar.Brand href="#home">Personal Info</Navbar.Brand>
+                </Navbar>
+            
+
+              
+
+
+
+
+
+
+
+
+              
+                {/* <Form onSubmit={handleSubmit} > 
                     <div className='row'>
                         <Firstpart  personalInfoNames ={personalInfoNames} />
                     </div>
@@ -263,7 +277,7 @@ export default function Personalinfo({sidemenuState}) {
                       <Button type='submit'>Next</Button>
                     </div>
 
-                </Form>
+                </Form> */}
             </PersonalInfoContainer>
     )
 }
