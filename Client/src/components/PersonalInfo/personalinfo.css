@@ -1,8 +1,12 @@
 .personalInfoContainer{
     width:100vw;
     height: 100vh;
-    background-color: rgb(13, 201, 201);
 }
 .personalInfoNavbarContainer{
     border: black 1px solid;
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    border-radius: 10px 100px / 120px;
+
 }

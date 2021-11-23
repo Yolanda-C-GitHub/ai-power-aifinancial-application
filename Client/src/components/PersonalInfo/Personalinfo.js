@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './personalinfo.css'
 import styled from 'styled-components'
-import {Form, Button, Navbar} from 'react-bootstrap'
+import {Form, Button, Nav, Navbar} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
@@ -229,7 +229,13 @@ export default function Personalinfo({sidemenuState}) {
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
                 <Navbar className='personalInfoNavbarContainer'>
-                    <Navbar.Brand href="#home">Personal Info</Navbar.Brand>
+             
+                    <Nav className='me-auto'>
+                        <Nav.Link>Applicant</Nav.Link>
+                        <Nav.Link>Co-Applicant</Nav.Link>
+                    </Nav>
+
+                    <Navbar.Brand href="#home">Personal Information</Navbar.Brand>
                 </Navbar>
             
 
