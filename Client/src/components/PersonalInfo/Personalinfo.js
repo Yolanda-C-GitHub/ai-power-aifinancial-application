@@ -54,13 +54,13 @@ export default function Personalinfo({sidemenuState}) {
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
     const[englishName, setEnglishName] = useState()
-    const personalInfoNames = {setLastName, setFirstName, setEnglishName}
-    
-    // state control for 2nd part
     const[gender, setGender]= useState()
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
-    const personalInfoOther = {gender,setGender, setBirthday, setSinNum}
+
+    const personalInfoNames = {setLastName, setFirstName, setEnglishName, gender,setGender, setBirthday, setSinNum}
+    
+ 
     
     // state control for 3rd part
     const[livingStatus, setLivingStatus] = useState('');
@@ -279,10 +279,7 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='row' className='applicantInfoNames'>
                             
                             <Firstpart  personalInfoNames ={personalInfoNames} />
-                            <Secondpart personalInfoOther={personalInfoOther} />
-                            <Thirdpart personalInfoStatus={personalInfoStatus} />
-                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
-                            <PartFive personalInfoPartFive={personalInfoPartFive} />
+                        
                         </div>
 
                     
