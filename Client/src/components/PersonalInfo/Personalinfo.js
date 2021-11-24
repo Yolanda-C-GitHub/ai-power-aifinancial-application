@@ -274,12 +274,21 @@ export default function Personalinfo({sidemenuState}) {
         
               
                 {applicantActive?(
+                    <Form onSubmit={handleSubmit}>
+
+                        <div className='row' className='applicantInfoNames'>
+                            <Firstpart  personalInfoNames ={personalInfoNames} />
+                        </div>
 
 
 
 
-
-                ) : null}
+                        <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
+                            <Button type='submit'>Next</Button>
+                        </div>
+                         
+                     </Form>
+                ) : null }
 
 
 

@@ -48,3 +48,13 @@
     font-weight: bold;
     color: white !important;;
 }
+
+
+.applicantInfoNames{
+    margin:20px;
+}
+
+
+.applicantInfoButton{
+    margin: 20px;
+}
