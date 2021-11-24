@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import './personalinfo.css'
 import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
@@ -15,10 +15,42 @@ const PersonalInfoContainer = styled.div`
     transition: 0.5s;
 `;
 
+const PersonalInfoApplicant = styled(Nav.Link)` 
+    background-color: ${({ applicantActive }) => (applicantActive? '#202c37' : '#374c5f;')}
+`;
 
+const PersonalInfoCoApplicant = styled(Nav.Link)`
+    background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
+`;
 
  
 export default function Personalinfo({sidemenuState}) {
+
+    // state control for applicant & coapplicant active styling
+    const[applicantActive, setApplicantActive] = useState(true);
+    const[coApplicantActive, setCoApplicantActive] = useState(false);
+    function toggleApplicantActive(e){
+        e.preventDefault();
+        if(applicantActive===true){
+            setCoApplicantActive(false)
+        }else{
+            setApplicantActive(true)
+            setCoApplicantActive(false)
+        }
+    }
+    function toggleCoApplicantActive(e){
+        e.preventDefault();
+        if(coApplicantActive===true){
+            setApplicantActive(false)
+        }else{
+            setCoApplicantActive(true)
+            setApplicantActive(false)
+        }
+    }
+
+    
+
+
 
     // state control for 1st part
     const[lastName, setLastName] = useState()
@@ -229,18 +261,13 @@ export default function Personalinfo({sidemenuState}) {
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
                 <Navbar className='personalInfoNavbarContainer'>
-             
                     <Nav className='me-auto'>
-                        
-                        <Nav.Link className='navLinkApplicant'>
+                        <PersonalInfoApplicant disabled={applicantActive?true:false} onClick={toggleApplicantActive} className='navLinkApplicant' applicantActive={applicantActive}>
                             Applicant
-                        </Nav.Link>
-
-
-                        <Nav.Link className='navLinkCoApplicant' >
+                        </PersonalInfoApplicant>
+                        <PersonalInfoCoApplicant disabled={coApplicantActive?true:false} onClick={toggleCoApplicantActive} className='navLinkCoApplicant' coApplicantActive={coApplicantActive} >
                             Co-Applicant
-                        </Nav.Link>
-
+                        </PersonalInfoCoApplicant>
                     </Nav>
 
                     <Navbar.Brand className='navBarBrand'>Personal Information</Navbar.Brand>
@@ -248,7 +275,7 @@ export default function Personalinfo({sidemenuState}) {
             
         
               
-
+                {}
 
 
 

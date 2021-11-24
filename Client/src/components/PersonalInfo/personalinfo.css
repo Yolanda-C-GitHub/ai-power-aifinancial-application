@@ -17,16 +17,25 @@
     font-weight: bolder;
     color: white !important;
     border-radius: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 .navLinkApplicant:hover{
     background: #202c37 ;
     transition: 0.1s;
+}
+.navLinkApplicant:target{
+    color:red !important;
 }
 
 .navLinkCoApplicant{
     font-weight: bolder;
     color: white !important;
     border-radius: 20px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
    
 }
 .navLinkCoApplicant:hover{
