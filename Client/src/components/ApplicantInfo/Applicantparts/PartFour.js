@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './partfour.css'
 
-export default function Partfour(params) {
+export default function Fourthpart(params) {
 
     // const emailRef = useRef();
     const cellNumRef=useRef();

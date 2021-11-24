@@ -3,6 +3,7 @@ import './personalinfo.css'
 import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
+import Coapp from '/home/ron/Desktop/test1/ai-power-aifinancial-application/Client/src/components/CoapplicantInfo/CoApplicantInfo'
 import Secondpart from './Personalinfoparts/Secondpart'
 import Thirdpart from './Personalinfoparts/Thirdpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
@@ -106,6 +107,78 @@ export default function Personalinfo({sidemenuState}) {
     const[postalCode2, setPostalCode2] = useState();
     const[rezSince2, setRezSince2]=useState();
     const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
+
+
+    // state control for coapplicant
+    const[colastName, setCoLastName] = useState()
+    const[cofirstName, setCoFirstName] = useState()
+    const[coenglishName, setCoEnglishName] = useState()
+
+    const[cogender, setCoGender]= useState()
+    const[cobirthDay, setCoBirthday] =useState()
+    const[cosinNum, setCoSinNum]= useState()
+
+    const[coemail, setCoEmail]=useState();
+    const[cocellNum, setCoCellNum]= useState();
+    const[cohomeNum, setCoHomeNum]=useState();
+    const[coworkNum, setCoWorkNum]=useState();
+
+    const[colivingStatus, setCoLivingStatus] = useState('');
+    const[comaritalStatus, setCoMaritalStatus]=useState('');
+    const[cocitizenship, setCoCitizenship] = useState('');
+    const[cotaxStatus, setCoTaxStatus]=useState('');
+
+    const[cohouseNum, setCoHouseNum]=useState();
+    const[cocurrentRez, setCoCurrentRez]=useState();
+    const[coaptNum, setCoAptNum]=useState();
+    const[coprovince, setCoProvince]=useState('ON');
+    const[copostalCode, setCoPostalCode]=useState();
+    const[corezSince, setCoRezSince]=useState();
+
+    const[cohouseNum2, setCoHouseNum2]=useState();
+    const[cocurrentRez2, setCoCurrentRez2]=useState();
+    const[coaptNum2, setCoAptNum2]=useState();
+    const[coprovince2,setCoProvince2]=useState();
+    const[copostalCode2, setCoPostalCode2] = useState();
+    const[corezSince2, setCoRezSince2]=useState();
+
+    const coAppInfo = {
+        setCoLastName,
+        setCoFirstName,
+        setCoEnglishName,
+        cogender,
+        setCoGender,
+        setCoBirthday,
+        setCoSinNum,
+        setCoEmail,
+        setCoCellNum,
+        setCoHomeNum,
+        setCoWorkNum,
+        setCoLivingStatus, 
+        setCoMaritalStatus, 
+        setCoCitizenship,
+        setCoTaxStatus,
+
+        setCoHouseNum,
+        setCoCurrentRez,
+        setCoAptNum,
+        setCoProvince,
+        setCoPostalCode,
+        setCoRezSince,
+
+        setCoHouseNum2,
+        setCoCurrentRez2,
+        setCoAptNum2,
+        setCoProvince2,
+        setCoPostalCode2,
+        setCoRezSince2,
+
+
+
+
+    }
+
+
 
 
     // state control part 5
@@ -313,7 +386,19 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 {coApplicantActive? (
-                    <h1>hello</h1>
+                    <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
+
+                    <div className='row' className='coapplicantInfoNames'> 
+                        <Coapp  coAppInfo ={coAppInfo} />
+                     
+                    </div>
+
+                
+                    <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
+                        <Button type='submit'>Next</Button>
+                    </div>
+                     
+                 </Form>
 
                 ):null}
 

@@ -1,0 +1,66 @@
+.firstPartCard{
+    display:flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+}
+
+.firstPartFormGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.firstPartFormGroupE{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.firstPartGenderLabel{
+    text-align: center;
+    align-self: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.firstPartGenderBox{
+    align-self: center;
+}
+
+
+.firstPartFormStatusOne{
+    display:flex;
+    flex-direction: row;
+    border: 1px black solid;
+    margin: 0px 10px 10px 10px;
+}
+
+.firstPartFormStatusTwo{
+    display:flex;
+    flex-direction: row;
+    border: 1px black solid;
+    margin: 0px 10px 10px 10px;
+}
+
+
+
+.partFourCard{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    padding:10px;
+    flex-wrap: wrap;
+}
+
+.formGroupPhone{
+    display: Flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+}
