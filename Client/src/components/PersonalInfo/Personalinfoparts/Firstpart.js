@@ -46,8 +46,8 @@ export default function Firstpart(params) {
                 </Form.Group>
 
                 <Form.Group className='firstPartFormGroup'>
-                    <Form.Label className =''>Gender:</Form.Label>
-                    <div>
+                    <Form.Label className ='firstPartGenderLabel'>Gender:</Form.Label>
+                    <div className='firstPartGenderBox' >
                         <Form.Check className ='' name='genderselector' label='Male' type='radio' 
                             ref={genderMaleRef} 
                             value="Male"  

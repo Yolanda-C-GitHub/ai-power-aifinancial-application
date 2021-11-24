@@ -3,7 +3,6 @@
     display:flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
-    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -16,3 +15,11 @@
 
 }
 
+.firstPartGenderLabel{
+    text-align: center;
+    align-self: center;
+    margin: 10px;
+}
+.firstPartGenderBox{
+    align-self: center;
+}
