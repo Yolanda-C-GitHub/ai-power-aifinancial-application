@@ -300,7 +300,7 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
                             <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
-                            <PartFive personalInfoPartFive={personalInfoPartFive} />
+                         
                         </div>
 
                     
