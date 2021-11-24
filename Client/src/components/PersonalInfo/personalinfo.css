@@ -50,9 +50,50 @@
 }
 
 
+
+
+
+
 .applicantInfoContainer{
     margin-left: 20px;
     margin-right: 20px;
+    animation: translateXApplicant 0.3s;
 }
+@keyframes translateXApplicant {
+    0% {
+      opacity: 1;
+      transform: translateX(-1000px);
+    }
+    
+    80% {
+      transform: translateX(5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 
 
+
+
+
+.coApplicantInfoContainer{
+    animation: translateXCoApplicant 0.3s;
+}
+@keyframes translateXCoApplicant {
+    0% {
+      opacity: 1;
+      transform: translateX(1000px);
+    }
+    
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }

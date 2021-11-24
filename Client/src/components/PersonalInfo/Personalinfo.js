@@ -313,8 +313,8 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 {coApplicantActive? (
-                    <h1>hello</h1>
-                    
+                    <h1 className='coApplicantInfoContainer '>hefjhsdakfhkasjlfghjklsdfahgkljdfhksdfjlafhsjkladfhasdjklfhsdjklafhsdjklafhsdajklfhasdkjlfllo</h1>
+
                 ):null}
 
 
