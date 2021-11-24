@@ -57,8 +57,11 @@ export default function Personalinfo({sidemenuState}) {
     const[gender, setGender]= useState()
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
-
-    const personalInfoNames = {setLastName, setFirstName, setEnglishName, gender,setGender, setBirthday, setSinNum}
+    const[email, setEmail]=useState();
+    const[cellNum, setCellNum]= useState();
+    const[homeNum, setHomeNum]=useState();
+    const[workNum, setWorkNum]=useState();
+    const personalInfoNames = {setLastName, setFirstName, setEnglishName, gender,setGender, setBirthday, setSinNum, setEmail, setCellNum, setHomeNum, setWorkNum,}
     
  
     
@@ -88,10 +91,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     // state control part 5
-    const[email, setEmail]=useState();
-    const[cellNum, setCellNum]= useState();
-    const[homeNum, setHomeNum]=useState();
-    const[workNum, setWorkNum]=useState();
+  
     const[idType, setIdType]=useState('provincialDriversLicense');
     const[idNum, setIdNum]=useState();
     const[issueDate, setIssueDate]=useState();
@@ -103,10 +103,6 @@ export default function Personalinfo({sidemenuState}) {
     const[dischargeDate, setDischargeDate]= useState();
     const personalInfoPartFive ={
         declared,
-        setEmail,
-        setCellNum,
-        setHomeNum,
-        setWorkNum,
         setIdType,
         setIdNum,
         setIssueDate,
@@ -117,6 +113,13 @@ export default function Personalinfo({sidemenuState}) {
         setDeclared,
         setDischargeDate,
     }
+
+
+
+
+
+
+
 
     // state control family info
     const[spouseFirstName, setSpouseFirstName]=useState();
@@ -276,15 +279,14 @@ export default function Personalinfo({sidemenuState}) {
                 {applicantActive?(
                     <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
 
-                        <div className='row' className='applicantInfoNames'>
-                            
+                        <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
-                        
+                            <Thirdpart personalInfoStatus={personalInfoStatus} />
+                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                            <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
                     
-
-
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             <Button type='submit'>Next</Button>
                         </div>

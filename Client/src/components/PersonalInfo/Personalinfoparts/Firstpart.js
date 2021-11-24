@@ -13,6 +13,12 @@ export default function Firstpart(params) {
     const birthdayRef = useRef()
     const sinRef = useRef()
 
+    const emailRef = useRef();
+    const cellNumRef=useRef();
+    const homeNumRef=useRef();
+    const workNumRef=useRef();
+
+
     return (
 
             <Card className='firstPartCard border'>
@@ -67,7 +73,22 @@ export default function Firstpart(params) {
                 </Form.Group>
 
 
+                <FloatingLabel className='firstPartFormGroup' label='Email'>
+                    <Form.Control type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoNames.setEmail(emailRef.current.value)}/>
+                </FloatingLabel>
 
+                <FloatingLabel className='firstPartFormGroup' label='Cell Phone'>
+                    <Form.Control placeholder='cellphone'ref={cellNumRef} onChange={()=>params.personalInfoNames.setCellNum(cellNumRef.current.value)}/>
+                </FloatingLabel>
+
+                <FloatingLabel className='firstPartFormGroup' label='Home Phone'>
+                    <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoNames.setHomeNum(homeNumRef.current.value)} />
+                </FloatingLabel>
+
+                <FloatingLabel className = 'firstPartFormGroup' label='Work Phone'>
+                    <Form.Control placeholder='workphone' ref={workNumRef} onChange={()=>params.personalInfoNames.setWorkNum(workNumRef.current.value)} />
+                </FloatingLabel>
+      
 
 
 

@@ -1,5 +1,4 @@
 .firstPartCard{
-    padding: 10px;
     display:flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
@@ -12,14 +11,21 @@
     justify-content: center;
     width: 200px;
     margin-left: 10px;
+    margin-bottom: 10px;
 
 }
 
 .firstPartGenderLabel{
     text-align: center;
     align-self: center;
-    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
+
 .firstPartGenderBox{
     align-self: center;
 }
+
+
+ 
