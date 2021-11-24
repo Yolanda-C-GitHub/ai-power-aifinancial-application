@@ -274,13 +274,18 @@ export default function Personalinfo({sidemenuState}) {
         
               
                 {applicantActive?(
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
 
                         <div className='row' className='applicantInfoNames'>
+                            
                             <Firstpart  personalInfoNames ={personalInfoNames} />
+                            <Secondpart personalInfoOther={personalInfoOther} />
+                            <Thirdpart personalInfoStatus={personalInfoStatus} />
+                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                            <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
-
+                    
 
 
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>

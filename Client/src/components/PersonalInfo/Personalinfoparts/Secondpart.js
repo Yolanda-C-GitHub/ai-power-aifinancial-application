@@ -33,9 +33,9 @@ export default function Secondpart(params) {
             </Form.Group>
 
          
-                <FloatingLabel  className='secondPartFormGroupBirthLabel' label='Date of Birth' >
+            <FloatingLabel  className='secondPartFormGroupBirthLabel' label='Date of Birth' >
                 <Form.Control type='date' className='' ref={birthdayRef} onChange={()=>params.personalInfoOther.setBirthday(birthdayRef.current.value)} ></Form.Control>
-                </FloatingLabel>
+            </FloatingLabel>
 
             <Form.Group className='secondPartFormGroupSin'>
                 <FloatingLabel label='SIN#'>

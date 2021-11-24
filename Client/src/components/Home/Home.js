@@ -14,8 +14,11 @@ export default function Home({sidemenuState}) {
 
 
     return (
-        <HomeContainer className ='homeContainer'  sideMenuPush={sidemenuState.sidemenu}>
-            <h1>hello Ron how are you today >:) ?</h1>
+        <HomeContainer className ='homeContainer'  sideMenuPush={sidemenuState.sidemenu}><h1>Study Music</h1>
+            <a href='https://www.youtube.com/watch?v=ctc3kF8CVs4' target='_blank'><h1>Bassa Nova Jazz</h1></a>
+            <a href='https://www.youtube.com/watch?v=cUZbRc0lwjA' target='_blank'><h1>Paris Jazz</h1></a>
+            <a href='https://www.youtube.com/watch?v=zXwOAw09g1I' target='_blank'><h1>Seaside Bassa Nova</h1></a>
+        
         </HomeContainer>
     )
 }

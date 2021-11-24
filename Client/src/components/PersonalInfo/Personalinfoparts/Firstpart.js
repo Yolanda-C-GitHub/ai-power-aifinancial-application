@@ -30,6 +30,14 @@ export default function Firstpart(params) {
                     </FloatingLabel>
                 </Form.Group>
 
+
+
+
+
+
+
+                
+
             </Card>
             
     )
