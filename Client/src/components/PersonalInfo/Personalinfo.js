@@ -300,7 +300,7 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
                             <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
-                         
+                            <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
                     
@@ -314,11 +314,11 @@ export default function Personalinfo({sidemenuState}) {
 
                 {coApplicantActive? (
                     <h1>hello</h1>
-
+                    
                 ):null}
 
 
-
+                
 
               
                 {/* <Form onSubmit={handleSubmit} > 
