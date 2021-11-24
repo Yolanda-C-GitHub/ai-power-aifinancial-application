@@ -18,6 +18,10 @@ export default function Firstpart(params) {
     const homeNumRef=useRef();
     const workNumRef=useRef();
 
+    const livingStatusRef = useRef();
+    const maritalStatusRef = useRef();
+    const citizenshipRef = useRef();
+    const taxStatusRef = useRef();
 
     return (
 
@@ -69,11 +73,10 @@ export default function Firstpart(params) {
                         >
                         </Form.Check>
                     </div>
-
                 </Form.Group>
 
 
-                <FloatingLabel className='firstPartFormGroup' label='Email'>
+                <FloatingLabel className='firstPartFormGroupE' label='Email'>
                     <Form.Control type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoNames.setEmail(emailRef.current.value)}/>
                 </FloatingLabel>
 
@@ -90,9 +93,57 @@ export default function Firstpart(params) {
                 </FloatingLabel>
       
 
+                <Form.Group className='firstPartFormStatusOne' >
+                    <FloatingLabel label='Living Status' >
+                        <Form.Select className='statusLiving' ref={livingStatusRef} onChange={()=>params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)}>
+                            <option placeholder='select' >Select</option>
+                            <option value='owner'>Owner</option>
+                            <option value='rent'>Rent</option>
+                            <option value='with parent'>With Parent</option>
+                            <option value='with other'>With Other</option>
+                            <option value='other'>Other</option>
+                        </Form.Select>
+                    </FloatingLabel>
+     
+                    <FloatingLabel label='Marital Status' >
+                        <Form.Select className='statusLiving' ref={maritalStatusRef} onChange={()=>params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)}>
+                            <option placeholder='select' >Select</option>
+                            <option value='married'>Married</option>
+                            <option value='single'>Single</option>
+                            <option value='divorced'>Divorced</option>
+                            <option value='separated'>Separated</option>
+                            <option value='widowed'>Widowed</option>
+                            <option value='common law'>Common Law</option>
+                            <option value='other'>Other</option>
+                        </Form.Select>
+                    </FloatingLabel>
+                </Form.Group>
+
+                <Form.Group className='firstPartFormStatusTwo' >
+                    <FloatingLabel label='Citizenship' >
+                        <Form.Select className='thirdPartSelector' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
+                            <option placeholder='select' >Select</option>
+                            <option value='canadian'>Canadian</option>
+                            <option value='chinese'>Chinese</option>
+                            <option value='pr'>PR</option>
+                            <option value='other'>Other</option>
+                        </Form.Select>            
+                    </FloatingLabel>
+
+                    <FloatingLabel label='Tax Status'>
+                        <Form.Select className='thirdPartSelector' ref={taxStatusRef} onChange={()=>params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)}>
+                            <option placeholder='select' >Select</option>
+                            <option value='canada'>Canada</option>
+                            <option value='usa'>USA</option>
+                            <option value='both'>Both</option>
+                            <option value='other'>Other</option>
+                        </Form.Select>
+                    </FloatingLabel>
+                </Form.Group>
+
+
 
 
             </Card>
-            
     )
 }

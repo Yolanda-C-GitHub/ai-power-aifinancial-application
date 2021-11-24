@@ -12,7 +12,14 @@
     width: 200px;
     margin-left: 10px;
     margin-bottom: 10px;
-
+}
+.firstPartFormGroupE{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .firstPartGenderLabel{
@@ -28,4 +35,19 @@
 }
 
 
- 
+.firstPartFormStatusOne{
+    display:flex;
+    flex-direction: row;
+    border: 1px black solid;
+    margin: 0px 10px 10px 10px;
+}
+    .statusLiving{
+        width: 300px;
+    }
+
+.firstPartFormStatusTwo{
+    display:flex;
+    flex-direction: row;
+    border: 1px black solid;
+    margin: 0px 10px 10px 10px;
+}

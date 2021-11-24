@@ -54,23 +54,41 @@ export default function Personalinfo({sidemenuState}) {
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
     const[englishName, setEnglishName] = useState()
+
     const[gender, setGender]= useState()
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
+
     const[email, setEmail]=useState();
     const[cellNum, setCellNum]= useState();
     const[homeNum, setHomeNum]=useState();
     const[workNum, setWorkNum]=useState();
-    const personalInfoNames = {setLastName, setFirstName, setEnglishName, gender,setGender, setBirthday, setSinNum, setEmail, setCellNum, setHomeNum, setWorkNum,}
-    
- 
-    
-    // state control for 3rd part
+
     const[livingStatus, setLivingStatus] = useState('');
     const[maritalStatus, setMaritalStatus]=useState('');
     const[citizenship, setCitizenship] = useState('');
     const[taxStatus, setTaxStatus]=useState('');
-    const personalInfoStatus = {setLivingStatus, setMaritalStatus, setCitizenship, setTaxStatus}
+    const personalInfoNames = {
+        setLastName,
+        setFirstName,
+        setEnglishName,
+        gender,
+        setGender,
+        setBirthday,
+        setSinNum,
+        setEmail,
+        setCellNum,
+        setHomeNum,
+        setWorkNum,
+        setLivingStatus, 
+        setMaritalStatus, 
+        setCitizenship,
+        setTaxStatus,
+    }
+    
+ 
+    
+ 
 
     // state control for 4th part
     const[houseNum, setHouseNum]=useState();
@@ -281,7 +299,6 @@ export default function Personalinfo({sidemenuState}) {
 
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
-                            <Thirdpart personalInfoStatus={personalInfoStatus} />
                             <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
                             <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
@@ -295,7 +312,10 @@ export default function Personalinfo({sidemenuState}) {
                 ) : null }
 
 
+                {coApplicantActive? (
+                    <h1>hello</h1>
 
+                ):null}
 
 
 
