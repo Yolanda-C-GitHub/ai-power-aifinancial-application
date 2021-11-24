@@ -14,11 +14,9 @@ const PersonalInfoContainer = styled.div`
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
     transition: 0.5s;
 `;
-
 const PersonalInfoApplicant = styled(Nav.Link)` 
     background-color: ${({ applicantActive }) => (applicantActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoCoApplicant = styled(Nav.Link)`
     background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
 `;
@@ -275,7 +273,13 @@ export default function Personalinfo({sidemenuState}) {
             
         
               
-                {}
+                {applicantActive?(
+
+
+
+
+
+                ) : null}
 
 
 
