@@ -24,6 +24,35 @@ const PersonalInfoCoApplicant = styled(Nav.Link)`
     background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
 `;
 
+const PersonalInfoID = styled(Nav.Link)`
+
+`;
+
+const PersonalInfoFamily = styled(Nav.Link)`
+    
+`;
+
+const PersonalInfoEmployment = styled(Nav.Link)`
+    
+`;
+
+const PersonalInfoCheque = styled(Nav.Link)`
+    
+`;
+
+const PersonalInfoAddress = styled(Nav.Link)`
+
+`;
+
+const PersonalInfoChannel= styled(Nav.Link)`
+
+`;
+
+const PersonalInfoKYC=styled(Nav.Link)`
+
+`;
+
+
 
 export default function Personalinfo({sidemenuState}) {
 
@@ -49,7 +78,16 @@ export default function Personalinfo({sidemenuState}) {
         }
     }
 
-    
+    // state control for detailed info
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,10 +212,6 @@ export default function Personalinfo({sidemenuState}) {
         setCoProvince2,
         setCoPostalCode2,
         setCoRezSince2,
-
-
-
-
     }
 
 
@@ -383,7 +417,41 @@ export default function Personalinfo({sidemenuState}) {
                             <Button type='submit'>Next</Button>
                         </div>
                          
-                     </Form>
+                        <Navbar className='personalInfoNavbarContainer'>
+                            <Nav className='me-auto'>
+                                <PersonalInfoID >
+                                    ID
+                                </PersonalInfoID>
+
+                                <PersonalInfoFamily>
+                                    Family
+                                </PersonalInfoFamily>
+
+                                <PersonalInfoEmployment>
+                                    Employment
+                                </PersonalInfoEmployment>
+                                
+                                <PersonalInfoCheque>
+                                    Cheque
+                                </PersonalInfoCheque>
+
+                                <PersonalInfoAddress>
+                                    Address
+                                </PersonalInfoAddress>
+
+                                <PersonalInfoChannel>
+                                    Channel
+                                </PersonalInfoChannel>
+
+                                <PersonalInfoKYC>
+                                    KYC
+                                </PersonalInfoKYC>
+
+                            </Nav>
+                            <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
+                        </Navbar>
+
+                    </Form>
                 ) : null }
 
 
@@ -405,7 +473,14 @@ export default function Personalinfo({sidemenuState}) {
                 ):null}
 
 
-                
+               
+
+
+
+
+
+
+
 
               
                 {/* <Form onSubmit={handleSubmit} > 
