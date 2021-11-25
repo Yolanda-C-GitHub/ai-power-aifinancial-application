@@ -25,31 +25,31 @@ const PersonalInfoCoApplicant = styled(Nav.Link)`
 `;
 
 const PersonalInfoID = styled(Nav.Link)`
-
+    background-color: ${({ IDActive }) => (IDActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoFamily = styled(Nav.Link)`
-    
+    background-color: ${({ familyActive }) => (familyActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoEmployment = styled(Nav.Link)`
-    
+    background-color: ${({ employmentActive }) => (employmentActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoCheque = styled(Nav.Link)`
-    
+    background-color: ${({ chequeActive }) => (chequeActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoAddress = styled(Nav.Link)`
-
+    background-color: ${({ addressActive }) => (addressActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoChannel= styled(Nav.Link)`
-
+    background-color: ${({ channelActive }) => (channelActive? '#202c37' : '#374c5f;')}
 `;
 
 const PersonalInfoKYC=styled(Nav.Link)`
-
+    background-color: ${({ KYCActive }) => (KYCActive? '#202c37' : '#374c5f;')}
 `;
 
 
@@ -79,7 +79,16 @@ export default function Personalinfo({sidemenuState}) {
     }
 
     // state control for detailed info
-
+    const [IDActive, setIDActive]=useState(true)
+    const [familyActive, setFamilyActive]=useState(false)
+    const [employmentActive, setEmploymentActive] = useState(false);
+    const [chequeActive, setChequeActive]= useState(false);
+    const [addressActive, setAddressActive]=useState(false);  
+    const [channelActive, setChannelActive]=useState(false);
+    const [KYCActive, setKYCActive]=useState(false);
+    function toggleIDActive(e){
+    
+    }
 
 
 
@@ -416,40 +425,44 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             <Button type='submit'>Next</Button>
                         </div>
-                         
+                        
                         <Navbar className='personalInfoNavbarContainer'>
                             <Nav className='me-auto'>
-                                <PersonalInfoID >
+                                <PersonalInfoID className='applicantAddtionalInfoItem' IDActive={IDActive}>
                                     ID
                                 </PersonalInfoID>
 
-                                <PersonalInfoFamily>
+                                <PersonalInfoFamily className='applicantAddtionalInfoItem' familyActive={familyActive}  >
                                     Family
-                                </PersonalInfoFamily>
+                                </PersonalInfoFamily >
 
-                                <PersonalInfoEmployment>
+                                <PersonalInfoEmployment className='applicantAddtionalInfoItem' employmentActive={employmentActive} >
                                     Employment
                                 </PersonalInfoEmployment>
                                 
-                                <PersonalInfoCheque>
+                                <PersonalInfoCheque className='applicantAddtionalInfoItem' chequeActive={chequeActive} >
                                     Cheque
                                 </PersonalInfoCheque>
 
-                                <PersonalInfoAddress>
+                                <PersonalInfoAddress className='applicantAddtionalInfoItem' addressActive={addressActive} >
                                     Address
                                 </PersonalInfoAddress>
 
-                                <PersonalInfoChannel>
+                                <PersonalInfoChannel className='applicantAddtionalInfoItem' channelActive={channelActive} >
                                     Channel
                                 </PersonalInfoChannel>
 
-                                <PersonalInfoKYC>
+                                <PersonalInfoKYC className='applicantAddtionalInfoItem' KYCActive={KYCActive} >
                                     KYC
                                 </PersonalInfoKYC>
-
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
+
+
+
+
+                        {/* conditional content will go here */}
 
                     </Form>
                 ) : null }
