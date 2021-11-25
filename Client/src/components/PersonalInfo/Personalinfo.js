@@ -387,7 +387,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 {coApplicantActive? (
-                    <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
+                    <Form onSubmit={handleSubmit} className='coApplicantInfoContainer'>
 
                     <div className='row' className='coapplicantInfoNames'> 
                         <Coapp  coAppInfo ={coAppInfo} />
