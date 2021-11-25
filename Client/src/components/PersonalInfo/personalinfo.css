@@ -102,7 +102,7 @@
 @keyframes translateXCoApplicant {
     0% {
       opacity: 1;
-      transform: translateX(1600px);
+      transform: translateX(1600px) ;
     }
     
     80% {
