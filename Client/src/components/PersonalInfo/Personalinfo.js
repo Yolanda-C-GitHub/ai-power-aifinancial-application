@@ -61,24 +61,16 @@ export default function Personalinfo({sidemenuState}) {
     const[coApplicantActive, setCoApplicantActive] = useState(false);
     function toggleApplicantActive(e){
         e.preventDefault();
-        if(applicantActive===true){
-            setCoApplicantActive(false)
-        }else{
-            setApplicantActive(true)
-            setCoApplicantActive(false)
-        }
+        setApplicantActive(true)
+        setCoApplicantActive(false)
     }
     function toggleCoApplicantActive(e){
         e.preventDefault();
-        if(coApplicantActive===true){
-            setApplicantActive(false)
-        }else{
-            setCoApplicantActive(true)
-            setApplicantActive(false)
-        }
+        setCoApplicantActive(true)
+        setApplicantActive(false)
     }
 
-    // state control for detailed info
+    // state control for detailed info active styling
     const [IDActive, setIDActive]=useState(true)
     const [familyActive, setFamilyActive]=useState(false)
     const [employmentActive, setEmploymentActive] = useState(false);
@@ -87,8 +79,78 @@ export default function Personalinfo({sidemenuState}) {
     const [channelActive, setChannelActive]=useState(false);
     const [KYCActive, setKYCActive]=useState(false);
     function toggleIDActive(e){
-    
+        e.preventDefault();
+        setIDActive(true);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCActive(false)
     }
+    function toggleFamilyActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(true)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCActive(false)
+    }
+    function toggleEmploymentActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(true)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCActive(false)
+    }
+    function toggleChequeActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(true)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCActive(false)
+    }
+    function toggleAddressActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(true)
+        setChannelActive(false)
+        setKYCActive(false)
+    }
+     function toggleChannelActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(true)
+        setKYCActive(false)
+    }
+
+    function toggleKYCActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCActive(true)
+    }
+
+
 
 
 
@@ -421,48 +483,75 @@ export default function Personalinfo({sidemenuState}) {
                             <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
-                    
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             <Button type='submit'>Next</Button>
                         </div>
-                        
+
                         <Navbar className='personalInfoNavbarContainer'>
                             <Nav className='me-auto'>
-                                <PersonalInfoID className='applicantAddtionalInfoItem' IDActive={IDActive}>
+                                <PersonalInfoID className='applicantAddtionalInfoItem' disabled={IDActive?true:false} IDActive={IDActive} onClick={toggleIDActive}>
                                     ID
                                 </PersonalInfoID>
 
-                                <PersonalInfoFamily className='applicantAddtionalInfoItem' familyActive={familyActive}  >
+                                <PersonalInfoFamily className='applicantAddtionalInfoItem' disabled={familyActive?true:false} familyActive={familyActive} onClick={toggleFamilyActive}  >
                                     Family
                                 </PersonalInfoFamily >
 
-                                <PersonalInfoEmployment className='applicantAddtionalInfoItem' employmentActive={employmentActive} >
+                                <PersonalInfoEmployment className='applicantAddtionalInfoItem' disabled={employmentActive?true:false} employmentActive={employmentActive} onClick={toggleEmploymentActive}>
                                     Employment
                                 </PersonalInfoEmployment>
                                 
-                                <PersonalInfoCheque className='applicantAddtionalInfoItem' chequeActive={chequeActive} >
+                                <PersonalInfoCheque className='applicantAddtionalInfoItem' disabled={chequeActive?true:false} chequeActive={chequeActive} onClick={toggleChequeActive}>
                                     Cheque
                                 </PersonalInfoCheque>
 
-                                <PersonalInfoAddress className='applicantAddtionalInfoItem' addressActive={addressActive} >
+                                <PersonalInfoAddress className='applicantAddtionalInfoItem' disabled={addressActive?true:false} addressActive={addressActive} onClick={toggleAddressActive} >
                                     Address
                                 </PersonalInfoAddress>
 
-                                <PersonalInfoChannel className='applicantAddtionalInfoItem' channelActive={channelActive} >
+                                <PersonalInfoChannel className='applicantAddtionalInfoItem' disabled={channelActive?true:false} channelActive={channelActive} onClick={toggleChannelActive}>
                                     Channel
                                 </PersonalInfoChannel>
 
-                                <PersonalInfoKYC className='applicantAddtionalInfoItem' KYCActive={KYCActive} >
+                                <PersonalInfoKYC className='applicantAddtionalInfoItem' disabled={KYCActive?true:false} KYCActive={KYCActive} onClick={toggleKYCActive} >
                                     KYC
                                 </PersonalInfoKYC>
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
+                    {/* conditional content will go here */}
+                        {IDActive?(
+                            <h1>hii</h1>
+                        ):null}
+
+                        {familyActive?(
+                            <h1>hello</h1>
+                        ):null}
+
+                        {employmentActive?(
+                            <h1>hey</h1>
+                        ):null}
+
+                        {chequeActive?(
+                            <h1>welp</h1>
+                        ):null}
+
+                        {addressActive?(
+                            <h1>sosad</h1>
+                        ):null}
+
+                        {channelActive?(
+                            <h1>try again</h1>            
+                        ):null}
+
+                        {KYCActive?(
+                            <h1>lol</h1>            
+                        ):null}
 
 
 
 
-                        {/* conditional content will go here */}
+                    {/* conditional content will go here */}
 
                     </Form>
                 ) : null }
