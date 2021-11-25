@@ -1,27 +1,34 @@
 .fourthPartCard{
     display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
+    flex-direction:row !important;
+    justify-content: flex-start;
     padding:10px;
-    flex-wrap: wrap;
 
 }
 .fourthPartSelector{
     width:120px;
 }
 .fourthPartHouseNumber{
-    width: 142px
+    width: 90px;
+    margin-right:5px;
+}
+.fourthPartAddress{
+    width: 200px;
+    margin-right:5px;
 }
 .fourthPartAptNum{
-    width:100px;
+    width:70px;
+    margin-right:5px;
 }
 .fourthPartPostalCode{
     width:120px;
+    margin-right:5px;
+    margin-left: 5px;
 }
 .fourthPartFormGroup{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
     padding:5px;
     width:100%;

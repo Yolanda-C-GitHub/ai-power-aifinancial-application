@@ -47,11 +47,11 @@ export default function Fourthpart(params) {
 
              
             <Form.Group className='fourthPartFormGroup'>
-                <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
+                <FloatingLabel className='fourthPartHouseNumber' label='House #'>
                     <Form.Control placeholder='house#' ref={houseNumRef} onChange={()=>params.personalInfoRez.setHouseNum(houseNumRef.current.value)} />
                 </FloatingLabel>
 
-                <FloatingLabel label='Current Residence'>
+                <FloatingLabel className='fourthPartAddress' label='Current Residence'>
                     <Form.Control placeholder='Address' ref={currentRezRef} onChange={()=>params.personalInfoRez.setCurrentRez(currentRezRef.current.value)} />
                 </FloatingLabel>
 
@@ -95,11 +95,11 @@ export default function Fourthpart(params) {
             {showRez2===true? 
                 (
                     <Form.Group className='fourthPartFormGroup'>
-                        <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
+                        <FloatingLabel className='fourthPartHouseNumber' label='House #'>
                             <Form.Control placeholder='house#' ref={houseNumRef2} onChange={()=>params.personalInfoRez2.setHouseNum2(houseNumRef2.current.value)} />
                         </FloatingLabel>
 
-                        <FloatingLabel label='Previous Resident'>
+                        <FloatingLabel className='fourthPartAddress' label='Previous Resident'>
                             <Form.Control placeholder='Address' ref={currentRezRef2} onChange={()=>params.personalInfoRez2.setCurrentRez2(currentRezRef2.current.value)} />
                         </FloatingLabel>
 

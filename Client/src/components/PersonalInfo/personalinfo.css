@@ -11,7 +11,24 @@
     box-shadow: 10px 7px 23px -3px rgba(116,116,116,0.94);
     padding-left: 10px;
     padding-right: 10px;
+    animation:translateXNavBarContainer 0.5s;
 }
+@keyframes translateXNavBarContainer {
+  0% {
+    opacity: 0;
+    transform: translateX(1600px);
+  }
+  
+  80% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 
 .navLinkApplicant{
     font-weight: bolder;
@@ -50,7 +67,50 @@
 }
 
 
-.applicantInfoContainer{
-    margin:20px;
-}
 
+
+
+
+.applicantInfoContainer{
+    margin-left: 20px;
+    margin-right: 20px;
+    animation: translateXApplicant 0.5s;
+}
+@keyframes translateXApplicant {
+    0% {
+      opacity: 1;
+      transform: translateX(-1600px);
+    }
+    
+    80% {
+      transform: translateX(5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+
+
+
+
+.coApplicantInfoContainer{
+    animation: translateXCoApplicant 0.5s;
+}
+@keyframes translateXCoApplicant {
+    0% {
+      opacity: 1;
+      transform: translateX(1600px);
+    }
+    
+    80% {
+      transform: translateX(-5px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
