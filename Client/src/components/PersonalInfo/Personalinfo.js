@@ -548,11 +548,7 @@ export default function Personalinfo({sidemenuState}) {
                             <h1>lol</h1>            
                         ):null}
 
-
-
-
                     {/* conditional content will go here */}
-
                     </Form>
                 ) : null }
 
@@ -575,7 +571,7 @@ export default function Personalinfo({sidemenuState}) {
                 ):null}
 
 
-               
+
 
 
 
