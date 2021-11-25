@@ -30,8 +30,8 @@ export default function Partfive(params) {
         <Card className='cardPartFive'>
 
             <Form.Group className='formGroupID'> 
-                <FloatingLabel label='ID Type'>
-                    <Form.Select className='partFiveIDType' ref={idTypeRef} onChange={()=>params.personalInfoPartFive.setIdType(idTypeRef.current.value)}>
+                <FloatingLabel className='partFiveIDType' label='ID Type'>
+                    <Form.Select  ref={idTypeRef} onChange={()=>params.personalInfoPartFive.setIdType(idTypeRef.current.value)}>
                         <option value='provincialDriversLicense'>Provincial Driver's License</option>
                         <option value="provincialPhotoID">Provincial Photo ID</option>
                         <option value="passport">Passport</option>
@@ -44,22 +44,20 @@ export default function Partfive(params) {
                     <Form.Control placeholder='idNumber' ref={idNumRef} onChange={()=>params.personalInfoPartFive.setIdNum(idNumRef.current.value)}/>
                 </FloatingLabel>
 
-                 <FloatingLabel label="Issue Date">
+                 <FloatingLabel className='partFiveIssueDate' label="Issue Date">
                     <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={()=>params.personalInfoPartFive.setIssueDate(issueDateRef.current.value)} />
                  </FloatingLabel>
 
-                 <FloatingLabel label="Expiry Date">
+                 <FloatingLabel className='partFiveExpiryDate' label="Expiry Date">
                     <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={()=>params.personalInfoPartFive.setExpiryDate(expiryDateRef.current.value)} />
                  </FloatingLabel>
 
-                 <FloatingLabel label="Verification Date">
+                 <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
                     <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={()=>params.personalInfoPartFive.setVerificationDate(verificationDateRef.current.value)} />
                  </FloatingLabel>
-            </Form.Group>
-
-            <Form.Group className='IdInfo'>
-                <FloatingLabel label='Issuing Province'>
-                    <Form.Select  className='issuingProvince' ref={issuingProvinceRef} onChange={()=>params.personalInfoPartFive.setIssuingProvince(issuingProvinceRef.current.value)} >
+           
+                <FloatingLabel className='issuingProvince' label='Issuing Province'>
+                    <Form.Select  ref={issuingProvinceRef} onChange={()=>params.personalInfoPartFive.setIssuingProvince(issuingProvinceRef.current.value)} >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -73,15 +71,15 @@ export default function Partfive(params) {
                         <option value='QC'>QC</option>
                         <option value='SK'>SK</option>
                         <option value='YT'>YT</option>
-                    </Form.Select>  
+                    </Form.Select>
                 </FloatingLabel>
 
-               <FloatingLabel label='Comments'>
+               <FloatingLabel className='partFiveComment' label='Comments'>
                     <Form.Control type='textarea' placeholder='comment' ref={commentRef} onChange={()=>params.personalInfoPartFive.setComments(commentRef.current.value)} />
                </FloatingLabel>
     
-               <FloatingLabel label='Have you previously Declared Bankruptcy?'>
-                    <Form.Select className='previouslyDeclared' ref={previousDeclaredRef} 
+               <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
+                    <Form.Select ref={previousDeclaredRef} 
                     onChange={()=>{
                         params.personalInfoPartFive.setDeclared(previousDeclaredRef.current.value)
                         toggleShowDischarge()
@@ -92,7 +90,7 @@ export default function Partfive(params) {
                </FloatingLabel>
 
                {showDischarge===true?(
-                    <FloatingLabel label='Discharge Date'>
+                    <FloatingLabel className='dischargeDate' label='Discharge Date'>
                         <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
                     </FloatingLabel>
                ): null} 

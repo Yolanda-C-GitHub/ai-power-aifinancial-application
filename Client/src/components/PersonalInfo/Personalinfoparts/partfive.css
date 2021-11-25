@@ -3,30 +3,56 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
+    padding-bottom: 10px;
 }
 
 .formGroupID{
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-top:10px;
     margin-left: 15px;
+    flex-wrap: wrap;
 }
-.IdInfo{
-    display:flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding-top:10px;
-    margin-left: 15px;
+
+
+.partFiveIDType{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.partFiveIDNum{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.partFiveIssueDate{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.partFiveExpiryDate{
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.partFiveVerificationDate{
+    margin-right:5px;
+    margin-top: 10px;
 }
 
 .issuingProvince{
     width: 200px;
+    margin-right:5px;
+    margin-top: 10px;
 }
 .previouslyDeclared{
     width: 350px;
+    margin-right:5px;
+    margin-top: 10px;
 }
 .verificationDate{
     width: 180px;
+}
+.partFiveComment{ 
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.dischargeDate{
+    margin-top:10px;
 }
