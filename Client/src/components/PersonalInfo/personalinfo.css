@@ -43,9 +43,7 @@
     background: #202c37 ;
     transition: 0.1s;
 }
-.navLinkApplicant:target{
-    color:red !important;
-}
+
 
 .navLinkCoApplicant{
     font-weight: bolder;
@@ -91,7 +89,6 @@
       transform: translateX(0px);
     }
   }
-
 
 
 

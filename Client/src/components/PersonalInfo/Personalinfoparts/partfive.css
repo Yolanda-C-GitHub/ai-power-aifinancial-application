@@ -1,28 +1,24 @@
-.partFiveCard{
+.cardPartFive{
     display:flex;
-    flex-direction:column;
-    justify-content: space-evenly;
-    padding:10px;
-    flex-wrap: wrap;
-}
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-.formGroupEmail{
-    display: Flex;
-    flex-direction:row;
-    justify-content: space-evenly;
 }
 
 .formGroupID{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding-top:10px;
+    margin-left: 15px;
 }
 .IdInfo{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding-top:10px;
+    margin-left: 15px;
 }
 
 .issuingProvince{

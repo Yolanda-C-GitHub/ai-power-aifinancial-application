@@ -18,12 +18,13 @@ const PersonalInfoContainer = styled.div`
 `;
 const PersonalInfoApplicant = styled(Nav.Link)` 
     background-color: ${({ applicantActive }) => (applicantActive? '#202c37' : '#374c5f;')}
+
 `;
 const PersonalInfoCoApplicant = styled(Nav.Link)`
     background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
 `;
 
- 
+
 export default function Personalinfo({sidemenuState}) {
 
     // state control for applicant & coapplicant active styling

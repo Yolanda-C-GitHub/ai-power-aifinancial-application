@@ -4,11 +4,6 @@ import './partfive.css'
 
 export default function Partfive(params) {
 
-    const emailRef = useRef();
-    const cellNumRef=useRef();
-    const homeNumRef=useRef();
-    const workNumRef=useRef();
-
     const idTypeRef=useRef();
     const idNumRef=useRef();
     const issueDateRef=useRef();
@@ -32,25 +27,7 @@ export default function Partfive(params) {
     }
 
     return (
-        <Card className='partFiveCard'>
-
-            <Form.Group className='formGroupEmail'>
-                <FloatingLabel className='partFiveEmail' label='Email'>
-                    <Form.Control type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoPartFive.setEmail(emailRef.current.value)}/>
-                </FloatingLabel>
-
-                <FloatingLabel className='partFiveCell' label='Cell Phone'>
-                    <Form.Control placeholder='cellphone'ref={cellNumRef} onChange={()=>params.personalInfoPartFive.setCellNum(cellNumRef.current.value)}/>
-                </FloatingLabel>
-
-                <FloatingLabel className='partFiveHome' label='Home Phone'>
-                    <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoPartFive.setHomeNum(homeNumRef.current.value)} />
-                </FloatingLabel>
-
-                <FloatingLabel className = 'partFiveWork' label='Work Phone'>
-                    <Form.Control placeholder='workphone' ref={workNumRef} onChange={()=>params.personalInfoPartFive.setWorkNum(workNumRef.current.value)} />
-                </FloatingLabel>
-            </Form.Group> 
+        <Card className='cardPartFive'>
 
             <Form.Group className='formGroupID'> 
                 <FloatingLabel label='ID Type'>
