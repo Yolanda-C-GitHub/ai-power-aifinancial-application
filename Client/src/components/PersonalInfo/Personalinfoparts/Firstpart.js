@@ -95,7 +95,7 @@ export default function Firstpart(params) {
 
                 
                 <Form.Group className='firstPartFormStatusContainer'>
-                    <Form.Group className='firstPartFormStatusOne' >
+                    <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status' >
                             <Form.Select className='formStatusItems' ref={livingStatusRef} onChange={()=>params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)}>
                                 <option placeholder='select' >Select</option>
@@ -119,9 +119,9 @@ export default function Firstpart(params) {
                                 <option value='other'>Other</option>
                             </Form.Select>
                         </FloatingLabel>
-                    </Form.Group>
+                    </div>
 
-                    <Form.Group className='firstPartFormStatusTwo' >
+                    <div className='firstPartFormStatusTwo' >
                         <FloatingLabel label='Citizenship' >
                             <Form.Select className='formStatusItems' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
                                 <option placeholder='select' >Select</option>
@@ -141,7 +141,7 @@ export default function Firstpart(params) {
                                 <option value='other'>Other</option>
                             </Form.Select>
                         </FloatingLabel>
-                    </Form.Group>
+                    </div>
                 </Form.Group>
 
             </Card>

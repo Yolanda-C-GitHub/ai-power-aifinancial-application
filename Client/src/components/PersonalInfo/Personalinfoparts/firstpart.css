@@ -47,11 +47,14 @@
 .firstPartFormStatusOne{
     display:flex;
     flex-direction: row;
-
+    border:none !important;
+    margin:0px 0px 10px 10px !important;
 }
 .firstPartFormStatusTwo{
     display:flex;
     flex-direction: row;
+    border:none !important;
+    margin:0px 0px 10px 0px !important;
 }
 
 .formStatusItems{
