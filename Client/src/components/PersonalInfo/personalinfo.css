@@ -11,9 +11,9 @@
     box-shadow: 10px 7px 23px -3px rgba(116,116,116,0.94);
     padding-left: 10px;
     padding-right: 10px;
-    animation:translateX 0.5s;
+    animation:translateXNavBarContainer 0.5s;
 }
-@keyframes translateX {
+@keyframes translateXNavBarContainer {
   0% {
     opacity: 0;
     transform: translateX(1600px);
