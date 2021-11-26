@@ -25,7 +25,7 @@ const PersonalInfoCoApplicant = styled(Nav.Link)`
 `;
 
 const PersonalInfoID = styled(Nav.Link)`
-    background-color: ${({ IDActive }) => (IDActive? '#202c37' : '#374c5f;')}
+    background-color: ${({ iDActive }) => (iDActive? '#202c37' : '#374c5f;')}
 `;
 const PersonalInfoFamily = styled(Nav.Link)`
     background-color: ${({ familyActive }) => (familyActive? '#202c37' : '#374c5f;')}
@@ -65,7 +65,7 @@ export default function Personalinfo({sidemenuState}) {
     }
 
     // state control for detailed info active styling
-    const [IDActive, setIDActive]=useState(true)
+    const [iDActive, setIDActive]=useState(true)
     const [familyActive, setFamilyActive]=useState(false)
     const [employmentActive, setEmploymentActive] = useState(false);
     const [chequeActive, setChequeActive]= useState(false);
@@ -333,50 +333,75 @@ export default function Personalinfo({sidemenuState}) {
     function handleSubmit(e){
         e.preventDefault()
 
-
-
-
+        console.log(
+            lastName,
+            firstName,
+            englishName,
+            gender,
+            birthDay,
+            sinNum,
+            email,
+            cellNum,
+            homeNum,
+            workNum,
+            livingStatus,
+            maritalStatus,
+            citizenship,
+            taxStatus,
+            declared,
+            dischargeDate,
+        )
         
-        console.log('submit form button working')
-        console.log(lastName, firstName, englishName)
-        console.log(gender, birthDay, sinNum)
-        console.log(livingStatus, maritalStatus, citizenship, taxStatus)
-        console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
-        console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
-        console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
-        console.log(spouseFirstName, spouseLastName, spouseBirth, child1Name,child1Birth, child2Name, child2Birth, child3Name, child3Birth, child4Name, child4Birth)
-
         console.log(
-            employmentStatus,
-            annualIncome,
-            employerName,
-            employerStreetNum,
-            employerAddress,
-            employerUnitNum,
-            employerCity,
-            employerProvince,
-            employerPostalCode,
-            durationStart,
-            durationEnd,
-            industry,
-            occupation,  
-        )
-        console.log(
-            employmentStatus2,
-            annualIncome2,
-            employerName2,
-            employerStreetNum2,
-            employerAddress2,
-            employerUnitNum2,
-            employerCity2,
-            employerProvince2,
-            employerPostalCode2,
-            durationStart2,
-            durationEnd2,
-            industry2,
-            occupation2,  
+             
         )
 
+
+
+
+
+
+        // console.log('submit form button working')
+        // console.log(lastName, firstName, englishName)
+        // console.log(gender, birthDay, sinNum)
+        // console.log(livingStatus, maritalStatus, citizenship, taxStatus)
+        // console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
+        // console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
+        // console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
+        // console.log(spouseFirstName, spouseLastName, spouseBirth, child1Name,child1Birth, child2Name, child2Birth, child3Name, child3Birth, child4Name, child4Birth)
+
+        // console.log(
+        //     employmentStatus,
+        //     annualIncome,
+        //     employerName,
+        //     employerStreetNum,
+        //     employerAddress,
+        //     employerUnitNum,
+        //     employerCity,
+        //     employerProvince,
+        //     employerPostalCode,
+        //     durationStart,
+        //     durationEnd,
+        //     industry,
+        //     occupation,  
+        // )
+
+        // console.log(
+        //     employmentStatus2,
+        //     annualIncome2,
+        //     employerName2,
+        //     employerStreetNum2,
+        //     employerAddress2,
+        //     employerUnitNum2,
+        //     employerCity2,
+        //     employerProvince2,
+        //     employerPostalCode2,
+        //     durationStart2,
+        //     durationEnd2,
+        //     industry2,
+        //     occupation2,  
+        // )
+        
 
     }
 
@@ -491,7 +516,7 @@ export default function Personalinfo({sidemenuState}) {
 
                         <Navbar className='personalInfoNavbarContainer2'>
                             <Nav className='me-auto'>
-                                <PersonalInfoID className='applicantAddtionalInfoItem' disabled={IDActive?true:false} IDActive={IDActive} onClick={toggleIDActive}>
+                                <PersonalInfoID className='applicantAddtionalInfoItem' disabled={iDActive?true:false} iDActive={iDActive} onClick={toggleIDActive}>
                                     ID
                                 </PersonalInfoID>
 
@@ -523,7 +548,7 @@ export default function Personalinfo({sidemenuState}) {
                         </Navbar>
                         {/* conditional content will go here */}
                         <div className='addtionalInfoElements'> 
-                            {IDActive?(
+                            {iDActive?(
                                 <PartFive personalInfoPartFive={personalInfoPartFive} />
                             ):null}
 
