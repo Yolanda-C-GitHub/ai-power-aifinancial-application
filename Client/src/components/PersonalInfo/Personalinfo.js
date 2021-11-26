@@ -195,6 +195,7 @@ export default function Personalinfo({sidemenuState}) {
         setTaxStatus,
         declared,
         setDeclared,
+        setDischargeDate,
     }
     
  
@@ -239,7 +240,6 @@ export default function Personalinfo({sidemenuState}) {
         setVerificationDate,
         setIssuingProvince,
         setComments,
-        setDischargeDate,
     }
 
 
@@ -483,13 +483,8 @@ export default function Personalinfo({sidemenuState}) {
 
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
-                      
-                            <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
-                        <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
-                            <Button type='submit'>Next</Button>
-                        </div>
 
                         <Navbar className='personalInfoNavbarContainer2'>
                             <Nav className='me-auto'>
@@ -523,11 +518,14 @@ export default function Personalinfo({sidemenuState}) {
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
-                    {/* conditional content will go here */}
+                        {/* conditional content will go here */}
                         {IDActive?(
+                            <>
                             <h1>hii</h1>
+                            <PartFive personalInfoPartFive={personalInfoPartFive} />
+                            </>
                         ):null}
-
+                        
                         {familyActive?(
                             <>
                             <h1>hello</h1>
@@ -554,9 +552,14 @@ export default function Personalinfo({sidemenuState}) {
                         {KYCActive?(
                             <h1>lol</h1>            
                         ):null}
+                        {/* conditional content will go here */}
 
-                    {/* conditional content will go here */}
+                        <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
+                            <Button type='submit'>Next</Button>
+                        </div>
                     </Form>
+
+                    
                 ) : null }
 
 
