@@ -27,8 +27,6 @@ export default function EmploymentInfo(params) {
 
 
 
-
-
     function displayPreviousEmploymentInfo(){
         if(currentEmployer===true){
             console.log(currentEmployer)
