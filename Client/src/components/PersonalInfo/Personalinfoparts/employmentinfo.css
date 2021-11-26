@@ -1,35 +1,57 @@
 
-
 .employmentInfoLabel{
     text-align: center;
-    margin-top:15px;
+    margin-top:5px;
     margin-bottom: 10px;
+    font-size: 25px;
 }
 
 .employerSection{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 .employmentStatus{
     width: 175px;
+    margin-left: 15px;
+    margin-right: 5px;
 }
 .annualIncome{
-    width:165px
+    width:165px;
+    margin-right: 5px;
+}
+.employerName{
+    margin-right:5px;
 }
 .industry{
-    width:165px
+    width:165px;
+    margin-right:5px;
 }
 
 .occupation{
-    width:165px
+    width:165px;
+    margin-right: 5px;
 }
-
+.streetNum{
+    width: 150px;
+}
+.address{
+    margin-left: 5px;
+}
+.unitNum{
+    width: 100px;
+    margin-left: 5px;
+}
+.city{
+    width:150px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
 .employerAddress{
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 
@@ -41,8 +63,19 @@
     width:100px;
 }
 
+.postalCode{
+    margin-left: 5px;
+}
+.startFrom{
+    margin-left: 5px;
+}
 .currentEmployerCheckBox{
     align-self: center;
+    margin-left: 20px;
+}
+
+.startTo{
+    margin-left: 20px;
 }
 
 /* employment info  2  */
@@ -51,4 +84,5 @@
     text-align: center;
     margin-top:15px;
     margin-bottom: 10px;
+    font-size: 25px;
 }
