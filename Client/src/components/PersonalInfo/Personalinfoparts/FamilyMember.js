@@ -16,27 +16,26 @@ export default function FamilyMember(params) {
     const child4NameRef=useRef();
     const child4BirthdayRef=useRef();
     
-
+ 
 
     return (
         <Card className='familyMemberCard'>
-            <h3 className='familyInfoLabel' >Family Info</h3>
 
             <Form.Group className='formGroupSpouseInfo'>
-                <FloatingLabel label='Spouse First Name'>
+                <FloatingLabel className='spouseInfoFirstName' label='Spouse First Name'>
                     <Form.Control placeholder ='First Name' ref={spouseFirstNameRef}  onChange={(e)=>params.personalInfoFamilyMember.setSpouseFirstName(e.target.value)} />
                 </FloatingLabel>
 
-                <FloatingLabel label='Spouse Last Name'>
+                <FloatingLabel className='spouseInfoLastName' label='Spouse Last Name'>
                     <Form.Control placeholder ='Last Name' ref={spouseLastNameRef} onChange={(e)=>params.personalInfoFamilyMember.setSpouseLastName(e.target.value)} />
                 </FloatingLabel>
 
-                <FloatingLabel label='Date of Birth'>
+                <FloatingLabel className='spouseInfoBday' label='Date of Birth'>
                     <Form.Control type='date' placeholder ='Date of Birth' ref={spouseBirthdayRef} onChange={(e)=>params.personalInfoFamilyMember.setSpouseBirth(e.target.value)}  />
                 </FloatingLabel>
                 
                 <InputGroup className='inputGroupChild1'>
-                    <FloatingLabel label='Child 1'>
+                    <FloatingLabel className='child1Name' label='Child 1'>
                         <Form.Control className='child1' placeholder ='Child 1' ref={child1NameRef} onChange={(e)=>params.personalInfoFamilyMember.setChild1Name(e.target.value)} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
@@ -48,7 +47,7 @@ export default function FamilyMember(params) {
     
             <Form.Group  className='formGroupChildInfo'>
                 <InputGroup className='otherChildInputGroup'>
-                    <FloatingLabel label='Child 2'>
+                    <FloatingLabel className='child2Name' label='Child 2'>
                         <Form.Control placeholder='Child 2' className = "otherChildName" ref={child2NameRef} onChange={(e)=>params.personalInfoFamilyMember.setChild2Name(e.target.value)} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
@@ -57,7 +56,7 @@ export default function FamilyMember(params) {
                 </InputGroup>
 
                 <InputGroup className='otherChildInputGroup'>
-                    <FloatingLabel label='Child 3'>
+                    <FloatingLabel className='child3Name' label='Child 3'>
                         <Form.Control placeholder ='Child 3' className ="otherChildName" ref={child3NameRef} onChange= {(e)=>params.personalInfoFamilyMember.setChild3Name(e.target.value) } />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
@@ -66,7 +65,7 @@ export default function FamilyMember(params) {
                 </InputGroup>
 
                 <InputGroup className='otherChildInputGroup'>
-                    <FloatingLabel label='Child 4'>
+                    <FloatingLabel className='child4Name' label='Child 4'>
                         <Form.Control placeholder ='Child 4' className = "otherChildName" ref={child4NameRef} onChange={(e)=>params.personalInfoFamilyMember.setChild4Name(e.target.value)} />
                     </FloatingLabel>
                     <FloatingLabel label='Date of Birth'>
