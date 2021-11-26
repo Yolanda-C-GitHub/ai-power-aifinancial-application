@@ -487,7 +487,7 @@ export default function Personalinfo({sidemenuState}) {
                             <Button type='submit'>Next</Button>
                         </div>
 
-                        <Navbar className='personalInfoNavbarContainer'>
+                        <Navbar className='personalInfoNavbarContainer2'>
                             <Nav className='me-auto'>
                                 <PersonalInfoID className='applicantAddtionalInfoItem' disabled={IDActive?true:false} IDActive={IDActive} onClick={toggleIDActive}>
                                     ID

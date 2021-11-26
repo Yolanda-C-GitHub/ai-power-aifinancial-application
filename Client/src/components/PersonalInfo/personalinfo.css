@@ -106,7 +106,15 @@
     }
   }
 
-
+.personalInfoNavbarContainer2{
+  display: flex;
+  flex-direction: row;
+  border-radius:  30px;
+  background-color: #374c5f;
+  box-shadow: 10px 7px 23px -3px rgba(116,116,116,0.94);
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
 .applicantAddtionalInfoItem{
   font-weight: bolder;
