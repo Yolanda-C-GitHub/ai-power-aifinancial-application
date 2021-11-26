@@ -27,27 +27,21 @@ const PersonalInfoCoApplicant = styled(Nav.Link)`
 const PersonalInfoID = styled(Nav.Link)`
     background-color: ${({ IDActive }) => (IDActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoFamily = styled(Nav.Link)`
     background-color: ${({ familyActive }) => (familyActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoEmployment = styled(Nav.Link)`
     background-color: ${({ employmentActive }) => (employmentActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoCheque = styled(Nav.Link)`
     background-color: ${({ chequeActive }) => (chequeActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoAddress = styled(Nav.Link)`
     background-color: ${({ addressActive }) => (addressActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoChannel= styled(Nav.Link)`
     background-color: ${({ channelActive }) => (channelActive? '#202c37' : '#374c5f;')}
 `;
-
 const PersonalInfoKYC=styled(Nav.Link)`
     background-color: ${({ KYCActive }) => (KYCActive? '#202c37' : '#374c5f;')}
 `;
@@ -138,7 +132,6 @@ export default function Personalinfo({sidemenuState}) {
         setChannelActive(true)
         setKYCActive(false)
     }
-
     function toggleKYCActive(e){
         e.preventDefault();
         setIDActive(false);
@@ -180,6 +173,10 @@ export default function Personalinfo({sidemenuState}) {
     const[maritalStatus, setMaritalStatus]=useState('');
     const[citizenship, setCitizenship] = useState('');
     const[taxStatus, setTaxStatus]=useState('');
+
+    const[declared, setDeclared] = useState('No');
+    const[dischargeDate, setDischargeDate]= useState();
+
     const personalInfoNames = {
         setLastName,
         setFirstName,
@@ -196,6 +193,8 @@ export default function Personalinfo({sidemenuState}) {
         setMaritalStatus, 
         setCitizenship,
         setTaxStatus,
+        declared,
+        setDeclared,
     }
     
  
@@ -220,76 +219,10 @@ export default function Personalinfo({sidemenuState}) {
     const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
 
 
-    // state control for coapplicant
-    const[colastName, setCoLastName] = useState()
-    const[cofirstName, setCoFirstName] = useState()
-    const[coenglishName, setCoEnglishName] = useState()
-
-    const[cogender, setCoGender]= useState()
-    const[cobirthDay, setCoBirthday] =useState()
-    const[cosinNum, setCoSinNum]= useState()
-
-    const[coemail, setCoEmail]=useState();
-    const[cocellNum, setCoCellNum]= useState();
-    const[cohomeNum, setCoHomeNum]=useState();
-    const[coworkNum, setCoWorkNum]=useState();
-
-    const[colivingStatus, setCoLivingStatus] = useState('');
-    const[comaritalStatus, setCoMaritalStatus]=useState('');
-    const[cocitizenship, setCoCitizenship] = useState('');
-    const[cotaxStatus, setCoTaxStatus]=useState('');
-
-    const[cohouseNum, setCoHouseNum]=useState();
-    const[cocurrentRez, setCoCurrentRez]=useState();
-    const[coaptNum, setCoAptNum]=useState();
-    const[coprovince, setCoProvince]=useState('ON');
-    const[copostalCode, setCoPostalCode]=useState();
-    const[corezSince, setCoRezSince]=useState();
-
-    const[cohouseNum2, setCoHouseNum2]=useState();
-    const[cocurrentRez2, setCoCurrentRez2]=useState();
-    const[coaptNum2, setCoAptNum2]=useState();
-    const[coprovince2,setCoProvince2]=useState();
-    const[copostalCode2, setCoPostalCode2] = useState();
-    const[corezSince2, setCoRezSince2]=useState();
-
-    const coAppInfo = {
-        setCoLastName,
-        setCoFirstName,
-        setCoEnglishName,
-        cogender,
-        setCoGender,
-        setCoBirthday,
-        setCoSinNum,
-        setCoEmail,
-        setCoCellNum,
-        setCoHomeNum,
-        setCoWorkNum,
-        setCoLivingStatus, 
-        setCoMaritalStatus, 
-        setCoCitizenship,
-        setCoTaxStatus,
-
-        setCoHouseNum,
-        setCoCurrentRez,
-        setCoAptNum,
-        setCoProvince,
-        setCoPostalCode,
-        setCoRezSince,
-
-        setCoHouseNum2,
-        setCoCurrentRez2,
-        setCoAptNum2,
-        setCoProvince2,
-        setCoPostalCode2,
-        setCoRezSince2,
-    }
-
-
-
+   
+ 
 
     // state control part 5
-  
     const[idType, setIdType]=useState('provincialDriversLicense');
     const[idNum, setIdNum]=useState();
     const[issueDate, setIssueDate]=useState();
@@ -297,10 +230,8 @@ export default function Personalinfo({sidemenuState}) {
     const[verificationDate, setVerificationDate]=useState();
     const[issuingProvince, setIssuingProvince]=useState('ON');
     const[comments, setComments] = useState();
-    const[declared, setDeclared] = useState('No');
-    const[dischargeDate, setDischargeDate]= useState();
+
     const personalInfoPartFive ={
-        declared,
         setIdType,
         setIdNum,
         setIssueDate,
@@ -308,14 +239,8 @@ export default function Personalinfo({sidemenuState}) {
         setVerificationDate,
         setIssuingProvince,
         setComments,
-        setDeclared,
         setDischargeDate,
     }
-
-
-
-
-
 
 
 
@@ -456,6 +381,85 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    
+    // state control for coapplicant
+    const[colastName, setCoLastName] = useState()
+    const[cofirstName, setCoFirstName] = useState()
+    const[coenglishName, setCoEnglishName] = useState()
+
+    const[cogender, setCoGender]= useState()
+    const[cobirthDay, setCoBirthday] =useState()
+    const[cosinNum, setCoSinNum]= useState()
+
+    const[coemail, setCoEmail]=useState();
+    const[cocellNum, setCoCellNum]= useState();
+    const[cohomeNum, setCoHomeNum]=useState();
+    const[coworkNum, setCoWorkNum]=useState();
+
+    const[colivingStatus, setCoLivingStatus] = useState('');
+    const[comaritalStatus, setCoMaritalStatus]=useState('');
+    const[cocitizenship, setCoCitizenship] = useState('');
+    const[cotaxStatus, setCoTaxStatus]=useState('');
+
+    const[cohouseNum, setCoHouseNum]=useState();
+    const[cocurrentRez, setCoCurrentRez]=useState();
+    const[coaptNum, setCoAptNum]=useState();
+    const[coprovince, setCoProvince]=useState('ON');
+    const[copostalCode, setCoPostalCode]=useState();
+    const[corezSince, setCoRezSince]=useState();
+
+    const[cohouseNum2, setCoHouseNum2]=useState();
+    const[cocurrentRez2, setCoCurrentRez2]=useState();
+    const[coaptNum2, setCoAptNum2]=useState();
+    const[coprovince2,setCoProvince2]=useState();
+    const[copostalCode2, setCoPostalCode2] = useState();
+    const[corezSince2, setCoRezSince2]=useState();
+
+    const coAppInfo = {
+        setCoLastName,
+        setCoFirstName,
+        setCoEnglishName,
+        cogender,
+        setCoGender,
+        setCoBirthday,
+        setCoSinNum,
+        setCoEmail,
+        setCoCellNum,
+        setCoHomeNum,
+        setCoWorkNum,
+        setCoLivingStatus, 
+        setCoMaritalStatus, 
+        setCoCitizenship,
+        setCoTaxStatus,
+
+        setCoHouseNum,
+        setCoCurrentRez,
+        setCoAptNum,
+        setCoProvince,
+        setCoPostalCode,
+        setCoRezSince,
+
+        setCoHouseNum2,
+        setCoCurrentRez2,
+        setCoAptNum2,
+        setCoProvince2,
+        setCoPostalCode2,
+        setCoRezSince2,
+    }
+
+
+
     return (
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
@@ -479,7 +483,7 @@ export default function Personalinfo({sidemenuState}) {
 
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
-                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                      
                             <PartFive personalInfoPartFive={personalInfoPartFive} />
                         </div>
 
@@ -525,7 +529,10 @@ export default function Personalinfo({sidemenuState}) {
                         ):null}
 
                         {familyActive?(
+                            <>
                             <h1>hello</h1>
+                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                            </>
                         ):null}
 
                         {employmentActive?(

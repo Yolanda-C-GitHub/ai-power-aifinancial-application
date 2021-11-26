@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './firstpart.css' 
 
@@ -22,6 +22,20 @@ export default function Firstpart(params) {
     const maritalStatusRef = useRef();
     const citizenshipRef = useRef();
     const taxStatusRef = useRef();
+
+    const previousDeclaredRef = useRef();
+    const dischargeDateRef=useRef();
+
+    const [showDischarge, setShowDischarge]=useState(false);
+    
+    function toggleShowDischarge(){
+        if(params.personalInfoNames.declared==='No'){
+            setShowDischarge(true)   
+        } else{
+            params.personalInfoNames.setDischargeDate('')
+            setShowDischarge(false)
+        }
+    }
 
     return (
 
@@ -142,7 +156,26 @@ export default function Firstpart(params) {
                             </Form.Select>
                         </FloatingLabel>
                     </div>
+
                 </Form.Group>
+
+                <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
+                        <Form.Select ref={previousDeclaredRef} 
+                        onChange={()=>{
+                            params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
+                            toggleShowDischarge()
+                        }}>
+                            <option value='No'>No</option>
+                            <option value='Yes'>Yes</option>
+                        </Form.Select>  
+                    </FloatingLabel>
+
+                    {showDischarge===true?(
+                            <FloatingLabel className='dischargeDate' label='Discharge Date'>
+                                <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
+                            </FloatingLabel>
+                    ): null} 
+
 
             </Card>
     )

@@ -40,7 +40,7 @@
     justify-content: center;
     margin-left: 10px;
     flex-wrap: wrap;
-    width: 900px;
+    width: 800px;
     align-items: center;
     height:60px;
 }
@@ -61,4 +61,13 @@
     width: 170px;
     margin-right: 10px;
     
+}
+.previouslyDeclared{
+    width: 350px;
+    margin-left:10px;
+
+}
+
+.dischargeDate{
+    margin-left:10px;
 }

@@ -12,19 +12,7 @@ export default function Partfive(params) {
 
     const issuingProvinceRef=useRef();
     const commentRef=useRef();
-    const previousDeclaredRef = useRef();
-    const dischargeDateRef=useRef();
 
-    const [showDischarge, setShowDischarge]=useState(false);
-    
-    function toggleShowDischarge(){
-        if(params.personalInfoPartFive.declared==='No'){
-            setShowDischarge(true)   
-        } else{
-            params.personalInfoPartFive.setDischargeDate('')
-            setShowDischarge(false)
-        }
-    }
 
     return (
         <Card className='cardPartFive'>
@@ -78,22 +66,6 @@ export default function Partfive(params) {
                     <Form.Control type='textarea' placeholder='comment' ref={commentRef} onChange={()=>params.personalInfoPartFive.setComments(commentRef.current.value)} />
                </FloatingLabel>
     
-               <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
-                    <Form.Select ref={previousDeclaredRef} 
-                    onChange={()=>{
-                        params.personalInfoPartFive.setDeclared(previousDeclaredRef.current.value)
-                        toggleShowDischarge()
-                    }}>
-                        <option value='No'>No</option>
-                        <option value='Yes'>Yes</option>
-                    </Form.Select>  
-               </FloatingLabel>
-
-               {showDischarge===true?(
-                    <FloatingLabel className='dischargeDate' label='Discharge Date'>
-                        <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoPartFive.setDischargeDate(dischargeDateRef.current.value)} />
-                    </FloatingLabel>
-               ): null} 
             </Form.Group>
 
         </Card>
