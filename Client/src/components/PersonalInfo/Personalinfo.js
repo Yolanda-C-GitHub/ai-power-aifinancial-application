@@ -519,44 +519,40 @@ export default function Personalinfo({sidemenuState}) {
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
                         {/* conditional content will go here */}
-                        {IDActive?(
-                            <>
-                            <h1>hii</h1>
-                            <PartFive personalInfoPartFive={personalInfoPartFive} />
-                            </>
-                        ):null}
-                        
-                        {familyActive?(
-                            <>
-                            <h1>hello</h1>
-                            <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
-                            </>
-                        ):null}
+                        <div className='addtionalInfoElements'> 
+                            {IDActive?(
+                                <PartFive personalInfoPartFive={personalInfoPartFive} />
+                            ):null}
 
-                        {employmentActive?(
-                            <h1>hey</h1>
-                        ):null}
+                            {familyActive?(
+                                <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                            ):null}
 
-                        {chequeActive?(
-                            <h1>welp</h1>
-                        ):null}
+                            {employmentActive?(
+                                <h1>hey</h1>
+                            ):null}
 
-                        {addressActive?(
-                            <h1>sosad</h1>
-                        ):null}
+                            {chequeActive?(
+                                <h1>welp</h1>
+                            ):null}
 
-                        {channelActive?(
-                            <h1>try again</h1>            
-                        ):null}
+                            {addressActive?(
+                                <h1>sosad</h1>
+                            ):null}
 
-                        {KYCActive?(
-                            <h1>lol</h1>            
-                        ):null}
-                        {/* conditional content will go here */}
+                            {channelActive?(
+                                <h1>try again</h1>            
+                            ):null}
 
-                        <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
-                            <Button type='submit'>Next</Button>
-                        </div>
+                            {KYCActive?(
+                                <h1>lol</h1>            
+                            ):null}
+                            {/* conditional content will go here */}
+
+                            <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
+                                <Button type='submit'>Next</Button>
+                            </div>
+                        </div> 
                     </Form>
 
                     
