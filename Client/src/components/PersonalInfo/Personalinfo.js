@@ -200,7 +200,6 @@ export default function Personalinfo({sidemenuState}) {
     
  
     
- 
 
     // state control for 4th part
     const[houseNum, setHouseNum]=useState();
@@ -210,7 +209,6 @@ export default function Personalinfo({sidemenuState}) {
     const[postalCode, setPostalCode]=useState();
     const[rezSince, setRezSince]=useState();
     const personalInfoRez = {setHouseNum, setCurrentRez, setAptNum, setProvince, setPostalCode, setRezSince}
-
     const[houseNum2, setHouseNum2]=useState();
     const[currentRez2, setCurrentRez2]=useState();
     const[aptNum2, setAptNum2]=useState();
@@ -221,7 +219,6 @@ export default function Personalinfo({sidemenuState}) {
 
 
    
- 
 
     // state control part 5
     const[idType, setIdType]=useState('provincialDriversLicense');
@@ -351,11 +348,28 @@ export default function Personalinfo({sidemenuState}) {
             declared,
             dischargeDate,
         )
-        
         console.log(
-             
+            idType,
+            idNum,
+            issueDate,
+            expiryDate,
+            verificationDate,
+            issuingProvince,
+            comments,
         )
-
+        console.log(
+            spouseFirstName,
+            spouseLastName,
+            spouseBirth,
+            child1Name,
+            child2Name,
+            child3Name,
+            child4Name,
+            child1Birth,
+            child2Birth,
+            child3Birth,
+            child4Birth,
+        )
 
 
 
