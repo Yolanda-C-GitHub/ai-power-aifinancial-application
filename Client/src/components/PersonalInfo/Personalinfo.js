@@ -334,6 +334,9 @@ export default function Personalinfo({sidemenuState}) {
         e.preventDefault()
 
 
+
+
+        
         console.log('submit form button working')
         console.log(lastName, firstName, englishName)
         console.log(gender, birthDay, sinNum)
@@ -525,11 +528,11 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {familyActive?(
-                                <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                                <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember}/>
                             ):null}
 
                             {employmentActive?(
-                                <h1>hey</h1>
+                                <EmploymentInfo personalInfoEmploymentInfo={personalInfoEmploymentInfo} personalInfoEmploymentInfo2={personalInfoEmploymentInfo2} />
                             ):null}
 
                             {chequeActive?(
@@ -537,7 +540,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {addressActive?(
-                                <h1>sosad</h1>
+                                <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
                             ):null}
 
                             {channelActive?(
