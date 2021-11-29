@@ -48,3 +48,32 @@
     margin-right: 5px;
     margin-top: 10px;
 }
+.buttonBox{
+    width: 100px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.deleteButton{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+}
+.deleteButton:hover{
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
+
+}
+.addButton{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+}
+.addButton:hover{
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
+}
