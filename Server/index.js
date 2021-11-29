@@ -30,9 +30,6 @@ db.connect(function(err){
 
 
 
-
-
-
 app.post('/insert', (req,res) =>  {
     const firstname = req.body.firstName;
     const lastname = req.body.lastName; 
