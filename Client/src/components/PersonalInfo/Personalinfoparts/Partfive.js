@@ -6,14 +6,7 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
 export default function Partfive(params) {
 
-    const idTypeRef=useRef();
-    const idNumRef=useRef();
-    const issueDateRef=useRef();
-    const expiryDateRef=useRef();
-    const verificationDateRef=useRef();
-
-    const issuingProvinceRef=useRef();
-    const commentRef=useRef();
+ 
 
     const handleOnChangeInput=(index,e)=>{
         console.log (index, e.target.name)
@@ -55,7 +48,7 @@ export default function Partfive(params) {
             
                 <Form.Group className='formGroupID' key={index} > 
                     <FloatingLabel className='partFiveIDType' label='ID Type'>
-                        <Form.Select  ref={idTypeRef} onChange={(e) => handleOnChangeInput(index,e)} name='idType'  value={params.personalInfoPartFive.idArray[index].idType}  >
+                        <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='idType'  value={params.personalInfoPartFive.idArray[index].idType}  >
                             <option value='provincialDriversLicense'>Provincial Driver's License</option>
                             <option value="provincialPhotoID">Provincial Photo ID</option>
                             <option value="passport">Passport</option>
@@ -65,23 +58,23 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                        <Form.Control placeholder='idNumber' ref={idNumRef}  onChange={(e) => handleOnChangeInput(index,e)}  name='idNum'  value={params.personalInfoPartFive.idArray[index].idNum} />
+                        <Form.Control placeholder='idNumber' onChange={(e) => handleOnChangeInput(index,e)}  name='idNum'  value={params.personalInfoPartFive.idArray[index].idNum} />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIssueDate' label="Issue Date">
-                        <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' value={params.personalInfoPartFive.idArray[index].issueDate} />
+                        <Form.Control placeholder='issueDate' type='date' onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' value={params.personalInfoPartFive.idArray[index].issueDate} />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveExpiryDate' label="Expiry Date">
-                        <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate' value={params.personalInfoPartFive.idArray[index].expiryDate}  />
+                        <Form.Control placeholder='expiryDate' type='date' onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate' value={params.personalInfoPartFive.idArray[index].expiryDate}  />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
-                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].verificationDate}  />
+                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].verificationDate}  />
                     </FloatingLabel>
             
                     <FloatingLabel className='issuingProvince' label='Issuing Province'>
-                        <Form.Select  ref={issuingProvinceRef} name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].issuingProvince} >
+                        <Form.Select name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].issuingProvince} >
                             <option value='ON'>ON</option>
                             <option value='AB'>AB</option>
                             <option value='BC'>BC</option>
@@ -99,7 +92,7 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                 <FloatingLabel className='partFiveComment' label='Comments'>
-                        <Form.Control type='textarea' placeholder='comment' ref={commentRef}  onChange={(e) => handleOnChangeInput(index,e)} name='comments' value={params.personalInfoPartFive.idArray[index].comments} />
+                        <Form.Control type='textarea' placeholder='comment'  onChange={(e) => handleOnChangeInput(index,e)} name='comments' value={params.personalInfoPartFive.idArray[index].comments} />
                 </FloatingLabel>
                 
                 <div className='buttonBox' >
@@ -108,7 +101,13 @@ export default function Partfive(params) {
                     ):(
                     <DeleteOutlineIcon className='deleteButton' onClick={() => handleDelete(index) } />
                     )}
+
+                    {index > 0?(
+                        <></>
+                    ):(
                     <AddBoxOutlinedIcon className='addButton' onClick={() => handleAdd()} />
+                    )}
+                    
                 </div>
 
                 </Form.Group>
