@@ -17,7 +17,7 @@ export default function Login() {
         console.log(emailRef.current.value)
         console.log(passwordRef.current.value)
 
-        Axios.post('http://localhost:3001/',{
+        Axios.post('http://localhost:3001/login',{
         userName: emailRef.current.value,
         passWord: passwordRef.current.value, 
         }).then((response) =>  {
@@ -25,7 +25,6 @@ export default function Login() {
         }).catch((err)=> {
             console.log(err)
         })
-
 
 
     }
