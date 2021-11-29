@@ -32,9 +32,19 @@ db.connect(function(err){
 
 
 
-app.post('/login', (req, res)=> {
-    const username = req.body.userName;
-    const password = req.body.passWord;
+
+
+// insert directly from back end = use this for manual testing
+app.get('/insert',(req,res) => {
+    const sqlInsert = "INSERT INTO devnv (id, username, password) VALUES( '1', 'firstuser', 'password1');"
+    db.query(sqlInsert,(err, result) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.send('working inserted')
+            console.log('console report working inserted')
+        }
+    })
 
 })
 
@@ -42,21 +52,6 @@ app.post('/login', (req, res)=> {
 
 
 
-
-
-// // insert directly from back end = use this for manual testing
-// app.get('/',(req,res) => {
-//     const sqlInsert = "INSERT INTO devnv (id, username, password) VALUES( '1', 'firstuser', 'password1');"
-//     db.query(sqlInsert,(err, result) => {
-//         if(err){
-//             console.log(err)
-//         }else{
-//             res.send('working inserted')
-//             console.log('console report working inserted')
-//         }
-//     })
-
-// })
 
 
 
