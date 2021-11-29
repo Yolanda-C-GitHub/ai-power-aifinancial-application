@@ -19,7 +19,7 @@ export default function Partfive(params) {
         params.personalInfoPartFive.setIdArray(
             [...params.personalInfoPartFive.idArray,
                 {
-                    idType:'',
+                    idType:'provincialDriversLicense',
                     idNum:'',
                     issueDate:'',
                     expiryDate:'',
