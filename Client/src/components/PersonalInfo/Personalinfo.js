@@ -11,6 +11,8 @@ import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 
+import Axios  from  'axios'
+
 
 const PersonalInfoContainer = styled.div`
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
@@ -198,8 +200,6 @@ export default function Personalinfo({sidemenuState}) {
         setDischargeDate,
     }
     
- 
-    
 
     // state control for 4th part
     const[houseNum, setHouseNum]=useState();
@@ -329,6 +329,27 @@ export default function Personalinfo({sidemenuState}) {
     function handleSubmit(e){
         e.preventDefault()
 
+        if(!firstName || !lastName || !englishName){
+          alert('Please Make Sure the Required Fields are Filled')
+          return
+        }
+        console.log(firstName, lastName, englishName, idArray)
+    
+        Axios.post('http://localhost:3001/insert',{
+          firstName: firstName,
+          lastName:lastName, 
+          englishName: englishName,
+          idArray: idArray,
+        }).then(() =>  {
+
+            console.log('database updated')
+            // later when we need to display the content, we would need to update an array state here right after the database has been updated.
+            // as for now, we'll just include a console.log statement that we have successfully updated the database
+          
+        })
+    
+
+
         console.log(
             lastName,
             firstName,
@@ -363,6 +384,16 @@ export default function Personalinfo({sidemenuState}) {
             child3Birth,
             child4Birth,
         )
+
+
+
+
+          
+
+
+
+
+
 
         // console.log('submit form button working')
         // console.log(lastName, firstName, englishName)
