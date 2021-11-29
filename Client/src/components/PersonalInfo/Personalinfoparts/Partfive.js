@@ -16,9 +16,9 @@ export default function Partfive(params) {
     const commentRef=useRef();
 
     const handleOnChangeInput=(index,e)=>{
-        console.log (index, idTypeRef.current.value)
+        console.log (index, e.target.name)
         const values = [...params.personalInfoPartFive.idArray]
-        values[index][e.target.name] = idTypeRef.current.value;
+        values[index][e.target.name] = e.target.value;
         params.personalInfoPartFive.setIdArray(values)
     }
 
@@ -47,23 +47,23 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                        <Form.Control placeholder='idNumber' ref={idNumRef}  value={item.idNum} />
+                        <Form.Control placeholder='idNumber' ref={idNumRef}  onChange={(e) => handleOnChangeInput(index,e)}  name='idNum' />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIssueDate' label="Issue Date">
-                        <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} />
+                        <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveExpiryDate' label="Expiry Date">
-                        <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef}  />
+                        <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate'  />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
-                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef}  />
+                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='verificationDate' />
                     </FloatingLabel>
             
                     <FloatingLabel className='issuingProvince' label='Issuing Province'>
-                        <Form.Select  ref={issuingProvinceRef}  >
+                        <Form.Select  ref={issuingProvinceRef} name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} >
                             <option value='ON'>ON</option>
                             <option value='AB'>AB</option>
                             <option value='BC'>BC</option>
@@ -81,7 +81,7 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                 <FloatingLabel className='partFiveComment' label='Comments'>
-                        <Form.Control type='textarea' placeholder='comment' ref={commentRef}  />
+                        <Form.Control type='textarea' placeholder='comment' ref={commentRef}  onChange={(e) => handleOnChangeInput(index,e)} onChange={(e) => handleOnChangeInput(index,e)} name='comments' />
                 </FloatingLabel>
                 
                 <div className='buttonBox' >

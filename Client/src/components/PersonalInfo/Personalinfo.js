@@ -221,13 +221,6 @@ export default function Personalinfo({sidemenuState}) {
    
 
     // state control part 5
-    // const[idType, setIdType]=useState('provincialDriversLicense');
-    // const[idNum, setIdNum]=useState();
-    // const[issueDate, setIssueDate]=useState();
-    // const[expiryDate, setExpiryDate]=useState();
-    // const[verificationDate, setVerificationDate]=useState();
-    // const[issuingProvince, setIssuingProvince]=useState('ON');
-    // const[comments, setComments] = useState();
     const[idArray, setIdArray] = useState([
         {
             idType:'',
@@ -238,18 +231,9 @@ export default function Personalinfo({sidemenuState}) {
             issuingProvince:'',
             comments:'',
         },
-
-
     ]);
 
     const personalInfoPartFive ={
-        // setIdType,
-        // setIdNum,
-        // setIssueDate,
-        // setExpiryDate,
-        // setVerificationDate,
-        // setIssuingProvince,
-        // setComments,
         idArray,
         setIdArray,
     }
@@ -364,13 +348,6 @@ export default function Personalinfo({sidemenuState}) {
             dischargeDate,
         )
         console.log(
-            // idType,
-            // idNum,
-            // issueDate,
-            // expiryDate,
-            // verificationDate,
-            // issuingProvince,
-            // comments,
             idArray
         )
         console.log(
