@@ -22,14 +22,32 @@ export default function Partfive(params) {
         params.personalInfoPartFive.setIdArray(values)
     }
 
+    const handleAdd = () => {
+        params.personalInfoPartFive.setIdArray(
+            [...params.personalInfoPartFive.idArray,
+                {
+                    idType:'',
+                    idNum:'',
+                    issueDate:'',
+                    expiryDate:'',
+                    verificationDate:'',
+                    issuingProvince:'',
+                    comments:'',
+                }
+            ]
+        )
+    }
 
-    // ()=>params.personalInfoPartFive.setIdType(idTypeRef.current.value)}
-    // onChange={()=>params.personalInfoPartFive.setIdNum(idNumRef.current.value)} value={item.idNum} 
-    // onChange={()=>params.personalInfoPartFive.setIssueDate(issueDateRef.current.value)
-    // onChange={()=>params.personalInfoPartFive.setExpiryDate(expiryDateRef.current.value)}
-    // onChange={()=>params.personalInfoPartFive.setVerificationDate(verificationDateRef.current.value)}
-    // onChange={()=>params.personalInfoPartFive.setIssuingProvince(issuingProvinceRef.current.value)}
-    // onChange={()=>params.personalInfoPartFive.setComments(commentRef.current.value)}
+    
+    const handleDelete =(index)=>{
+        const values = [...params.personalInfoPartFive.idArray]
+        values.splice(index,1)
+        params.personalInfoPartFive.setIdArray(values);
+    }
+
+
+
+
 
     return (
         <Card className='cardPartFive'>
@@ -37,7 +55,7 @@ export default function Partfive(params) {
             
                 <Form.Group className='formGroupID' key={index} > 
                     <FloatingLabel className='partFiveIDType' label='ID Type'>
-                        <Form.Select  ref={idTypeRef} onChange={(e) => handleOnChangeInput(index,e)}  name='idType' >
+                        <Form.Select  ref={idTypeRef} onChange={(e) => handleOnChangeInput(index,e)} name='idType'  value={params.personalInfoPartFive.idArray[index].idType}  >
                             <option value='provincialDriversLicense'>Provincial Driver's License</option>
                             <option value="provincialPhotoID">Provincial Photo ID</option>
                             <option value="passport">Passport</option>
@@ -47,23 +65,23 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                        <Form.Control placeholder='idNumber' ref={idNumRef}  onChange={(e) => handleOnChangeInput(index,e)}  name='idNum' />
+                        <Form.Control placeholder='idNumber' ref={idNumRef}  onChange={(e) => handleOnChangeInput(index,e)}  name='idNum'  value={params.personalInfoPartFive.idArray[index].idNum} />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveIssueDate' label="Issue Date">
-                        <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' />
+                        <Form.Control placeholder='issueDate' type='date' ref={issueDateRef} onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' value={params.personalInfoPartFive.idArray[index].issueDate} />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveExpiryDate' label="Expiry Date">
-                        <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate'  />
+                        <Form.Control placeholder='expiryDate' type='date' ref={expiryDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate' value={params.personalInfoPartFive.idArray[index].expiryDate}  />
                     </FloatingLabel>
 
                     <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
-                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={(e) => handleOnChangeInput(index,e)} name='verificationDate' />
+                        <Form.Control className='verificationDate' placeholder='verificationDate' type='date' ref={verificationDateRef} onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].verificationDate}  />
                     </FloatingLabel>
             
                     <FloatingLabel className='issuingProvince' label='Issuing Province'>
-                        <Form.Select  ref={issuingProvinceRef} name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} >
+                        <Form.Select  ref={issuingProvinceRef} name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].issuingProvince} >
                             <option value='ON'>ON</option>
                             <option value='AB'>AB</option>
                             <option value='BC'>BC</option>
@@ -81,12 +99,16 @@ export default function Partfive(params) {
                     </FloatingLabel>
 
                 <FloatingLabel className='partFiveComment' label='Comments'>
-                        <Form.Control type='textarea' placeholder='comment' ref={commentRef}  onChange={(e) => handleOnChangeInput(index,e)} onChange={(e) => handleOnChangeInput(index,e)} name='comments' />
+                        <Form.Control type='textarea' placeholder='comment' ref={commentRef}  onChange={(e) => handleOnChangeInput(index,e)} name='comments' value={params.personalInfoPartFive.idArray[index].comments} />
                 </FloatingLabel>
                 
                 <div className='buttonBox' >
-                    <DeleteOutlineIcon className='deleteButton' />
-                    <AddBoxOutlinedIcon className='addButton' />
+                    {index === 0?(
+                        <></>
+                    ):(
+                    <DeleteOutlineIcon className='deleteButton' onClick={() => handleDelete(index) } />
+                    )}
+                    <AddBoxOutlinedIcon className='addButton' onClick={() => handleAdd()} />
                 </div>
 
                 </Form.Group>
