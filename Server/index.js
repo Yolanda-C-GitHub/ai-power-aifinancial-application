@@ -10,11 +10,11 @@ app.use(express.json())
 
 // connect mySQL database
 const db = mysql.createConnection({
-    host:'192.168.75.82',
-    user: 'andy',
-    password: 'Andy@123',
-    database: 'servertesting',
-    port: '3306'
+    host:'35.192.49.178',
+    user: 'root',
+    password: 'AI0801',
+    database: 'hengyi_core',
+    
 })
 
 // report if connection was made
