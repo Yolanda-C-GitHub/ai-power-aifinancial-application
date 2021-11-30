@@ -10,13 +10,20 @@ app.use(express.json())
 
 
 // connect mySQL database
-const db = mysql.createPool({
+// const db = mysql.createPool({
+//     user:process.env.DB_USER,
+//     password:process.env.DB_PASS,
+//     database: process.env.DB_NAME,
+// })
+
+
+const db = mysql.createConnection({
     host:'35.192.49.178',
     user: 'root',
     password: 'AI0801',
     database: 'hengyi_core',
+    
 })
-
 
 // report if connection was made
 db.connect(function(err){
@@ -32,16 +39,18 @@ db.connect(function(err){
 
 
 app.post('/insert', (req,res) =>  {
-    const firstname = req.body.firstName;
-    const lastname = req.body.lastName; 
-    const englishname = req.body.englishName;
+    const First_Name = req.body.firstName;
+    const Last_Name = req.body.lastName; 
+    const English_Name = req.body.englishName;
+    const Gender = 'yes'
+    const Date_of_Birth = '2013/01/01'
     const idarray = req.body.idArray;
-    const sqlInsertName = "INSERT INTO  person123 (firstname, lastname, englishname) VALUES (?,?,?)"
+    const sqlInsertName = "INSERT INTO Person (First_Name, Last_Name, English_Name, Gender, Date_of_Birth) VALUES (?,?,?,?,?)"
     const sqlInsertIdArray = "INSERT INTO  idArray (idarray) VALUES (?)"
 
     db.query(
         sqlInsertName,
-        [firstname, lastname, englishname],
+        [First_Name, Last_Name, English_Name, Gender, Date_of_Birth],
         (err,result)=>{
             if(err){
                 console.log(err)
@@ -50,16 +59,16 @@ app.post('/insert', (req,res) =>  {
             }
         })
 
-    db.query(
-        sqlInsertIdArray,
-        [idarray],
-        (err,result) => {
-            if(err){
-                console.log(err)
-            }else{
-                res.send('value inserted')
-            }
-        })  
+    // db.query(
+    //     sqlInsertIdArray,
+    //     [idarray],
+    //     (err,result) => {
+    //         if(err){
+    //             console.log(err)
+    //         }else{
+    //             res.send('value inserted')
+    //         }
+    //     })  
     })
 
 

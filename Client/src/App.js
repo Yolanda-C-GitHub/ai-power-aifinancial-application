@@ -15,7 +15,7 @@ import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
 function App() {
 
   const [sidemenu, setSidemenu] = useState(true);
-  const sidemenuState={sidemenu, setSidemenu}
+  const sidemenuState={sidemenu, setSidemenu};
 
   return (
     <Router className="App">
