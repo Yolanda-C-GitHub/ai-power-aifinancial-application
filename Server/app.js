@@ -8,14 +8,15 @@ app.use(cors())
 app.use(express.json())
 
 
+
 // connect mySQL database
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host:'35.192.49.178',
     user: 'root',
     password: 'AI0801',
     database: 'hengyi_core',
-    
 })
+
 
 // report if connection was made
 db.connect(function(err){
