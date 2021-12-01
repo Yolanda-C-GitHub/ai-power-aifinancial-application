@@ -232,7 +232,6 @@ export default function Personalinfo({sidemenuState}) {
             comments:'',
         },
     ]);
-
     const personalInfoPartFive ={
         idArray,
         setIdArray,
