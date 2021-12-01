@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const cors =  require('cors');
+const fs = require('fs');
+
+
+const myconfig = require('./myconfig.json')
 
 // middleware
 app.use(cors())
@@ -9,38 +13,80 @@ app.use(express.json())
 
 
 
-// connect mySQL database
-// const db = mysql.createPool({
-//     user:process.env.DB_USER,
-//     password:process.env.DB_PASS,
-//     database: process.env.DB_NAME,
+// // connect using mysql.createConnection()
+// const db = mysql.createConnection({
+//     host:'35.192.49.178',
+//         user: 'root',
+//         password: 'AI0801',
+//         database: 'hengyi_core',
+//         ssl: {
+//         	ca: "./server-ca.pem",
+//         	key: "./client-key.pem",
+//         	cert: "./client-cert.pem"
+//         },
+// })
+   
+// // report if connection was made = this only works with mysql.createConnection()
+// db.connect(function(err){
+//     if(err){
+//         process.exit(1)
+//         alert('server connection failed')
+//     }
+//     console.log('connected to mySQL database')
 // })
 
 
+const pool = mysql.createPool({
+
+    host:myconfig.host,
+    user:myconfig.user,
+    password:myconfig.password,
+    ssl : {
+        ca:fs.readFileSync(myconfig.ssl.ca),
+        key: fs.readFileSync(myconfig.ssl.key),
+        cert: fs.readFileSync(myconfig.ssl.cert)
+    },
+    database: myconfig.database,
+    connectionLimit: 8,
+    waitForConnections: false
+})
 
 
-const db = mysql.createConnection({
-    host:'35.192.49.178',
-    user: 'root',
-    password: 'AI0801',
-    database: 'hengyi_core',
-    // ssl: {
-	// 	ca: "/server-ca.pem",
-	// 	key: "/client-key.pem",
-	// 	cert: "/client-cert.pem"
-	// },
+
+pool.query('SHOW DATABASES', function(error, results, fields){
     
+    if(error){
+        console.log('Error: cannot query database');
+
+        if("sqlMessage" in error){
+            console.log(error.errno +":"+ error.sqlMessage)
+        }else {
+            console.log(error);
+        }
+        db.end()
+    }
+
+    console.log('DATABASES')
+    console.log('------------------------');
+    Object.keys(results).forEach(function(key){
+        const row = results[key];
+        console.log(row.Database)
+    })
+
+
+
 })
 
-// report if connection was made
-db.connect(function(err){
-    if(err){
-        console.log(err)
-        process.exit(1)
-        alert('server connection failed')
-    }
-    console.log('connected to mySQL database')
-})
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -80,43 +126,20 @@ db.connect(function(err){
 //     })
 
 
-    // function db_listDatabases(con) {
-    //     con.query('SHOW DATABASES', function (error, results, fields) {
-    //         if (error) {
-    //             console.log("Error: Cannot query databases");
-    
-    //             if ("sqlMessage" in error) {
-    //                 console.log(error.errno + " : " + error.sqlMessage);
-    //             } else {
-    //                 console.log(error);
-    //             }
-    
-    //             con.end();
-    
-    //             return;
-    //         }
-    
-    //         console.log('DATABASES');
-    //         console.log('--------------------');
-    //         Object.keys(results).forEach(function(key) {
-    //             var row = results[key];
-    //             console.log(row.Database)
-    //         });
-    //         con.end();
-    //     });
-    // }
-    
 
 
 
 
 
-// insert directly from back end = use this for manual testing
-app.get('/',(req,res) => {
 
 
-    const sqlInsert = "INSERT INTO Advisor (Advisor_PID, AdvisorID, Advisor_Type) VALUES( '8', '8a', '8s');"
-    db.query(sqlInsert,(err, result) => {
+
+
+// insert directly from back end = use this for manual testing for connection and that we can insert data
+// when testing make sure you are going to this site instead http://localhost:3001/insert
+app.get('/insert',(req,res) => {
+    const sqlInsert = "INSERT INTO Advisor (Advisor_PID, AdvisorID, Advisor_Type) VALUES( '13', '13a', '13s');"
+    pool.query(sqlInsert,(err, result) => {
         if(err){
             console.log(err)
         }else{
@@ -124,8 +147,14 @@ app.get('/',(req,res) => {
             console.log('console report working inserted')
         }
     })
+   
 
 })
+
+
+
+
+
 
 
 
@@ -138,7 +167,7 @@ app.listen(3001, () => {
     console.log ('server running on port 3001 yes')
 }) 
 
-// define main route
+// define main route 
 app.get('/', (req,res)=>{
     res.send('server is working123')
 })

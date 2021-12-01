@@ -1,0 +1,11 @@
+{
+	"host": "35.192.49.178",
+	"user": "root",
+	"password": "AI0801",
+    "database": "hengyi_core",
+    "ssl":{
+        "ca":"./server-ca.pem",
+        "key":"./client-key.pem",
+        "cert":"./client-cert.pem"
+    }
+}
