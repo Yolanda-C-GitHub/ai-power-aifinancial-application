@@ -61,6 +61,7 @@ app.post('/insert', (req,res) =>  {
             }
         })
 
+        db_listDatabases(db);
     // db.query(
     //     sqlInsertIdArray,
     //     [idarray],
@@ -74,7 +75,32 @@ app.post('/insert', (req,res) =>  {
     })
 
 
-
+    function db_listDatabases(con) {
+        con.query('SHOW DATABASES', function (error, results, fields) {
+            if (error) {
+                console.log("Error: Cannot query databases");
+    
+                if ("sqlMessage" in error) {
+                    console.log(error.errno + " : " + error.sqlMessage);
+                } else {
+                    console.log(error);
+                }
+    
+                con.end();
+    
+                return;
+            }
+    
+            console.log('DATABASES');
+            console.log('--------------------');
+            Object.keys(results).forEach(function(key) {
+                var row = results[key];
+                console.log(row.Database)
+            });
+            con.end();
+        });
+    }
+    
 
 
 

@@ -1,1 +1,4 @@
 /Server/node_modules
+/Server/server-ca.pem
+/Server/client-cert.pem
+/Server/client-key.pem
