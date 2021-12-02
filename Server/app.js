@@ -8,8 +8,8 @@ const fs = require('fs');
 const myconfig = require('./myconfig.json')
 
 // middleware
-app.use(cors())
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 
 
@@ -40,11 +40,11 @@ const pool = mysql.createPool({
     host:myconfig.host,
     user:myconfig.user,
     password:myconfig.password,
-    ssl : {
-        ca:fs.readFileSync(myconfig.ssl.ca),
-        key: fs.readFileSync(myconfig.ssl.key),
-        cert: fs.readFileSync(myconfig.ssl.cert)
-    },
+    // ssl : {
+    //     ca:fs.readFileSync(myconfig.ssl.ca),
+    //     key: fs.readFileSync(myconfig.ssl.key),
+    //     cert: fs.readFileSync(myconfig.ssl.cert)
+    // },
     database: myconfig.database,
     connectionLimit: 8,
     waitForConnections: false
@@ -71,9 +71,7 @@ pool.query('SHOW DATABASES', function(error, results, fields){
 
 
 
-
-
-
+// post request frontend to backend testing 
 app.post('/insert', (req,res) =>  {
     const First_Name = req.body.firstName;
     const Last_Name = req.body.lastName; 
@@ -89,9 +87,38 @@ app.post('/insert', (req,res) =>  {
                 res.send('value inserted')
             }
         })
-
-
     })
+
+app.get('/insert', (req,res)=>{
+    res.send('insert server is working')
+})
+
+
+
+// get request frontend to backend testing
+app.get('/data', (req, res) => {
+    db.query("SELECT * FROM person123", (err, result) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.send(result)
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -318,7 +318,7 @@ export default function Personalinfo({sidemenuState}) {
         setEmployerUnitNum2,
         setEmployerCity2,
         setEmployerProvince2,
-        setEmployerPostalCode2,
+        setEmployerPostalCode2, 
         setDurationStart2,
         setDurationEnd2,
         setIndustry2,
@@ -334,19 +334,20 @@ export default function Personalinfo({sidemenuState}) {
         }
         console.log(firstName, lastName, englishName, idArray)
     
-        Axios.post('http://localhost:3001/insert',{
-          firstName: firstName,
-          lastName:lastName, 
-          englishName: englishName,
+        Axios.post('https://ai-financial-333500.uc.r.appspot.com/insert',{
+            header:{
+                'Access-Control-Allow-Origin': '*',
+            },
+            firstName: firstName,
+            lastName:lastName, 
+            englishName: englishName,
         }).then(() =>  {
             alert('inserted')
             console.log('database updated')
             // later when we need to display the content, we would need to update an array state here right after the database has been updated.
             // as for now, we'll just include a console.log statement that we have successfully updated the database
-          
         })
     
-
 
         console.log(
             lastName,
