@@ -327,7 +327,7 @@ export default function Personalinfo({sidemenuState}) {
 
     function handleSubmit(e){
         e.preventDefault()
-
+    
         if(!firstName || !lastName || !englishName){
           alert('Please Make Sure the Required Fields are Filled')
           return
@@ -339,7 +339,7 @@ export default function Personalinfo({sidemenuState}) {
           lastName:lastName, 
           englishName: englishName,
         }).then(() =>  {
-
+            alert('inserted')
             console.log('database updated')
             // later when we need to display the content, we would need to update an array state here right after the database has been updated.
             // as for now, we'll just include a console.log statement that we have successfully updated the database
