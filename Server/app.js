@@ -37,7 +37,6 @@ app.use(express.json())
 
 
 const pool = mysql.createPool({
-
     host:myconfig.host,
     user:myconfig.user,
     password:myconfig.password,
@@ -50,11 +49,7 @@ const pool = mysql.createPool({
     connectionLimit: 8,
     waitForConnections: false
 })
-
-
-
 pool.query('SHOW DATABASES', function(error, results, fields){
-    
     if(error){
         console.log('Error: cannot query database');
 
@@ -65,16 +60,12 @@ pool.query('SHOW DATABASES', function(error, results, fields){
         }
         db.end()
     }
-
     console.log('DATABASES')
     console.log('------------------------');
     Object.keys(results).forEach(function(key){
         const row = results[key];
         console.log(row.Database)
     })
-
-
-
 })
 
 
@@ -83,73 +74,60 @@ pool.query('SHOW DATABASES', function(error, results, fields){
 
 
 
+app.post('/insert', (req,res) =>  {
+    const First_Name = req.body.firstName;
+    const Last_Name = req.body.lastName; 
+    const English_Name = req.body.englishName;
+    const sqlInsertName = "INSERT INTO Advisor (Advisor_PID, AdvisorID, Advisor_Type) VALUES (?,?,?)"
+    pool.query(
+        sqlInsertName,
+        [First_Name, Last_Name, English_Name],
+        (err,result)=>{
+            if(err){
+                console.log(err)
+            } else{
+                res.send('value inserted')
+            }
+        })
 
 
-
-
-
-
-
-
-// app.post('/insert', (req,res) =>  {
-//     const First_Name = req.body.firstName;
-//     const Last_Name = req.body.lastName; 
-//     const English_Name = req.body.englishName;
-//     const Gender = 'yes'
-//     const Date_of_Birth = '2013/01/01'
-//     const idarray = req.body.idArray;
-//     const sqlInsertName = "INSERT INTO Person (First_Name, Last_Name, English_Name, Gender, Date_of_Birth) VALUES (?,?,?,?,?)"
-//     const sqlInsertIdArray = "INSERT INTO  idArray (idarray) VALUES (?)"
-
-//     db.query(
-//         sqlInsertName,
-//         [First_Name, Last_Name, English_Name, Gender, Date_of_Birth],
-//         (err,result)=>{
-//             if(err){
-//                 console.log(err)
-//             } else{
-//                 res.send('value inserted')
-//             }
-//         })
-
-//         db_listDatabases(db);
-//     // db.query(
-//     //     sqlInsertIdArray,
-//     //     [idarray],
-//     //     (err,result) => {
-//     //         if(err){
-//     //             console.log(err)
-//     //         }else{
-//     //             res.send('value inserted')
-//     //         }
-//     //     })  
-//     })
-
-
-
-
-
-
-
-
-
-
-
-// insert directly from back end = use this for manual testing for connection and that we can insert data
-// when testing make sure you are going to this site instead http://localhost:3001/insert
-app.get('/insert',(req,res) => {
-    const sqlInsert = "INSERT INTO Advisor (Advisor_PID, AdvisorID, Advisor_Type) VALUES( '13', '13a', '13s');"
-    pool.query(sqlInsert,(err, result) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.send('working inserted')
-            console.log('console report working inserted')
-        }
     })
+
+
+
+// // insert directly from back end = use this for manual testing for connection and that we can insert data
+// // when testing make sure you are going to this site instead http://localhost:3001/insert
+// app.get('/insert',(req,res) => {
+//     const sqlInsert = "INSERT INTO Advisor (Advisor_PID, AdvisorID, Advisor_Type) VALUES( '13', '13a', '13s');"
+//     pool.query(sqlInsert,(err, result) => {
+//         if(err){
+//             console.log(err)
+//         }else{
+//             res.send('working inserted')
+//             console.log('console report working inserted')
+//         }
+//     })
    
 
-})
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -338,7 +338,6 @@ export default function Personalinfo({sidemenuState}) {
           firstName: firstName,
           lastName:lastName, 
           englishName: englishName,
-          idArray: idArray,
         }).then(() =>  {
 
             console.log('database updated')
