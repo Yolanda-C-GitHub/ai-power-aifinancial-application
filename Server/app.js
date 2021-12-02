@@ -133,20 +133,13 @@ app.post('/insert', (req,res) =>  {
 
 
 
-
-
-
-
-
-
-
-
-app.listen(3001, () => {
-    console.log ('server running on port 3001 yes')
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log (`App deployed at port ${PORT}`)
 }) 
 
 // define main route 
 app.get('/', (req,res)=>{
-    res.send('server is working123')
+    res.send('server is working')
 })
 
