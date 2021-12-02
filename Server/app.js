@@ -40,11 +40,11 @@ const pool = mysql.createPool({
     host:myconfig.host,
     user:myconfig.user,
     password:myconfig.password,
-    // ssl : {
-    //     ca:fs.readFileSync(myconfig.ssl.ca),
-    //     key: fs.readFileSync(myconfig.ssl.key),
-    //     cert: fs.readFileSync(myconfig.ssl.cert)
-    // },
+    ssl : {
+        ca:fs.readFileSync(myconfig.ssl.ca),
+        key: fs.readFileSync(myconfig.ssl.key),
+        cert: fs.readFileSync(myconfig.ssl.cert)
+    },
     database: myconfig.database,
     connectionLimit: 8,
     waitForConnections: false
@@ -97,7 +97,7 @@ app.get('/insert', (req,res)=>{
 
 // get request frontend to backend testing
 app.get('/data', (req, res) => {
-    db.query("SELECT * FROM person123", (err, result) => {
+    pool.query("SELECT * FROM Person", (err, result) => {
         if(err){
             console.log(err)
         }else{

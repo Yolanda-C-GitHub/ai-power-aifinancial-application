@@ -334,10 +334,7 @@ export default function Personalinfo({sidemenuState}) {
         }
         console.log(firstName, lastName, englishName, idArray)
     
-        Axios.post('https://ai-financial-333500.uc.r.appspot.com/insert',{
-            header:{
-                'Access-Control-Allow-Origin': '*',
-            },
+        Axios.post('http://localhost:3001/insert',{
             firstName: firstName,
             lastName:lastName, 
             englishName: englishName,
@@ -348,6 +345,9 @@ export default function Personalinfo({sidemenuState}) {
             // as for now, we'll just include a console.log statement that we have successfully updated the database
         })
     
+        Axios.get('http://localhost:3001/data').then((response) => {
+            console.log(response.data)
+          })
 
         console.log(
             lastName,
