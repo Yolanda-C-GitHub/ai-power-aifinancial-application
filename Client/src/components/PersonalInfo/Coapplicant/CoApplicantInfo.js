@@ -156,9 +156,7 @@ export default function Coapp(params) {
                             <option value='other'>Other</option>
                         </Form.Select>
                     </FloatingLabel>
-                </Form.Group>
-
-                <Form.Group className='firstPartFormStatusTwo' >
+             
                     <FloatingLabel label='Citizenship' >
                         <Form.Select className='thirdPartSelector' ref={cocitizenshipRef} onChange={()=>params.coAppInfo.setCoCitizenship(cocitizenshipRef.current.value)} >
                             <option placeholder='select' >Select</option>
@@ -185,96 +183,9 @@ export default function Coapp(params) {
 
 
 
-                <Form.Group className='fourthPartFormGroup'>
-                <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
-                    <Form.Control placeholder='house#' ref={cohouseNumRef} onChange={()=>params.coAppInfo.setCoHouseNum(cohouseNumRef.current.value)} />
-                </FloatingLabel>
 
-                <FloatingLabel label='Current Residence'>
-                    <Form.Control placeholder='Address' ref={cocurrentRezRef} onChange={()=>params.coAppInfo.setCoCurrentRez(cocurrentRezRef.current.value)} />
-                </FloatingLabel>
+                  
 
-                <FloatingLabel className='fourthPartAptNum' label='APT#'>
-                    <Form.Control placeholder='apt#' ref={coaptNumRef} onChange={()=> params.coAppInfo.setCoAptNum(coaptNumRef.current.value)} />
-                </FloatingLabel>
-
-                <FloatingLabel label='Province'>
-                    <Form.Select className='fourthPartSelector' ref={coprovinceRef} onChange={()=>params.coAppInfo.setCoProvince(coprovinceRef.current.value)} >
-                        <option value='ON'>ON</option>
-                        <option value='AB'>AB</option>
-                        <option value='BC'>BC</option>
-                        <option value='MB'>MB</option>
-                        <option value='NB'>NB</option>
-                        <option value='NL'>NL</option>
-                        <option value="NT">NT</option>
-                        <option value='NS'>NS</option>
-                        <option value='NU'>NU</option>
-                        <option value='PE'>PE</option>
-                        <option value='QC'>QC</option>
-                        <option value='SK'>SK</option>
-                        <option value='YT'>YT</option>
-                    </Form.Select> 
-                </FloatingLabel>           
-
-                <FloatingLabel className='fourthPartPostalCode' label='Postal Code'>
-                    <Form.Control  placeholder='postal'  ref={copostalCodeRef} onChange={()=>params.coAppInfo.setCoPostalCode(copostalCodeRef.current.value)} />
-                </FloatingLabel>
-
-                <FloatingLabel label='Since'>
-                    <Form.Control type='date'  placeholder='date' ref={corezSinceRef} 
-                        onChange={()=> {
-                            params.coAppInfo.setCoRezSince(corezSinceRef.current.value)
-                            numberDaysBetween()
-                        }}  
-                    />
-                </FloatingLabel>
-            </Form.Group>
-
-
-            {coshowRez2===true? 
-                (
-                    <Form.Group className='fourthPartFormGroup'>
-                        <FloatingLabel className='fourthPartHouseNumber' label='House Number'>
-                            <Form.Control placeholder='house#' ref={cohouseNumRef2} onChange={()=>params.coAppInfo.setCoHouseNum2(cohouseNumRef2.current.value)} />
-                        </FloatingLabel>
-
-                        <FloatingLabel label='Previous Resident'>
-                            <Form.Control placeholder='Address' ref={cocurrentRezRef2} onChange={()=>params.coAppInfo.setCoCurrentRez2(cocurrentRezRef2.current.value)} />
-                        </FloatingLabel>
-
-                        <FloatingLabel className='fourthPartAptNum' label='APT#'>
-                            <Form.Control placeholder='apt#' ref={coaptNumRef2} onChange={()=> params.coAppInfo.setCoAptNum2(coaptNumRef2.current.value)} />
-                        </FloatingLabel>
-
-                        <Form.Select className='fourthPartSelector' ref={coprovinceRef2} onChange={()=>params.coAppInfo.setCoProvince2(coprovinceRef2.current.value)} >
-                            <option>Province</option>
-                            <option value='ON'>ON</option>
-                            <option value='AB'>AB</option>
-                            <option value='BC'>BC</option>
-                            <option value='MB'>MB</option>
-                            <option value='NB'>NB</option>
-                            <option value='NL'>NL</option>
-                            <option value="NT">NT</option>
-                            <option value='NS'>NS</option>
-                            <option value='NU'>NU</option>
-                            <option value='PE'>PE</option>
-                            <option value='QC'>QC</option>
-                            <option value='SK'>SK</option>
-                            <option value='YT'>YT</option>
-                        </Form.Select>            
-
-                        <FloatingLabel className='fourthPartPostalCode' label='Postal Code'>
-                            <Form.Control  placeholder='postal'  ref={copostalCodeRef2} onChange={()=>params.coAppInfo.setCoPostalCode2(copostalCodeRef2.current.value)} />
-                        </FloatingLabel>
-
-                        <FloatingLabel label='Since'>
-                            <Form.Control type='date'  placeholder='date' ref={corezSinceRef2} onChange={()=>params.coAppInfo.setCoRezSince2(corezSinceRef2.current.value)} />
-                        </FloatingLabel>
-                    </Form.Group>
-                ):null
-            }
-            </Card>
-
-            
+            </Card>  
     )
 }

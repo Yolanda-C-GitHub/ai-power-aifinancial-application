@@ -1,15 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import './personalinfo.css'
+import Axios  from  'axios'
 import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
-import Firstpart from './Personalinfoparts/Firstpart'
-import Coapp from '../CoapplicantInfo/CoApplicantInfo'
 
+import './personalinfo.css'
+import Firstpart from './Personalinfoparts/Firstpart'
 import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
-import Axios  from  'axios'
+
+import Coapp from './Coapplicant/CoApplicantInfo'
+
+
 
 
 // dynamic sidemenu & main container
@@ -309,6 +312,94 @@ export default function Personalinfo({sidemenuState}) {
         setOccupation2,
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    // state control for coapplicant main 
+    const[colastName, setCoLastName] = useState()
+    const[cofirstName, setCoFirstName] = useState()
+    const[coenglishName, setCoEnglishName] = useState()
+    const[cogender, setCoGender]= useState()
+    const[cobirthDay, setCoBirthday] =useState()
+    const[cosinNum, setCoSinNum]= useState()
+    const[coemail, setCoEmail]=useState();
+    const[cocellNum, setCoCellNum]= useState();
+    const[cohomeNum, setCoHomeNum]=useState();
+    const[coworkNum, setCoWorkNum]=useState();
+    const[colivingStatus, setCoLivingStatus] = useState('');
+    const[comaritalStatus, setCoMaritalStatus]=useState('');
+    const[cocitizenship, setCoCitizenship] = useState('');
+    const[cotaxStatus, setCoTaxStatus]=useState('');
+    const coAppInfo = {
+        setCoLastName,
+        setCoFirstName,
+        setCoEnglishName,
+        cogender,
+        setCoGender,
+        setCoBirthday,
+        setCoSinNum,
+        setCoEmail,
+        setCoCellNum,
+        setCoHomeNum,
+        setCoWorkNum,
+        setCoLivingStatus, 
+        setCoMaritalStatus, 
+        setCoCitizenship,
+        setCoTaxStatus,
+    }
+
+
+// coapp Housing Info
+    const[cohouseNum, setCoHouseNum]=useState();
+    const[cocurrentRez, setCoCurrentRez]=useState();
+    const[coaptNum, setCoAptNum]=useState();
+    const[coprovince, setCoProvince]=useState('ON');
+    const[copostalCode, setCoPostalCode]=useState();
+    const[corezSince, setCoRezSince]=useState();
+    const[cohouseNum2, setCoHouseNum2]=useState();
+    const[cocurrentRez2, setCoCurrentRez2]=useState();
+    const[coaptNum2, setCoAptNum2]=useState();
+    const[coprovince2,setCoProvince2]=useState();
+    const[copostalCode2, setCoPostalCode2] = useState();
+    const[corezSince2, setCoRezSince2]=useState();
+    const coApphouse={
+        setCoHouseNum,
+        setCoCurrentRez,
+        setCoAptNum,
+        setCoProvince,
+        setCoPostalCode,
+        setCoRezSince,
+
+        setCoHouseNum2,
+        setCoCurrentRez2,
+        setCoAptNum2,
+        setCoProvince2,
+        setCoPostalCode2,
+        setCoRezSince2,
+    }
+
+
+
+
+
+
+
+
     function handleSubmit(e){
         e.preventDefault()
         if(!firstName || !lastName || !englishName){
@@ -419,89 +510,6 @@ export default function Personalinfo({sidemenuState}) {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    // state control for coapplicant
-    const[colastName, setCoLastName] = useState()
-    const[cofirstName, setCoFirstName] = useState()
-    const[coenglishName, setCoEnglishName] = useState()
-
-    const[cogender, setCoGender]= useState()
-    const[cobirthDay, setCoBirthday] =useState()
-    const[cosinNum, setCoSinNum]= useState()
-
-    const[coemail, setCoEmail]=useState();
-    const[cocellNum, setCoCellNum]= useState();
-    const[cohomeNum, setCoHomeNum]=useState();
-    const[coworkNum, setCoWorkNum]=useState();
-
-    const[colivingStatus, setCoLivingStatus] = useState('');
-    const[comaritalStatus, setCoMaritalStatus]=useState('');
-    const[cocitizenship, setCoCitizenship] = useState('');
-    const[cotaxStatus, setCoTaxStatus]=useState('');
-
-    const[cohouseNum, setCoHouseNum]=useState();
-    const[cocurrentRez, setCoCurrentRez]=useState();
-    const[coaptNum, setCoAptNum]=useState();
-    const[coprovince, setCoProvince]=useState('ON');
-    const[copostalCode, setCoPostalCode]=useState();
-    const[corezSince, setCoRezSince]=useState();
-
-    const[cohouseNum2, setCoHouseNum2]=useState();
-    const[cocurrentRez2, setCoCurrentRez2]=useState();
-    const[coaptNum2, setCoAptNum2]=useState();
-    const[coprovince2,setCoProvince2]=useState();
-    const[copostalCode2, setCoPostalCode2] = useState();
-    const[corezSince2, setCoRezSince2]=useState();
-
-    const coAppInfo = {
-        setCoLastName,
-        setCoFirstName,
-        setCoEnglishName,
-        cogender,
-        setCoGender,
-        setCoBirthday,
-        setCoSinNum,
-        setCoEmail,
-        setCoCellNum,
-        setCoHomeNum,
-        setCoWorkNum,
-        setCoLivingStatus, 
-        setCoMaritalStatus, 
-        setCoCitizenship,
-        setCoTaxStatus,
-
-        setCoHouseNum,
-        setCoCurrentRez,
-        setCoAptNum,
-        setCoProvince,
-        setCoPostalCode,
-        setCoRezSince,
-
-        setCoHouseNum2,
-        setCoCurrentRez2,
-        setCoAptNum2,
-        setCoProvince2,
-        setCoPostalCode2,
-        setCoRezSince2,
-    }
-
-
-
     return (
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
@@ -518,8 +526,7 @@ export default function Personalinfo({sidemenuState}) {
                     <Navbar.Brand className='navBarBrand'>Personal Information</Navbar.Brand>
                 </Navbar>
             
-        
-              
+
                 {applicantActive?(
                     <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
 
@@ -594,8 +601,6 @@ export default function Personalinfo({sidemenuState}) {
                             </div>
                         </div> 
                     </Form>
-
-                    
                 ) : null }
 
 
@@ -604,68 +609,22 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='row' className='coapplicantInfoNames'> 
                             <Coapp  coAppInfo ={coAppInfo} />
                         </div>
+
+
+
+
+
+
+
+
+
+
+
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             <Button type='submit'>Next</Button>
                         </div>
                     </Form>
-
-
-
-
-
-
-
-
-
-
                 ):null}
-
-
-
-
-
-
-
-
-
-
-
-              
-                {/* <Form onSubmit={handleSubmit} > 
-                    <div className='row'>
-                        <Firstpart  personalInfoNames ={personalInfoNames} />
-                    </div>
-
-                    <div className ='row'>
-                        <Secondpart personalInfoOther={personalInfoOther} />
-                    </div>
-
-                    <div className ='row' >
-                        <Thirdpart personalInfoStatus={personalInfoStatus} />
-                    </div>
-
-                    <div className='row'>
-                        <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
-                    </div>
-
-                    <div className='row'>
-                        <PartFive personalInfoPartFive={personalInfoPartFive} />
-                    </div>
-
-                    <div className='row'>  
-                        <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember} />  
-                    </div>
-
-
-                    <div className='row'>
-                        <EmploymentInfo personalInfoEmploymentInfo={personalInfoEmploymentInfo} personalInfoEmploymentInfo2={personalInfoEmploymentInfo2} />
-                    </div>
-
-                    <div className='d-flex justify-content-end mt-2 mb-2'>
-                      <Button type='submit'>Next</Button>
-                    </div>
-
-                </Form> */}
             </PersonalInfoContainer>
     )
 }
