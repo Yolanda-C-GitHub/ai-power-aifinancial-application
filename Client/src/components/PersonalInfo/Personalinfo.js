@@ -153,11 +153,6 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-
-
-
-
-
     // state control for 1st part
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
@@ -218,9 +213,6 @@ export default function Personalinfo({sidemenuState}) {
     const[rezSince2, setRezSince2]=useState();
     const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
 
-
-   
-
     // state control part 5
     const[idArray, setIdArray] = useState([
         {
@@ -237,7 +229,6 @@ export default function Personalinfo({sidemenuState}) {
         idArray,
         setIdArray,
     }
-
 
 
     // state control family info
