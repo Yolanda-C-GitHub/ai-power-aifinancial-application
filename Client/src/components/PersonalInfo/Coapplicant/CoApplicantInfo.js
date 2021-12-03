@@ -86,7 +86,7 @@ export default function Coapp(params) {
                         <Form.Check inline name='genderselector' label='Female' type='radio' 
                             ref={cogenderFemaleRef} 
                             value="Female" 
-                            checked={params.coAppInfo.gender === "Female"} 
+                            checked={params.coAppInfo.cogender === "Female"} 
                             onChange={()=>params.coAppInfo.setCoGender(cogenderFemaleRef.current.value)}
                         >
                         </Form.Check>
