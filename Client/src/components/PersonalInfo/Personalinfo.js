@@ -523,11 +523,12 @@ export default function Personalinfo({sidemenuState}) {
                 {applicantActive?(
                     <Form onSubmit={handleSubmit} className='applicantInfoContainer'>
 
+                        {/* main info  */}
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
                         </div>
 
-
+                        {/* supporting info tabs */}
                         <Navbar className='personalInfoNavbarContainer2'>
                             <Nav className='me-auto'>
                                 <PersonalInfoID className='applicantAddtionalInfoItem' disabled={iDActive?true:false} iDActive={iDActive} onClick={toggleIDActive}>
@@ -560,12 +561,11 @@ export default function Personalinfo({sidemenuState}) {
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
-                        {/* conditional content will go here */}
+                      
                         <div className='addtionalInfoElements'> 
                             {iDActive?(
                                 <PartFive personalInfoPartFive={personalInfoPartFive} />
                             ):null}
-
                             {familyActive?(
                                 <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember}/>
                             ):null}
@@ -589,7 +589,7 @@ export default function Personalinfo({sidemenuState}) {
                             {KYCActive?(
                                 <h1>lol</h1>            
                             ):null}
-                            {/* conditional content will go here */}
+                    
 
                             <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                                 <Button type='submit'>Next</Button>
