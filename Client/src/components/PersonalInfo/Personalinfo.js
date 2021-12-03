@@ -153,28 +153,23 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-    // state control for 1st part
+    // state control for 1st part main applicant tab
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
     const[englishName, setEnglishName] = useState()
-
     const[gender, setGender]= useState()
     const[birthDay, setBirthday] =useState()
     const[sinNum, setSinNum]= useState()
-
     const[email, setEmail]=useState();
     const[cellNum, setCellNum]= useState();
     const[homeNum, setHomeNum]=useState();
     const[workNum, setWorkNum]=useState();
-
     const[livingStatus, setLivingStatus] = useState('');
     const[maritalStatus, setMaritalStatus]=useState('');
     const[citizenship, setCitizenship] = useState('');
     const[taxStatus, setTaxStatus]=useState('');
-
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
-
     const personalInfoNames = {
         setLastName,
         setFirstName,
@@ -196,8 +191,7 @@ export default function Personalinfo({sidemenuState}) {
         setDischargeDate,
     }
     
-
-    // state control for 4th part
+    // state control for 4th part address info
     const[houseNum, setHouseNum]=useState();
     const[currentRez, setCurrentRez]=useState();
     const[aptNum, setAptNum]=useState();
@@ -213,7 +207,7 @@ export default function Personalinfo({sidemenuState}) {
     const[rezSince2, setRezSince2]=useState();
     const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
 
-    // state control part 5
+    // state control part 5 ID info
     const[idArray, setIdArray] = useState([
         {
             idType:'provincialDriversLicense',
@@ -257,7 +251,6 @@ export default function Personalinfo({sidemenuState}) {
         setChild4Birth,
     }
 
-
     // state control employment info
     const [employmentStatus, setEmploymentStatus]=useState();
     const [annualIncome, setAnnualIncome]=useState();
@@ -287,7 +280,6 @@ export default function Personalinfo({sidemenuState}) {
         setIndustry,
         setOccupation,
     }
-
     const [employmentStatus2, setEmploymentStatus2]=useState();
     const [annualIncome2, setAnnualIncome2]=useState();
     const [employerName2, setEmployername2]=useState();
