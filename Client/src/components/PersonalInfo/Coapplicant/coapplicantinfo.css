@@ -40,7 +40,7 @@
 .firstPartFormStatusOne{
     display:flex;
     flex-direction: row;
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px 10px 0px;
 }
 
 
@@ -60,4 +60,5 @@
 
 .coformStatusItems{
     margin-left: 10px;
+    width: 200px;
 }
