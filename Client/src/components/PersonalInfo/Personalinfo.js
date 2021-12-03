@@ -4,28 +4,25 @@ import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
 import Firstpart from './Personalinfoparts/Firstpart'
 import Coapp from '../CoapplicantInfo/CoApplicantInfo'
-import Secondpart from './Personalinfoparts/Secondpart'
-import Thirdpart from './Personalinfoparts/Thirdpart'
+
 import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
-
 import Axios  from  'axios'
 
 
+// dynamic sidemenu & main container
 const PersonalInfoContainer = styled.div`
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
     transition: 0.5s;
 `;
+
+// dynamic applicant
 const PersonalInfoApplicant = styled(Nav.Link)` 
     background-color: ${({ applicantActive }) => (applicantActive? '#202c37' : '#374c5f;')}
-
 `;
-const PersonalInfoCoApplicant = styled(Nav.Link)`
-    background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
-`;
-
+// dynamic tabs for applicant
 const PersonalInfoID = styled(Nav.Link)`
     background-color: ${({ iDActive }) => (iDActive? '#202c37' : '#374c5f;')}
 `;
@@ -48,6 +45,10 @@ const PersonalInfoKYC=styled(Nav.Link)`
     background-color: ${({ KYCActive }) => (KYCActive? '#202c37' : '#374c5f;')}
 `;
 
+// dynamic tabs for coapplicant
+const PersonalInfoCoApplicant = styled(Nav.Link)`
+    background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
+`;
 
 
 export default function Personalinfo({sidemenuState}) {

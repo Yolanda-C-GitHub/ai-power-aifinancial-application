@@ -7,10 +7,9 @@ import React, {useState} from 'react'
 import Sidemenu  from './components/Sidemenu/Sidemenu'
 import Home from  './components/Home/Home'
 import Personalinfo from './components/PersonalInfo/Personalinfo' 
-
 import Header from './components/Header'
 import Login from './components/Login/Login'
-import ApplicantInfo from './components/ApplicantInfo/Applicantinfo'
+
 
 function App() {
 
@@ -37,6 +36,5 @@ export default App;
 
 
     {/* <Header /> */}
-      {/* <Login /> */}
-      {/* <Personalinfo /> */}
-      {/* <ApplicantInfo/> */}
+    {/* <Login /> */}
+
