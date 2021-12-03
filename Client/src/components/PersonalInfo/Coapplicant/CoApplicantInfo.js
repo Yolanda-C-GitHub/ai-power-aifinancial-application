@@ -177,8 +177,6 @@ export default function Coapp(params) {
                 ): null} 
 
 
-
-    
             </Card>  
     )
 }
