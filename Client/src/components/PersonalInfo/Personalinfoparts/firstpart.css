@@ -3,6 +3,8 @@
     flex-direction: row !important;
     justify-content: flex-start !important;
     flex-wrap: wrap;
+    padding:5px;
+    border:none;
 }
 
 .firstPartFormGroup{

@@ -39,7 +39,7 @@ export default function Firstpart(params) {
 
     return (
 
-            <Card className='firstPartCard border'>
+            <Card className='firstPartCard'>
 
                 <Form.Group className='firstPartFormGroup'>
                     <FloatingLabel label='First Name'>
