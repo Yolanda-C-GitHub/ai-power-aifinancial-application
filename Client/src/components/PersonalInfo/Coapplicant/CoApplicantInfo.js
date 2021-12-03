@@ -24,43 +24,21 @@ export default function Coapp(params) {
     const cocitizenshipRef = useRef();
     const cotaxStatusRef = useRef();
 
-    //rez info
-    const cohouseNumRef=useRef();
-    const cocurrentRezRef=useRef();
-    const coaptNumRef=useRef();
-    const coprovinceRef=useRef();
-    const copostalCodeRef=useRef();
-    const corezSinceRef=useRef();
+    const codischargeDateRef = useRef();
+    const copreviousDeclaredRef =useRef();
+  
 
-    const cohouseNumRef2=useRef();
-    const cocurrentRezRef2=useRef();
-    const coaptNumRef2=useRef();
-    const coprovinceRef2=useRef();
-    const copostalCodeRef2=useRef();
-    const corezSinceRef2=useRef();
-
-    const[coshowRez2, setCoShowRez2]=useState(false);
-
-
-    function numberDaysBetween(){
-        const cosinceDate = moment(corezSinceRef.current.value,"YYYY/MM/DD")
-        const cotodaysDate = moment(moment().startOf('day'),'YYYY/MM/DD')
-        const codaysBetween = moment.duration(cotodaysDate.diff(cosinceDate)).asDays()
-        console.log(codaysBetween)
-        
-        if(codaysBetween < 730){
-            setCoShowRez2(true)
-        }else{
-            params.coAppInfo.setCoHouseNum2('')
-            params.coAppInfo.setCoCurrentRez2('')
-            params.coAppInfo.setCoAptNum2('')
-            params.coAppInfo.setCoProvince2('')
-            params.coAppInfo.setCoPostalCode2('')
-            params.coAppInfo.setCoRezSince2('')
-            setCoShowRez2(false)
+    const [showDischarge, setShowDischarge]=useState(false);
+    
+    function toggleShowDischarge(){
+        if(params.coAppInfo.codeclared==='No'){
+            setShowDischarge(true)   
+        } else{
+            params.coAppInfo.setcoDischargeDate('')
+            setShowDischarge(false)
         }
-
     }
+
 
     return (
 
@@ -181,11 +159,26 @@ export default function Coapp(params) {
 
 
 
+                <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
+                    <Form.Select ref={copreviousDeclaredRef} 
+                    onChange={()=>{
+                        params.coAppInfo.setcoDeclared(copreviousDeclaredRef.current.value)
+                        toggleShowDischarge()
+                    }}>
+                        <option value='No'>No</option>
+                        <option value='Yes'>Yes</option>
+                    </Form.Select>  
+                </FloatingLabel>
+
+                {showDischarge===true?(
+                        <FloatingLabel className='dischargeDate' label='Discharge Date'>
+                            <Form.Control type='date' placeholder='dateOfDischarge' ref={codischargeDateRef} onChange={()=>params.coAppInfo.setcoDischargeDate(codischargeDateRef.current.value)} />
+                        </FloatingLabel>
+                ): null} 
 
 
 
-                  
-
+    
             </Card>  
     )
 }

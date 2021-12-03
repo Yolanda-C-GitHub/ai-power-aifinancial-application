@@ -345,6 +345,8 @@ export default function Personalinfo({sidemenuState}) {
     const[comaritalStatus, setCoMaritalStatus]=useState('');
     const[cocitizenship, setCoCitizenship] = useState('');
     const[cotaxStatus, setCoTaxStatus]=useState('');
+    const[codeclared, setcoDeclared] = useState('No');
+    const[codischargeDate, setcoDischargeDate]= useState();
     const coAppInfo = {
         setCoLastName,
         setCoFirstName,
@@ -361,6 +363,9 @@ export default function Personalinfo({sidemenuState}) {
         setCoMaritalStatus, 
         setCoCitizenship,
         setCoTaxStatus,
+        codeclared,
+        setcoDeclared,
+        setcoDischargeDate,
     }
 
 

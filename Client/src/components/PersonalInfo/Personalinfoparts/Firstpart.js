@@ -160,21 +160,21 @@ export default function Firstpart(params) {
                 </Form.Group>
 
                 <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
-                        <Form.Select ref={previousDeclaredRef} 
-                        onChange={()=>{
-                            params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
-                            toggleShowDischarge()
-                        }}>
-                            <option value='No'>No</option>
-                            <option value='Yes'>Yes</option>
-                        </Form.Select>  
-                    </FloatingLabel>
+                    <Form.Select ref={previousDeclaredRef} 
+                    onChange={()=>{
+                        params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
+                        toggleShowDischarge()
+                    }}>
+                        <option value='No'>No</option>
+                        <option value='Yes'>Yes</option>
+                    </Form.Select>  
+                </FloatingLabel>
 
-                    {showDischarge===true?(
-                            <FloatingLabel className='dischargeDate' label='Discharge Date'>
-                                <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
-                            </FloatingLabel>
-                    ): null} 
+                {showDischarge===true?(
+                        <FloatingLabel className='dischargeDate' label='Discharge Date'>
+                            <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
+                        </FloatingLabel>
+                ): null} 
 
 
             </Card>
