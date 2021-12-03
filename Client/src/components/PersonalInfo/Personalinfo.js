@@ -589,8 +589,6 @@ export default function Personalinfo({sidemenuState}) {
                             {KYCActive?(
                                 <h1>lol</h1>            
                             ):null}
-                    
-
                             <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                                 <Button type='submit'>Next</Button>
                             </div>
@@ -603,16 +601,12 @@ export default function Personalinfo({sidemenuState}) {
 
                 {coApplicantActive? (
                     <Form onSubmit={handleSubmit} className='coApplicantInfoContainer'>
-
                         <div className='row' className='coapplicantInfoNames'> 
                             <Coapp  coAppInfo ={coAppInfo} />
                         </div>
-
-                    
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             <Button type='submit'>Next</Button>
                         </div>
-                     
                     </Form>
 
 
