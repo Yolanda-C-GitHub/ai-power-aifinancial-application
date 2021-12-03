@@ -36,33 +36,17 @@
     align-self: center;
 }
 
-
-.firstPartFormStatusContainer{
-    display:flex; 
-    justify-content: center;
-    margin-left: 10px;
-    flex-wrap: wrap;
-    width: 800px;
-    align-items: center;
-    height:60px;
-}
 .firstPartFormStatusOne{
     display:flex;
     flex-direction: row;
-    border:none !important;
-    margin:0px 0px 10px 10px !important;
-}
-.firstPartFormStatusTwo{
-    display:flex;
-    flex-direction: row;
-    border:none !important;
-    margin:0px 0px 10px 0px !important;
+    margin: 0px 10px 10px 10px;
+    border: none !important;
 }
 
+
 .formStatusItems{
-    width: 170px;
+    width: 200px;
     margin-right: 10px;
-    
 }
 .previouslyDeclared{
     width: 350px;

@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './coapplicantinfo.css' 
-import moment from 'moment'
+
 
 export default function Coapp(params) {
 
@@ -42,7 +42,7 @@ export default function Coapp(params) {
 
     return (
 
-            <Card className='firstPartCard border'>
+            <Card className='cofirstPartCard'>
 
                 <Form.Group className='firstPartFormGroup'>
                     <FloatingLabel label='First Name'>
@@ -111,8 +111,8 @@ export default function Coapp(params) {
       
 
                 <Form.Group className='firstPartFormStatusOne' >
-                    <FloatingLabel label='Living Status' >
-                        <Form.Select className='statusLiving' ref={colivingStatusRef} onChange={()=>params.coAppInfo.setCoLivingStatus(colivingStatusRef.current.value)}>
+                    <FloatingLabel className='coformStatusItems' label='Living Status' >
+                        <Form.Select  ref={colivingStatusRef} onChange={()=>params.coAppInfo.setCoLivingStatus(colivingStatusRef.current.value)}>
                             <option placeholder='select' >Select</option>
                             <option value='owner'>Owner</option>
                             <option value='rent'>Rent</option>
@@ -122,8 +122,8 @@ export default function Coapp(params) {
                         </Form.Select>
                     </FloatingLabel>
      
-                    <FloatingLabel label='Marital Status' >
-                        <Form.Select className='statusLiving' ref={comaritalStatusRef} onChange={()=>params.coAppInfo.setCoMaritalStatus(comaritalStatusRef.current.value)}>
+                    <FloatingLabel className='coformStatusItems' label='Marital Status' >
+                        <Form.Select ref={comaritalStatusRef} onChange={()=>params.coAppInfo.setCoMaritalStatus(comaritalStatusRef.current.value)}>
                             <option placeholder='select' >Select</option>
                             <option value='married'>Married</option>
                             <option value='single'>Single</option>
@@ -135,8 +135,8 @@ export default function Coapp(params) {
                         </Form.Select>
                     </FloatingLabel>
              
-                    <FloatingLabel label='Citizenship' >
-                        <Form.Select className='thirdPartSelector' ref={cocitizenshipRef} onChange={()=>params.coAppInfo.setCoCitizenship(cocitizenshipRef.current.value)} >
+                    <FloatingLabel className='coformStatusItems' label='Citizenship' >
+                        <Form.Select ref={cocitizenshipRef} onChange={()=>params.coAppInfo.setCoCitizenship(cocitizenshipRef.current.value)} >
                             <option placeholder='select' >Select</option>
                             <option value='canadian'>Canadian</option>
                             <option value='chinese'>Chinese</option>
@@ -145,8 +145,8 @@ export default function Coapp(params) {
                         </Form.Select>            
                     </FloatingLabel>
 
-                    <FloatingLabel label='Tax Status'>
-                        <Form.Select className='thirdPartSelector' ref={cotaxStatusRef} onChange={()=>params.coAppInfo.setCoTaxStatus(cotaxStatusRef.current.value)}>
+                    <FloatingLabel className='coformStatusItems' label='Tax Status'>
+                        <Form.Select ref={cotaxStatusRef} onChange={()=>params.coAppInfo.setCoTaxStatus(cotaxStatusRef.current.value)}>
                             <option placeholder='select' >Select</option>
                             <option value='canada'>Canada</option>
                             <option value='usa'>USA</option>
@@ -175,7 +175,6 @@ export default function Coapp(params) {
                             <Form.Control type='date' placeholder='dateOfDischarge' ref={codischargeDateRef} onChange={()=>params.coAppInfo.setcoDischargeDate(codischargeDateRef.current.value)} />
                         </FloatingLabel>
                 ): null} 
-
 
             </Card>  
     )
