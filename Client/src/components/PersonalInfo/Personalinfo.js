@@ -369,6 +369,7 @@ export default function Personalinfo({sidemenuState}) {
     }
 
 
+
 // coapp Housing Info
     const[cohouseNum, setCoHouseNum]=useState();
     const[cocurrentRez, setCoCurrentRez]=useState();
