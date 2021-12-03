@@ -87,8 +87,7 @@ app.post('/insert', (req,res) =>  {
                 res.send('value inserted')
             }
         })
-    })
-
+})
 app.get('/insert', (req,res)=>{
     res.send('insert server is working')
 })
