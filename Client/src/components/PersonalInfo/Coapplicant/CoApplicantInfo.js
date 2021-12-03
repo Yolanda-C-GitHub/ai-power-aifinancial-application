@@ -75,20 +75,22 @@ export default function Coapp(params) {
                 <Form.Group className='firstPartFormGroup'>
                     <Form.Label className ='firstPartGenderLabel'>Gender:</Form.Label>
                     <div className='firstPartGenderBox' >
-                        <Form.Check className ='' name='genderselector' label='Male' type='radio' 
+
+                        <Form.Check  name='genderselector' label='Male' type='radio' 
                             ref={cogenderMaleRef} 
                             value="Male"  
                             onChange={() => params.coAppInfo.setCoGender(cogenderMaleRef.current.value)}
                         >
                         </Form.Check>
 
-                        <Form.Check inline className = '' name='genderselector' label='Female' type='radio' 
+                        <Form.Check inline name='genderselector' label='Female' type='radio' 
                             ref={cogenderFemaleRef} 
                             value="Female" 
                             checked={params.coAppInfo.gender === "Female"} 
                             onChange={()=>params.coAppInfo.setCoGender(cogenderFemaleRef.current.value)}
                         >
                         </Form.Check>
+
                     </div>
                 </Form.Group>
 

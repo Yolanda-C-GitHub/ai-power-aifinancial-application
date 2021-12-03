@@ -72,14 +72,14 @@ export default function Firstpart(params) {
                 <Form.Group className='firstPartFormGroup'>
                     <Form.Label className ='firstPartGenderLabel'>Gender:</Form.Label>
                     <div className='firstPartGenderBox' >
-                        <Form.Check className ='' name='genderselector' label='Male' type='radio' 
+                        <Form.Check name='genderselector' label='Male' type='radio' 
                             ref={genderMaleRef} 
                             value="Male"  
                             onChange={() => params.personalInfoNames.setGender(genderMaleRef.current.value)}
                         >
                         </Form.Check>
 
-                        <Form.Check inline className = '' name='genderselector' label='Female' type='radio' 
+                        <Form.Check inline name='genderselector' label='Female' type='radio' 
                             ref={genderFemaleRef} 
                             value="Female" 
                             checked={params.personalInfoNames.gender === "Female"} 
