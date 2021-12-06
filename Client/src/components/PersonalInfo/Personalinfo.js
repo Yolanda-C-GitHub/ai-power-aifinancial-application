@@ -13,14 +13,11 @@ import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Coapp from './Coapplicant/CoApplicantInfo'
 
 
-
-
 // dynamic sidemenu & main container
 const PersonalInfoContainer = styled.div`
     padding-left:${({ sideMenuPush }) => sideMenuPush? '250px':'0px' };
     transition: 0.5s;
 `;
-
 // dynamic applicant
 const PersonalInfoApplicant = styled(Nav.Link)` 
     background-color: ${({ applicantActive }) => (applicantActive? '#202c37' : '#374c5f;')}
@@ -52,6 +49,29 @@ const PersonalInfoKYC=styled(Nav.Link)`
 const PersonalInfoCoApplicant = styled(Nav.Link)`
     background-color: ${({ coApplicantActive }) => (coApplicantActive? '#202c37' : '#374c5f;')}
 `;
+const CoPersonalInfoID = styled(Nav.Link)`
+    background-color: ${({ coiDActive }) => (coiDActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoFamily=styled(Nav.Link)`
+    background-color: ${({ cofamilyActive }) => (cofamilyActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoEmployment=styled(Nav.Link)`
+    background-color: ${({ coemploymentActive }) => (coemploymentActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoCheque = styled(Nav.Link)`
+    background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoAddresss=styled(Nav.Link)`
+    background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoChannel=styled(Nav.Link)`
+    background-color: ${({ coKYCActive }) => (coKYCActive? '#202c37' : '#374c5f;')}
+`;
+const CoPersonalInfoKYC=styled(Nav.Link)`
+    background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
+`;
+
+
 
 
 export default function Personalinfo({sidemenuState}) {
@@ -149,7 +169,90 @@ export default function Personalinfo({sidemenuState}) {
         setKYCActive(true)
     }
 
+    // state control for detailed info active styling for coapplicant
+    const [coiDActive, setCoIDActive]=useState(true)
+    const [cofamilyActive, setcoFamilyActive]=useState(false)
+    const [coemploymentActive, setcoEmploymentActive]=useState(false);
+    const [cochequeActive, setcoChequeActive]=useState(false);
+    const [coaddressActive, setcoAddressActive]= useState(false);
+    const [cochannelActive, setcoChannelActive]=useState(false);
+    const [coKYCActive, setcoKYCActive] = useState(false);
 
+    function toggleCoIDActive(e){
+        e.preventDefault();
+        setCoIDActive(true);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(false);
+        setcoChequeActive(false);
+        setcoAddressActive(false);
+        setcoChannelActive(false);
+        setcoKYCActive(false);
+        console.log(coiDActive);
+    }
+    function toggleCoFamilyActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(true);
+        setcoEmploymentActive(false);
+        setcoChequeActive(false);
+        setcoAddressActive(false);
+        setcoChannelActive(false);
+        setcoKYCActive(false);
+    }
+    function toggleCoEmploymentActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(true);
+        setcoChequeActive(false);
+        setcoAddressActive(false);
+        setcoChannelActive(false);
+        setcoKYCActive(false);
+    }
+    function toggleCoChequeActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(false);
+        setcoChequeActive(true);
+        setcoAddressActive(false);
+        setcoChannelActive(false);
+        setcoKYCActive(false);
+    }
+    function toogleCoAddressActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(false);
+        setcoChequeActive(false);
+        setcoAddressActive(true);
+        setcoChannelActive(false);
+        setcoKYCActive(false);
+    }
+    function toggleCoChannelActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(false);
+        setcoChequeActive(false);
+        setcoAddressActive(false);
+        setcoChannelActive(true);
+        setcoKYCActive(false);
+    }
+    function toggleCoKYCActive(e){
+        e.preventDefault();
+        setCoIDActive(false);
+        setcoFamilyActive(false);
+        setcoEmploymentActive(false);
+        setcoChequeActive(false);
+        setcoAddressActive(false);
+        setcoChannelActive(false);
+        setcoKYCActive(true);
+    }
+
+
+
+  
 
 
 
@@ -612,18 +715,80 @@ export default function Personalinfo({sidemenuState}) {
 
                 {coApplicantActive? (
                     <Form onSubmit={handleSubmit} className='coApplicantInfoContainer'>
+
+                        {/* main info coApplicant  */}
                         <div className='row' className='coapplicantInfoNames'> 
                             <Coapp  coAppInfo ={coAppInfo} />
                         </div>
 
+                         {/* supporting info tabs coApplicant */}
+                        <Navbar className='copersonalInfoNavbarContainer2'>
+                            <Nav className='me-auto'>
+
+                                <CoPersonalInfoID className='applicantAddtionalInfoItem' disabled={coiDActive?true:false} coiDActive={coiDActive} onClick={toggleCoIDActive}>
+                                    ID
+                                </CoPersonalInfoID>
+
+                                
+                                <CoPersonalInfoFamily className='applicantAddtionalInfoItem' disabled={cofamilyActive?true:false} cofamilyActive={cofamilyActive} onClick={toggleCoFamilyActive}  >
+                                    Family
+                                </CoPersonalInfoFamily >
+
+                                <CoPersonalInfoEmployment className='applicantAddtionalInfoItem' disabled={coemploymentActive?true:false} coemploymentActive={coemploymentActive} onClick={toggleCoEmploymentActive}>
+                                    Employment
+                                </CoPersonalInfoEmployment>
+                                
+                                <CoPersonalInfoCheque className='applicantAddtionalInfoItem' disabled={cochequeActive?true:false} cochequeActive={cochequeActive} onClick={toggleCoChequeActive}>
+                                    Cheque
+                                </CoPersonalInfoCheque>
+
+                                <CoPersonalInfoAddresss className='applicantAddtionalInfoItem' disabled={coaddressActive?true:false} coaddressActive={coaddressActive} onClick={toogleCoAddressActive} >
+                                    Address
+                                </CoPersonalInfoAddresss>
+
+                                <CoPersonalInfoChannel className='applicantAddtionalInfoItem' disabled={cochannelActive?true:false} cochannelActive={cochannelActive} onClick={toggleCoChannelActive}>
+                                    Channel
+                                </CoPersonalInfoChannel>
+
+                                <CoPersonalInfoKYC className='applicantAddtionalInfoItem' disabled={coKYCActive?true:false} coKYCActive={coKYCActive} onClick={toggleCoKYCActive} >
+                                    KYC
+                                </CoPersonalInfoKYC>
+                            </Nav>
+                            <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
+                        </Navbar>
 
 
 
 
+                        <div className='addtionalInfoElements'>
+                            {coiDActive?(
+                                <h1>hi</h1>
+                            ): null}
 
+                            {cofamilyActive? (
+                                <h1>hihi</h1>
+                            ): null}
 
+                            {coemploymentActive?(
+                                <h1>welp</h1>
+                            ): null}
 
+                            {cochequeActive?(
+                                <h1>mmh</h1>
+                            ): null}
 
+                            {coaddressActive?(
+                                <h1>skrskr</h1>
+                            ):null}
+
+                            {cochannelActive?( 
+                                <h1>hi</h1> 
+                            ):null}
+
+                            {coKYCActive?( 
+                                <h1>yes</h1>
+                            ):null}
+                        </div>
 
 
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
