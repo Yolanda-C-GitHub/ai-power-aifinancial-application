@@ -62,13 +62,13 @@ const CoPersonalInfoCheque = styled(Nav.Link)`
     background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
 `;
 const CoPersonalInfoAddresss=styled(Nav.Link)`
-    background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
+    background-color: ${({ coaddressActive }) => (coaddressActive? '#202c37' : '#374c5f;')}
 `;
 const CoPersonalInfoChannel=styled(Nav.Link)`
-    background-color: ${({ coKYCActive }) => (coKYCActive? '#202c37' : '#374c5f;')}
+    background-color: ${({ cochannelActive }) => (cochannelActive? '#202c37' : '#374c5f;')}
 `;
 const CoPersonalInfoKYC=styled(Nav.Link)`
-    background-color: ${({ cochequeActive }) => (cochequeActive? '#202c37' : '#374c5f;')}
+    background-color: ${({ coKYCActive }) => (coKYCActive? '#202c37' : '#374c5f;')}
 `;
 
 
@@ -729,7 +729,6 @@ export default function Personalinfo({sidemenuState}) {
                                     ID
                                 </CoPersonalInfoID>
 
-                                
                                 <CoPersonalInfoFamily className='applicantAddtionalInfoItem' disabled={cofamilyActive?true:false} cofamilyActive={cofamilyActive} onClick={toggleCoFamilyActive}  >
                                     Family
                                 </CoPersonalInfoFamily >
