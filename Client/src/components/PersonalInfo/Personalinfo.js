@@ -332,29 +332,29 @@ export default function Personalinfo({sidemenuState}) {
 
 
     // state control family info
-    const[spouseFirstName, setSpouseFirstName]=useState();
-    const[spouseLastName, setSpouseLastName]=useState();
-    const[spouseBirth, setSpouseBirth]=useState();
-    const[child1Name, setChild1Name]=useState();
-    const[child1Birth, setChild1Birth]=useState();
-    const[child2Name, setChild2Name]=useState();
-    const[child2Birth, setChild2Birth]=useState();
-    const[child3Name, setChild3Name]=useState();
-    const[child3Birth, setChild3Birth]= useState();
-    const[child4Name, setChild4Name]=useState();
-    const[child4Birth, setChild4Birth]=useState();
-    const personalInfoFamilyMember={
-        setSpouseFirstName,
-        setSpouseLastName,
-        setSpouseBirth,
-        setChild1Name,
-        setChild2Name,
-        setChild3Name,
-        setChild4Name,
-        setChild1Birth,
-        setChild2Birth,
-        setChild3Birth,
-        setChild4Birth,
+    const [familyArray, setFamilyArray]=useState([
+        {
+            relationship:'spouse',
+            firstName:'',
+            lastName:'',
+            dateofBirth:'',
+        },
+        {
+            relationship:'',
+            firstName:'',
+            lastName:'',
+            dateofBirth:'',
+        },    {
+            relationship:'',
+            firstName:'',
+            lastName:'',
+            dateofBirth:'',
+        }
+
+    ])
+    const personalInfoFamilyArray={
+        familyArray,
+        setFamilyArray,
     }
 
     // state control employment info
@@ -549,19 +549,7 @@ export default function Personalinfo({sidemenuState}) {
         console.log(
             idArray
         )
-        console.log(
-            spouseFirstName,
-            spouseLastName,
-            spouseBirth,
-            child1Name,
-            child2Name,
-            child3Name,
-            child4Name,
-            child1Birth,
-            child2Birth,
-            child3Birth,
-            child4Birth,
-        )
+
 
 
 
@@ -681,7 +669,7 @@ export default function Personalinfo({sidemenuState}) {
                                 <PartFive personalInfoPartFive={personalInfoPartFive} />
                             ):null}
                             {familyActive?(
-                                <FamilyMember personalInfoFamilyMember={personalInfoFamilyMember}/>
+                                <FamilyMember personalInfoFamilyArray={personalInfoFamilyArray}/>
                             ):null}
 
                             {employmentActive?(
