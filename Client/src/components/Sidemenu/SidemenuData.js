@@ -9,7 +9,8 @@
  import CreateNewFolderIcon from '@mui/icons-material/CreateNewFolder';
  import DriveFileMoveIcon from '@mui/icons-material/DriveFileMove';
  import CalculateIcon from '@mui/icons-material/Calculate';
-
+ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+ import CreditScoreIcon from '@mui/icons-material/CreditScore';
 
  export const SidemenuData = [
     {
@@ -30,16 +31,6 @@
                 link:'/basicinfo/personalinfo',
             },
             {
-                title: 'Family Info',
-                icon: <FamilyRestroomIcon />,
-                link:'/basicinfo/familyinfo',
-            },
-            {
-                title: 'Employment Info',
-                icon: <WorkIcon />,
-                link:'/basicinfo/employmentinfo',
-            },
-            {
                 title: 'Calculate TDSR',
                 icon: <CalculateIcon/>,
                 link:'/basicinfo/calculatetdsr'
@@ -51,12 +42,32 @@
         title: 'Application',
         icon: <DriveFileMoveIcon />,
         link:'/application',
+        iconClosed:<ArrowDropDownIcon />,
+        iconOpened:<ArrowDropUpIcon />,
+        subNav:[
+            {
+                title: 'Investment Info',
+                icon: <AccountBalanceIcon />,
+                link:'/application/investment',
+            },
+            {
+                title: 'Loan',
+                icon: <CreditScoreIcon/>,
+                link:'/application/loan'
+            },
+            
+        ]
     },
     {
         title: 'Account Info',
         icon: <ManageAccountsIcon />,
         link:'/accoutinfo',
     },
+
+
+
+
+
    
  ]
    
