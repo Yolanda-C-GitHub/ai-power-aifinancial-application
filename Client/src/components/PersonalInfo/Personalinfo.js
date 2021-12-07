@@ -9,6 +9,7 @@ import Fourthpart from './Personalinfoparts/Fourthpart'
 import PartFive from './Personalinfoparts/Partfive'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
+import Cheque from './Personalinfoparts/Cheque'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 
@@ -672,7 +673,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {chequeActive?(
-                                <h1>welp</h1>
+                                <Cheque />
                             ):null}
 
                             {addressActive?(
