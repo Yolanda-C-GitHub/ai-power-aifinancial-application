@@ -507,8 +507,6 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-
-
     function handleSubmit(e){
         e.preventDefault()
         if(!firstName || !lastName || !englishName){
