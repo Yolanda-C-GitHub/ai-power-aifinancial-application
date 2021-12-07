@@ -1,6 +1,9 @@
 import React,{useRef} from 'react'
 import {Card, Form, FloatingLabel, InputGroup} from 'react-bootstrap'
 import './familymember.css'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+
 
 export default function FamilyMember(params) {
 
@@ -11,8 +14,30 @@ export default function FamilyMember(params) {
         const values = [...params.personalInfoFamilyArray.familyArray]
         values[index][e.target.name] = e.target.value;
         params.personalInfoFamilyArray.setFamilyArray(values)
+        console.log(params.personalInfoFamilyArray.familyArray)
     }
  
+
+    function handleAdd(){
+        params.personalInfoFamilyArray.setFamilyArray(
+            [...params.personalInfoFamilyArray.familyArray,
+                {
+                    relationship:'children',
+                    firstName:'',
+                    lastName:'',
+                    dateofBirth:'',
+                }
+            ]
+        )
+    }
+
+    
+    const handleDelete=(index)=>{
+        const values = [...params.personalInfoFamilyArray.familyArray]
+        values.splice(index,1)
+        params.personalInfoFamilyArray.setFamilyArray(values);
+    }
+
 
     return (
         <Card className='familyMemberCard'>
@@ -20,8 +45,8 @@ export default function FamilyMember(params) {
             {params.personalInfoFamilyArray.familyArray.map((item, index) => 
                 <Form.Group className='formGroupFamily'>
                     
-                    <FloatingLabel label='Relationship' >
-                        <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='relationship'  value={params.personalInfoFamilyArray.familyArray[index].idType}  >
+                    <FloatingLabel className='familyRelationship' label='Relationship' >
+                        <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='relationship'  value={params.personalInfoFamilyArray.familyArray[index].relationship}  >
                             <option value='spouse'>Spouse</option>
                             <option value="children">Children</option>
                             <option value="parent">Parent</option>
@@ -29,16 +54,35 @@ export default function FamilyMember(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='familyFirstName'  label='First Name'>
-                        <Form.Control placeholder='First Name' />
+                        <Form.Control placeholder='First Name' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].firstName} />
                     </FloatingLabel>
                         
                     <FloatingLabel className='familyLastName' label='Last Name' >
-                        <Form.Control placeholder='Last Name' />
+                        <Form.Control placeholder='Last Name' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].lastName} />
                     </FloatingLabel>
                             
                     <FloatingLabel  className='familyBirth' label='Date of Birth' >
-                        <Form.Control type='date' />
+                        <Form.Control type='date' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].dateofBirth}  />
                     </FloatingLabel>
+
+
+                    {index === 0? (
+                        <></>
+                    ):(<DeleteOutlineIcon className='deleteIcon' onClick={()=> handleDelete(index)} />
+                    )}
+
+                    {index > 0? (
+                        <></>
+                    ):(
+                        <AddBoxOutlinedIcon className='addIcon' onClick={()=>handleAdd()} />
+                    )}
+                        
+                 
+              
+
+
+                    
+
 
                 </Form.Group>
             )}

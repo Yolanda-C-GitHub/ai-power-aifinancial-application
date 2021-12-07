@@ -10,7 +10,53 @@
 .formGroupFamily{
     display:flex;
     flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
+.familyRelationship{
+    margin-right: 5px;
+    width: 200px;
+}
+.familyFirstName{
+    margin-right: 5px;
+}
+.familyLastName{
+    margin-right: 5px;
+}
+.familyBirt{
+    margin-right: 5px;
+}
+.addIcon{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
+
+}
+.addIcon:hover{
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
+}
+.deleteIcon{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
+}
+.deleteIcon:hover{
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
+    justify-self: center;
+}
+
+
+
+
+
 
 
 
