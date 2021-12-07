@@ -12,4 +12,24 @@
     justify-content: flex-start;
     margin-left: 15px;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
+.chequeArrayBankName{
+    margin-right: 5px;
+}
+.chequeArrayInstitution{
+    margin-right: 5px;
+}
+.chequeArrayAccountNum{
+    margin-right:5px;
+}
+.chequeArrayTransitNum{
+    margin-right:5px;
+}
+.chequeArrayAdd{
+    align-self: center;
+}
+.chequeArrayDelete{
+    align-self:center;
+}
+
