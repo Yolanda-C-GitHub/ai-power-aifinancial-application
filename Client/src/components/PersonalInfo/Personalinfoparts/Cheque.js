@@ -18,9 +18,28 @@ export default function Cheque(params) {
         params.personalInfoChequeArray.setChequeArray(values)
     }
 
+    function handleAdd(){
+        params.personalInfoChequeArray.setChequeArray([
+            ...params.personalInfoChequeArray.chequeArray,
+            {
+                chequeID:'',
+                transitNum:'',
+                institution:'',
+                accountNum:'',
+                bankName:'',
+                address:'',
+                verified:true,
+                verifiedDate:'',
+            }
 
+        ])
+    }
  
-
+    function handleDelete(index){
+        const values = [...params.personalInfoChequeArray.chequeArray]
+        values.splice(index, 1);
+        params.personalInfoChequeArray.setChequeArray(values)
+    }
 
 
     return (
@@ -31,23 +50,23 @@ export default function Cheque(params) {
             
                 
                     <FloatingLabel className='chequeArrayBankName' label='Bank Name' >
-                        <Form.Control placeholder='Bank Name' name='bankName'  value={params.personalInfoChequeArray.chequeArray[index].bankName} />
+                        <Form.Control placeholder='Bank Name' onChange={(e)=>handleOnchangeInput(index,e)} name='bankName'  value={params.personalInfoChequeArray.chequeArray[index].bankName} />
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayInstitution' label='Institution' >
-                        <Form.Control placeholder='Institution' name='institution'  value={params.personalInfoChequeArray.chequeArray[index].institution} />
+                        <Form.Control placeholder='Institution' onChange={(e)=>handleOnchangeInput(index,e)} name='institution'  value={params.personalInfoChequeArray.chequeArray[index].institution} />
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayAccountNum' label='Account #' >
-                        <Form.Control placeholder='Account Number' name='accountNum'  value={params.personalInfoChequeArray.chequeArray[index].accountNum} />
+                        <Form.Control placeholder='Account Number' onChange={(e)=>handleOnchangeInput(index,e)} name='accountNum'  value={params.personalInfoChequeArray.chequeArray[index].accountNum} />
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayTransitNum' label='Transit #' >
-                        <Form.Control placeholder='Transit Number' name='transitNum'  value={params.personalInfoChequeArray.chequeArray[index].transitNum} />
+                        <Form.Control placeholder='Transit Number' onChange={(e)=>handleOnchangeInput(index,e)} name='transitNum'  value={params.personalInfoChequeArray.chequeArray[index].transitNum} />
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayAddress' label='Address' >
-                        <Form.Control placeholder='Address' name='address'  value={params.personalInfoChequeArray.chequeArray[index].address} />
+                        <Form.Control placeholder='Address' onChange={(e)=>handleOnchangeInput(index,e)} name='address'  value={params.personalInfoChequeArray.chequeArray[index].address} />
                     </FloatingLabel>
 
 
@@ -60,13 +79,13 @@ export default function Cheque(params) {
                     {index===0? (
                         <></>
                     ):(
-                        <DeleteOutlineIcon className='chequeArrayAdd' />
+                        <DeleteOutlineIcon className='chequeArrayAdd' onClick={(e)=> handleDelete(index,e)} />
                     )}
 
                     {index>0? (
                         <></>
                     ):(
-                        <AddBoxOutlinedIcon className='chequeArrayDelete' />
+                        <AddBoxOutlinedIcon className='chequeArrayDelete' onClick={()=> handleAdd()} />
                     )}  
                        
                 
