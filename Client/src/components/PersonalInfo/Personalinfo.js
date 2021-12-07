@@ -429,7 +429,7 @@ export default function Personalinfo({sidemenuState}) {
             institution:'',
             accountNum:'',
             bankName:'',
-            verified:false,
+            verified:true,
             verifiedDate:'',
         },
     ]);
