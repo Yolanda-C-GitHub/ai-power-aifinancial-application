@@ -412,8 +412,31 @@ export default function Personalinfo({sidemenuState}) {
     }
 
 
-
-
+    // states for personalinfo cheque
+    const [chequeArray, setChequeArray] = useState([
+        {
+            chequeID:'',
+            transitNum:'',
+            institution:'',
+            accountNum:'',
+            bankName:'',
+            verified:false,
+            verifiedDate:'',
+        },
+        {
+            chequeID:'',
+            transitNum:'',
+            institution:'',
+            accountNum:'',
+            bankName:'',
+            verified:false,
+            verifiedDate:'',
+        },
+    ]);
+    const personalInfoChequeArray = {
+        chequeArray,
+        setChequeArray,
+    }
 
 
 
@@ -673,7 +696,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {chequeActive?(
-                                <Cheque />
+                                <Cheque personalInfoChequeArray={personalInfoChequeArray}  />
                             ):null}
 
                             {addressActive?(
