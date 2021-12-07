@@ -420,7 +420,7 @@ export default function Personalinfo({sidemenuState}) {
             institution:'',
             accountNum:'',
             bankName:'',
-            verified:false,
+            verified:true,
             verifiedDate:'',
         },
         {
@@ -437,6 +437,8 @@ export default function Personalinfo({sidemenuState}) {
         chequeArray,
         setChequeArray,
     }
+
+
 
 
 

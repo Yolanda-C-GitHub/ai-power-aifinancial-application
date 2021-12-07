@@ -6,4 +6,10 @@
     flex-wrap: wrap;
     padding:15px;
 }
-
+.formGroupCheque{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
