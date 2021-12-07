@@ -538,10 +538,8 @@ export default function Personalinfo({sidemenuState}) {
             declared,
             dischargeDate,
         )
-        console.log(
-            idArray
-        )
-
+        // console.log(idArray)
+        console.log(chequeArray)
 
 
 
