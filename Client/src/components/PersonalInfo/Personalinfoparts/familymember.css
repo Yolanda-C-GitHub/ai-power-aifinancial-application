@@ -6,6 +6,14 @@
     flex-wrap: wrap;
     padding:15px;
 }
+
+.formGroupFamily{
+    display:flex;
+    flex-direction: row;
+}
+
+
+
 .formGroupSpouseInfo{
     display:flex;
     flex-direction: row;

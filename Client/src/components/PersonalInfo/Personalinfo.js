@@ -340,12 +340,13 @@ export default function Personalinfo({sidemenuState}) {
             dateofBirth:'',
         },
         {
-            relationship:'',
+            relationship:'children',
             firstName:'',
             lastName:'',
             dateofBirth:'',
-        },    {
-            relationship:'',
+        },    
+        {
+            relationship:'parent',
             firstName:'',
             lastName:'',
             dateofBirth:'',

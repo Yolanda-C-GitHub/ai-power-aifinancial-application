@@ -18,9 +18,9 @@ export default function FamilyMember(params) {
         <Card className='familyMemberCard'>
 
             {params.personalInfoFamilyArray.familyArray.map((item, index) => 
-                <Form.Group>
+                <Form.Group className='formGroupFamily'>
                     
-                    <FloatingLabel>
+                    <FloatingLabel label='Relationship' >
                         <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='relationship'  value={params.personalInfoFamilyArray.familyArray[index].idType}  >
                             <option value='spouse'>Spouse</option>
                             <option value="children">Children</option>
@@ -28,10 +28,17 @@ export default function FamilyMember(params) {
                         </Form.Select>
                     </FloatingLabel>
 
-                
-
-
-
+                    <FloatingLabel className='familyFirstName'  label='First Name'>
+                        <Form.Control placeholder='First Name' />
+                    </FloatingLabel>
+                        
+                    <FloatingLabel className='familyLastName' label='Last Name' >
+                        <Form.Control placeholder='Last Name' />
+                    </FloatingLabel>
+                            
+                    <FloatingLabel  className='familyBirth' label='Date of Birth' >
+                        <Form.Control type='date' />
+                    </FloatingLabel>
 
                 </Form.Group>
             )}
