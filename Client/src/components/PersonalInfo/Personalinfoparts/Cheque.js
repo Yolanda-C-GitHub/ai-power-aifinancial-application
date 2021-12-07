@@ -42,6 +42,13 @@ export default function Cheque(params) {
     }
 
 
+    // require value for chequeID
+    function createChequeID(){
+        
+    }
+
+
+
     return (
         <Card className='chequeInfoCard'>
 
