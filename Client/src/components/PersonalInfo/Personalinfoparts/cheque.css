@@ -26,10 +26,39 @@
 .chequeArrayTransitNum{
     margin-right:5px;
 }
-.chequeArrayAdd{
-    align-self: center;
+.chequeArrayAddress{
+    margin-right:5px;
 }
-.chequeArrayDelete{
+.chequeArrayVerified{
     align-self:center;
+    margin: 0 10px 0 20px;
+}
+.chequeArrayAdd{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
+}
+.chequeArrayAdd:hover{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
 }
 
+.chequeArrayDelete{
+    transition:0.2s;
+    padding: 5px;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
+}
+.chequeArrayDelete:hover{
+    transition:0.2s;
+    padding: 5px ;
+    transform: scale(2);
+    align-self: center;
+    margin: 10px;
+}

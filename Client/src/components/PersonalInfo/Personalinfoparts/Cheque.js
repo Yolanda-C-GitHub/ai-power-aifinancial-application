@@ -46,6 +46,11 @@ export default function Cheque(params) {
                         <Form.Control placeholder='Transit Number' name='transitNum'  value={params.personalInfoChequeArray.chequeArray[index].transitNum} />
                     </FloatingLabel>
 
+                    <FloatingLabel className='chequeArrayAddress' label='Address' >
+                        <Form.Control placeholder='Address' name='address'  value={params.personalInfoChequeArray.chequeArray[index].address} />
+                    </FloatingLabel>
+
+
                     <Form.Check className='chequeArrayVerified' name='verified' type='checkbox' checked={params.personalInfoChequeArray.chequeArray[index].verified} label='Verified' 
                     onChange={(e)=>{
                         handleOnchangeCheck(index,e)
