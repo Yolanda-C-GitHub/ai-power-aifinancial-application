@@ -172,9 +172,8 @@ export default function Personalinfo({sidemenuState}) {
 
     // state control for detailed info active styling for coapplicant
     const [coiDActive, setCoIDActive]=useState(true)
-    const [cofamilyActive, setcoFamilyActive]=useState(false)
+
     const [coemploymentActive, setcoEmploymentActive]=useState(false);
-    const [cochequeActive, setcoChequeActive]=useState(false);
     const [coaddressActive, setcoAddressActive]= useState(false);
     const [cochannelActive, setcoChannelActive]=useState(false);
     const [coKYCActive, setcoKYCActive] = useState(false);
@@ -182,40 +181,16 @@ export default function Personalinfo({sidemenuState}) {
     function toggleCoIDActive(e){
         e.preventDefault();
         setCoIDActive(true);
-        setcoFamilyActive(false);
         setcoEmploymentActive(false);
-        setcoChequeActive(false);
         setcoAddressActive(false);
         setcoChannelActive(false);
         setcoKYCActive(false);
         console.log(coiDActive);
     }
-    function toggleCoFamilyActive(e){
-        e.preventDefault();
-        setCoIDActive(false);
-        setcoFamilyActive(true);
-        setcoEmploymentActive(false);
-        setcoChequeActive(false);
-        setcoAddressActive(false);
-        setcoChannelActive(false);
-        setcoKYCActive(false);
-    }
     function toggleCoEmploymentActive(e){
         e.preventDefault();
         setCoIDActive(false);
-        setcoFamilyActive(false);
         setcoEmploymentActive(true);
-        setcoChequeActive(false);
-        setcoAddressActive(false);
-        setcoChannelActive(false);
-        setcoKYCActive(false);
-    }
-    function toggleCoChequeActive(e){
-        e.preventDefault();
-        setCoIDActive(false);
-        setcoFamilyActive(false);
-        setcoEmploymentActive(false);
-        setcoChequeActive(true);
         setcoAddressActive(false);
         setcoChannelActive(false);
         setcoKYCActive(false);
@@ -223,9 +198,7 @@ export default function Personalinfo({sidemenuState}) {
     function toogleCoAddressActive(e){
         e.preventDefault();
         setCoIDActive(false);
-        setcoFamilyActive(false);
         setcoEmploymentActive(false);
-        setcoChequeActive(false);
         setcoAddressActive(true);
         setcoChannelActive(false);
         setcoKYCActive(false);
@@ -233,9 +206,7 @@ export default function Personalinfo({sidemenuState}) {
     function toggleCoChannelActive(e){
         e.preventDefault();
         setCoIDActive(false);
-        setcoFamilyActive(false);
         setcoEmploymentActive(false);
-        setcoChequeActive(false);
         setcoAddressActive(false);
         setcoChannelActive(true);
         setcoKYCActive(false);
@@ -243,9 +214,7 @@ export default function Personalinfo({sidemenuState}) {
     function toggleCoKYCActive(e){
         e.preventDefault();
         setCoIDActive(false);
-        setcoFamilyActive(false);
         setcoEmploymentActive(false);
-        setcoChequeActive(false);
         setcoAddressActive(false);
         setcoChannelActive(false);
         setcoKYCActive(true);
@@ -736,17 +705,9 @@ export default function Personalinfo({sidemenuState}) {
                                     ID
                                 </CoPersonalInfoID>
 
-                                <CoPersonalInfoFamily className='applicantAddtionalInfoItem' disabled={cofamilyActive?true:false} cofamilyActive={cofamilyActive} onClick={toggleCoFamilyActive}  >
-                                    Family
-                                </CoPersonalInfoFamily >
-
                                 <CoPersonalInfoEmployment className='applicantAddtionalInfoItem' disabled={coemploymentActive?true:false} coemploymentActive={coemploymentActive} onClick={toggleCoEmploymentActive}>
                                     Employment
                                 </CoPersonalInfoEmployment>
-                                
-                                <CoPersonalInfoCheque className='applicantAddtionalInfoItem' disabled={cochequeActive?true:false} cochequeActive={cochequeActive} onClick={toggleCoChequeActive}>
-                                    Cheque
-                                </CoPersonalInfoCheque>
 
                                 <CoPersonalInfoAddresss className='applicantAddtionalInfoItem' disabled={coaddressActive?true:false} coaddressActive={coaddressActive} onClick={toogleCoAddressActive} >
                                     Address
@@ -771,16 +732,8 @@ export default function Personalinfo({sidemenuState}) {
                                 <h1>hi</h1>
                             ): null}
 
-                            {cofamilyActive? (
-                                <h1>hihi</h1>
-                            ): null}
-
                             {coemploymentActive?(
                                 <h1>welp</h1>
-                            ): null}
-
-                            {cochequeActive?(
-                                <h1>mmh</h1>
                             ): null}
 
                             {coaddressActive?(
