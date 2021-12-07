@@ -345,12 +345,6 @@ export default function Personalinfo({sidemenuState}) {
             lastName:'',
             dateofBirth:'',
         },    
-        {
-            relationship:'parent',
-            firstName:'',
-            lastName:'',
-            dateofBirth:'',
-        }
 
     ])
     const personalInfoFamilyArray={

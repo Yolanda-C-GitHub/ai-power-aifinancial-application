@@ -49,7 +49,6 @@ export default function FamilyMember(params) {
                         <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='relationship'  value={params.personalInfoFamilyArray.familyArray[index].relationship}  >
                             <option value='spouse'>Spouse</option>
                             <option value="children">Children</option>
-                            <option value="parent">Parent</option>
                         </Form.Select>
                     </FloatingLabel>
 
@@ -81,8 +80,6 @@ export default function FamilyMember(params) {
                 </Form.Group>
             )}
          
-
-
         </Card>
     )
 }
