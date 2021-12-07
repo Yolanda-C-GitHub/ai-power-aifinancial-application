@@ -77,9 +77,7 @@ export default function FamilyMember(params) {
                         <AddBoxOutlinedIcon className='addIcon' onClick={()=>handleAdd()} />
                     )}
                         
-                 
-              
-
+                
                 </Form.Group>
             )}
          
