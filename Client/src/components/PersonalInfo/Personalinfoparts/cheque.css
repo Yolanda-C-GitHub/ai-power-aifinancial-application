@@ -41,11 +41,9 @@
     margin: 10px;
 }
 .chequeArrayAdd:hover{
-    transition:0.2s;
-    padding: 5px ;
-    transform: scale(2);
-    align-self: center;
-    margin: 10px;
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
 }
 
 .chequeArrayDelete{
@@ -56,9 +54,8 @@
     margin: 10px;
 }
 .chequeArrayDelete:hover{
-    transition:0.2s;
-    padding: 5px ;
-    transform: scale(2);
-    align-self: center;
-    margin: 10px;
+    cursor: pointer;
+    transform: scale(2.5);
+    transition: 0.2s;
 }
+
