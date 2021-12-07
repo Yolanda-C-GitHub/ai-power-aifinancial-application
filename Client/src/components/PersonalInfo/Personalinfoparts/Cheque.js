@@ -1,6 +1,8 @@
 import React, {useRef} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './cheque.css'
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
 export default function Cheque(params) {
 
@@ -48,14 +50,19 @@ export default function Cheque(params) {
                     onChange={(e)=>{
                         handleOnchangeCheck(index,e)
                     }}
-
-
                     />
 
+                    {index===0? (
+                        <></>
+                    ):(
+                        <DeleteOutlineIcon />
+                    )}
 
+                        <AddBoxOutlinedIcon />
                 
                 </ Form.Group>
             )}
+
 
 
 
