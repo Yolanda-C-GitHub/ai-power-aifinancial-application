@@ -8,32 +8,12 @@ const fs = require('fs');
 const myconfig = require('./myconfig.json')
 
 // middleware
-app.use(cors());
+app.use(cors({
+    origin:'*',
+}));
 app.use(express.json());
 
 
-
-// // connect using mysql.createConnection()
-// const db = mysql.createConnection({
-//     host:'35.192.49.178',
-//         user: 'root',
-//         password: 'AI0801',
-//         database: 'hengyi_core',
-//         ssl: {
-//         	ca: "./server-ca.pem",
-//         	key: "./client-key.pem",
-//         	cert: "./client-cert.pem"
-//         },
-// })
-   
-// // report if connection was made = this only works with mysql.createConnection()
-// db.connect(function(err){
-//     if(err){
-//         process.exit(1)
-//         alert('server connection failed')
-//     }
-//     console.log('connected to mySQL database')
-// })
 
 
 const pool = mysql.createPool({
@@ -72,7 +52,7 @@ pool.query('SHOW DATABASES', function(error, results, fields){
 
 
 // post request frontend to backend testing 
-app.post('/insert', (req,res) =>  {
+app.post('/api/insert', (req,res) =>  {
     const First_Name = req.body.firstName;
     const Last_Name = req.body.lastName; 
     const English_Name = req.body.englishName;
@@ -88,14 +68,14 @@ app.post('/insert', (req,res) =>  {
             }
         })
 })
-app.get('/insert', (req,res)=>{
+app.get('/api/insert', (req,res)=>{
     res.send('insert server is working')
 })
 
 
 
 // get request frontend to backend testing
-app.get('/data', (req, res) => {
+app.get('/api/readdata', (req, res) => {
     pool.query("SELECT * FROM Person", (err, result) => {
         if(err){
             console.log(err)
@@ -109,6 +89,15 @@ app.get('/data', (req, res) => {
 
 
 
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log (`App deployed at port ${PORT}`)
+}) 
+
+// define main route 
+app.get('/api', (req,res)=>{
+    res.send(`server is working on ${PORT}`)
+})
 
 
 
@@ -118,6 +107,29 @@ app.get('/data', (req, res) => {
 
 
 
+
+
+// // connect using mysql.createConnection()
+// const db = mysql.createConnection({
+//     host:'35.192.49.178',
+//         user: 'root',
+//         password: 'AI0801',
+//         database: 'hengyi_core',
+//         ssl: {
+//         	ca: "./server-ca.pem",
+//         	key: "./client-key.pem",
+//         	cert: "./client-cert.pem"
+//         },
+// })
+   
+// // report if connection was made = this only works with mysql.createConnection()
+// db.connect(function(err){
+//     if(err){
+//         process.exit(1)
+//         alert('server connection failed')
+//     }
+//     console.log('connected to mySQL database')
+// })
 
 
 
@@ -158,14 +170,4 @@ app.get('/data', (req, res) => {
 
 
 
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    console.log (`App deployed at port ${PORT}`)
-}) 
-
-// define main route 
-app.get('/', (req,res)=>{
-    res.send('server is working')
-})
 

@@ -516,7 +516,7 @@ export default function Personalinfo({sidemenuState}) {
           return
         }
         console.log(firstName, lastName, englishName, idArray)
-        Axios.post('http://localhost:3001/insert',{
+        Axios.post('https://ai-financial-333500.uc.r.appspot.com/api/insert',{
             firstName: firstName,
             lastName:lastName, 
             englishName: englishName,
@@ -526,7 +526,7 @@ export default function Personalinfo({sidemenuState}) {
             // later when we need to display the content, we would need to update an array state here right after the database has been updated.
             // as for now, we'll just include a console.log statement that we have successfully updated the database
         })
-        Axios.get('http://localhost:3001/data').then((response) => {
+        Axios.get('https://ai-financial-333500.uc.r.appspot.com/api/readdata').then((response) => {
             console.log(response.data)
           })
 

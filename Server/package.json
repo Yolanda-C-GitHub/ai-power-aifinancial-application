@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
     "devStart": "nodemon app.js",
-    "deploy":"gcloud app deploy"
+    "deploy": "gcloud app deploy"
   },
   "author": "",
   "license": "ISC",
