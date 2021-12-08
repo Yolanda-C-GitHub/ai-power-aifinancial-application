@@ -28,7 +28,7 @@ export default function Cheque(params) {
                 accountNum:'',
                 bankName:'',
                 address:'',
-                verified:true,
+                verified:false,
                 verifiedDate:'',
             }
 

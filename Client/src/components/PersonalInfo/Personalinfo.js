@@ -390,7 +390,7 @@ export default function Personalinfo({sidemenuState}) {
             accountNum:'',
             bankName:'',
             address:'',
-            verified:true,
+            verified:false,
             verifiedDate:'',
         },
         {
@@ -400,7 +400,7 @@ export default function Personalinfo({sidemenuState}) {
             accountNum:'',
             bankName:'',
             address:'',
-            verified:true,
+            verified:false,
             verifiedDate:'',
         },
     ]);
