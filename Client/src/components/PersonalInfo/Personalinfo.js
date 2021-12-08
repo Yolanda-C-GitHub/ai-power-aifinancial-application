@@ -5,8 +5,8 @@ import {Form, Button, Nav, Navbar} from 'react-bootstrap'
 
 import './personalinfo.css'
 import Firstpart from './Personalinfoparts/Firstpart'
-import Fourthpart from './Personalinfoparts/Fourthpart'
-import PartFive from './Personalinfoparts/Partfive'
+import Address from './Personalinfoparts/Address'
+import IDInfo from './Personalinfoparts/IDInfo'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Cheque from './Personalinfoparts/Cheque'
@@ -656,7 +656,7 @@ export default function Personalinfo({sidemenuState}) {
                       
                         <div className='addtionalInfoElements'> 
                             {iDActive?(
-                                <PartFive personalInfoPartFive={personalInfoPartFive} />
+                                <IDInfo personalInfoPartFive={personalInfoPartFive} />
                             ):null}
                             {familyActive?(
                                 <FamilyMember personalInfoFamilyArray={personalInfoFamilyArray}/>
@@ -671,7 +671,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {addressActive?(
-                                <Fourthpart personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
+                                <Address personalInfoRez={personalInfoRez}  personalInfoRez2={personalInfoRez2} />
                             ):null}
 
                             {channelActive?(

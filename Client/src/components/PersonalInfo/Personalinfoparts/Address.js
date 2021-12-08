@@ -1,9 +1,9 @@
 import React, {useRef, useState} from 'react'
 import {Card, FloatingLabel,Form} from 'react-bootstrap'
-import './fourthpart.css'
+import './addressinfo.css'
 import moment from 'moment'
 
-export default function Fourthpart(params) {
+export default function Address(params) {
     
     const houseNumRef=useRef();
     const currentRezRef=useRef();

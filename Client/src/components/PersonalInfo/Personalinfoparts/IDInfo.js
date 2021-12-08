@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
-import './partfive.css'
+import './idinfo.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 
