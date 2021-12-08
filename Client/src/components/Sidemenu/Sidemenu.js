@@ -43,7 +43,7 @@ export default function Sidemenu({sidemenuState}) {
 
                 {SidemenuData.map((item, index)=>{
                     return <Submenu item={item} key={index} />
-                })}s
+                })}
 
             </SidemenuNav>
 
