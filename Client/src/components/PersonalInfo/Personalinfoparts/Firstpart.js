@@ -32,6 +32,7 @@ export default function Firstpart(params) {
     const previousDeclaredRef = useRef();
     const dischargeDateRef=useRef();
 
+    
     // toggle discharge dates base on discharge input
     const [showDischarge, setShowDischarge]=useState(false);
     function toggleShowDischarge(){
