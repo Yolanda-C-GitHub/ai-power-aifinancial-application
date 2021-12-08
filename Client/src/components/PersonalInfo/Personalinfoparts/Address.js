@@ -11,7 +11,6 @@ export default function Address(params) {
     const provinceRef=useRef();
     const postalCodeRef=useRef();
     const rezSinceRef=useRef();
-
     const houseNumRef2=useRef();
     const currentRezRef2=useRef();
     const aptNumRef2=useRef();

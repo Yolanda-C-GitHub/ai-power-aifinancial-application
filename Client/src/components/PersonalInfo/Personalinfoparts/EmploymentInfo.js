@@ -97,7 +97,7 @@ export default function EmploymentInfo(params) {
                         <option>Select</option>
                         <option value='employed' >Employed</option>
                         <option value="selfEmployed">Self Employed</option>
-                        <option value="retired">Retuired</option>
+                        <option value="retired">Retired</option>
                         <option value="student">Student</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="other">Other</option>

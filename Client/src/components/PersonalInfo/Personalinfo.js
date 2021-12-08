@@ -248,6 +248,9 @@ export default function Personalinfo({sidemenuState}) {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const personalInfoNames = {
+        firstName,
+        lastName,
+        englishName,
         setLastName,
         setFirstName,
         setEnglishName,
