@@ -305,7 +305,7 @@ export default function Personalinfo({sidemenuState}) {
     const [familyArray, setFamilyArray]=useState([
         {
             relationship:'spouse',
-            firstName:'1',
+            firstName:'',
             lastName:'',
             dateofBirth:'',
         },
