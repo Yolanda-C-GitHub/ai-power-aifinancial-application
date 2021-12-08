@@ -10,6 +10,7 @@ import IDInfo from './Personalinfoparts/IDInfo'
 import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Cheque from './Personalinfoparts/Cheque'
+import Channel from './Personalinfoparts/Channel'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 
@@ -409,8 +410,20 @@ export default function Personalinfo({sidemenuState}) {
         setChequeArray,
     }
 
-
-
+    // states for personalinfo Channel
+    const [channelArray, setChannelArray]=useState([
+        {       
+            channelType:'',
+            accountid:'',
+            nickName:'',
+        },
+        {
+            channelType:'',
+            accountid:'',
+            nickName:'',
+        },
+        
+    ])
 
 
 
@@ -675,7 +688,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {channelActive?(
-                                <h1>try again</h1>            
+                                <Channel />          
                             ):null}
 
                             {KYCActive?(

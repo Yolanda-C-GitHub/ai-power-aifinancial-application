@@ -39,7 +39,7 @@
 .firstPartFormStatusOne{
     display:flex;
     flex-direction: row;
-    margin: 0px 10px 10px 10px;
+    margin: 0px 10px 10px 10px !important;
     border: none !important;
 }
 
