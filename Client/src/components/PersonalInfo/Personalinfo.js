@@ -305,7 +305,7 @@ export default function Personalinfo({sidemenuState}) {
     const [familyArray, setFamilyArray]=useState([
         {
             relationship:'spouse',
-            firstName:'',
+            firstName:'1',
             lastName:'',
             dateofBirth:'',
         },
@@ -539,8 +539,8 @@ export default function Personalinfo({sidemenuState}) {
             dischargeDate,
         )
         // console.log(idArray)
-        console.log(chequeArray)
-
+        // console.log(chequeArray)
+        console.log(familyArray)
 
 
 

@@ -9,12 +9,11 @@ export default function FamilyMember(params) {
 
     
 
-    const handleOnChangeInput=(index,e)=>{
-        console.log (index, e.target.name,)
+    function handleOnChangeInput(index,e){
         const values = [...params.personalInfoFamilyArray.familyArray]
         values[index][e.target.name] = e.target.value;
         params.personalInfoFamilyArray.setFamilyArray(values)
-        console.log(params.personalInfoFamilyArray.familyArray)
+      
     }
  
 
@@ -53,15 +52,15 @@ export default function FamilyMember(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='familyFirstName'  label='First Name'>
-                        <Form.Control placeholder='First Name' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].firstName} />
+                        <Form.Control placeholder='First Name' onChange={(e)=>handleOnChangeInput(index,e)} name='firstName' value={params.personalInfoFamilyArray.familyArray[index].firstName} />
                     </FloatingLabel>
                         
                     <FloatingLabel className='familyLastName' label='Last Name' >
-                        <Form.Control placeholder='Last Name' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].lastName} />
+                        <Form.Control placeholder='Last Name' onChange={(e)=>handleOnChangeInput(index,e)} name='lastName' value={params.personalInfoFamilyArray.familyArray[index].lastName} />
                     </FloatingLabel>
                             
                     <FloatingLabel  className='familyBirth' label='Date of Birth' >
-                        <Form.Control type='date' onChange={(e)=>handleOnChangeInput(index,e)} value={params.personalInfoFamilyArray.familyArray[index].dateofBirth}  />
+                        <Form.Control type='date' onChange={(e)=>handleOnChangeInput(index,e)} name='dateofBirth' alue={params.personalInfoFamilyArray.familyArray[index].dateofBirth}  />
                     </FloatingLabel>
 
 
