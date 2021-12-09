@@ -53,8 +53,9 @@ export default function Firstpart(params) {
             e.stopPropagation();
             console.log('no check the form')
         } else{
+            // once validation is passed, store all values in state
             setValidated(true);
-            console.log('run a bunch of setstates')
+            console.log('run a bunch of setstates') 
         }
        
     }
@@ -118,7 +119,7 @@ export default function Firstpart(params) {
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='SIN#'>
                             <Form.Control required 
-                                type='number'
+                                
                                 minlength='9' 
                                 maxlength='9' 
                                 placeholder='SIN#' 
