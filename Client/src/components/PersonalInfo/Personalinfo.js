@@ -632,7 +632,7 @@ export default function Personalinfo({sidemenuState}) {
 
                     // <Form onSubmit={handleSubmit} className='applicantInfoContainer'> REMOVE THIS FORM FOR NOW, WE ARE GOING TO CREATE MULTIPLE FORMS INSTEAD
 
-                        <>
+                        <div className='applicantInfoContainer'>
                         {/* main info  */}
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames ={personalInfoNames} />
@@ -700,11 +700,11 @@ export default function Personalinfo({sidemenuState}) {
                                 <h1>lol</h1>            
                             ):null}
                             <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
-                                {/* <Button type='submit'>Next</Button> */}
+                                <Button type='submit'>Next</Button>
                             </div>
                         </div> 
                     {/* // </Form> */}
-                    </>
+                    </div>
                 ) : null }
 
 

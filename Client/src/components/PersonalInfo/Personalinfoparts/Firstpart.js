@@ -46,58 +46,107 @@ export default function Firstpart(params) {
     function handleSubmit(e){
         e.preventDefault()
         const form = e.currentTarget;
+        const checkStatus = form.checkValidity()
+        console.log(checkStatus)
         if (form.checkValidity() === false) {
-            e.preventDefault();
+            setValidated(true);
             e.stopPropagation();
-        } 
-        setValidated(true);
+            console.log('no check the form')
+        } else{
+            setValidated(true);
+            console.log('run a bunch of setstates')
+        }
+       
     }
 
     return (
-            <Form noValidate validated={validated} onSubmit={handleSubmit} >
+            <Form noValidate validated={validated} onSubmit={handleSubmit} className='personalInfoForm'>
 
                 <Card className='firstPartCard'>
 
                     <Form.Group className='firstPartFormGroup' controlId="validationCustom01">
                         <FloatingLabel label='First Name'>
-                            <Form.Control required type='text' autocomplete='off' name='firstName' placeholder='First Name' ref= {firstNameRef} onChange ={()=>params.personalInfoNames.setFirstName(firstNameRef.current.value)} />
-                            <Form.Control.Feedback type='invalid'>this is a required field</Form.Control.Feedback>
+                            <Form.Control required
+                                type='text' 
+                                pattern='[A-Za-z]+' 
+                                autocomplete='off' 
+                                name='firstName' 
+                                placeholder='First Name' 
+                                ref= {firstNameRef} 
+                                onChange ={()=>params.personalInfoNames.setFirstName(firstNameRef.current.value)} />
+                            <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
 
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='Last Name'>
-                            <Form.Control name='lastName' placeholder='Last Name' ref={lastNameRef} onChange={()=>params.personalInfoNames.setLastName(lastNameRef.current.value)} ></Form.Control>
+                            <Form.Control required 
+                                name='lastName' 
+                                type='text' 
+                                pattern='[A-Za-z]+' 
+                                autocomplete='off' 
+                                placeholder='Last Name' 
+                                ref={lastNameRef} 
+                                onChange={()=>params.personalInfoNames.setLastName(lastNameRef.current.value)} ></Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
 
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='English Name'>
-                            <Form.Control name='englishName' placeholder='English Name' ref={englishNameRef} onChange={()=>params.personalInfoNames.setEnglishName(englishNameRef.current.value)} ></Form.Control>
+                            <Form.Control required
+                                name='lastName'
+                                type='text' 
+                                pattern='[A-Za-z]+' 
+                                autocomplete='off' 
+                                name='englishName' 
+                                placeholder='English Name' 
+                                ref={englishNameRef} 
+                                onChange={()=>params.personalInfoNames.setEnglishName(englishNameRef.current.value)} ></Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
             
                     <FloatingLabel  className='firstPartFormGroup' label='Date of Birth' >
-                        <Form.Control type='date' className='' ref={birthdayRef} onChange={()=>params.personalInfoNames.setBirthday(birthdayRef.current.value)} ></Form.Control>
+                        <Form.Control required 
+                            type='date' 
+                            ref={birthdayRef} 
+                            onChange={()=>params.personalInfoNames.setBirthday(birthdayRef.current.value)} ></Form.Control>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='SIN#'>
-                            <Form.Control placeholder='SIN#' ref={sinRef} onChange={()=>params.personalInfoNames.setSinNum(sinRef.current.value)}></Form.Control>
+                            <Form.Control required 
+                                type='number'
+                                minlength='9' 
+                                maxlength='9' 
+                                placeholder='SIN#' 
+                                ref={sinRef} 
+                                onChange={()=>params.personalInfoNames.setSinNum(sinRef.current.value)}></Form.Control>
+                            <Form.Control.Feedback type='invalid'>9 DIGIT SIN CARD NUM</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
 
-                    <Form.Group className='firstPartFormGroup'>
+                    <Form.Group required className='firstPartFormGroupGender'    
+                                feedback="Must Select a Gender"
+                                feedbackType="invalid">
                         <Form.Label className ='firstPartGenderLabel'>Gender:</Form.Label>
                         <div className='firstPartGenderBox' >
-                            <Form.Check name='genderselector' label='Male' type='radio' 
+                            <Form.Check required 
+                                name='genderselector' 
+                                label='Male'
+                                type='radio' 
                                 ref={genderMaleRef} 
                                 value="Male"  
                                 onChange={() => params.personalInfoNames.setGender(genderMaleRef.current.value)}
                             >
                             </Form.Check>
 
-                            <Form.Check inline name='genderselector' label='Female' type='radio' 
+                            <Form.Check required 
+                                inline name='genderselector' 
+                                label='Female' 
+                                type='radio' 
                                 ref={genderFemaleRef} 
                                 value="Female" 
                                 checked={params.personalInfoNames.gender === "Female"} 
@@ -106,22 +155,27 @@ export default function Firstpart(params) {
                             </Form.Check>
                         </div>
                     </Form.Group>
+                        
 
 
                     <FloatingLabel className='firstPartFormGroupE' label='Email'>
-                        <Form.Control type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoNames.setEmail(emailRef.current.value)}/>
+                        <Form.Control required type='email' ref={emailRef} placeholder='Email' onChange={()=>params.personalInfoNames.setEmail(emailRef.current.value)}/>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='firstPartFormGroup' label='Cell Phone'>
-                        <Form.Control placeholder='cellphone'ref={cellNumRef} onChange={()=>params.personalInfoNames.setCellNum(cellNumRef.current.value)}/>
+                        <Form.Control required placeholder='cellphone'ref={cellNumRef} onChange={()=>params.personalInfoNames.setCellNum(cellNumRef.current.value)}/>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='firstPartFormGroup' label='Home Phone'>
-                        <Form.Control placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoNames.setHomeNum(homeNumRef.current.value)} />
+                        <Form.Control required placeholder='homephone' ref={homeNumRef} onChange={()=>params.personalInfoNames.setHomeNum(homeNumRef.current.value)} />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className = 'firstPartFormGroup' label='Work Phone'>
-                        <Form.Control placeholder='workphone' ref={workNumRef} onChange={()=>params.personalInfoNames.setWorkNum(workNumRef.current.value)} />
+                        <Form.Control required placeholder='workphone' ref={workNumRef} onChange={()=>params.personalInfoNames.setWorkNum(workNumRef.current.value)} />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
         
 
@@ -129,19 +183,20 @@ export default function Firstpart(params) {
             
                     <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status' >
-                            <Form.Select className='formStatusItems' ref={livingStatusRef} onChange={()=>params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)}>
-                                <option placeholder='select' >Select</option>
+                            <Form.Control required as='select' className='formStatusItems' ref={livingStatusRef} onChange={()=>params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)}>
+                                <option value=''>Select</option>
                                 <option value='owner'>Owner</option>
                                 <option value='rent'>Rent</option>
                                 <option value='with parent'>With Parent</option>
                                 <option value='with other'>With Other</option>
                                 <option value='other'>Other</option>
-                            </Form.Select>
+                            </Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel label='Marital Status' >
-                            <Form.Select className='formStatusItems' ref={maritalStatusRef} onChange={()=>params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)}>
-                                <option placeholder='select' >Select</option>
+                            <Form.Control required as='select' className='formStatusItems' ref={maritalStatusRef} onChange={()=>params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)}>
+                                <option value='' >Select</option>
                                 <option value='married'>Married</option>
                                 <option value='single'>Single</option>
                                 <option value='divorced'>Divorced</option>
@@ -149,27 +204,30 @@ export default function Firstpart(params) {
                                 <option value='widowed'>Widowed</option>
                                 <option value='common law'>Common Law</option>
                                 <option value='other'>Other</option>
-                            </Form.Select>
+                            </Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                 
                         <FloatingLabel label='Citizenship' >
-                            <Form.Select className='formStatusItems' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
-                                <option placeholder='select' >Select</option>
+                            <Form.Control required as='select' className='formStatusItems' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
+                                <option value='' >Select</option>
                                 <option value='canadian'>Canadian</option>
                                 <option value='chinese'>Chinese</option>
                                 <option value='pr'>PR</option>
                                 <option value='other'>Other</option>
-                            </Form.Select>            
+                            </Form.Control>    
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>        
                         </FloatingLabel>
 
                         <FloatingLabel label='Tax Status'>
-                            <Form.Select className='formStatusItems' ref={taxStatusRef} onChange={()=>params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)}>
-                                <option placeholder='select' >Select</option>
+                            <Form.Control required as='select' className='formStatusItems' ref={taxStatusRef} onChange={()=>params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)}>
+                                <option value='' >Select</option>
                                 <option value='canada'>Canada</option>
                                 <option value='usa'>USA</option>
                                 <option value='both'>Both</option>
                                 <option value='other'>Other</option>
-                            </Form.Select>
+                            </Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                     </div>
 
@@ -188,12 +246,13 @@ export default function Firstpart(params) {
 
                     {showDischarge===true?(
                             <FloatingLabel className='dischargeDate' label='Discharge Date'>
-                                <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
+                                <Form.Control required type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
+                                <Form.Control.Feedback type='invalid'>Required Field if You Have Previously Declared Bankruptcy</Form.Control.Feedback>
                             </FloatingLabel>
                     ): null} 
                 </Card>
 
-                <Button type='submit'>Save</Button>
+                <Button type='submit' className='personalInfoButton'>Save</Button>
 
             </Form>
     )

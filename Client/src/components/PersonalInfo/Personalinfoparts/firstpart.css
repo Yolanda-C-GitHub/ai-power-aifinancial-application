@@ -1,25 +1,45 @@
+.personalInfoForm{
+    display: flex;
+    flex-direction: column;
+}
+.personalInfoButton{
+    margin: 0px 0px 0px 0px;
+    align-self: flex-end;
+}
+
 .firstPartCard{
     display:flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
     flex-wrap: wrap;
-    padding:5px;
+    margin:15px;
     border:none;
+
 }
 
 .firstPartFormGroup{
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     justify-content: center;
     width: 200px;
     margin-left: 10px;
     margin-bottom: 10px;
+    flex-wrap:wrap;
 }
 .firstPartFormGroupE{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     width: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.firstPartFormGroupGender{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
     margin-left: 10px;
     margin-bottom: 10px;
 }
