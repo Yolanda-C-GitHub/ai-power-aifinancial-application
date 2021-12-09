@@ -1,17 +1,14 @@
 import React, {useRef, useState} from 'react';
-import {Card, Form, FloatingLabel} from 'react-bootstrap';
+import {Card, Form, FloatingLabel, Button} from 'react-bootstrap';
 import './firstpart.css';
-import * as Yup from 'yup';
 
 
-const FORM_VALIDATION = Yup.object().shape({
-    firstName: Yup.string().max(5, 'Too Long').required(),
-    lastName: Yup.string().max(5, 'Too Long').required(),
-    englishName: Yup.string().max(5, 'Too Long').required(),
-})
 
 
-export default function Firstpart(params) {
+
+
+
+export default function Firstpart(params) {  
 
     // ref for inputs
     const lastNameRef = useRef()
@@ -44,18 +41,33 @@ export default function Firstpart(params) {
         }
     }
 
+    const [validated, setValidated] = useState(false)
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const form = e.currentTarget;
+        if (form.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+        } 
+        setValidated(true);
+    }
+
     return (
+            <Form noValidate validated={validated} onSubmit={handleSubmit} >
+
                 <Card className='firstPartCard'>
 
-                    <Form.Group className='firstPartFormGroup'>
+                    <Form.Group className='firstPartFormGroup' controlId="validationCustom01">
                         <FloatingLabel label='First Name'>
-                            <Form.Control name='firstName' placeholder='First Name' ref= {lastNameRef} onChange ={()=>params.personalInfoNames.setLastName(lastNameRef.current.value)}></Form.Control>
+                            <Form.Control required type='text' autocomplete='off' name='firstName' placeholder='First Name' ref= {firstNameRef} onChange ={()=>params.personalInfoNames.setFirstName(firstNameRef.current.value)} />
+                            <Form.Control.Feedback type='invalid'>this is a required field</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
 
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='Last Name'>
-                            <Form.Control name='lastName' placeholder='Last Name' ref={firstNameRef} onChange={()=>params.personalInfoNames.setFirstName(firstNameRef.current.value)} ></Form.Control>
+                            <Form.Control name='lastName' placeholder='Last Name' ref={lastNameRef} onChange={()=>params.personalInfoNames.setLastName(lastNameRef.current.value)} ></Form.Control>
                         </FloatingLabel>
                     </Form.Group>
 
@@ -126,7 +138,7 @@ export default function Firstpart(params) {
                                 <option value='other'>Other</option>
                             </Form.Select>
                         </FloatingLabel>
-        
+
                         <FloatingLabel label='Marital Status' >
                             <Form.Select className='formStatusItems' ref={maritalStatusRef} onChange={()=>params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)}>
                                 <option placeholder='select' >Select</option>
@@ -179,8 +191,10 @@ export default function Firstpart(params) {
                                 <Form.Control type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
                             </FloatingLabel>
                     ): null} 
-
-
                 </Card>
+
+                <Button type='submit'>Save</Button>
+
+            </Form>
     )
 }
