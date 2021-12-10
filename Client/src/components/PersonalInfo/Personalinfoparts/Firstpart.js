@@ -62,6 +62,7 @@ export default function Firstpart(params) {
             console.log(
                 params.personalInfoNames.firstName,
                 params.personalInfoNames.lastName,
+                params.personalInfoNames.
             )
         }
        
@@ -235,7 +236,7 @@ export default function Firstpart(params) {
                             </Form.Control>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
-                        
+
                         <FloatingLabel label='Citizenship' >
                             <Form.Control required as='select' className='formStatusItems' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
                                 <option value='' >Select</option>
