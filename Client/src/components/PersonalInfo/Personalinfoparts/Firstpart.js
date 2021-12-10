@@ -72,7 +72,7 @@ export default function Firstpart(params) {
             params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)
             params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
             if(showDischarge===true){
-            params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
+                params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
             }
 
         }
