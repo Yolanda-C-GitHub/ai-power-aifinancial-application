@@ -710,33 +710,14 @@ export default function Personalinfo({sidemenuState}) {
                             {KYCActive?(
                                 <h1>lol</h1>            
                             ):null}
-                            <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
-                                <Button type='submit' onClick={(e)=>{
-                                    console.log('----------------')
-                                    console.log(
-                                        firstName,
-                                        lastName,
-                                        englishName,
-                                        gender,
-                                        birthDay,
-                                        sinNum,
-                                        email,
-                                        cellNum,
-                                        homeNum,
-                                        workNum,
-                                        livingStatus,
-                                        maritalStatus,
-                                        citizenship,
-                                        taxStatus,
-                                        declared,
-                                        dischargeDate,
-                                    )
-                                }}>Test Submit</Button>
-                            </div>
+                         
                         </div> 
                     {/* // </Form> */}
                     </div>
                 ) : null }
+
+
+
 
 
                 {coApplicantActive? (
@@ -805,6 +786,34 @@ export default function Personalinfo({sidemenuState}) {
                         </div>
                     </Form>
                 ):null}
+
+
+
+
+
+                <div className='applicantInfoButton'>
+                    <Button type='submit' onClick={(e)=>{
+                        console.log('----------------')
+                        console.log(
+                            firstName,
+                            lastName,
+                            englishName,
+                            gender,
+                            birthDay,
+                            sinNum,
+                            email,
+                            cellNum,
+                            homeNum,
+                            workNum,
+                            livingStatus,
+                            maritalStatus,
+                            citizenship,
+                            taxStatus,
+                            declared,
+                            dischargeDate,
+                        )
+                    }}>Test Submit</Button>
+                </div>
             </PersonalInfoContainer>
     )
 }

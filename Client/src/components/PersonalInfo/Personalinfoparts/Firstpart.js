@@ -76,7 +76,7 @@ export default function Firstpart(params) {
             }
 
         }
-       
+        
     }
 
     return (
