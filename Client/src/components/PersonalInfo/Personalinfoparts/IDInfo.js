@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import {Card, Form, FloatingLabel, Button} from 'react-bootstrap'
 import './idinfo.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
@@ -38,12 +38,15 @@ export default function Partfive(params) {
         params.personalInfoPartFive.setIdArray(values);
     }
 
-
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log('working')
+    }
 
 
 
     return (
-            <Form className='formPartFive'>    
+            <Form className='formPartFive' onSubmit={handleSubmit} >    
                 {params.personalInfoPartFive.idArray.map((item, index) => 
                 
                     <Form.Group className='formGroupID' key={index} > 
@@ -115,9 +118,7 @@ export default function Partfive(params) {
                 )}
 
                 <div className='idSubmitButton'>
-                    <Button type='submit' onClick={(e)=>{
-                        e.preventDefault();
-                    }}>Save to State</Button>
+                    <Button type='submit' >Save to State</Button>
                 </div>
 
             </Form>
