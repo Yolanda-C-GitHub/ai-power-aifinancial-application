@@ -71,7 +71,7 @@ export default function Firstpart(params) {
             params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)
             params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)
             params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
-            if(showDischarge === true){
+            if(showDischarge===true){
             params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
             }
 
@@ -93,7 +93,7 @@ export default function Firstpart(params) {
                                 name='firstName' 
                                 placeholder='First Name' 
                                 ref= {firstNameRef} 
-                                />
+                            />
                             <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
@@ -114,7 +114,7 @@ export default function Firstpart(params) {
 
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='English Name'>
-                            <Form.Control required
+                            <Form.Control
                                 name='lastName'
                                 type='text' 
                                 pattern='[A-Za-z]+' 
@@ -314,7 +314,6 @@ export default function Firstpart(params) {
 
                 <Button type='submit' className='personalInfoButton'>Save to State</Button>
         
-
             </Form>
     )
 }
