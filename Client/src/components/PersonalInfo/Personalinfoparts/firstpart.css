@@ -1,10 +1,15 @@
 .personalInfoForm{
     display: flex;
     flex-direction: column;
+    border: 1px solid rgb(211, 189, 189);
+    border-radius: 5px;
 }
 .personalInfoButton{
     margin: 0px 0px 0px 0px;
     align-self: flex-end;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 .firstPartCard{
@@ -13,7 +18,7 @@
     justify-content: flex-start !important;
     flex-wrap: wrap;
     margin:15px;
-    border:none;
+    border: none;
 
 }
 

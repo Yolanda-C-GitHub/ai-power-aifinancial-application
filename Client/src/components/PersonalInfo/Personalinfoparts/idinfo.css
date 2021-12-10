@@ -1,9 +1,12 @@
-.cardPartFive{
+
+
+.formPartFive{
     display:flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-bottom: 10px;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid rgb(211, 189, 189);
+    border-radius: 5px;
 }
 
 .formGroupID{
@@ -76,4 +79,11 @@
     cursor: pointer;
     transform: scale(2.5);
     transition: 0.2s;
+}
+
+.idSubmitButton{
+    align-self: flex-end;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }

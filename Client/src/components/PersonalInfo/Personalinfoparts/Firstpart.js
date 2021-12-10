@@ -309,9 +309,11 @@ export default function Firstpart(params) {
                                 <Form.Control.Feedback type='invalid'>Required Field if You Have Previously Declared Bankruptcy</Form.Control.Feedback>
                             </FloatingLabel>
                     ): null} 
+                    
                 </Card>
 
                 <Button type='submit' className='personalInfoButton'>Save to State</Button>
+        
 
             </Form>
     )

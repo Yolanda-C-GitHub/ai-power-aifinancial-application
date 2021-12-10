@@ -43,9 +43,7 @@ export default function Partfive(params) {
 
 
     return (
-        <Card className='cardPartFive'>
-
-           <Form>   
+            <Form className='formPartFive'>    
                 {params.personalInfoPartFive.idArray.map((item, index) => 
                 
                     <Form.Group className='formGroupID' key={index} > 
@@ -117,9 +115,12 @@ export default function Partfive(params) {
                 )}
 
                 <div className='idSubmitButton'>
-                    <Button type='submit'>Save to State</Button>
+                    <Button type='submit' onClick={(e)=>{
+                        e.preventDefault();
+                    }}>Save to State</Button>
                 </div>
+
             </Form>
-        </Card>
+
     )
 }

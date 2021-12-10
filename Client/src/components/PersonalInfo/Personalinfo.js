@@ -619,7 +619,6 @@ export default function Personalinfo({sidemenuState}) {
         //     occupation2,  
         // )
         
-
     }
 
     return (
