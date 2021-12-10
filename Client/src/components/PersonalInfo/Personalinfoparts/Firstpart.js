@@ -62,9 +62,7 @@ export default function Firstpart(params) {
             params.personalInfoNames.setEnglishName(englishNameRef.current.value)
             params.personalInfoNames.setBirthday(birthdayRef.current.value)
             params.personalInfoNames.setSinNum(sinRef.current.value)
-
             params.personalInfoNames.setGender(gender)
-
             params.personalInfoNames.setEmail(emailRef.current.value)
             params.personalInfoNames.setCellNum(cellNumRef.current.value)
             params.personalInfoNames.setHomeNum(homeNumRef.current.value)
@@ -73,31 +71,10 @@ export default function Firstpart(params) {
             params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)
             params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)
             params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
+            if(showDischarge === true){
             params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
-
-
-
-
-
-            console.log('run a bunch of setstates') 
-            // console.log(
-            //     params.personalInfoNames.firstName,
-            //     params.personalInfoNames.lastName,
-            //     params.personalInfoNames.englishName,
-            //     params.personalInfoNames.gender,
-            //     params.personalInfoNames.birthDay,
-            //     params.personalInfoNames.sinNum, 
-            //     params.personalInfoNames.email,
-            //     params.personalInfoNames.cellNum,
-            //     params.personalInfoNames.homeNum,
-            //     params.personalInfoNames.workNum,
-            //     params.personalInfoNames.livingStatus,
-            //     params.personalInfoNames.maritalStatus,
-            //     params.personalInfoNames.citizenshipStatus,
-            //     params.personalInfoNames.taxStatus,
-            //     params.personalInfoNames.declared,
-            //     params.persoanlInfoNames.dischargeDate,
-            // )
+            }
+            
         }
        
     }
