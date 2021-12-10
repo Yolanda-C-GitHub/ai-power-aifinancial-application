@@ -156,7 +156,7 @@ export default function Firstpart(params) {
                             <Form.Check required 
                                 name='genderselector' 
                                 label='Male'
-                                type='radio' 
+                                type='radio'
                                 ref={genderMaleRef} 
                                 value="Male"
                                 onChange={() => setGender(genderMaleRef.current.value)}
