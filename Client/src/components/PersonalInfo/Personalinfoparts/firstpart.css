@@ -17,9 +17,8 @@
     flex-direction: row !important;
     justify-content: flex-start !important;
     flex-wrap: wrap;
-    margin:15px;
+    margin:10px;
     border: none;
-
 }
 
 .firstPartFormGroup{
