@@ -27,9 +27,11 @@ export default function Firstpart(params) {
     const citizenshipRef = useRef();
     const taxStatusRef = useRef();
     const previousDeclaredRef = useRef();
-    const dischargeDateRef=useRef();
+    const dischargeDateRef=useRef('');
 
+    const [gender, setGender]=useState()
     
+
     // toggle discharge dates base on discharge input
     const [showDischarge, setShowDischarge]=useState(false);
     function toggleShowDischarge(){
@@ -58,12 +60,44 @@ export default function Firstpart(params) {
             params.personalInfoNames.setFirstName(firstNameRef.current.value)
             params.personalInfoNames.setLastName(lastNameRef.current.value)
             params.personalInfoNames.setEnglishName(englishNameRef.current.value)
+            params.personalInfoNames.setBirthday(birthdayRef.current.value)
+            params.personalInfoNames.setSinNum(sinRef.current.value)
+
+            params.personalInfoNames.setGender(gender)
+
+            params.personalInfoNames.setEmail(emailRef.current.value)
+            params.personalInfoNames.setCellNum(cellNumRef.current.value)
+            params.personalInfoNames.setHomeNum(homeNumRef.current.value)
+            params.personalInfoNames.setWorkNum(workNumRef.current.value)
+            params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)
+            params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)
+            params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)
+            params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
+            params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
+
+
+
+
+
             console.log('run a bunch of setstates') 
-            console.log(
-                params.personalInfoNames.firstName,
-                params.personalInfoNames.lastName,
-                params.personalInfoNames.
-            )
+            // console.log(
+            //     params.personalInfoNames.firstName,
+            //     params.personalInfoNames.lastName,
+            //     params.personalInfoNames.englishName,
+            //     params.personalInfoNames.gender,
+            //     params.personalInfoNames.birthDay,
+            //     params.personalInfoNames.sinNum, 
+            //     params.personalInfoNames.email,
+            //     params.personalInfoNames.cellNum,
+            //     params.personalInfoNames.homeNum,
+            //     params.personalInfoNames.workNum,
+            //     params.personalInfoNames.livingStatus,
+            //     params.personalInfoNames.maritalStatus,
+            //     params.personalInfoNames.citizenshipStatus,
+            //     params.personalInfoNames.taxStatus,
+            //     params.personalInfoNames.declared,
+            //     params.persoanlInfoNames.dischargeDate,
+            // )
         }
        
     }
@@ -120,7 +154,7 @@ export default function Firstpart(params) {
                         <Form.Control required 
                             type='date' 
                             ref={birthdayRef} 
-                            onChange={()=>params.personalInfoNames.setBirthday(birthdayRef.current.value)} ></Form.Control>
+                        />
                         <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
@@ -132,7 +166,7 @@ export default function Firstpart(params) {
                                 pattern='[0-9]+'
                                 placeholder='SIN#' 
                                 ref={sinRef} 
-                                onChange={()=>params.personalInfoNames.setSinNum(sinRef.current.value)}></Form.Control>
+                            />
                             <Form.Control.Feedback type='invalid'>9 DIGIT SIN CARD NUM</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
@@ -148,18 +182,18 @@ export default function Firstpart(params) {
                                 type='radio' 
                                 ref={genderMaleRef} 
                                 value="Male"
-                                onChange={() => params.personalInfoNames.setGender(genderMaleRef.current.value)}
+                                onChange={() => setGender(genderMaleRef.current.value)}
                             >
                             </Form.Check>
 
                             <Form.Check required 
                                 inline name='genderselector' 
                                 label='Female' 
-                                type='radio' 
+                                type='radio'
                                 ref={genderFemaleRef} 
                                 value="Female" 
-                                checked={params.personalInfoNames.gender === "Female"} 
-                                onChange={()=>params.personalInfoNames.setGender(genderFemaleRef.current.value)}
+                                checked={gender === "Female"} 
+                                onChange={()=>setGender(genderFemaleRef.current.value)}
                             >
                             </Form.Check>
                         </div>
@@ -172,7 +206,7 @@ export default function Firstpart(params) {
                         type='email' 
                         ref={emailRef} 
                         placeholder='Email' 
-                        onChange={()=>params.personalInfoNames.setEmail(emailRef.current.value)}/>
+                        />
                         <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
@@ -183,7 +217,7 @@ export default function Firstpart(params) {
                         pattern='\d{3}\d{3}\d{4}'
                         placeholder='cellphone'
                         ref={cellNumRef}
-                        onChange={()=>params.personalInfoNames.setCellNum(cellNumRef.current.value)}/>
+                        />
                         <Form.Control.Feedback type='invalid'>Required Field, Must Contain 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
 
@@ -193,7 +227,7 @@ export default function Firstpart(params) {
                         pattern='\d{3}\d{3}\d{4}'
                         placeholder='homephone' 
                         ref={homeNumRef}
-                        onChange={()=>params.personalInfoNames.setHomeNum(homeNumRef.current.value)} />
+                        />
                         <Form.Control.Feedback type='invalid'>Required Field, Must Contain 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
 
@@ -203,7 +237,7 @@ export default function Firstpart(params) {
                         pattern='\d{3}\d{3}\d{4}'
                         placeholder='workphone'
                         ref={workNumRef} 
-                        onChange={()=>params.personalInfoNames.setWorkNum(workNumRef.current.value)} />
+                        />
                         <Form.Control.Feedback type='invalid'>Optional Field, But Format Must Be 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
         
@@ -212,7 +246,11 @@ export default function Firstpart(params) {
             
                     <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status' >
-                            <Form.Control required as='select' className='formStatusItems' ref={livingStatusRef} onChange={()=>params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)}>
+                            <Form.Control required 
+                                as='select' 
+                                className='formStatusItems' 
+                                ref={livingStatusRef}
+                            >
                                 <option value=''>Select</option>
                                 <option value='owner'>Owner</option>
                                 <option value='rent'>Rent</option>
@@ -265,7 +303,6 @@ export default function Firstpart(params) {
                     <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
                         <Form.Select ref={previousDeclaredRef} 
                         onChange={()=>{
-                            params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
                             toggleShowDischarge()
                         }}>
                             <option value='No'>No</option>
@@ -275,7 +312,11 @@ export default function Firstpart(params) {
 
                     {showDischarge===true?(
                             <FloatingLabel className='dischargeDate' label='Discharge Date'>
-                                <Form.Control required type='date' placeholder='dateOfDischarge' ref={dischargeDateRef} onChange={()=>params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)} />
+                                <Form.Control required 
+                                    type='date' 
+                                    placeholder='dateOfDischarge' 
+                                    ref={dischargeDateRef} 
+                                />
                                 <Form.Control.Feedback type='invalid'>Required Field if You Have Previously Declared Bankruptcy</Form.Control.Feedback>
                             </FloatingLabel>
                     ): null} 

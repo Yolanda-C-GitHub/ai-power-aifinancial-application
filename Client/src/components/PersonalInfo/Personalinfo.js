@@ -646,7 +646,7 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='applicantInfoContainer'>
                         {/* main info  */}
                         <div className='row' className='applicantInfoNames'> 
-                            <Firstpart  personalInfoNames ={personalInfoNames} />
+                            <Firstpart  personalInfoNames={personalInfoNames} />
                         </div>
 
                         {/* supporting info tabs */}
@@ -712,9 +712,25 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
                             <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                                 <Button type='submit' onClick={(e)=>{
-                                    console.log(firstName)
-                                    console.log(lastName)
-                                    console.log(englishName)
+                                    console.log('----------------')
+                                    console.log(
+                                        firstName,
+                                        lastName,
+                                        englishName,
+                                        gender,
+                                        birthDay,
+                                        sinNum,
+                                        email,
+                                        cellNum,
+                                        homeNum,
+                                        workNum,
+                                        livingStatus,
+                                        maritalStatus,
+                                        citizenship,
+                                        taxStatus,
+                                        declared,
+                                        dischargeDate,
+                                    )
                                 }}>Test Submit</Button>
                             </div>
                         </div> 
