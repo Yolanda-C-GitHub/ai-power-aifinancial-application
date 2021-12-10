@@ -31,7 +31,6 @@ export default function Partfive(params) {
         )
     }
 
-    
     const handleDelete =(index)=>{
         const values = [...params.personalInfoPartFive.idArray]
         values.splice(index,1)
