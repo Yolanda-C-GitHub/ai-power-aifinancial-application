@@ -74,7 +74,7 @@ export default function Firstpart(params) {
             if(showDischarge === true){
             params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
             }
-            
+
         }
        
     }
@@ -239,7 +239,11 @@ export default function Firstpart(params) {
                         </FloatingLabel>
 
                         <FloatingLabel label='Marital Status' >
-                            <Form.Control required as='select' className='formStatusItems' ref={maritalStatusRef} onChange={()=>params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)}>
+                            <Form.Control required 
+                                as='select'
+                                className='formStatusItems'
+                                ref={maritalStatusRef}
+                            >
                                 <option value='' >Select</option>
                                 <option value='married'>Married</option>
                                 <option value='single'>Single</option>
@@ -253,7 +257,11 @@ export default function Firstpart(params) {
                         </FloatingLabel>
 
                         <FloatingLabel label='Citizenship' >
-                            <Form.Control required as='select' className='formStatusItems' ref={citizenshipRef} onChange={()=>params.personalInfoNames.setCitizenship(citizenshipRef.current.value)} >
+                            <Form.Control required 
+                                as='select' 
+                                className='formStatusItems' 
+                                ref={citizenshipRef} 
+                            >
                                 <option value='' >Select</option>
                                 <option value='canadian'>Canadian</option>
                                 <option value='chinese'>Chinese</option>
@@ -264,7 +272,11 @@ export default function Firstpart(params) {
                         </FloatingLabel>
 
                         <FloatingLabel label='Tax Status'>
-                            <Form.Control required as='select' className='formStatusItems' ref={taxStatusRef} onChange={()=>params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)}>
+                            <Form.Control required 
+                                as='select' 
+                                className='formStatusItems' 
+                                ref={taxStatusRef} 
+                            >
                                 <option value='' >Select</option>
                                 <option value='canada'>Canada</option>
                                 <option value='usa'>USA</option>
