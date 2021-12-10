@@ -558,7 +558,7 @@ export default function Personalinfo({sidemenuState}) {
         // console.log(chequeArray)
         console.log(familyArray)
 
-
+        console.log(lastName, firstName, englishName)
 
           
 
@@ -568,7 +568,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
         // console.log('submit form button working')
-        // console.log(lastName, firstName, englishName)
+   
         // console.log(gender, birthDay, sinNum)
         // console.log(livingStatus, maritalStatus, citizenship, taxStatus)
         // console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
@@ -700,7 +700,11 @@ export default function Personalinfo({sidemenuState}) {
                                 <h1>lol</h1>            
                             ):null}
                             <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
-                                <Button type='submit'>Next</Button>
+                                <Button type='submit' onClick={(e)=>{
+                                    console.log(firstName)
+                                    console.log(lastName)
+                                    console.log(englishName)
+                                }}>Test Submit</Button>
                             </div>
                         </div> 
                     {/* // </Form> */}
