@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {Card, Form, FloatingLabel, Button} from 'react-bootstrap';
 import './firstpart.css';
+import moment from 'moment'
 
 
 
@@ -149,6 +150,7 @@ export default function Firstpart(params) {
                         <Form.Control required 
                             type='date' 
                             ref={birthdayRef}
+                            max={moment().format("YYYY-MM-DD")}
                         />
                         <Form.Control.Feedback ref={birthdayFeedback} type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
