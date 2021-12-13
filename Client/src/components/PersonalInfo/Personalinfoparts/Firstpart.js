@@ -34,7 +34,6 @@ export default function Firstpart(params) {
 
     // toggle discharge dates base on discharge input
     const [showDischarge, setShowDischarge]=useState(false);
-
     function toggleShowDischarge(){
         if(params.personalInfoNames.declared==='No'){
             setShowDischarge(true)
