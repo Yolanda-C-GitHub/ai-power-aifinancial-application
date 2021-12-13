@@ -112,6 +112,7 @@ export default function Firstpart(params) {
                                     firstNameFeedback.current.textContent = 'Required Field Letters Only'
                                     }
                                 }}
+                                value={params.personalInfoNames.firstName}
                             />
                             <Form.Control.Feedback ref={firstNameFeedback} type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
@@ -125,7 +126,7 @@ export default function Firstpart(params) {
                                 pattern='[A-Za-z]+' 
                                 autocomplete='off' 
                                 placeholder='Last Name' 
-                                ref={lastNameRef} 
+                                ref={lastNameRef}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>

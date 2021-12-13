@@ -51,11 +51,6 @@ export default function Partfive(params) {
 
 
 
-
-
-
-
-
     // validation 
     const [validated, setValidated] = useState(false)
     function handleSubmit(e){
