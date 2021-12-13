@@ -85,6 +85,10 @@ export default function Partfive(params) {
 
 
 
+
+
+
+    // // directly changing final state info, might still need this later
     // const handleOnChangeInput=(index,e)=>{
     //     console.log (index, e.target.name)
     //     const values = [...params.personalInfoPartFive.idArray]
