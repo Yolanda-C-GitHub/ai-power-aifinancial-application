@@ -2,6 +2,9 @@ import React, {useState, useRef} from 'react'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 import './employmentinfo.css'
 import moment from 'moment'
+import {occupationOptions} from './employmentdata'
+
+
 
 export default function EmploymentInfo(params) {
     
@@ -85,6 +88,8 @@ export default function EmploymentInfo(params) {
  
     
 
+    const industrySelectorRef = useRef();
+    const [industrySelect, setIndustrySelect] = useState('')
 
     return (
         <Card className='employmentInfoCard' >
@@ -113,8 +118,12 @@ export default function EmploymentInfo(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Industry'>
-                    <Form.Select className='industry' onChange={(e)=>params.personalInfoEmploymentInfo.setIndustry(e.target.value)} > 
-                        <option>Select</option>
+                    <Form.Select className='industry' ref={industrySelectorRef} onChange={(e)=>{
+                        params.personalInfoEmploymentInfo.setIndustry(e.target.value);
+                        setIndustrySelect(e.target.value)
+                    }}
+                    > 
+                        <option value=''>Select</option>
                         <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                         <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
                         <option value="artsEntertainmentRecreationSports">Arts Entertainment Recreation Sports</option>
@@ -139,7 +148,17 @@ export default function EmploymentInfo(params) {
                 </FloatingLabel>
 
                 <FloatingLabel label='Occupation'>
-                    <Form.Control className='occupation' placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value) }  /> 
+                    <Form.Select className='occupation' placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value)}> 
+                        
+                        { industrySelect === 'agricultureFishingForestryMining' ?(
+                            occupationOptions[0].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):
+                            <option value=''>Select Industry first</option>
+                        }
+               
+                    </Form.Select>
                 </FloatingLabel>
 
                 <FloatingLabel className='streetNum' label='Street Number'>
