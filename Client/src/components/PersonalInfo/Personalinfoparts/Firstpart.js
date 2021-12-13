@@ -34,12 +34,16 @@ export default function Firstpart(params) {
 
     // toggle discharge dates base on discharge input
     const [showDischarge, setShowDischarge]=useState(false);
+
     function toggleShowDischarge(){
         if(params.personalInfoNames.declared==='No'){
-            setShowDischarge(true)   
-        } else{
-            params.personalInfoNames.setDischargeDate('')
+            setShowDischarge(true)
+            params.personalInfoNames.setDeclared('Yes')
+          
+        } else if(params.personalInfoNames.declared==='Yes'){
             setShowDischarge(false)
+            params.personalInfoNames.setDischargeDate('')
+            params.personalInfoNames.setDeclared('No')
         }
     }
 
@@ -85,7 +89,7 @@ export default function Firstpart(params) {
                 <Card className='firstPartCard'>
 
                     <Form.Group className='firstPartFormGroup' controlId="validationCustom01">
-                        <FloatingLabel label='First Name'>
+                        <FloatingLabel label='First Name*'>
                             <Form.Control required
                                 type='text' 
                                 pattern='[A-Za-z]+' 
@@ -99,7 +103,7 @@ export default function Firstpart(params) {
                     </Form.Group>
 
                     <Form.Group className='firstPartFormGroup'>
-                        <FloatingLabel label='Last Name'>
+                        <FloatingLabel label='Last Name*'>
                             <Form.Control required 
                                 name='lastName' 
                                 type='text' 
@@ -127,7 +131,7 @@ export default function Firstpart(params) {
                         </FloatingLabel>
                     </Form.Group>
             
-                    <FloatingLabel  className='firstPartFormGroup' label='Date of Birth' >
+                    <FloatingLabel  className='firstPartFormGroup' label='Date of Birth*' >
                         <Form.Control required 
                             type='date' 
                             ref={birthdayRef} 
@@ -136,7 +140,7 @@ export default function Firstpart(params) {
                     </FloatingLabel>
 
                     <Form.Group className='firstPartFormGroup'>
-                        <FloatingLabel label='SIN#'>
+                        <FloatingLabel label='SIN#*'>
                             <Form.Control required 
                                 minlength='9' 
                                 maxlength='9'
@@ -151,7 +155,7 @@ export default function Firstpart(params) {
                     <Form.Group required className='firstPartFormGroupGender'    
                                 feedback="Must Select a Gender"
                                 feedbackType="invalid">
-                        <Form.Label className ='firstPartGenderLabel'>Gender:</Form.Label>
+                        <Form.Label className ='firstPartGenderLabel'>Gender*:</Form.Label>
                         <div className='firstPartGenderBox' >
                             <Form.Check required 
                                 name='genderselector' 
@@ -178,7 +182,7 @@ export default function Firstpart(params) {
                         
 
 
-                    <FloatingLabel className='firstPartFormGroupE' label='Email'>
+                    <FloatingLabel className='firstPartFormGroupE' label='E-Mail*'>
                         <Form.Control required
                         type='email' 
                         ref={emailRef} 
@@ -187,7 +191,7 @@ export default function Firstpart(params) {
                         <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
-                    <FloatingLabel className='firstPartFormGroup' label='Cell Phone'>
+                    <FloatingLabel className='firstPartFormGroup' label='Cell Phone*'>
                         <Form.Control required 
                         maxlength='10'
                         minlenght='10'
@@ -222,7 +226,7 @@ export default function Firstpart(params) {
                     
             
                     <div className='firstPartFormStatusOne' >
-                        <FloatingLabel label='Living Status' >
+                        <FloatingLabel label='Living Status*' >
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
@@ -238,7 +242,7 @@ export default function Firstpart(params) {
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
-                        <FloatingLabel label='Marital Status' >
+                        <FloatingLabel label='Marital Status*' >
                             <Form.Control required 
                                 as='select'
                                 className='formStatusItems'
@@ -256,7 +260,7 @@ export default function Firstpart(params) {
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
-                        <FloatingLabel label='Citizenship' >
+                        <FloatingLabel label='Citizenship*' >
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
@@ -271,7 +275,7 @@ export default function Firstpart(params) {
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>        
                         </FloatingLabel>
 
-                        <FloatingLabel label='Tax Status'>
+                        <FloatingLabel label='Tax Status*'>
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
@@ -290,9 +294,10 @@ export default function Firstpart(params) {
             
 
                     <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
-                        <Form.Select ref={previousDeclaredRef} 
-                        onChange={()=>{
-                            toggleShowDischarge()
+                        <Form.Select
+                            ref={previousDeclaredRef} 
+                            onChange={()=>{
+                                toggleShowDischarge()
                         }}>
                             <option value='No'>No</option>
                             <option value='Yes'>Yes</option>
