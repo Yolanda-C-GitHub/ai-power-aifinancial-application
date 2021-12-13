@@ -137,7 +137,7 @@ export default function EmploymentInfo(params) {
                         <option value="medicalHealthcare">Medical Healthcare</option>
                         <option value="mediaTelecommunicationCommunication">Media Telecommunication Communication</option>
                         <option value="religion">Religion</option>
-                        <option value="legal\Services">Legal\Services</option>
+                        <option value="legalservices">Legal\Services</option>
                         <option value="emergencyProtection">Emergency Protection</option>
                         <option value="realEstate">RealEstate</option>
                         <option value="professionalScientificTechnicalServices">Professional Scientific Technical Services</option>
@@ -154,10 +154,95 @@ export default function EmploymentInfo(params) {
                             occupationOptions[0].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):
+                        ): industrySelect === 'foodFoodserviceHospitality'?(
+                            occupationOptions[1].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'artsEntertainmentRecreationSports'?(
+                            occupationOptions[2].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'insuranceAccountingBanking'?(
+                            occupationOptions[3].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'designCreative'?(
+                            occupationOptions[4].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'constructionSkilledTrades'?(
+                            occupationOptions[5].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'educationTraining'?(
+                            occupationOptions[6].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'governmentPublicAdministration'?(
+                            occupationOptions[7].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'engineeringArchitecture'?(
+                            occupationOptions[8].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ):  industrySelect === 'manufacturingProductionOperation'?(
+                            occupationOptions[9].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'medicalHealthcare'?(
+                            occupationOptions[10].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'mediaTelecommunicationCommunication'?(
+                            occupationOptions[11].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'religion'?(
+                            occupationOptions[12].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'legalservices'?(
+                            occupationOptions[13].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'emergencyProtection'?(
+                            occupationOptions[14].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'realEstate'?(
+                            occupationOptions[15].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'professionalScientificTechnicalServices'?(
+                            occupationOptions[16].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'informationTechnology'?(
+                            occupationOptions[17].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'transportationUtilities'?(
+                            occupationOptions[18].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): industrySelect === 'salesMarketingRetail'?(
+                            occupationOptions[19].map((item, index) => {
+                                return  <option value={item} key={index}>{item}</option>
+                            })
+                        ): (
                             <option value=''>Select Industry first</option>
+                        )
                         }
                
+
+
+                    
+
+
+
+
+
                     </Form.Select>
                 </FloatingLabel>
 
