@@ -7,7 +7,6 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 export default function Partfive(params) {
 
     const handleOnChangeInput=(index,e)=>{
-        console.log (index, e.target.name)
         const values = [...localIdArray]
         values[index][e.target.name] = e.target.value;
         setLocalIdArray(values)
@@ -69,11 +68,8 @@ export default function Partfive(params) {
             console.log('no check the form')
         }else{
             console.log('validity passed')
-
             const valueinLocalState = [...localIdArray]
             params.personalInfoPartFive.setIdArray([...valueinLocalState])
-
-
             console.log(localIdArray)
             console.log(params.personalInfoPartFive.idArray)
         }
