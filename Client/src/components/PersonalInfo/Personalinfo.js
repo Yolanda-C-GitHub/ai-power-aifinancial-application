@@ -301,7 +301,7 @@ export default function Personalinfo({sidemenuState}) {
     // state control part 5 ID info
     const[idArray, setIdArray] = useState([
         {
-            idType:'provincialDriversLicense',
+            idType:'',
             idNum:'',
             issueDate:'',
             expiryDate:'',

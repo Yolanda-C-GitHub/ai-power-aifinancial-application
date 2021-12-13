@@ -98,7 +98,10 @@ export default function EmploymentInfo(params) {
 
             <Form.Group className='employerSection'>
                 <FloatingLabel className='employmentStatus' label='Employment Status'>
-                    <Form.Select  onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} >
+                    <Form.Control required
+                        as='select'
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} 
+                    >
                         <option>Select</option>
                         <option value='employed' >Employed</option>
                         <option value="selfEmployed">Self Employed</option>
@@ -106,7 +109,7 @@ export default function EmploymentInfo(params) {
                         <option value="student">Student</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="other">Other</option>
-                    </Form.Select>
+                    </Form.Control>
                 </FloatingLabel>
 
                 <FloatingLabel className='annualIncome' label='Annual Income' >
