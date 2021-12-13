@@ -634,27 +634,50 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
+    const [validated, setValidated] = useState(false)
+
+    function handleSubmit(e){
+        e.preventDefault()
+        const form = e.currentTarget;
+        const checkStatus = form.checkValidity()
+        console.log(checkStatus)
+        if (form.checkValidity() === false) {
+            setValidated(true);
+            e.stopPropagation();
+            console.log('no check the form')
+        }else{
+            console.log('validation passed')
+
+            console.log('----------------')
+            console.log(
+                firstName,
+                lastName,
+                englishName,
+                gender,
+                birthDay,
+                sinNum,
+                email,
+                cellNum,
+                homeNum,
+                workNum,
+                livingStatus,
+                maritalStatus,
+                citizenship,
+                taxStatus,
+                declared,
+                dischargeDate,
+                idArray,
+            )
+        }
+        
+    }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
     return (
+        <Form noValidate validated={validated} onSubmit={handleSubmit} >
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
                 <Navbar className='personalInfoNavbarContainer'>
@@ -672,8 +695,6 @@ export default function Personalinfo({sidemenuState}) {
             
 
                 {applicantActive?(
-
-                    // <Form onSubmit={handleSubmit} className='applicantInfoContainer'> REMOVE THIS FORM FOR NOW, WE ARE GOING TO CREATE MULTIPLE FORMS INSTEAD
 
                         <div className='applicantInfoContainer'>
                         {/* main info  */}
@@ -744,7 +765,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
                          
                         </div> 
-                    {/* // </Form> */}
+                        
                     </div>
                 ) : null }
 
@@ -824,30 +845,13 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 <div className='applicantInfoButton'>
-                    <Button type='submit' onClick={(e)=>{
-                        console.log('----------------')
-                        console.log(
-                            firstName,
-                            lastName,
-                            englishName,
-                            gender,
-                            birthDay,
-                            sinNum,
-                            email,
-                            cellNum,
-                            homeNum,
-                            workNum,
-                            livingStatus,
-                            maritalStatus,
-                            citizenship,
-                            taxStatus,
-                            declared,
-                            dischargeDate,
-                            idArray,
-                
-                        )
-                    }}>Test Submit</Button>
+                    <Button type='submit'>Submit</Button>
                 </div>
             </PersonalInfoContainer>
+
+
+
+
+        </Form>
     )
 }

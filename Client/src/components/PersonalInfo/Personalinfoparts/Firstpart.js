@@ -30,6 +30,7 @@ export default function Firstpart(params) {
     const previousDeclaredRef = useRef();
     const dischargeDateRef=useRef('');
 
+
     const firstNameFeedback=useRef('')
     const birthdayFeedback=useRef('')
 
@@ -50,54 +51,13 @@ export default function Firstpart(params) {
         }
     }
 
-    const [validated, setValidated] = useState(false)
 
-
-
-
-
-
-    
-    function handleSubmit(e){
-        e.preventDefault()
-        const form = e.currentTarget;
-        const checkStatus = form.checkValidity()
-        console.log(checkStatus)
-        if (form.checkValidity() === false) {
-            setValidated(true);
-            e.stopPropagation();
-            console.log('no check the form')
-        } else{
-            // once validation is passed, store all values in state
-            setValidated(true);
-            params.personalInfoNames.setFirstName(firstNameRef.current.value)
-            params.personalInfoNames.setLastName(lastNameRef.current.value)
-            params.personalInfoNames.setEnglishName(englishNameRef.current.value)
-            params.personalInfoNames.setBirthday(birthdayRef.current.value)
-            params.personalInfoNames.setSinNum(sinRef.current.value)
-            params.personalInfoNames.setGender(gender)
-            params.personalInfoNames.setEmail(emailRef.current.value)
-            params.personalInfoNames.setCellNum(cellNumRef.current.value)
-            params.personalInfoNames.setHomeNum(homeNumRef.current.value)
-            params.personalInfoNames.setWorkNum(workNumRef.current.value)
-            params.personalInfoNames.setLivingStatus(livingStatusRef.current.value)
-            params.personalInfoNames.setMaritalStatus(maritalStatusRef.current.value)
-            params.personalInfoNames.setTaxStatus(taxStatusRef.current.value)
-            params.personalInfoNames.setDeclared(previousDeclaredRef.current.value)
-            if(showDischarge===true){
-                params.personalInfoNames.setDischargeDate(dischargeDateRef.current.value)
-            }
-
-        }
-        
-    }
 
 
 
 
     return (
-            <Form noValidate validated={validated} onSubmit={handleSubmit} className='personalInfoForm'>
-
+        <div className='personalInfoForm'>
                 <Card className='firstPartCard'>
 
                     <Form.Group className='firstPartFormGroup' controlId="validationCustom01">
@@ -110,6 +70,9 @@ export default function Firstpart(params) {
                                 placeholder='First Name' 
                                 ref= {firstNameRef} 
                                 onChange={(e)=>{
+                        
+                                    params.personalInfoNames.setFirstName(e.target.value)
+
                                     if (e.target.value ==='yes') {
                                     e.target.setCustomValidity("you selected yes, yes is not allowed!"); //this works for default feedbacks, if want to use custom feedback = need to set condition in custom feedback
                                     firstNameFeedback.current.textContent = 'Yes is not allowed'
@@ -340,8 +303,8 @@ export default function Firstpart(params) {
                     
                 </Card>
 
-                <Button type='submit' className='personalInfoButton'>Save to State</Button>
-        
-            </Form>
+                <Button className='personalInfoButton'>Check Validation</Button>
+
+            </div>
     )
 }
