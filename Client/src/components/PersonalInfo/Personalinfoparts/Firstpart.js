@@ -29,6 +29,9 @@ export default function Firstpart(params) {
     const previousDeclaredRef = useRef();
     const dischargeDateRef=useRef('');
 
+    const firstNameFeedback=useRef('')
+    const birthdayFeedback=useRef('')
+
     const [gender, setGender]=useState()
     
 
@@ -102,13 +105,14 @@ export default function Firstpart(params) {
                                 onChange={(e)=>{
                                     if (e.target.value ==='yes') {
                                     e.target.setCustomValidity("you selected yes, yes is not allowed!"); //this works for default feedbacks, if want to use custom feedback = need to set condition in custom feedback
-                                    e.target.reportValidity();
+                                    firstNameFeedback.current.textContent = 'Yes is not allowed'
                                     } else {
                                     e.target.setCustomValidity("");
+                                    firstNameFeedback.current.textContent = 'Required Field Letters Only'
                                     }
                                 }}
                             />
-                            <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
+                            <Form.Control.Feedback ref={firstNameFeedback} type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
 
@@ -144,9 +148,9 @@ export default function Firstpart(params) {
                     <FloatingLabel  className='firstPartFormGroup' label='Date of Birth*' >
                         <Form.Control required 
                             type='date' 
-                            ref={birthdayRef} 
+                            ref={birthdayRef}
                         />
-                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
+                        <Form.Control.Feedback ref={birthdayFeedback} type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <Form.Group className='firstPartFormGroup'>
