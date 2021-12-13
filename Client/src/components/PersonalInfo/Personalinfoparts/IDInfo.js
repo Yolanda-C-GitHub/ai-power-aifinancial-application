@@ -8,13 +8,13 @@ export default function Partfive(params) {
 
     const handleOnChangeInput=(index,e)=>{
         console.log (index, e.target.name)
-        const values = [...params.personalInfoPartFive.idArray]
+        const values = [...localIdArray]
         values[index][e.target.name] = e.target.value;
-        params.personalInfoPartFive.setIdArray(values)
+        setLocalIdArray(values)
     }
     const handleAdd = () => {
-        params.personalInfoPartFive.setIdArray(
-            [...params.personalInfoPartFive.idArray,
+        setLocalIdArray(
+            [...localIdArray,
                 {
                     idType:'',
                     idNum:'',
@@ -28,24 +28,34 @@ export default function Partfive(params) {
         )
     }
     const handleDelete =(index)=>{
-        const values = [...params.personalInfoPartFive.idArray]
+        const values = [...localIdArray]
         values.splice(index,1)
-        params.personalInfoPartFive.setIdArray(values);
+        setLocalIdArray(values);
     }
 
 
-    // // local state
-    // const[localIdArray, setLocalIdArray] = useState([
-    //     {
-    //         idType:'',
-    //         idNum:'',
-    //         issueDate:'',
-    //         expiryDate:'',
-    //         verificationDate:'',
-    //         issuingProvince:'',
-    //         comments:'',
-    //     },
-    // ]);
+    // local state
+    const[localIdArray, setLocalIdArray] = useState([
+        {
+            idType:'',
+            idNum:'',
+            issueDate:'',
+            expiryDate:'',
+            verificationDate:'',
+            issuingProvince:'',
+            comments:'',
+        },
+    ]);
+
+
+
+
+
+
+
+
+
+
 
     // validation 
     const [validated, setValidated] = useState(false)
@@ -53,27 +63,67 @@ export default function Partfive(params) {
         e.preventDefault()
         const form = e.currentTarget;
         const checkStatus = form.checkValidity()
-        if (form.checkValidity() === false) {
+        if(form.checkValidity() === false) {
             setValidated(true);
             e.stopPropagation();
             console.log('no check the form')
         }else{
             console.log('validity passed')
+
+            const valueinLocalState = [...localIdArray]
+            params.personalInfoPartFive.setIdArray([...valueinLocalState])
+
+
+            console.log(localIdArray)
+            console.log(params.personalInfoPartFive.idArray)
         }
     }
 
 
 
+
+
+
+
+    // const handleOnChangeInput=(index,e)=>{
+    //     console.log (index, e.target.name)
+    //     const values = [...params.personalInfoPartFive.idArray]
+    //     values[index][e.target.name] = e.target.value;
+    //     params.personalInfoPartFive.setIdArray(values)
+    // }
+    // const handleAdd = () => {
+    //     params.personalInfoPartFive.setIdArray(
+    //         [...params.personalInfoPartFive.idArray,
+    //             {
+    //                 idType:'',
+    //                 idNum:'',
+    //                 issueDate:'',
+    //                 expiryDate:'',
+    //                 verificationDate:'',
+    //                 issuingProvince:'',
+    //                 comments:'',
+    //             }
+    //         ]
+    //     )
+    // }
+    // const handleDelete =(index)=>{
+    //     const values = [...params.personalInfoPartFive.idArray]
+    //     values.splice(index,1) 
+    //     params.personalInfoPartFive.setIdArray(values);
+    // }
+
+
     return (
             <Form noValidate validated={validated} className='formPartFive' onSubmit={handleSubmit} >    
-                {params.personalInfoPartFive.idArray.map((item, index) => 
+                {localIdArray.map((item, index) => 
                 
                     <Form.Group className='formGroupID' key={index} > 
                         <FloatingLabel className='partFiveIDType' label='ID Type'>
                             <Form.Control required
                                 as='select' 
-                                onChange={(e) => handleOnChangeInput(index,e)} name='idType'  
-                                value={params.personalInfoPartFive.idArray[index].idType} 
+                                onChange={(e) => handleOnChangeInput(index,e)} 
+                                name='idType'  
+                                value={localIdArray[index].idType} 
                             >
                                 <option value="">Select</option>
                                 <option value='provincialDriversLicense'>Provincial Driver's License</option>
@@ -86,23 +136,56 @@ export default function Partfive(params) {
                         </FloatingLabel>
 
                         <FloatingLabel className='partFiveIDNum' label='ID Number' >
-                            <Form.Control placeholder='idNumber' onChange={(e) => handleOnChangeInput(index,e)}  name='idNum'  value={params.personalInfoPartFive.idArray[index].idNum} />
+                            <Form.Control required
+                                placeholder='idNumber' 
+                                onChange={(e) => handleOnChangeInput(index,e)}  
+                                name='idNum'  
+                                value={localIdArray[index].idNum}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='partFiveIssueDate' label="Issue Date">
-                            <Form.Control placeholder='issueDate' type='date' onChange={(e) => handleOnChangeInput(index,e)}  name='issueDate' value={params.personalInfoPartFive.idArray[index].issueDate} />
+                            <Form.Control required
+                                placeholder='issueDate' 
+                                type='date' 
+                                onChange={(e) => handleOnChangeInput(index,e)} 
+                                name='issueDate' 
+                                value={localIdArray[index].issueDate}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='partFiveExpiryDate' label="Expiry Date">
-                            <Form.Control placeholder='expiryDate' type='date' onChange={(e) => handleOnChangeInput(index,e)} name='expiryDate' value={params.personalInfoPartFive.idArray[index].expiryDate}  />
+                            <Form.Control required
+                                placeholder='expiryDate'
+                                type='date' 
+                                onChange={(e) => handleOnChangeInput(index,e)} 
+                                name='expiryDate' 
+                                value={localIdArray[index].expiryDate}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
-                            <Form.Control className='verificationDate' placeholder='verificationDate' type='date' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].verificationDate}  />
+                            <Form.Control required
+                                className='verificationDate' 
+                                placeholder='verificationDate' 
+                                type='date' 
+                                name='verificationDate' 
+                                onChange={(e) => handleOnChangeInput(index,e)}
+                                value={localIdArray[index].verificationDate} 
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                 
                         <FloatingLabel className='issuingProvince' label='Issuing Province'>
-                            <Form.Select name='issuingProvince' onChange={(e) => handleOnChangeInput(index,e)} value={params.personalInfoPartFive.idArray[index].issuingProvince} >
+                            <Form.Control required
+                                as='select'
+                                name='issuingProvince' 
+                                onChange={(e) => handleOnChangeInput(index,e)} 
+                                value={localIdArray[index].issuingProvince} >
+                                <option value=''>Select</option>
                                 <option value='ON'>ON</option>
                                 <option value='AB'>AB</option>
                                 <option value='BC'>BC</option>
@@ -116,11 +199,17 @@ export default function Partfive(params) {
                                 <option value='QC'>QC</option>
                                 <option value='SK'>SK</option>
                                 <option value='YT'>YT</option>
-                            </Form.Select>
+                            </Form.Control>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='partFiveComment' label='Comments'>
-                                <Form.Control type='textarea' placeholder='comment'  onChange={(e) => handleOnChangeInput(index,e)} name='comments' value={params.personalInfoPartFive.idArray[index].comments} />
+                                <Form.Control
+                                    type='textarea' 
+                                    placeholder='comment'  
+                                    onChange={(e) => handleOnChangeInput(index,e)} 
+                                    name='comments' 
+                                    value={localIdArray[index].comments} />
                         </FloatingLabel>
                         
                         <div className='buttonBox' >

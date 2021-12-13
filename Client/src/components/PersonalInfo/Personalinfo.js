@@ -567,10 +567,7 @@ export default function Personalinfo({sidemenuState}) {
         )
         // console.log(idArray)
         // console.log(chequeArray)
-        console.log(familyArray)
-
-        console.log(lastName, firstName, englishName)
-
+    
           
 
 
@@ -810,6 +807,8 @@ export default function Personalinfo({sidemenuState}) {
                             taxStatus,
                             declared,
                             dischargeDate,
+                            idArray,
+                
                         )
                     }}>Test Submit</Button>
                 </div>
