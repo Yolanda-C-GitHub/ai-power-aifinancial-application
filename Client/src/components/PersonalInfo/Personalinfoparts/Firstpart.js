@@ -82,6 +82,9 @@ export default function Firstpart(params) {
         
     }
 
+
+
+
     return (
             <Form noValidate validated={validated} onSubmit={handleSubmit} className='personalInfoForm'>
 
@@ -96,6 +99,14 @@ export default function Firstpart(params) {
                                 name='firstName' 
                                 placeholder='First Name' 
                                 ref= {firstNameRef} 
+                                onChange={(e)=>{
+                                    if (e.target.value ==='yes') {
+                                    e.target.setCustomValidity("you selected yes, yes is not allowed!"); //this works for default feedbacks, if want to use custom feedback = need to set condition in custom feedback
+                                    e.target.reportValidity();
+                                    } else {
+                                    e.target.setCustomValidity("");
+                                    }
+                                }}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
