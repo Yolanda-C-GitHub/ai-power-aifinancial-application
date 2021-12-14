@@ -369,6 +369,19 @@ export default function Personalinfo({sidemenuState}) {
         setDurationEnd,
         setIndustry,
         setOccupation,
+        employmentStatus,
+        annualIncome,
+        employerName,
+        employerStreetNum,
+        employerAddress,
+        employerUnitNum,
+        employerCity,
+        employerProvince,
+        employerPostalCode,
+        durationStart,
+        durationEnd,
+        industry,
+        occupation,
     }
     const [employmentStatus2, setEmploymentStatus2]=useState();
     const [annualIncome2, setAnnualIncome2]=useState();

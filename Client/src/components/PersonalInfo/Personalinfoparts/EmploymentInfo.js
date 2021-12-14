@@ -96,35 +96,56 @@ export default function EmploymentInfo(params) {
             {/* most recent employer info */}
             <h3 className='employmentInfoLabel'>Current Employment Info </h3>
 
-            <Form.Group className='employerSection'>
+            <div className='employerSection'>
                 <FloatingLabel className='employmentStatus' label='Employment Status'>
-                    <Form.Control required
+                    <Form.Select required
                         as='select'
-                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)} 
+                        value={params.personalInfoEmploymentInfo.employmentStatus}
+                        onChange={(e)=>{
+                            params.personalInfoEmploymentInfo.setEmploymentStatus(e.target.value)
+                        }} 
                     >
-                        <option>Select</option>
+                        <option value=''>Select</option>
                         <option value='employed' >Employed</option>
                         <option value="selfEmployed">Self Employed</option>
                         <option value="retired">Retired</option>
                         <option value="student">Student</option>
                         <option value="unemployed">Unemployed</option>
                         <option value="other">Other</option>
-                    </Form.Control>
+                    </Form.Select>
+                    <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='annualIncome' label='Annual Income' >
-                    <Form.Control placeholder='Annual Income' onChange={(e)=>params.personalInfoEmploymentInfo.setAnnualIncome(e.target.value)} />
+                    <Form.Control required
+                        pattern='[0-9]+'
+                        placeholder='Annual Income' 
+                        value={params.personalInfoEmploymentInfo.annualIncome}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setAnnualIncome(e.target.value)} 
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field Numbers Only</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='employerName' label='Employer Name'>
-                    <Form.Control placeholder='Employer Name' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployername(e.target.value)} /> 
+                    <Form.Control required
+                        pattern='[A-Za-z0-9]+' 
+                        placeholder='Employer Name' 
+                        value={params.personalInfoEmploymentInfo.employerName}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmployername(e.target.value)} 
+                    /> 
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel label='Industry'>
-                    <Form.Select className='industry' ref={industrySelectorRef} onChange={(e)=>{
+                    <Form.Select required
+                        className='industry' 
+                        ref={industrySelectorRef} 
+                        value={params.personalInfoEmploymentInfo.industry}
+                        onChange={(e)=>{
                         params.personalInfoEmploymentInfo.setIndustry(e.target.value);
                         setIndustrySelect(e.target.value)
-                    }}
+                        }}
+
                     > 
                         <option value=''>Select</option>
                         <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
@@ -148,10 +169,16 @@ export default function EmploymentInfo(params) {
                         <option value="transportationUtilities">Transportation Utilities</option>
                         <option value="salesMarketingRetail">Sales Marketing Retail</option>
                     </Form.Select>
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel label='Occupation'>
-                    <Form.Select className='occupation' placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value)}> 
+                    <Form.Select required
+                        className='occupation' 
+                        placeholder='Occupation' 
+                        value={params.personalInfoEmploymentInfo.occupation}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value)}
+                    > 
                         
                         { industrySelect === 'agricultureFishingForestryMining' ?(
                             occupationOptions[0].map((item, index) => {
@@ -237,39 +264,58 @@ export default function EmploymentInfo(params) {
                             <option value=''>Select Industry first</option>
                         )
                         }
-               
-
-
-                    
-
-
-
-
-
                     </Form.Select>
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='streetNum' label='Street Number'>
-                    <Form.Control placeholder='Street Number' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerStreetNum(e.target.value)} /> 
+                    <Form.Control required
+                        pattern='[0-9]+'
+                        placeholder='Street Number'
+                        value={params.personalInfoEmploymentInfo.employerStreetNum}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerStreetNum(e.target.value)}
+                    /> 
+                    <Form.Control.Feedback type='invalid'>Required Field, Numbers Only</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='address' label='Address'>
-                    <Form.Control placeholder='Address' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerAddress(e.target.value)} /> 
+                    <Form.Control required
+                        pattern='[A-Za-z]+'
+                        placeholder='Address' 
+                        value={params.personalInfoEmploymentInfo.employerAddress}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerAddress(e.target.value)}
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='unitNum' label='Unit #'>
-                    <Form.Control placeholder='Unit Number' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerUnitNum(e.target.value)} /> 
+                    <Form.Control required
+                        placeholder='Unit Number' 
+                        value={params.personalInfoEmploymentInfo.employerUnitNum}
+                        onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerUnitNum(e.target.value)} 
+                    /> 
+                     <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
-            </Form.Group>
+            </div>
 
 
-            <Form.Group className='employerAddress'>
+            <div className='employerAddress'>
                 <FloatingLabel className='city' label='City'>
-                    <Form.Control placeholder='City' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerCity(e.target.value) } /> 
+                    <Form.Control required
+                        placeholder='City' 
+                        value={params.personalInfoEmploymentInfo.employerCity}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerCity(e.target.value)}
+                    /> 
+                    <Form.Control.Feedback type='invalid'>Required Field, Letters Only</Form.Control.Feedback>
                 </FloatingLabel>
+
                 <FloatingLabel label='Province' >
-                    <Form.Select  className='province' onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)}  >
+                    <Form.Select required  
+                        className='province' 
+                        value={params.personalInfoEmploymentInfo.employerProvince}
+                        onChange={(e)=>params.personalInfoEmploymentInfo.setEmployerProvince(e.target.value)}  
+                    >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -284,19 +330,33 @@ export default function EmploymentInfo(params) {
                         <option value='SK'>SK</option>
                         <option value='YT'>YT</option>
                     </Form.Select>  
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>    
 
                 <FloatingLabel className='postalCode' label='Postal Code'>
-                    <Form.Control placeholder='Postal Code' onChange={(e)=> params.personalInfoEmploymentInfo.setEmployerPostalCode(e.target.value)} /> 
+                    <Form.Control required
+                        placeholder='Postal Code' 
+                        pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
+                        value={params.personalInfoEmploymentInfo.employerPostalCode}
+                        onChange={(e)=>{
+                            params.personalInfoEmploymentInfo.setEmployerPostalCode(e.target.value)
+                        }}
+                    /> 
+                    <Form.Control.Feedback type='invalid'>Required Field, Format Must Be "A1A 1A1"</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='startFrom' label='Start From'>
-                    <Form.Control type='date' placeholder='Start From' ref={employerStartFrom} 
-                    onChange={(e)=>{
-                        params.personalInfoEmploymentInfo.setDurationStart(e.target.value);
-                        displayPreviousEmploymentInfo()
-                        }} 
+                    <Form.Control required
+                        max={moment().format("YYYY-MM-DD")}
+                        type='date' 
+                        placeholder='Start From' 
+                        ref={employerStartFrom} 
+                        onChange={(e)=>{
+                            params.personalInfoEmploymentInfo.setDurationStart(e.target.value);
+                            displayPreviousEmploymentInfo()
+                        }}
                     /> 
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel> 
 
                 <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={currentEmployer} label='Current Employer' 
@@ -317,11 +377,9 @@ export default function EmploymentInfo(params) {
                
 
 
-            </Form.Group>
+            </div>
 
 
-            <Form.Group className='employerAddressProvince' >
-            </Form.Group>
     
             
             {/*previous employer info if he/she is employed at the most recent employer for less than 2 years */}
@@ -330,8 +388,12 @@ export default function EmploymentInfo(params) {
                     <h3 className='employmentInfoLabel2' >Previous Employment Info</h3>
                     <Form.Group className='employerSection'>
                         <FloatingLabel className='employmentStatus' label='Employment Status'>
-                            <Form.Select  ref={employermentStatus2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmploymentStatus2(e.target.value)} >
-                                <option>Select</option>
+                            <Form.Select required
+                                ref={employermentStatus2Ref} 
+                                value={params.personalInfoEmploymentInfo2.employmentStatus2}
+                                onChange={(e)=>params.personalInfoEmploymentInfo2.setEmploymentStatus2(e.target.value)} 
+                            >
+                                <option value=''>Select</option>
                                 <option value='employed' >Employed</option>
                                 <option value="selfEmployed">Self Employed</option>
                                 <option value="retired">Retuired</option>
@@ -339,10 +401,18 @@ export default function EmploymentInfo(params) {
                                 <option value="unemployed">Unemployed</option>
                                 <option value="other">Other</option>
                             </Form.Select>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='annualIncome' label='Annual Income' >
-                            <Form.Control ref={annualIncome2Ref} placeholder='Annual Income' onChange={(e)=>params.personalInfoEmploymentInfo2.setAnnualIncome2(e.target.value)} />
+                            <Form.Control required
+                                pattern='[0-9]+'
+                                ref={annualIncome2Ref}
+                                placeholder='Annual Income'
+                                value={params.personalInfoEmploymentInfo2.annualIncome2}
+                                onChange={(e)=>params.personalInfoEmploymentInfo2.setAnnualIncome2(e.target.value)} 
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field Numbers Only</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='employerName' label='Employer Name'>
