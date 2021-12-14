@@ -247,6 +247,7 @@ export default function Personalinfo({sidemenuState}) {
     const[taxStatus, setTaxStatus]=useState('');
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
+    const[showDischarge, setShowDischarge]=useState();
     const personalInfoNames = {
         firstName,
         lastName,
@@ -264,6 +265,7 @@ export default function Personalinfo({sidemenuState}) {
         taxStatus,
         declared,
         dischargeDate,
+        showDischarge,
         setLastName,
         setFirstName,
         setEnglishName,
@@ -280,6 +282,7 @@ export default function Personalinfo({sidemenuState}) {
         setTaxStatus,
         setDeclared,
         setDischargeDate,
+        setShowDischarge,
     }
     
     // state control for 4th part address info
