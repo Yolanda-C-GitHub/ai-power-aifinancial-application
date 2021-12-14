@@ -7,13 +7,14 @@ import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 export default function Partfive(params) {
 
     const handleOnChangeInput=(index,e)=>{
-        const values = [...localIdArray]
+        console.log (index, e.target.name)
+        const values = [...params.personalInfoPartFive.idArray]
         values[index][e.target.name] = e.target.value;
-        setLocalIdArray(values)
+        params.personalInfoPartFive.setIdArray(values)
     }
     const handleAdd = () => {
-        setLocalIdArray(
-            [...localIdArray,
+        params.personalInfoPartFive.setIdArray(
+            [...params.personalInfoPartFive.idArray,
                 {
                     idType:'',
                     idNum:'',
@@ -27,90 +28,15 @@ export default function Partfive(params) {
         )
     }
     const handleDelete =(index)=>{
-        const values = [...localIdArray]
-        values.splice(index,1)
-        setLocalIdArray(values);
+        const values = [...params.personalInfoPartFive.idArray]
+        values.splice(index,1) 
+        params.personalInfoPartFive.setIdArray(values);
     }
-
-
-    // local state
-    const[localIdArray, setLocalIdArray] = useState([
-        {
-            idType:'',
-            idNum:'',
-            issueDate:'',
-            expiryDate:'',
-            verificationDate:'',
-            issuingProvince:'',
-            comments:'',
-        },
-    ]);
-
-
-
-
-
-
-    // validation 
-    const [validated, setValidated] = useState(false)
-    function handleSubmit(e){
-        e.preventDefault()
-        const form = e.currentTarget;
-        const checkStatus = form.checkValidity()
-        if(form.checkValidity() === false) {
-            setValidated(true);
-            e.stopPropagation();
-            console.log('no check the form')
-        }else{
-            console.log('validity passed')
-            const valueinLocalState = [...localIdArray]
-            params.personalInfoPartFive.setIdArray([...valueinLocalState])
-            console.log(localIdArray)
-            console.log(params.personalInfoPartFive.idArray)
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-    // // directly changing final state info, might still need this later
-    // const handleOnChangeInput=(index,e)=>{
-    //     console.log (index, e.target.name)
-    //     const values = [...params.personalInfoPartFive.idArray]
-    //     values[index][e.target.name] = e.target.value;
-    //     params.personalInfoPartFive.setIdArray(values)
-    // }
-    // const handleAdd = () => {
-    //     params.personalInfoPartFive.setIdArray(
-    //         [...params.personalInfoPartFive.idArray,
-    //             {
-    //                 idType:'',
-    //                 idNum:'',
-    //                 issueDate:'',
-    //                 expiryDate:'',
-    //                 verificationDate:'',
-    //                 issuingProvince:'',
-    //                 comments:'',
-    //             }
-    //         ]
-    //     )
-    // }
-    // const handleDelete =(index)=>{
-    //     const values = [...params.personalInfoPartFive.idArray]
-    //     values.splice(index,1) 
-    //     params.personalInfoPartFive.setIdArray(values);
-    // }
 
 
     return (
-            <Form noValidate validated={validated} className='formPartFive' onSubmit={handleSubmit} >    
-                {localIdArray.map((item, index) => 
+            <div className='formPartFive'>    
+                {params.personalInfoPartFive.idArray.map((item, index) => 
                 
                     <Form.Group className='formGroupID' key={index} > 
                         <FloatingLabel className='partFiveIDType' label='ID Type'>
@@ -118,7 +44,7 @@ export default function Partfive(params) {
                                 as='select' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
                                 name='idType'  
-                                value={localIdArray[index].idType} 
+                                value={params.personalInfoPartFive.idArray[index].idType} 
                             >
                                 <option value="">Select</option>
                                 <option value='provincialDriversLicense'>Provincial Driver's License</option>
@@ -135,7 +61,7 @@ export default function Partfive(params) {
                                 placeholder='idNumber' 
                                 onChange={(e) => handleOnChangeInput(index,e)}  
                                 name='idNum'  
-                                value={localIdArray[index].idNum}
+                                value={params.personalInfoPartFive.idArray[index].idNum}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
@@ -146,7 +72,7 @@ export default function Partfive(params) {
                                 type='date' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
                                 name='issueDate' 
-                                value={localIdArray[index].issueDate}
+                                value={params.personalInfoPartFive.idArray[index].issueDate}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
@@ -157,7 +83,7 @@ export default function Partfive(params) {
                                 type='date' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
                                 name='expiryDate' 
-                                value={localIdArray[index].expiryDate}
+                                value={params.personalInfoPartFive.idArray[index].expiryDate}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
@@ -169,7 +95,7 @@ export default function Partfive(params) {
                                 type='date' 
                                 name='verificationDate' 
                                 onChange={(e) => handleOnChangeInput(index,e)}
-                                value={localIdArray[index].verificationDate} 
+                                value={params.personalInfoPartFive.idArray[index].verificationDate} 
                             />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
@@ -179,7 +105,7 @@ export default function Partfive(params) {
                                 as='select'
                                 name='issuingProvince' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
-                                value={localIdArray[index].issuingProvince} >
+                                value={params.personalInfoPartFive.idArray[index].issuingProvince} >
                                 <option value=''>Select</option>
                                 <option value='ON'>ON</option>
                                 <option value='AB'>AB</option>
@@ -204,7 +130,7 @@ export default function Partfive(params) {
                                     placeholder='comment'  
                                     onChange={(e) => handleOnChangeInput(index,e)} 
                                     name='comments' 
-                                    value={localIdArray[index].comments} />
+                                    value={params.personalInfoPartFive.idArray[index].comments} />
                         </FloatingLabel>
                         
                         <div className='buttonBox' >
@@ -213,7 +139,7 @@ export default function Partfive(params) {
                             ):(
                             <DeleteOutlineIcon className='deleteButton' onClick={() => handleDelete(index) } />
                             )}
-
+                            
                             {index > 0?(
                                 <></>
                             ):(
@@ -230,7 +156,7 @@ export default function Partfive(params) {
                     <Button type='submit' >Save to State</Button>
                 </div>
 
-            </Form>
+            </div>
 
     )
 }
