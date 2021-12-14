@@ -101,7 +101,7 @@ export default function Partfive(params) {
                         </FloatingLabel>
                 
                         <FloatingLabel className='issuingProvince' label='Issuing Province'>
-                            <Form.Control required
+                            <Form.Select required
                                 as='select'
                                 name='issuingProvince' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
@@ -120,7 +120,7 @@ export default function Partfive(params) {
                                 <option value='QC'>QC</option>
                                 <option value='SK'>SK</option>
                                 <option value='YT'>YT</option>
-                            </Form.Control>
+                            </Form.Select>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 

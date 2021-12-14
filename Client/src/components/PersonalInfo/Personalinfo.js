@@ -412,16 +412,6 @@ export default function Personalinfo({sidemenuState}) {
             verified:false,
             verifiedDate:'',
         },
-        {
-            chequeID:'',
-            transitNum:'',
-            institution:'',
-            accountNum:'',
-            bankName:'',
-            address:'',
-            verified:false,
-            verifiedDate:'',
-        },
     ]);
     const personalInfoChequeArray = {
         chequeArray,

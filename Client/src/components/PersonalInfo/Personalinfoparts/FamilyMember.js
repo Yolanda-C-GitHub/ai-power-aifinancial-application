@@ -3,7 +3,7 @@ import {Card, Form, FloatingLabel, InputGroup} from 'react-bootstrap'
 import './familymember.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
-
+import moment from 'moment'
 
 export default function FamilyMember(params) {
 
@@ -45,22 +45,47 @@ export default function FamilyMember(params) {
                 <Form.Group className='formGroupFamily'>
                     
                     <FloatingLabel className='familyRelationship' label='Relationship' >
-                        <Form.Select onChange={(e) => handleOnChangeInput(index,e)} name='relationship'  value={params.personalInfoFamilyArray.familyArray[index].relationship}  >
+                        <Form.Select required
+                            name='relationship'
+                            value={params.personalInfoFamilyArray.familyArray[index].relationship} 
+                            onChange={(e) => handleOnChangeInput(index,e)}
+                        >
                             <option value='spouse'>Spouse</option>
                             <option value="children">Children</option>
                         </Form.Select>
                     </FloatingLabel>
 
                     <FloatingLabel className='familyFirstName'  label='First Name'>
-                        <Form.Control placeholder='First Name' onChange={(e)=>handleOnChangeInput(index,e)} name='firstName' value={params.personalInfoFamilyArray.familyArray[index].firstName} />
+                        <Form.Control required
+                            pattern='[A-Za-z]+'
+                            placeholder='First Name' 
+                            name='firstName'
+                            value={params.personalInfoFamilyArray.familyArray[index].firstName}
+                            onChange={(e)=>handleOnChangeInput(index,e)} 
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                     </FloatingLabel>
                         
                     <FloatingLabel className='familyLastName' label='Last Name' >
-                        <Form.Control placeholder='Last Name' onChange={(e)=>handleOnChangeInput(index,e)} name='lastName' value={params.personalInfoFamilyArray.familyArray[index].lastName} />
+                        <Form.Control required
+                            pattern='[A-Za-z]+'
+                            placeholder='Last Name' 
+                            name='lastName' 
+                            value={params.personalInfoFamilyArray.familyArray[index].lastName}
+                            onChange={(e)=>handleOnChangeInput(index,e)} 
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                     </FloatingLabel>
                             
                     <FloatingLabel  className='familyBirth' label='Date of Birth' >
-                        <Form.Control type='date' onChange={(e)=>handleOnChangeInput(index,e)} name='dateofBirth' alue={params.personalInfoFamilyArray.familyArray[index].dateofBirth}  />
+                        <Form.Control required
+                            max={moment().format("YYYY-MM-DD")}
+                            type='date' 
+                            name='dateofBirth'
+                            value={params.personalInfoFamilyArray.familyArray[index].dateofBirth} 
+                            onChange={(e)=>handleOnChangeInput(index,e)} 
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                     </FloatingLabel>
 
 
@@ -82,6 +107,9 @@ export default function FamilyMember(params) {
         </Card>
     )
 }
+
+
+
 
 
 

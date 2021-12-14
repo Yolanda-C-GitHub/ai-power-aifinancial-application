@@ -135,7 +135,7 @@ export default function Firstpart(params) {
                     </Form.Group>
 
                     <Form.Group required className='firstPartFormGroupGender'>
-                        <Form.Label className ='firstPartGenderLabel'>Gender*:</Form.Label>
+                        <Form.Label className ='firstPartGenderLabel'>Gender* :</Form.Label>
                         <div className='firstPartGenderBox' >
                             <Form.Check required 
                                 name='genderselector' 
@@ -221,8 +221,8 @@ export default function Firstpart(params) {
             
                     <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status*' >
-                            <Form.Control required 
-                                as='select' 
+                            <Form.Select required 
+                                as='select'
                                 className='formStatusItems' 
                                 value={params.personalInfoNames.livingStatus}
                                 onChange={(e)=>{
@@ -235,12 +235,12 @@ export default function Firstpart(params) {
                                 <option value='with parent'>With Parent</option>
                                 <option value='with other'>With Other</option>
                                 <option value='other'>Other</option>
-                            </Form.Control>
+                            </Form.Select>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel label='Marital Status*' >
-                            <Form.Control required 
+                            <Form.Select required 
                                 as='select'
                                 className='formStatusItems'
                                 value={params.personalInfoNames.maritalStatus}
@@ -256,12 +256,12 @@ export default function Firstpart(params) {
                                 <option value='widowed'>Widowed</option>
                                 <option value='common law'>Common Law</option>
                                 <option value='other'>Other</option>
-                            </Form.Control>
+                            </Form.Select>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel label='Citizenship*' >
-                            <Form.Control required 
+                            <Form.Select required 
                                 as='select' 
                                 className='formStatusItems' 
                                 value={params.personalInfoNames.citizenship}
@@ -274,12 +274,12 @@ export default function Firstpart(params) {
                                 <option value='chinese'>Chinese</option>
                                 <option value='pr'>PR</option>
                                 <option value='other'>Other</option>
-                            </Form.Control>    
+                            </Form.Select>    
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>        
                         </FloatingLabel>
 
                         <FloatingLabel label='Tax Status*'>
-                            <Form.Control required 
+                            <Form.Select required 
                                 as='select' 
                                 className='formStatusItems' 
                                 value={params.personalInfoNames.taxStatus}
@@ -292,7 +292,7 @@ export default function Firstpart(params) {
                                 <option value='usa'>USA</option>
                                 <option value='both'>Both</option>
                                 <option value='other'>Other</option>
-                            </Form.Control>
+                            </Form.Select>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                     </div>
