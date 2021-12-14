@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import {Card, Form, FloatingLabel, Button} from 'react-bootstrap';
 import './firstpart.css';
 import moment from 'moment'
@@ -10,32 +10,11 @@ import moment from 'moment'
 
 
 export default function Firstpart(params) {  
-
-    // ref for inputs
-    const lastNameRef = useRef()
-    const firstNameRef = useRef()
-    const englishNameRef = useRef()
-    const genderFemaleRef = useRef()
-    const genderMaleRef=useRef();
-    const birthdayRef = useRef()
-    const sinRef = useRef()
-    const emailRef = useRef();
-    const cellNumRef=useRef();
-    const homeNumRef=useRef();
-    const workNumRef=useRef();
-    const livingStatusRef = useRef();
-    const maritalStatusRef = useRef();
-    const citizenshipRef = useRef();
-    const taxStatusRef = useRef();
-    const previousDeclaredRef = useRef();
-    const dischargeDateRef=useRef('');
-
+    
+    const firstName = useRef()
 
     const firstNameFeedback=useRef('')
     const birthdayFeedback=useRef('')
-
-
-    
 
     // toggle discharge dates base on discharge input
     function toggleShowDischarge(){
@@ -50,7 +29,16 @@ export default function Firstpart(params) {
         }
     }
 
-
+    useEffect(()=>{
+        params.personalInfoNames.setFirstName(firstName.current.value)
+        if (firstName.current.value ==='yes') {
+        firstName.current.setCustomValidity("you selected yes, yes is not allowed!"); //this works for default feedbacks, if want to use custom feedback = need to set condition in custom feedback
+        firstNameFeedback.current.textContent = 'Yes is not allowed'
+        } else {
+        firstName.current.setCustomValidity("");
+        firstNameFeedback.current.textContent = 'Required Field Letters Only'
+        }
+    })
 
 
 
@@ -66,8 +54,8 @@ export default function Firstpart(params) {
                                 pattern='[A-Za-z]+' 
                                 autocomplete='off' 
                                 name='firstName' 
+                                ref={firstName}
                                 placeholder='First Name' 
-                                ref= {firstNameRef} 
                                 onChange={(e)=>{
                                     params.personalInfoNames.setFirstName(e.target.value)
                                     if (e.target.value ==='yes') {
@@ -92,7 +80,6 @@ export default function Firstpart(params) {
                                 pattern='[A-Za-z]+' 
                                 autocomplete='off' 
                                 placeholder='Last Name' 
-                                ref={lastNameRef}
                                 onChange={(e)=>{
                                     params.personalInfoNames.setLastName(e.target.value)
                                 }}
@@ -109,8 +96,7 @@ export default function Firstpart(params) {
                                 pattern='[A-Za-z]+' 
                                 autocomplete='off' 
                                 name='englishName' 
-                                placeholder='English Name' 
-                                ref={englishNameRef} 
+                                placeholder='English Name'
                                 onChange={(e)=>{
                                     params.personalInfoNames.setEnglishName(e.target.value)
                                 }}
@@ -123,7 +109,6 @@ export default function Firstpart(params) {
                     <FloatingLabel  className='firstPartFormGroup' label='Date of Birth*' >
                         <Form.Control required 
                             type='date' 
-                            ref={birthdayRef}
                             max={moment().format("YYYY-MM-DD")}
                             onChange = {(e)=>{
                                 params.personalInfoNames.setBirthday(e.target.value)
@@ -140,7 +125,6 @@ export default function Firstpart(params) {
                                 maxlength='9'
                                 pattern='[0-9]+'
                                 placeholder='SIN#' 
-                                ref={sinRef} 
                                 onChange = {(e)=>{
                                     params.personalInfoNames.setSinNum(e.target.value)
                                 }}
@@ -157,7 +141,6 @@ export default function Firstpart(params) {
                                 name='genderselector' 
                                 label='Male'
                                 type='radio'
-                                ref={genderMaleRef}
                                 value='Male'
                                 checked={params.personalInfoNames.gender === "Male"} 
                                 onChange={(e)=>{
@@ -170,7 +153,6 @@ export default function Firstpart(params) {
                                 inline name='genderselector' 
                                 label='Female' 
                                 type='radio'
-                                ref={genderFemaleRef} 
                                 value="Female" 
                                 checked={params.personalInfoNames.gender === "Female"} 
                                 onChange={(e)=>{
@@ -185,7 +167,6 @@ export default function Firstpart(params) {
                     <FloatingLabel className='firstPartFormGroupE' label='E-Mail*'>
                         <Form.Control required
                         type='email' 
-                        ref={emailRef} 
                         placeholder='Email' 
                         value={params.personalInfoNames.email}
                         onChange={(e)=>{
@@ -201,7 +182,6 @@ export default function Firstpart(params) {
                         minlenght='10'
                         pattern='\d{3}\d{3}\d{4}'
                         placeholder='cellphone'
-                        ref={cellNumRef}
                         value={params.personalInfoNames.cellNum}
                         onChange={(e)=>{
                             params.personalInfoNames.setCellNum(e.target.value)
@@ -215,7 +195,6 @@ export default function Firstpart(params) {
                         maxlength='10'
                         pattern='\d{3}\d{3}\d{4}'
                         placeholder='homephone' 
-                        ref={homeNumRef}
                         value={params.personalInfoNames.homeNum}
                         onChange={(e)=>{
                             params.personalInfoNames.setHomeNum(e.target.value)
@@ -229,7 +208,6 @@ export default function Firstpart(params) {
                             maxlength='10'
                             pattern='\d{3}\d{3}\d{4}'
                             placeholder='workphone'
-                            ref={workNumRef} 
                             value={params.personalInfoNames.workNum}
                             onChange={(e)=>{
                                 params.personalInfoNames.setWorkNum(e.target.value)               
@@ -246,7 +224,6 @@ export default function Firstpart(params) {
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
-                                ref={livingStatusRef}
                                 value={params.personalInfoNames.livingStatus}
                                 onChange={(e)=>{
                                     params.personalInfoNames.setLivingStatus(e.target.value)
@@ -266,7 +243,6 @@ export default function Firstpart(params) {
                             <Form.Control required 
                                 as='select'
                                 className='formStatusItems'
-                                ref={maritalStatusRef}
                                 value={params.personalInfoNames.maritalStatus}
                                 onChange={(e)=>{
                                     params.personalInfoNames.setMaritalStatus(e.target.value)
@@ -288,7 +264,6 @@ export default function Firstpart(params) {
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
-                                ref={citizenshipRef} 
                                 value={params.personalInfoNames.citizenship}
                                 onChange={(e)=>{
                                     params.personalInfoNames.setCitizenship(e.target.value)
@@ -307,7 +282,6 @@ export default function Firstpart(params) {
                             <Form.Control required 
                                 as='select' 
                                 className='formStatusItems' 
-                                ref={taxStatusRef} 
                                 value={params.personalInfoNames.taxStatus}
                                 onChange={(e)=>{
                                     params.personalInfoNames.setTaxStatus(e.target.value)
@@ -327,7 +301,6 @@ export default function Firstpart(params) {
 
                     <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
                         <Form.Select
-                            ref={previousDeclaredRef} 
                             value={params.personalInfoNames.declared}
                             onChange={(e)=>{
                                 params.personalInfoNames.setDeclared(e.target.value)
@@ -343,7 +316,6 @@ export default function Firstpart(params) {
                                 <Form.Control required 
                                     type='date' 
                                     placeholder='dateOfDischarge' 
-                                    ref={dischargeDateRef} 
                                     max={moment().format("YYYY-MM-DD")}
                                     value={params.personalInfoNames.dischargeDate}
                                     onChange={(e)=>{

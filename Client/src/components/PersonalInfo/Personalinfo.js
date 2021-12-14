@@ -248,6 +248,7 @@ export default function Personalinfo({sidemenuState}) {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const[showDischarge, setShowDischarge]=useState();
+
     const personalInfoNames = {
         firstName,
         lastName,
@@ -644,6 +645,7 @@ export default function Personalinfo({sidemenuState}) {
         const form = e.currentTarget;
         const checkStatus = form.checkValidity()
         console.log(checkStatus)
+        
         if (form.checkValidity() === false) {
             setValidated(true);
             e.stopPropagation();
@@ -670,7 +672,6 @@ export default function Personalinfo({sidemenuState}) {
             )
         }else{
             console.log('validation passed')
-
             console.log('----------------')
             console.log(
                 firstName,
