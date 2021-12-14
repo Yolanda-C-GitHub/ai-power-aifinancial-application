@@ -70,9 +70,7 @@ export default function Firstpart(params) {
                                 placeholder='First Name' 
                                 ref= {firstNameRef} 
                                 onChange={(e)=>{
-                        
                                     params.personalInfoNames.setFirstName(e.target.value)
-
                                     if (e.target.value ==='yes') {
                                     e.target.setCustomValidity("you selected yes, yes is not allowed!"); //this works for default feedbacks, if want to use custom feedback = need to set condition in custom feedback
                                     firstNameFeedback.current.textContent = 'Yes is not allowed'
@@ -96,6 +94,10 @@ export default function Firstpart(params) {
                                 autocomplete='off' 
                                 placeholder='Last Name' 
                                 ref={lastNameRef}
+                                onChange={(e)=>{
+                                    params.personalInfoNames.setLastName(e.target.value)
+                                }}
+                                value={params.personalInfoNames.lastName}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field Letters Only</Form.Control.Feedback>
                         </FloatingLabel>
@@ -104,13 +106,16 @@ export default function Firstpart(params) {
                     <Form.Group className='firstPartFormGroup'>
                         <FloatingLabel label='English Name'>
                             <Form.Control
-                                name='lastName'
                                 type='text' 
                                 pattern='[A-Za-z]+' 
                                 autocomplete='off' 
                                 name='englishName' 
                                 placeholder='English Name' 
                                 ref={englishNameRef} 
+                                onChange={(e)=>{
+                                    params.personalInfoNames.setEnglishName(e.target.value)
+                                }}
+                                value={params.personalInfoNames.englishName}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
@@ -121,6 +126,10 @@ export default function Firstpart(params) {
                             type='date' 
                             ref={birthdayRef}
                             max={moment().format("YYYY-MM-DD")}
+                            onChange = {(e)=>{
+                                params.personalInfoNames.setBirthday(e.target.value)
+                            }}
+                            value={params.personalInfoNames.birthDay}
                         />
                         <Form.Control.Feedback ref={birthdayFeedback} type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>

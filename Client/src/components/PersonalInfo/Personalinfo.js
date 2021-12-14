@@ -645,6 +645,26 @@ export default function Personalinfo({sidemenuState}) {
             setValidated(true);
             e.stopPropagation();
             console.log('no check the form')
+            console.log('----------------')
+            console.log(
+                firstName,
+                lastName,
+                englishName,
+                gender,
+                birthDay,
+                sinNum,
+                email,
+                cellNum,
+                homeNum,
+                workNum,
+                livingStatus,
+                maritalStatus,
+                citizenship,
+                taxStatus,
+                declared,
+                dischargeDate,
+                idArray,
+            )
         }else{
             console.log('validation passed')
 
