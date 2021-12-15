@@ -558,7 +558,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-    function handleSubmit(e){
+    function handleSubmitOld(e){
         e.preventDefault()
         if(!firstName || !lastName || !englishName){
           alert('Please Make Sure the Required Fields are Filled')
@@ -597,68 +597,7 @@ export default function Personalinfo({sidemenuState}) {
             declared,
             dischargeDate,
         )
-        // console.log(idArray)
-        // console.log(chequeArray)
-    
-          
-
-
-
-
-
-
-        // console.log('submit form button working')
-   
-        // console.log(gender, birthDay, sinNum)
-        // console.log(livingStatus, maritalStatus, citizenship, taxStatus)
-        // console.log(houseNum,currentRez,aptNum,province,postalCode,rezSince)
-        // console.log(houseNum2,currentRez2,aptNum2,province2,postalCode2,rezSince2)
-        // console.log(email, cellNum, homeNum, workNum, idType, idNum, issueDate, expiryDate, verificationDate, issuingProvince, comments, declared, dischargeDate)
-        // console.log(spouseFirstName, spouseLastName, spouseBirth, child1Name,child1Birth, child2Name, child2Birth, child3Name, child3Birth, child4Name, child4Birth)
-
-        // console.log(
-        //     employmentStatus,
-        //     annualIncome,
-        //     employerName,
-        //     employerStreetNum,
-        //     employerAddress,
-        //     employerUnitNum,
-        //     employerCity,
-        //     employerProvince,
-        //     employerPostalCode,
-        //     durationStart,
-        //     durationEnd,
-        //     industry,
-        //     occupation,  
-        // )
-
-        // console.log(
-        //     employmentStatus2,
-        //     annualIncome2,
-        //     employerName2,
-        //     employerStreetNum2,
-        //     employerAddress2,
-        //     employerUnitNum2,
-        //     employerCity2,
-        //     employerProvince2,
-        //     employerPostalCode2,
-        //     durationStart2,
-        //     durationEnd2,
-        //     industry2,
-        //     occupation2,  
-        // )
-        
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
