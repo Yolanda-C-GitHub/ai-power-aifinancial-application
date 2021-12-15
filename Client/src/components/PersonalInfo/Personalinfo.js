@@ -357,6 +357,7 @@ export default function Personalinfo({sidemenuState}) {
     const [occupation, setOccupation]=useState();
     const [currentEmployer, setCurrentEmployer]=useState(true)
     const [showEmployer2, setShowEmployer2]=useState(false)
+    const [otherOccupation, setOtherOccupation]=useState()
     const personalInfoEmploymentInfo={
         setEmploymentStatus,
         setAnnualIncome,
@@ -373,6 +374,7 @@ export default function Personalinfo({sidemenuState}) {
         setOccupation,
         setCurrentEmployer,
         setShowEmployer2,
+        setOtherOccupation,
         employmentStatus,
         annualIncome,
         employerName,
@@ -387,7 +389,8 @@ export default function Personalinfo({sidemenuState}) {
         industry,
         occupation,
         currentEmployer,
-        showEmployer2
+        showEmployer2,
+        otherOccupation,
     }
     const [employmentStatus2, setEmploymentStatus2]=useState();
     const [annualIncome2, setAnnualIncome2]=useState();
@@ -402,6 +405,7 @@ export default function Personalinfo({sidemenuState}) {
     const [durationEnd2, setDurationEnd2]=useState();
     const [industry2, setIndustry2]=useState();
     const [occupation2, setOccupation2]=useState();
+    const [otherOccupation2, setOtherOccupation2]=useState();
     const personalInfoEmploymentInfo2={
         setEmploymentStatus2,
         setAnnualIncome2,
@@ -416,6 +420,7 @@ export default function Personalinfo({sidemenuState}) {
         setDurationEnd2,
         setIndustry2,
         setOccupation2,
+        setOtherOccupation2,
         employmentStatus2,
         annualIncome2,
         employerName2,
@@ -429,6 +434,7 @@ export default function Personalinfo({sidemenuState}) {
         durationEnd2,
         industry2,
         occupation2,
+        otherOccupation2,
     }
 
 

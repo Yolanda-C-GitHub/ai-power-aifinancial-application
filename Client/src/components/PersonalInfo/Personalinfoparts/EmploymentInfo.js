@@ -264,16 +264,20 @@ export default function EmploymentInfo(params) {
 
 
                 {params.personalInfoEmploymentInfo.occupation==='Other - Specify'?(
-                    console.log(params.personalInfoEmploymentInfo.occupation)
-                ):(
-                    console.log('nope')
-                )}
                     <FloatingLabel className='otherOccupation'   label='Occupation-Other'>
                         <Form.Control required
                             pattern='[A-Za-z]+'
                             placeholder='Occupation-Other'
+                            value={params.personalInfoEmploymentInfo.otherOccupation}
+                            onChange={(e)=>{
+                                params.personalInfoEmploymentInfo.setOtherOccupation(e.target.value)
+                            }}
                         />
+                        <Form.Control.Feedback type='invalid'>Required Field, Letters Only</Form.Control.Feedback>
                     </FloatingLabel>
+                ):(
+                    null
+                )}
 
                 <FloatingLabel className='streetNum' label='Street Number'>
                     <Form.Control required
@@ -566,13 +570,23 @@ export default function EmploymentInfo(params) {
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
-                        <FloatingLabel>
-                                <Form.Control required
-                                
-                                >
 
-                                </Form.Control>
-                        </FloatingLabel>
+
+                        {params.personalInfoEmploymentInfo.occupation2==='Other - Specify'?(
+                            <FloatingLabel className='otherOccupation'   label='Occupation-Other'>
+                                <Form.Control required
+                                    pattern='[A-Za-z]+'
+                                    placeholder='Occupation-Other'
+                                    value={params.personalInfoEmploymentInfo.otherOccupation2}
+                                    onChange={(e)=>{
+                                        params.personalInfoEmploymentInfo.setOtherOccupation2(e.target.value)
+                                    }}
+                                />
+                                <Form.Control.Feedback type='invalid'>Required Field, Letters Only</Form.Control.Feedback>
+                            </FloatingLabel>
+                            ):(
+                                null
+                            )}
 
                         <FloatingLabel className='streetNum' label='Street Number'>
                             <Form.Control required

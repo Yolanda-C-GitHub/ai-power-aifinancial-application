@@ -328,8 +328,6 @@ export default function Firstpart(params) {
                     
                 </Card>
 
-                <Button className='personalInfoButton'>Check Validation</Button>
-
             </div>
     )
 }
