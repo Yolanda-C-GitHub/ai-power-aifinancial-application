@@ -25,21 +25,18 @@ export default function EmploymentInfo(params) {
     const startFrom2Ref = useRef();
     const to2Ref = useRef();
 
-    const [currentEmployer, setCurrentEmployer]=useState(true)
-    const [showEmployer2, setShowEmployer2]=useState(false)
-
 
 
     function displayPreviousEmploymentInfo(){
-        if(currentEmployer===true){
-            console.log(currentEmployer)
+        if(params.personalInfoEmploymentInfo.currentEmployer===true){
+            console.log(params.personalInfoEmploymentInfo.currentEmployer)
             const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
             const todaysDate = moment(moment().startOf('day'), 'YYYY/MM/DD')
             const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays()
 
             if (daysBetweenStartToday < 730){
                 console.log('its within 2 years')
-                setShowEmployer2(true)
+                params.personalInfoEmploymentInfo.setShowEmployer2(true)
             }else{
                 params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
                 params.personalInfoEmploymentInfo2.setAnnualIncome2('');
@@ -54,18 +51,18 @@ export default function EmploymentInfo(params) {
                 params.personalInfoEmploymentInfo2.setDurationEnd2('');
                 params.personalInfoEmploymentInfo2.setIndustry2('');
                 params.personalInfoEmploymentInfo2.setOccupation2('');
-                setShowEmployer2(false)
+                params.personalInfoEmploymentInfo.setShowEmployer2(false)
             }
 
-        }else if(currentEmployer===false){
-            console.log(currentEmployer)
+        }else if(params.personalInfoEmploymentInfo.currentEmployer===false){
+            console.log(params.personalInfoEmploymentInfo.currentEmployer)
             const startFromDate = moment(employerStartFrom.current.value, 'YYYY/MM/DD')
             const todaysDate = moment(employerTo.current.value, 'YYYY/MM/DD')
             const daysBetweenStartToday = moment.duration(todaysDate.diff(startFromDate)).asDays();
 
             console.log(todaysDate, daysBetweenStartToday )
             if (daysBetweenStartToday < 730){
-                setShowEmployer2(true)
+                params.personalInfoEmploymentInfo.setShowEmployer2(true)
             }else{
                 params.personalInfoEmploymentInfo2.setEmploymentStatus2('')
                 params.personalInfoEmploymentInfo2.setAnnualIncome2('');
@@ -80,7 +77,7 @@ export default function EmploymentInfo(params) {
                 params.personalInfoEmploymentInfo2.setDurationEnd2('');
                 params.personalInfoEmploymentInfo2.setIndustry2('');
                 params.personalInfoEmploymentInfo2.setOccupation2('');
-                setShowEmployer2(false)
+                params.personalInfoEmploymentInfo.setShowEmployer2(false)
             }
         }
         
@@ -89,7 +86,6 @@ export default function EmploymentInfo(params) {
     
 
     const industrySelectorRef = useRef();
-    const [industrySelect, setIndustrySelect] = useState('')
 
     return (
         <Card className='employmentInfoCard' >
@@ -142,8 +138,7 @@ export default function EmploymentInfo(params) {
                         ref={industrySelectorRef} 
                         value={params.personalInfoEmploymentInfo.industry}
                         onChange={(e)=>{
-                        params.personalInfoEmploymentInfo.setIndustry(e.target.value);
-                        setIndustrySelect(e.target.value)
+                            params.personalInfoEmploymentInfo.setIndustry(e.target.value);
                         }}
 
                     > 
@@ -180,83 +175,83 @@ export default function EmploymentInfo(params) {
                         onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value)}
                     > 
                         
-                        { industrySelect === 'agricultureFishingForestryMining' ?(
+                        { params.personalInfoEmploymentInfo.industry === 'agricultureFishingForestryMining' ?(
                             occupationOptions[0].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'foodFoodserviceHospitality'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'foodFoodserviceHospitality'?(
                             occupationOptions[1].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'artsEntertainmentRecreationSports'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'artsEntertainmentRecreationSports'?(
                             occupationOptions[2].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'insuranceAccountingBanking'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'insuranceAccountingBanking'?(
                             occupationOptions[3].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'designCreative'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'designCreative'?(
                             occupationOptions[4].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'constructionSkilledTrades'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'constructionSkilledTrades'?(
                             occupationOptions[5].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'educationTraining'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'educationTraining'?(
                             occupationOptions[6].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'governmentPublicAdministration'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'governmentPublicAdministration'?(
                             occupationOptions[7].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'engineeringArchitecture'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'engineeringArchitecture'?(
                             occupationOptions[8].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ):  industrySelect === 'manufacturingProductionOperation'?(
+                        ):  params.personalInfoEmploymentInfo.industry === 'manufacturingProductionOperation'?(
                             occupationOptions[9].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'medicalHealthcare'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'medicalHealthcare'?(
                             occupationOptions[10].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'mediaTelecommunicationCommunication'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'mediaTelecommunicationCommunication'?(
                             occupationOptions[11].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'religion'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'religion'?(
                             occupationOptions[12].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'legalservices'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'legalservices'?(
                             occupationOptions[13].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'emergencyProtection'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'emergencyProtection'?(
                             occupationOptions[14].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'realEstate'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'realEstate'?(
                             occupationOptions[15].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'professionalScientificTechnicalServices'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'professionalScientificTechnicalServices'?(
                             occupationOptions[16].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'informationTechnology'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'informationTechnology'?(
                             occupationOptions[17].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'transportationUtilities'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'transportationUtilities'?(
                             occupationOptions[18].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
-                        ): industrySelect === 'salesMarketingRetail'?(
+                        ): params.personalInfoEmploymentInfo.industry === 'salesMarketingRetail'?(
                             occupationOptions[19].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
                             })
@@ -351,6 +346,7 @@ export default function EmploymentInfo(params) {
                         type='date' 
                         placeholder='Start From' 
                         ref={employerStartFrom} 
+                        value={params.personalInfoEmploymentInfo.durationStart}
                         onChange={(e)=>{
                             params.personalInfoEmploymentInfo.setDurationStart(e.target.value);
                             displayPreviousEmploymentInfo()
@@ -359,14 +355,14 @@ export default function EmploymentInfo(params) {
                     <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel> 
 
-                <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={currentEmployer} label='Current Employer' 
+                <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={params.personalInfoEmploymentInfo.currentEmployer} label='Current Employer' 
                     onChange={(e)=>{
-                    setCurrentEmployer(e.target.checked)
+                    params.personalInfoEmploymentInfo.setCurrentEmployer(e.target.checked)
                     displayPreviousEmploymentInfo()
                     }}
                 />
 
-                {currentEmployer===false? (
+                {params.personalInfoEmploymentInfo.currentEmployer===false? (
                     <FloatingLabel className='startTo' label='To'>
                         <Form.Control type='date' placeholder='To' ref={employerTo} onChange={(e)=>{
                             params.personalInfoEmploymentInfo.setDurationEnd(e.target.value)
@@ -383,7 +379,7 @@ export default function EmploymentInfo(params) {
     
             
             {/*previous employer info if he/she is employed at the most recent employer for less than 2 years */}
-            {showEmployer2===true? (
+            {params.personalInfoEmploymentInfo.showEmployer2===true? (
                 <Form.Group>
                     <h3 className='employmentInfoLabel2' >Previous Employment Info</h3>
                     <Form.Group className='employerSection'>
@@ -417,12 +413,14 @@ export default function EmploymentInfo(params) {
 
                         <FloatingLabel className='employerName' label='Employer Name'>
                             <Form.Control required
+                                pattern='[A-Za-z0-9]+' 
                                 placeholder='Employer Name'
                                 ref={employerName2Ref} 
                                 value={params.personalInfoEmploymentInfo2.employerName2}
                                 onChange={(e)=>{params.personalInfoEmploymentInfo2.setEmployername2(e.target.value)
                                 }}
                             /> 
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='industry' label='Industry'>
@@ -431,9 +429,9 @@ export default function EmploymentInfo(params) {
                                 value={params.personalInfoEmploymentInfo2.industry2}
                                 onChange={(e)=>{
                                     params.personalInfoEmploymentInfo2.setIndustry2(e.target.value)
-                                }} 
+                                }}
                             > 
-                                <option>Select</option>
+                                <option value=''>Select</option>
                                 <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                                 <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
                                 <option value="artsEntertainmentRecreationSports">Arts Entertainment Recreation Sports</option>
@@ -455,22 +453,141 @@ export default function EmploymentInfo(params) {
                                 <option value="transportationUtilities">Transportation Utilities</option>
                                 <option value="salesMarketingRetail">Sales Marketing Retail</option>
                             </Form.Select>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='occupation' label='Occupation'>
-                            <Form.Control ref={occupation2Ref}  placeholder='Occupation' onChange={(e)=>params.personalInfoEmploymentInfo2.setOccupation2(e.target.value) }  /> 
+                            <Form.Select required
+                                className='occupation' 
+                                placeholder='Occupation' 
+                                value={params.personalInfoEmploymentInfo2.occupation2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setOccupation2(e.target.value)
+                                }}
+                            > 
+                            
+                                { params.personalInfoEmploymentInfo2.industry2 === 'agricultureFishingForestryMining' ?(
+                                    occupationOptions[0].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'foodFoodserviceHospitality'?(
+                                    occupationOptions[1].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'artsEntertainmentRecreationSports'?(
+                                    occupationOptions[2].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'insuranceAccountingBanking'?(
+                                    occupationOptions[3].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'designCreative'?(
+                                    occupationOptions[4].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'constructionSkilledTrades'?(
+                                    occupationOptions[5].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'educationTraining'?(
+                                    occupationOptions[6].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'governmentPublicAdministration'?(
+                                    occupationOptions[7].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'engineeringArchitecture'?(
+                                    occupationOptions[8].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ):  params.personalInfoEmploymentInfo2.industry2 === 'manufacturingProductionOperation'?(
+                                    occupationOptions[9].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'medicalHealthcare'?(
+                                    occupationOptions[10].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'mediaTelecommunicationCommunication'?(
+                                    occupationOptions[11].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'religion'?(
+                                    occupationOptions[12].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'legalservices'?(
+                                    occupationOptions[13].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'emergencyProtection'?(
+                                    occupationOptions[14].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'realEstate'?(
+                                    occupationOptions[15].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'professionalScientificTechnicalServices'?(
+                                    occupationOptions[16].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'informationTechnology'?(
+                                    occupationOptions[17].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'transportationUtilities'?(
+                                    occupationOptions[18].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): params.personalInfoEmploymentInfo2.industry2 === 'salesMarketingRetail'?(
+                                    occupationOptions[19].map((item, index) => {
+                                        return  <option value={item} key={index}>{item}</option>
+                                    })
+                                ): (
+                                    <option value=''>Select Industry first</option>
+                                )
+                                }
+                            </Form.Select>
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='streetNum' label='Street Number'>
-                            <Form.Control placeholder='Street Number' ref={streetNum2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmployerStreetNum2(e.target.value)} /> 
+                            <Form.Control required
+                                placeholder='Street Number' 
+                                ref={streetNum2Ref} 
+                                value={params.personalInfoEmploymentInfo2.employerStreetNum2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerStreetNum2(e.target.value)
+                                }} 
+                            /> 
+                            <Form.Control.Feedback type='invalid'>Required Field, Numbers Only</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='address' label='Address'>
-                            <Form.Control placeholder='Address' ref={address2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmployerAddress2(e.target.value)} /> 
+                            <Form.Control required
+                                placeholder='Address' 
+                                ref={address2Ref} 
+                                value={params.personalInfoEmploymentInfo2.employerAddress2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerAddress2(e.target.value)
+                                    }}
+                            /> 
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='unitNum' label='Unit #'>
-                            <Form.Control placeholder='Unit Number' ref={unitNum2Ref} onChange={(e)=> params.personalInfoEmploymentInfo2.setEmployerUnitNum2(e.target.value)} /> 
+                            <Form.Control required
+                                placeholder='Unit Number' 
+                                ref={unitNum2Ref}
+                                value={params.personalInfoEmploymentInfo2.employerUnitNum2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerUnitNum2(e.target.value)
+                                }}
+                            /> 
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                     </Form.Group>
@@ -479,11 +596,25 @@ export default function EmploymentInfo(params) {
                     <Form.Group className='employerAddress'>
 
                         <FloatingLabel className='city' label='City'>
-                            <Form.Control placeholder='City' ref={city2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmployerCity2(e.target.value) } /> 
+                            <Form.Control required
+                                placeholder='City' 
+                                ref={city2Ref} 
+                                value={params.personalInfoEmploymentInfo2.employerAddress2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerCity2(e.target.value) 
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='province' label='Province' >
-                            <Form.Select ref={province2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmployerProvince2(e.target.value)}  >
+                            <Form.Select required
+                                ref={province2Ref}
+                                value={params.personalInfoEmploymentInfo2.employerProvince2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerProvince2(e.target.value)
+                                }} 
+                            >
                                 <option value='ON'>ON</option>
                                 <option value='AB'>AB</option>
                                 <option value='BC'>BC</option>
@@ -501,15 +632,42 @@ export default function EmploymentInfo(params) {
                         </FloatingLabel>  
 
                         <FloatingLabel className='postalCode' label='Postal Code'>
-                            <Form.Control placeholder='Postal Code' ref={postalCode2Ref} onChange={(e)=> params.personalInfoEmploymentInfo2.setEmployerPostalCode2(e.target.value)} /> 
+                            <Form.Control required
+                                pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
+                                placeholder='Postal Code'
+                                ref={postalCode2Ref}
+                                value={params.personalInfoEmploymentInfo2.employerPostalCode2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setEmployerPostalCode2(e.target.value)
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field, Format Must Be "A1A 1A1"</Form.Control.Feedback>
                         </FloatingLabel>
                         
                         <FloatingLabel className='startFrom' label='Start From'>
-                            <Form.Control type='date' placeholder='Start From' ref={startFrom2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setDurationStart2(e.target.value)} /> 
+                            <Form.Control required
+                                type='date'
+                                placeholder='Start From'
+                                ref={startFrom2Ref}
+                                value={params.personalInfoEmploymentInfo2.durationStart2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setDurationStart2(e.target.value)
+                                }}
+                            /> 
+                            <Form.Control.Feedback type='invalid'>Required Field"</Form.Control.Feedback>
                         </FloatingLabel> 
 
-                        <FloatingLabel className='startTo' label='startTo'>
-                            <Form.Control type='date' placeholder='To' ref={to2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setDurationEnd2(e.target.value)} /> 
+                        <FloatingLabel className='startTo' label='To'>
+                            <Form.Control required
+                                type='date' 
+                                placeholder='To'
+                                ref={to2Ref}
+                                value={params.personalInfoEmploymentInfo2.durationEnd2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setDurationEnd2(e.target.value)  
+                                    }}
+                            /> 
+                            <Form.Control.Feedback type='invalid'>Required Field"</Form.Control.Feedback>
                         </FloatingLabel> 
                     </Form.Group>
                 </Form.Group>
