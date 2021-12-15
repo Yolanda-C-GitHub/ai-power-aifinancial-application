@@ -18,8 +18,6 @@ export default function Address(params) {
     const postalCodeRef2=useRef();
     const rezSinceRef2=useRef();
 
-    const[showRez2, setShowRez2]=useState(false);
-
 
     function numberDaysBetween(){
         const sinceDate = moment(rezSinceRef.current.value,"YYYY/MM/DD")
@@ -28,7 +26,7 @@ export default function Address(params) {
         console.log(daysBetween)
         
         if(daysBetween < 730){
-            setShowRez2(true)
+            params.personalInfoRez.setShowRez2(true)
         }else{
             params.personalInfoRez2.setHouseNum2('')
             params.personalInfoRez2.setCurrentRez2('')
@@ -36,7 +34,7 @@ export default function Address(params) {
             params.personalInfoRez2.setProvince2('')
             params.personalInfoRez2.setPostalCode2('')
             params.personalInfoRez2.setRezSince2('')
-            setShowRez2(false)
+            params.personalInfoRez.setShowRez2(false)
         }
 
     }
@@ -44,7 +42,6 @@ export default function Address(params) {
     return (
         <Card className='fourthPartCard'> 
 
-             
             <Form.Group className='fourthPartFormGroup'>
                 <FloatingLabel className='fourthPartHouseNumber' label='House #'>
                     <Form.Control required
@@ -131,44 +128,90 @@ export default function Address(params) {
             </Form.Group>
 
 
-            {showRez2===true? 
+            {params.personalInfoRez.showRez2===true? 
                 (
                     <Form.Group className='fourthPartFormGroup'>
                         <FloatingLabel className='fourthPartHouseNumber' label='House #'>
-                            <Form.Control placeholder='house#' ref={houseNumRef2} onChange={()=>params.personalInfoRez2.setHouseNum2(houseNumRef2.current.value)} />
+                            <Form.Control required
+                                placeholder='house#'
+                                ref={houseNumRef2} 
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setHouseNum2(e.target.value)
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='fourthPartAddress' label='Previous Resident'>
-                            <Form.Control placeholder='Address' ref={currentRezRef2} onChange={()=>params.personalInfoRez2.setCurrentRez2(currentRezRef2.current.value)} />
+                            <Form.Control required 
+                                placeholder='Address'
+                                ref={currentRezRef2}
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setCurrentRez2(e.target.value)
+                                }} 
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel className='fourthPartAptNum' label='APT#'>
-                            <Form.Control placeholder='apt#' ref={aptNumRef2} onChange={()=> params.personalInfoRez2.setAptNum2(aptNumRef2.current.value)} />
+                            <Form.Control required
+                                placeholder='apt#'
+                                ref={aptNumRef2}
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setAptNum2(e.target.value)
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
-                        <Form.Select className='fourthPartSelector' ref={provinceRef2} onChange={()=>params.personalInfoRez2.setProvince2(provinceRef2.current.value)} >
-                            <option>Province</option>
-                            <option value='ON'>ON</option>
-                            <option value='AB'>AB</option>
-                            <option value='BC'>BC</option>
-                            <option value='MB'>MB</option>
-                            <option value='NB'>NB</option>
-                            <option value='NL'>NL</option>
-                            <option value="NT">NT</option>
-                            <option value='NS'>NS</option>
-                            <option value='NU'>NU</option>
-                            <option value='PE'>PE</option>
-                            <option value='QC'>QC</option>
-                            <option value='SK'>SK</option>
-                            <option value='YT'>YT</option>
-                        </Form.Select>            
-
+                        <FloatingLabel label='Province'>
+                            <Form.Select required
+                                className='fourthPartSelector'
+                                ref={provinceRef2}
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setProvince2(e.target.value)
+                                }}
+                            >
+                                <option>Province</option>
+                                <option value='ON'>ON</option>
+                                <option value='AB'>AB</option>
+                                <option value='BC'>BC</option>
+                                <option value='MB'>MB</option>
+                                <option value='NB'>NB</option>
+                                <option value='NL'>NL</option>
+                                <option value="NT">NT</option>
+                                <option value='NS'>NS</option>
+                                <option value='NU'>NU</option>
+                                <option value='PE'>PE</option>
+                                <option value='QC'>QC</option>
+                                <option value='SK'>SK</option>
+                                <option value='YT'>YT</option>
+                            </Form.Select> 
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>           
+                        </FloatingLabel>
+                        
                         <FloatingLabel className='fourthPartPostalCode' label='Postal Code'>
-                            <Form.Control  placeholder='postal'  ref={postalCodeRef2} onChange={()=>params.personalInfoRez2.setPostalCode2(postalCodeRef2.current.value)} />
+                            <Form.Control required
+                                pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
+                                placeholder='postal' 
+                                ref={postalCodeRef2} 
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setPostalCode2(e.target.value)
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field, Format Must Be "A1A 1A1"</Form.Control.Feedback>
                         </FloatingLabel>
 
                         <FloatingLabel label='Since'>
-                            <Form.Control type='date'  placeholder='date' ref={rezSinceRef2} onChange={()=>params.personalInfoRez2.setRezSince2(rezSinceRef2.current.value)} />
+                            <Form.Control required 
+                                type='date' 
+                                placeholder='date'
+                                ref={rezSinceRef2}
+                                onChange={(e)=>{
+                                    params.personalInfoRez2.setRezSince2(e.target.value)
+                                }}
+                            />
+                            <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
                     </Form.Group>
                 ):null

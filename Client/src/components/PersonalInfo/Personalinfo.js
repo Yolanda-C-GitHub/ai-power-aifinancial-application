@@ -292,6 +292,7 @@ export default function Personalinfo({sidemenuState}) {
     const[province, setProvince]=useState('ON');
     const[postalCode, setPostalCode]=useState();
     const[rezSince, setRezSince]=useState();
+    const[showRez2, setShowRez2]=useState(false);
     const personalInfoRez = {
         setHouseNum, 
         setCurrentRez, 
@@ -299,12 +300,14 @@ export default function Personalinfo({sidemenuState}) {
         setProvince, 
         setPostalCode,
         setRezSince,
+        setShowRez2,
         houseNum,
         currentRez,
         aptNum,
         province,
         postalCode,
         rezSince,
+        showRez2
     }
     const[houseNum2, setHouseNum2]=useState();
     const[currentRez2, setCurrentRez2]=useState();
