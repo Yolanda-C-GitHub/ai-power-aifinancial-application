@@ -416,11 +416,23 @@ export default function EmploymentInfo(params) {
                         </FloatingLabel>
 
                         <FloatingLabel className='employerName' label='Employer Name'>
-                            <Form.Control placeholder='Employer Name' ref={employerName2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setEmployername2(e.target.value)} /> 
+                            <Form.Control required
+                                placeholder='Employer Name'
+                                ref={employerName2Ref} 
+                                value={params.personalInfoEmploymentInfo2.employerName2}
+                                onChange={(e)=>{params.personalInfoEmploymentInfo2.setEmployername2(e.target.value)
+                                }}
+                            /> 
                         </FloatingLabel>
 
                         <FloatingLabel className='industry' label='Industry'>
-                            <Form.Select ref={industry2Ref} onChange={(e)=>params.personalInfoEmploymentInfo2.setIndustry2(e.target.value)} > 
+                            <Form.Select required
+                                ref={industry2Ref} 
+                                value={params.personalInfoEmploymentInfo2.industry2}
+                                onChange={(e)=>{
+                                    params.personalInfoEmploymentInfo2.setIndustry2(e.target.value)
+                                }} 
+                            > 
                                 <option>Select</option>
                                 <option value="agricultureFishingForestryMining">Agriculture Fishing Forestry Mining</option>
                                 <option value="foodFoodserviceHospitality">Food Foodservice Hospitality</option>
