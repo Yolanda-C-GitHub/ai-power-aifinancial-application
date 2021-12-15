@@ -222,7 +222,6 @@ export default function Firstpart(params) {
                     <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status*' >
                             <Form.Select required 
-                                as='select'
                                 className='formStatusItems' 
                                 value={params.personalInfoNames.livingStatus}
                                 onChange={(e)=>{
