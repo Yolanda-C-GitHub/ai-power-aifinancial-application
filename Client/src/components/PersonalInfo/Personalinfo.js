@@ -686,7 +686,6 @@ export default function Personalinfo({sidemenuState}) {
             
 
                 {applicantActive?(
-
                         <div className='applicantInfoContainer'>
                         {/* main info  */}
                         <div className='row' className='applicantInfoNames'> 
