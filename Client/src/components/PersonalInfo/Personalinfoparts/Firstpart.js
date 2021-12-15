@@ -313,7 +313,7 @@ export default function Firstpart(params) {
 
                     {params.personalInfoNames.showDischarge===true?(
                             <FloatingLabel className='dischargeDate' label='Discharge Date'>
-                                <Form.Control required 
+                                <Form.Control required
                                     type='date' 
                                     placeholder='dateOfDischarge' 
                                     max={moment().format("YYYY-MM-DD")}

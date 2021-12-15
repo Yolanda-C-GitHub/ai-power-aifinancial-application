@@ -173,8 +173,7 @@ export default function EmploymentInfo(params) {
                         placeholder='Occupation' 
                         value={params.personalInfoEmploymentInfo.occupation}
                         onChange={(e)=>params.personalInfoEmploymentInfo.setOccupation(e.target.value)}
-                    > 
-                        
+                    >
                         { params.personalInfoEmploymentInfo.industry === 'agricultureFishingForestryMining' ?(
                             occupationOptions[0].map((item, index) => {
                                 return  <option value={item} key={index}>{item}</option>
@@ -262,6 +261,19 @@ export default function EmploymentInfo(params) {
                     </Form.Select>
                     <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
+
+
+                {params.personalInfoEmploymentInfo.occupation==='Other - Specify'?(
+                    console.log(params.personalInfoEmploymentInfo.occupation)
+                ):(
+                    console.log('nope')
+                )}
+                    <FloatingLabel className='otherOccupation'   label='Occupation-Other'>
+                        <Form.Control required
+                            pattern='[A-Za-z]+'
+                            placeholder='Occupation-Other'
+                        />
+                    </FloatingLabel>
 
                 <FloatingLabel className='streetNum' label='Street Number'>
                     <Form.Control required
@@ -554,6 +566,14 @@ export default function EmploymentInfo(params) {
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
+                        <FloatingLabel>
+                                <Form.Control required
+                                
+                                >
+
+                                </Form.Control>
+                        </FloatingLabel>
+
                         <FloatingLabel className='streetNum' label='Street Number'>
                             <Form.Control required
                                 placeholder='Street Number' 
@@ -665,7 +685,7 @@ export default function EmploymentInfo(params) {
                                 value={params.personalInfoEmploymentInfo2.durationEnd2}
                                 onChange={(e)=>{
                                     params.personalInfoEmploymentInfo2.setDurationEnd2(e.target.value)  
-                                    }}
+                                }}
                             /> 
                             <Form.Control.Feedback type='invalid'>Required Field"</Form.Control.Feedback>
                         </FloatingLabel> 
