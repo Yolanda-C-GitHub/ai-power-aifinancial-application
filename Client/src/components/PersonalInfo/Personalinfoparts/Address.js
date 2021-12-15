@@ -47,6 +47,7 @@ export default function Address(params) {
                     <Form.Control required
                         placeholder='house#'
                         ref={houseNumRef}
+                        value={params.personalInfoRez.houseNum}
                         onChange={(e)=>{
                             params.personalInfoRez.setHouseNum(e.target.value)
                         }}
@@ -56,8 +57,9 @@ export default function Address(params) {
 
                 <FloatingLabel className='fourthPartAddress' label='Current Residence'>
                     <Form.Control required
-                        placeholder='Address'
+                        placeholder='Current Residence'
                         ref={currentRezRef}
+                        value={params.personalInfoRez.currentRez}
                         onChange={(e)=>{
                             params.personalInfoRez.setCurrentRez(e.target.value)
                         }}
@@ -68,7 +70,8 @@ export default function Address(params) {
                 <FloatingLabel className='fourthPartAptNum' label='APT#'>
                     <Form.Control required
                         placeholder='apt#' 
-                        ref={aptNumRef} 
+                        ref={aptNumRef}
+                        value={params.personalInfoRez.aptNum}
                         onChange={(e)=>{
                             params.personalInfoRez.setAptNum(e.target.value)
                         }}
@@ -80,6 +83,7 @@ export default function Address(params) {
                     <Form.Select required
                         className='fourthPartSelector' 
                         ref={provinceRef}
+                        value={params.personalInfoRez.province}
                         onChange={(e)=>{
                             params.personalInfoRez.setProvince(e.target.value)
                         }}
@@ -106,6 +110,7 @@ export default function Address(params) {
                         placeholder='postal'
                         pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
                         ref={postalCodeRef}
+                        value={params.personalInfoRez.postalCode}
                         onChange={(e)=>{
                             params.personalInfoRez.setPostalCode(e.target.value)
                         }} 
@@ -118,6 +123,7 @@ export default function Address(params) {
                         type='date'
                         placeholder='date' 
                         ref={rezSinceRef} 
+                        value={params.personalInfoRez.rezSince}
                         onChange={(e)=> {
                             params.personalInfoRez.setRezSince(e.target.value)
                             numberDaysBetween()
@@ -135,6 +141,7 @@ export default function Address(params) {
                             <Form.Control required
                                 placeholder='house#'
                                 ref={houseNumRef2} 
+                                value={params.personalInfoRez2.houseNum2}
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setHouseNum2(e.target.value)
                                 }}
@@ -144,8 +151,9 @@ export default function Address(params) {
 
                         <FloatingLabel className='fourthPartAddress' label='Previous Resident'>
                             <Form.Control required 
-                                placeholder='Address'
+                                placeholder='Previous Resident'
                                 ref={currentRezRef2}
+                                value={params.personalInfoRez2.currentRez2}
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setCurrentRez2(e.target.value)
                                 }} 
@@ -157,6 +165,7 @@ export default function Address(params) {
                             <Form.Control required
                                 placeholder='apt#'
                                 ref={aptNumRef2}
+                                value={params.personalInfoRez2.aptNum2}
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setAptNum2(e.target.value)
                                 }}
@@ -168,6 +177,7 @@ export default function Address(params) {
                             <Form.Select required
                                 className='fourthPartSelector'
                                 ref={provinceRef2}
+                                value={params.personalInfoRez2.province2}
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setProvince2(e.target.value)
                                 }}
@@ -195,6 +205,7 @@ export default function Address(params) {
                                 pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
                                 placeholder='postal' 
                                 ref={postalCodeRef2} 
+                                value={params.personalInfoRez2.postalCode2}
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setPostalCode2(e.target.value)
                                 }}
