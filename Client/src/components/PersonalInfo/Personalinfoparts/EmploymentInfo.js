@@ -587,7 +587,7 @@ export default function EmploymentInfo(params) {
                             ):(
                                 null
                             )}
-
+                            
                         <FloatingLabel className='streetNum' label='Street Number'>
                             <Form.Control required
                                 placeholder='Street Number' 

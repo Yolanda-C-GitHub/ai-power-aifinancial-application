@@ -57,30 +57,70 @@ export default function Cheque(params) {
             
                 
                     <FloatingLabel className='chequeArrayBankName' label='Bank Name' >
-                        <Form.Control placeholder='Bank Name' onChange={(e)=>handleOnchangeInput(index,e)} name='bankName'  value={params.personalInfoChequeArray.chequeArray[index].bankName} />
+                        <Form.Control required
+                            placeholder='Bank Name' 
+                            name='bankName' 
+                            value={params.personalInfoChequeArray.chequeArray[index].bankName}
+                            onChange={(e)=>{
+                                handleOnchangeInput(index,e)
+                            }}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayInstitution' label='Institution' >
-                        <Form.Control placeholder='Institution' onChange={(e)=>handleOnchangeInput(index,e)} name='institution'  value={params.personalInfoChequeArray.chequeArray[index].institution} />
+                        <Form.Control required
+                            placeholder='Institution' 
+                            name='institution'
+                            value={params.personalInfoChequeArray.chequeArray[index].institution}
+                            onChange={(e)=>{
+                                handleOnchangeInput(index,e)
+                            }}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayAccountNum' label='Account #' >
-                        <Form.Control placeholder='Account Number' onChange={(e)=>handleOnchangeInput(index,e)} name='accountNum'  value={params.personalInfoChequeArray.chequeArray[index].accountNum} />
+                        <Form.Control required
+                            placeholder='Account Number' 
+                            name='accountNum'
+                            value={params.personalInfoChequeArray.chequeArray[index].accountNum}
+                            onChange={(e)=>handleOnchangeInput(index,e)}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='chequeArrayTransitNum' label='Transit #' >
-                        <Form.Control placeholder='Transit Number' onChange={(e)=>handleOnchangeInput(index,e)} name='transitNum'  value={params.personalInfoChequeArray.chequeArray[index].transitNum} />
+                        <Form.Control required
+                            placeholder='Transit Number'
+                            name='transitNum'
+                            value={params.personalInfoChequeArray.chequeArray[index].transitNum} 
+                            onChange={(e)=>handleOnchangeInput(index,e)}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
-
+                    
                     <FloatingLabel className='chequeArrayAddress' label='Address' >
-                        <Form.Control placeholder='Address' onChange={(e)=>handleOnchangeInput(index,e)} name='address'  value={params.personalInfoChequeArray.chequeArray[index].address} />
+                        <Form.Control required
+                            placeholder='Address' 
+                            name='address'
+                            value={params.personalInfoChequeArray.chequeArray[index].address}
+                            onChange={(e)=>{
+                                handleOnchangeInput(index,e)}} 
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
 
-                    <Form.Check className='chequeArrayVerified' name='verified' type='checkbox' checked={params.personalInfoChequeArray.chequeArray[index].verified} label='Verified' 
-                    onChange={(e)=>{
-                        handleOnchangeCheck(index,e)
-                    }}
+                    <Form.Check 
+                        className='chequeArrayVerified' 
+                        label='Verified' 
+                        name='verified' 
+                        type='checkbox' 
+                        checked={params.personalInfoChequeArray.chequeArray[index].verified}
+                        onChange={(e)=>{
+                            handleOnchangeCheck(index,e)
+                        }}
                     />
                     
                     {index===0? (
