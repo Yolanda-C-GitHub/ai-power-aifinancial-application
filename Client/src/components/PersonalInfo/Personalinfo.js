@@ -248,7 +248,6 @@ export default function Personalinfo({sidemenuState}) {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const[showDischarge, setShowDischarge]=useState();
-
     const personalInfoNames = {
         firstName,
         lastName,
@@ -293,14 +292,40 @@ export default function Personalinfo({sidemenuState}) {
     const[province, setProvince]=useState('ON');
     const[postalCode, setPostalCode]=useState();
     const[rezSince, setRezSince]=useState();
-    const personalInfoRez = {setHouseNum, setCurrentRez, setAptNum, setProvince, setPostalCode, setRezSince}
+    const personalInfoRez = {
+        setHouseNum, 
+        setCurrentRez, 
+        setAptNum, 
+        setProvince, 
+        setPostalCode,
+        setRezSince,
+        houseNum,
+        currentRez,
+        aptNum,
+        province,
+        postalCode,
+        rezSince,
+    }
     const[houseNum2, setHouseNum2]=useState();
     const[currentRez2, setCurrentRez2]=useState();
     const[aptNum2, setAptNum2]=useState();
     const[province2,setProvince2]=useState();
     const[postalCode2, setPostalCode2] = useState();
     const[rezSince2, setRezSince2]=useState();
-    const personalInfoRez2 = {setHouseNum2, setCurrentRez2, setAptNum2, setProvince2, setPostalCode2, setRezSince2}
+    const personalInfoRez2 = {
+        setHouseNum2, 
+        setCurrentRez2, 
+        setAptNum2,
+        setProvince2, 
+        setPostalCode2, 
+        setRezSince2,
+        houseNum2,
+        currentRez2,
+        aptNum2,
+        province2,
+        postalCode2,
+        rezSince2,
+    }
 
     // state control part 5 ID info
     const[idArray, setIdArray] = useState([

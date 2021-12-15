@@ -587,7 +587,7 @@ export default function EmploymentInfo(params) {
                             ):(
                                 null
                             )}
-                            
+
                         <FloatingLabel className='streetNum' label='Street Number'>
                             <Form.Control required
                                 placeholder='Street Number' 
@@ -608,7 +608,7 @@ export default function EmploymentInfo(params) {
                                 onChange={(e)=>{
                                     params.personalInfoEmploymentInfo2.setEmployerAddress2(e.target.value)
                                     }}
-                            /> 
+                            />
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
@@ -623,7 +623,6 @@ export default function EmploymentInfo(params) {
                             /> 
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
-
                     </Form.Group>
 
 

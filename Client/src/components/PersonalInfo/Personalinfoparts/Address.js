@@ -47,19 +47,46 @@ export default function Address(params) {
              
             <Form.Group className='fourthPartFormGroup'>
                 <FloatingLabel className='fourthPartHouseNumber' label='House #'>
-                    <Form.Control placeholder='house#' ref={houseNumRef} onChange={()=>params.personalInfoRez.setHouseNum(houseNumRef.current.value)} />
+                    <Form.Control required
+                        placeholder='house#'
+                        ref={houseNumRef}
+                        onChange={(e)=>{
+                            params.personalInfoRez.setHouseNum(e.target.value)
+                        }}
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='fourthPartAddress' label='Current Residence'>
-                    <Form.Control placeholder='Address' ref={currentRezRef} onChange={()=>params.personalInfoRez.setCurrentRez(currentRezRef.current.value)} />
+                    <Form.Control required
+                        placeholder='Address'
+                        ref={currentRezRef}
+                        onChange={(e)=>{
+                            params.personalInfoRez.setCurrentRez(e.target.value)
+                        }}
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel className='fourthPartAptNum' label='APT#'>
-                    <Form.Control placeholder='apt#' ref={aptNumRef} onChange={()=> params.personalInfoRez.setAptNum(aptNumRef.current.value)} />
+                    <Form.Control required
+                        placeholder='apt#' 
+                        ref={aptNumRef} 
+                        onChange={(e)=>{
+                            params.personalInfoRez.setAptNum(e.target.value)
+                        }}
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
 
                 <FloatingLabel label='Province'>
-                    <Form.Select className='fourthPartSelector' ref={provinceRef} onChange={()=>params.personalInfoRez.setProvince(provinceRef.current.value)} >
+                    <Form.Select required
+                        className='fourthPartSelector' 
+                        ref={provinceRef}
+                        onChange={(e)=>{
+                            params.personalInfoRez.setProvince(e.target.value)
+                        }}
+                    >
                         <option value='ON'>ON</option>
                         <option value='AB'>AB</option>
                         <option value='BC'>BC</option>
@@ -74,19 +101,32 @@ export default function Address(params) {
                         <option value='SK'>SK</option>
                         <option value='YT'>YT</option>
                     </Form.Select> 
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>           
 
                 <FloatingLabel className='fourthPartPostalCode' label='Postal Code'>
-                    <Form.Control  placeholder='postal'  ref={postalCodeRef} onChange={()=>params.personalInfoRez.setPostalCode(postalCodeRef.current.value)} />
+                    <Form.Control  required
+                        placeholder='postal'
+                        pattern='[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]'
+                        ref={postalCodeRef}
+                        onChange={(e)=>{
+                            params.personalInfoRez.setPostalCode(e.target.value)
+                        }} 
+                    />
+                    <Form.Control.Feedback type='invalid'>Required Field, Format Must Be "A1A 1A1"</Form.Control.Feedback>
                 </FloatingLabel>
-
+                
                 <FloatingLabel label='Since'>
-                    <Form.Control type='date'  placeholder='date' ref={rezSinceRef} 
-                        onChange={()=> {
-                            params.personalInfoRez.setRezSince(rezSinceRef.current.value)
+                    <Form.Control required
+                        type='date'
+                        placeholder='date' 
+                        ref={rezSinceRef} 
+                        onChange={(e)=> {
+                            params.personalInfoRez.setRezSince(e.target.value)
                             numberDaysBetween()
                         }}  
                     />
+                    <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel>
             </Form.Group>
 
