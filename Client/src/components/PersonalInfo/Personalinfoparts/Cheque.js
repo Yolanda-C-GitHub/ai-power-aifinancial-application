@@ -111,7 +111,7 @@ export default function Cheque(params) {
                         <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
-
+                    <div className='checkContainerCheque' >
                     <Form.Check 
                         className='chequeArrayVerified' 
                         label='Verified' 
@@ -134,7 +134,7 @@ export default function Cheque(params) {
                     ):(
                         <AddBoxOutlinedIcon className='chequeArrayDelete' onClick={()=> handleAdd()} />
                     )}  
-                       
+                    </div>
                 
                 </ Form.Group>
             )}

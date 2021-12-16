@@ -370,13 +370,15 @@ export default function EmploymentInfo(params) {
                     /> 
                     <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                 </FloatingLabel> 
-
+                
+                <div className='checkboxContainerEmployment' >
                 <Form.Check className='currentEmployerCheckBox' type='checkbox' checked={params.personalInfoEmploymentInfo.currentEmployer} label='Current Employer' 
                     onChange={(e)=>{
                     params.personalInfoEmploymentInfo.setCurrentEmployer(e.target.checked)
                     displayPreviousEmploymentInfo()
                     }}
                 />
+                </div>
 
                 {params.personalInfoEmploymentInfo.currentEmployer===false? (
                     <FloatingLabel className='startTo' label='To'>

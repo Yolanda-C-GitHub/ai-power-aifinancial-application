@@ -89,6 +89,7 @@ export default function FamilyMember(params) {
                     </FloatingLabel>
 
 
+                    <div className='buttonBoxFamily'>
                     {index === 0? (
                         <></>
                     ):(<DeleteOutlineIcon className='deleteIcon' onClick={()=> handleDelete(index)} />
@@ -99,7 +100,7 @@ export default function FamilyMember(params) {
                     ):(
                         <AddBoxOutlinedIcon className='addIcon' onClick={()=>handleAdd()} />
                     )}
-                        
+                    </div>
                 
                 </Form.Group>
             )}

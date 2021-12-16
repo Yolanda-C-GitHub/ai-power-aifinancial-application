@@ -26,12 +26,19 @@
 .familyBirt{
     margin-right: 5px;
 }
+.buttonBoxFamily{
+    width: 50px;
+    display:flex;
+    height:55px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center !important;
+}
+
 .addIcon{
     transition:0.2s;
     padding: 5px ;
     transform: scale(2);
-    align-self: center;
-    margin: 10px;
 }
 .addIcon:hover{
     cursor: pointer;
@@ -42,14 +49,11 @@
     transition:0.2s;
     padding: 5px ;
     transform: scale(2);
-    align-self: center;
-    margin: 10px;
 }
 .deleteIcon:hover{
     cursor: pointer;
     transform: scale(2.5);
     transition: 0.2s;
-    justify-self: center;
 }
 
 

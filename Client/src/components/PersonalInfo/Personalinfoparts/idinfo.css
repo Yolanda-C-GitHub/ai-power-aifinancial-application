@@ -52,11 +52,12 @@
     width: 120px;
 }
 .buttonBox{
-    width: 100px;
+    width: 50px;
     display:flex;
+    height:75px;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: center !important;
 }
 
 .deleteButton{

@@ -33,6 +33,14 @@
     align-self:center;
     margin: 0 10px 0 20px;
 }
+.checkContainerCheque{
+    width: 170px;
+    display:flex;
+    height:60px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center !important;
+}
 .chequeArrayAdd{
     transition:0.2s;
     padding: 5px ;

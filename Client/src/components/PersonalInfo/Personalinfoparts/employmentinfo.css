@@ -69,9 +69,18 @@
 .startFrom{
     margin-left: 5px;
 }
+.checkboxContainerEmployment{
+    width: 180px;
+    display:flex;
+    height:55px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center !important;
+}
 .currentEmployerCheckBox{
-    align-self: center;
+    align-self: center !important;
     margin-left: 20px;
+    justify-content: center;
 }
 
 .startTo{
