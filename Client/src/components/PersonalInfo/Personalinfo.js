@@ -225,11 +225,6 @@ export default function Personalinfo({sidemenuState}) {
 
   
 
-
-
-
-
-
     // state control for 1st part main applicant tab
     const[lastName, setLastName] = useState()
     const[firstName, setFirstName] = useState()
@@ -485,19 +480,32 @@ export default function Personalinfo({sidemenuState}) {
     }
 
     // states for personalinfo Channel
-    const [channelArray, setChannelArray]=useState([
-        {       
-            channelType:'',
-            accountid:'',
-            nickName:'',
-        },
-        {
-            channelType:'',
-            accountid:'',
-            nickName:'',
-        },
+
+    const [wechat, setWechat] = useState()
+    const [telegram, setTelegram] =useState()
+    const [addtionalEmail, setAddtionalEmail] = useState()
+    const personalInfoChannel={
+        wechat,
+        telegram,
+        addtionalEmail,
+        setWechat,
+        setTelegram,
+        setAddtionalEmail,
+    }
+    // const [channelArray, setChannelArray]=useState([
+    //     {       
+    //         channelType:'',
+    //         accountid:'',
+    //         nickName:'',
+    //     },
+    //     {
+    //         channelType:'',
+    //         accountid:'',
+    //         nickName:'',
+    //     },
         
-    ])
+    // ])
+
 
 
 
@@ -512,6 +520,33 @@ export default function Personalinfo({sidemenuState}) {
 
 
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ====================================================================
     // state control for coapplicant main 
     const[colastName, setCoLastName] = useState()
     const[cofirstName, setCoFirstName] = useState()
@@ -775,7 +810,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {channelActive?(
-                                <Channel />          
+                                <Channel personalInfoChannel={personalInfoChannel} />          
                             ):null}
 
                             {KYCActive?(
