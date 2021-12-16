@@ -211,13 +211,14 @@ export default function Address(params) {
                                 }}
                             />
                             <Form.Control.Feedback type='invalid'>Required Field, Format Must Be "A1A 1A1"</Form.Control.Feedback>
-                        </FloatingLabel>
+                        </FloatingLabel>                
 
                         <FloatingLabel label='Since'>
                             <Form.Control required 
                                 type='date' 
                                 placeholder='date'
                                 ref={rezSinceRef2}
+                                value={params.personalInfoRez.rezSince2} 
                                 onChange={(e)=>{
                                     params.personalInfoRez2.setRezSince2(e.target.value)
                                 }}
