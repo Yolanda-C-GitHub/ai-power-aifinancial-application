@@ -457,7 +457,7 @@ export default function EmploymentInfo(params) {
                                 <option value="designCreative">Design Creative</option>
                                 <option value="constructionSkilledTrades">Construction SkilledTrades</option>
                                 <option value="educationTraining">Education Training</option>
-                                <option value="governmentPublicAdministration">Government blicAdministration</option>
+                                <option value="governmentPublicAdministration">Government Public Administration</option>
                                 <option value="engineeringArchitecture">Engineering Architecture</option>
                                 <option value="manufacturingProductionOperation">Manufacturing Production Operation</option>
                                 <option value="medicalHealthcare">Medical Healthcare</option>
