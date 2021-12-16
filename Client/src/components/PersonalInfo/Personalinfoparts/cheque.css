@@ -4,13 +4,14 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    padding:15px;
+    padding:10px;
 }
 .formGroupCheque{
     display:flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-left: 15px;
+    margin-left: 5px;
+    margin-top: 5px;
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
