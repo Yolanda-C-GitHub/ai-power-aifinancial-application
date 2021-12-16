@@ -112,28 +112,28 @@ export default function Cheque(params) {
                     </FloatingLabel>
 
                     <div className='checkContainerCheque' >
-                    <Form.Check 
-                        className='chequeArrayVerified' 
-                        label='Verified' 
-                        name='verified' 
-                        type='checkbox' 
-                        checked={params.personalInfoChequeArray.chequeArray[index].verified}
-                        onChange={(e)=>{
-                            handleOnchangeCheck(index,e)
-                        }}
-                    />
-                    
-                    {index===0? (
-                        <></>
-                    ):(
-                        <DeleteOutlineIcon className='chequeArrayAdd' onClick={(e)=> handleDelete(index,e)} />
-                    )}
+                        <Form.Check 
+                            className='chequeArrayVerified' 
+                            label='Verified' 
+                            name='verified' 
+                            type='checkbox' 
+                            checked={params.personalInfoChequeArray.chequeArray[index].verified}
+                            onChange={(e)=>{
+                                handleOnchangeCheck(index,e)
+                            }}
+                        />
+                        
+                        {index===0? (
+                            <></>
+                        ):(
+                            <DeleteOutlineIcon className='chequeArrayAdd' onClick={(e)=> handleDelete(index,e)} />
+                        )}
 
-                    {index>0? (
-                        <></>
-                    ):(
-                        <AddBoxOutlinedIcon className='chequeArrayDelete' onClick={()=> handleAdd()} />
-                    )}  
+                        {index>0? (
+                            <></>
+                        ):(
+                            <AddBoxOutlinedIcon className='chequeArrayDelete' onClick={()=> handleAdd()} />
+                        )}  
                     </div>
                 
                 </ Form.Group>
