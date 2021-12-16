@@ -11,6 +11,7 @@ import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Cheque from './Personalinfoparts/Cheque'
 import Channel from './Personalinfoparts/Channel'
+import Kyc from './Personalinfoparts/Kyc'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 
@@ -814,7 +815,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {KYCActive?(
-                                <h1>lol</h1>            
+                                <Kyc />       
                             ):null}
                          
                         </div> 
