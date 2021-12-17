@@ -161,39 +161,39 @@ export default function Coapp(params) {
 
                     <FloatingLabel className='firstPartFormGroupE' label='E-Mail*'>
                         <Form.Control required
-                        type='email' 
-                        placeholder='Email' 
-                        value={params.coAppInfo.coemail}
-                        onChange={(e)=>{
-                            params.coAppInfo.setCoEmail(e.target.value)
-                        }}
-                    />
+                            type='email' 
+                            placeholder='Email' 
+                            value={params.coAppInfo.coemail}
+                            onChange={(e)=>{
+                                params.coAppInfo.setCoEmail(e.target.value)
+                            }}
+                        />
                         <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='firstPartFormGroup' label='Cell Phone*'>
                         <Form.Control required 
-                        maxlength='10'
-                        minlenght='10'
-                        pattern='\d{3}\d{3}\d{4}'
-                        placeholder='cellphone'
-                        value={params.coAppInfo.cellNum}
-                        onChange={(e)=>{
-                            params.coAppInfo.setCellNum(e.target.value)
-                        }}    
+                            maxlength='10'
+                            minlenght='10'
+                            pattern='\d{3}\d{3}\d{4}'
+                            placeholder='cellphone'
+                            value={params.coAppInfo.cocellNum}
+                            onChange={(e)=>{
+                                params.coAppInfo.setCoCellNum(e.target.value)
+                            }}    
                         />
                         <Form.Control.Feedback type='invalid'>Required Field, Must Contain 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
 
                     <FloatingLabel className='firstPartFormGroup' label='Home Phone'>
                         <Form.Control 
-                        maxlength='10'
-                        pattern='\d{3}\d{3}\d{4}'
-                        placeholder='homephone' 
-                        value={params.coAppInfo.homeNum}
-                        onChange={(e)=>{
-                            params.coAppInfo.setHomeNum(e.target.value)
-                        }}
+                            maxlength='10'
+                            pattern='\d{3}\d{3}\d{4}'
+                            placeholder='homephone' 
+                            value={params.coAppInfo.cohomeNum}
+                            onChange={(e)=>{
+                                params.coAppInfo.setCoHomeNum(e.target.value)
+                            }}
                         />
                         <Form.Control.Feedback type='invalid'>Required Field, Must Contain 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
@@ -203,24 +203,24 @@ export default function Coapp(params) {
                             maxlength='10'
                             pattern='\d{3}\d{3}\d{4}'
                             placeholder='workphone'
-                            value={params.coAppInfo.workNum}
+                            value={params.coAppInfo.coworkNum}
                             onChange={(e)=>{
-                                params.coAppInfo.setWorkNum(e.target.value)               
-                        }}
+                                params.coAppInfo.setCoWorkNum(e.target.value)               
+                            }}
                         />
                         <Form.Control.Feedback type='invalid'>Optional Field, But Format Must Be 10 Digit Number</Form.Control.Feedback>
                     </FloatingLabel>
         
 
-                    
+
             
                     <div className='firstPartFormStatusOne' >
                         <FloatingLabel label='Living Status*' >
                             <Form.Select required 
                                 className='formStatusItems' 
-                                value={params.coAppInfo.livingStatus}
+                                value={params.coAppInfo.colivingStatus}
                                 onChange={(e)=>{
-                                    params.coAppInfo.setLivingStatus(e.target.value)
+                                    params.coAppInfo.setCoLivingStatus(e.target.value)
                                 }}
                             >
                                 <option value=''>Select</option>
@@ -237,9 +237,9 @@ export default function Coapp(params) {
                             <Form.Select required 
                                 as='select'
                                 className='formStatusItems'
-                                value={params.coAppInfo.maritalStatus}
+                                value={params.coAppInfo.comaritalStatus}
                                 onChange={(e)=>{
-                                    params.coAppInfo.setMaritalStatus(e.target.value)
+                                    params.coAppInfo.setCoMaritalStatus(e.target.value)
                                 }}
                             >
                                 <option value='' >Select</option>
@@ -258,9 +258,9 @@ export default function Coapp(params) {
                             <Form.Select required 
                                 as='select' 
                                 className='formStatusItems' 
-                                value={params.coAppInfo.citizenship}
+                                value={params.coAppInfo.cocitizenship}
                                 onChange={(e)=>{
-                                    params.coAppInfo.setCitizenship(e.target.value)
+                                    params.coAppInfo.setCoCitizenship(e.target.value)
                                 }}
                             >
                                 <option value='' >Select</option>
@@ -276,9 +276,9 @@ export default function Coapp(params) {
                             <Form.Select required 
                                 as='select' 
                                 className='formStatusItems' 
-                                value={params.coAppInfo.taxStatus}
+                                value={params.coAppInfo.cotaxStatus}
                                 onChange={(e)=>{
-                                    params.coAppInfo.setTaxStatus(e.target.value)
+                                    params.coAppInfo.setCoTaxStatus(e.target.value)
                                 }}
                             >
                                 <option value='' >Select</option>
@@ -295,9 +295,9 @@ export default function Coapp(params) {
 
                     <FloatingLabel className='previouslyDeclared' label='Have you previously Declared Bankruptcy?'>
                         <Form.Select
-                            value={params.coAppInfo.declared}
+                            value={params.coAppInfo.codeclared}
                             onChange={(e)=>{
-                                params.coAppInfo.setDeclared(e.target.value)
+                                params.coAppInfo.setcoDeclared(e.target.value)
                                 toggleShowDischarge()
                         }}>
                             <option value='No'>No</option>
@@ -305,15 +305,15 @@ export default function Coapp(params) {
                         </Form.Select>  
                     </FloatingLabel>
 
-                    {params.coAppInfo.showDischarge===true?(
+                    {params.coAppInfo.showCoDischarge===true?(
                             <FloatingLabel className='dischargeDate' label='Discharge Date'>
                                 <Form.Control required
                                     type='date' 
                                     placeholder='dateOfDischarge' 
                                     max={moment().format("YYYY-MM-DD")}
-                                    value={params.coAppInfo.dischargeDate}
+                                    value={params.coAppInfo.codischargeDate}
                                     onChange={(e)=>{
-                                        params.coAppInfo.setDischargeDate(e.target.value)
+                                        params.coAppInfo.setcoDischargeDate(e.target.value)
                                     }}
                                 />
                                 <Form.Control.Feedback type='invalid'>Required Field if You Have Previously Declared Bankruptcy</Form.Control.Feedback>
