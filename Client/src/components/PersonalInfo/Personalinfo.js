@@ -14,6 +14,7 @@ import Channel from './Personalinfoparts/Channel'
 import Kyc from './Personalinfoparts/Kyc'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
+import Coidinfo from './Coapplicant/Coidinfo'
 
 
 // dynamic sidemenu & main container
@@ -923,7 +924,7 @@ export default function Personalinfo({sidemenuState}) {
 
                         <div className='addtionalInfoElements'>
                             {coiDActive?(
-                                <h1>hi</h1>
+                                <Coidinfo/>
                             ): null}
 
                             {coemploymentActive?(
