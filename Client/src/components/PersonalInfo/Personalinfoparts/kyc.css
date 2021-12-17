@@ -1,9 +1,11 @@
 .kycquestions{
     margin: 15px;
-    width: 800px;
+    width: 1500px;
     
 }
 
 .kycControlSize{
-    height: 100px !important;
+    height: 110px !important;
+    display:flex;
+    justify-content: center;
 }
