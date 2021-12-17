@@ -320,7 +320,7 @@ export default function Coapp(params) {
                             </FloatingLabel>
                     ): null} 
                     
-                </Card>
+                </Card> 
 
             </div>
     )
