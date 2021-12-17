@@ -152,10 +152,6 @@ export default function Partfive(params) {
                 
                 )}
 
-                <div className='idSubmitButton'>
-                    <Button type='submit' >Save to State</Button>
-                </div>
-
             </div>
 
     )

@@ -806,7 +806,7 @@ export default function Personalinfo({sidemenuState}) {
             
 
                 {applicantActive?(
-                        <div className='applicantInfoContainer'>
+                    <div className='applicantInfoContainer'>
                         {/* main info  */}
                         <div className='row' className='applicantInfoNames'> 
                             <Firstpart  personalInfoNames={personalInfoNames} />
@@ -884,7 +884,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 {coApplicantActive? (
-                    <Form onSubmit={handleSubmit} className='coApplicantInfoContainer'>
+                    <div className='coApplicantInfoContainer'>
 
                         {/* main info coApplicant  */}
                         <div className='row' className='coapplicantInfoNames'> 
@@ -947,7 +947,7 @@ export default function Personalinfo({sidemenuState}) {
                         <div className='applicantInfoButton d-flex justify-content-end mt-2 mb-2'>
                             {/* <Button type='submit'>Next</Button> */}
                         </div>
-                    </Form>
+                    </div>
                 ):null}
 
 
