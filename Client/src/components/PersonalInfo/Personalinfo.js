@@ -697,7 +697,7 @@ export default function Personalinfo({sidemenuState}) {
             setValidated(true);
             e.stopPropagation();
             console.log('no check the form')
-            console.log('----------------')
+            console.log('-----------applicant data---------')
             console.log(
                 firstName,
                 lastName,
@@ -717,9 +717,29 @@ export default function Personalinfo({sidemenuState}) {
                 dischargeDate,
                 idArray,
             )
+            console.log('------------co-applicant data---------------')
+            console.log(
+                colastName,
+                cofirstName,
+                coenglishName,
+                cogender,
+                cobirthDay,
+                cosinNum,
+                coemail,
+                cocellNum,
+                cohomeNum,
+                coworkNum,
+                colivingStatus,
+                comaritalStatus,
+                cocitizenship,
+                cotaxStatus,
+                codeclared,
+                codischargeDate,
+                showCoDischarge,
+            )
         }else{
             console.log('validation passed')
-            console.log('----------------')
+            console.log('------------Applicant data---------')
             console.log(
                 firstName,
                 lastName,
@@ -738,6 +758,26 @@ export default function Personalinfo({sidemenuState}) {
                 declared,
                 dischargeDate,
                 idArray,
+            )
+            console.log('--------co-applicant data-------------')
+            console.log(
+                colastName,
+                cofirstName,
+                coenglishName,
+                cogender,
+                cobirthDay,
+                cosinNum,
+                coemail,
+                cocellNum,
+                cohomeNum,
+                coworkNum,
+                colivingStatus,
+                comaritalStatus,
+                cocitizenship,
+                cotaxStatus,
+                codeclared,
+                codischargeDate,
+                showCoDischarge,
             )
         }
         
