@@ -1,10 +1,10 @@
-.cofirstPartCard{
+/* .cofirstPartCard{
     display:flex !important;
     flex-direction: row !important;
     justify-content: flex-start !important;
     flex-wrap: wrap;
     padding:10px;
-    border:none;
+    border:none; 
 }
 
 .firstPartFormGroup{
@@ -61,4 +61,91 @@
 .coformStatusItems{
     margin-left: 10px;
     width: 200px;
+} */
+
+
+.coPersonalInfoForm{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(211, 189, 189);
+    border-radius: 5px;
+    margin-left: 20px !important;  
+    margin-right:10px !important;
+}
+.personalInfoButton{
+    margin: 0px 0px 0px 0px;
+    align-self: flex-end;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.firstPartCard{
+    display:flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    margin:10px;
+    border: none;
+}
+
+.firstPartFormGroup{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    flex-wrap:wrap;
+}
+.firstPartFormGroupE{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+.firstPartFormGroupGender{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.firstPartGenderLabel{
+    text-align: center;
+    align-self: center;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.firstPartGenderBox{
+    align-self: center;
+}
+
+.firstPartFormStatusOne{
+    display:flex;
+    flex-direction: row;
+    margin: 0px 10px 10px 10px !important;
+    border: none !important;
+}
+
+
+.formStatusItems{
+    width: 200px;
+    margin-right: 10px;
+}
+.previouslyDeclared{
+    width: 350px;
+    margin-left:10px;
+
+}
+
+.dischargeDate{
+    margin-left:10px;
 }
