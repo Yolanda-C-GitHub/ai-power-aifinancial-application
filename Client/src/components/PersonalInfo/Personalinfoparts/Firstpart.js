@@ -9,10 +9,10 @@ import moment from 'moment'
 
 
 
-export default function Firstpart(params, onHandleSubmit) {  
+export default function Firstpart(params) {  
     
     const firstName = useRef()
-
+ 
     const firstNameFeedback=useRef('')
     const birthdayFeedback=useRef('')
 
@@ -327,21 +327,6 @@ export default function Firstpart(params, onHandleSubmit) {
                     
                 </Card>
                 
-                <Button
-                    value='hello'
-                    type='submit'
-                    onClick={(e)=>{
-                        e.preventDefault()
-                        const form = params.personalInfoNames.formRef.current
-                        if (form.checkValidity() === false) {
-                            params.personalInfoNames.setValidated(true);
-                            e.stopPropagation();
-                            alert('Make sure all required fields are filled out properly')
-                        }else{
-                           params.personalInfoNames.setValidateStatusApplicant(true)
-                        }
-                    }}
-                >Validate</Button>
             </div>
     )
 }

@@ -87,3 +87,12 @@
     margin-right: 15px;
     margin-bottom: 15px;
 }
+
+.validationContainerPersonalID{
+    align-self: center;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

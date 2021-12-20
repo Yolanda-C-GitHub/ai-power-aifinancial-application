@@ -1,8 +1,9 @@
-import React, {useRef, useState} from 'react'
-import {Card, Form, FloatingLabel, Button} from 'react-bootstrap'
+import React from 'react'
+import {Form, FloatingLabel, Button} from 'react-bootstrap'
 import './idinfo.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import DoneIcon from '@mui/icons-material/Done';
 
 export default function Partfive(params) {
 
@@ -147,11 +148,31 @@ export default function Partfive(params) {
                             )}
                             
                         </div>
-            
                     </Form.Group>
-                
                 )}
+            
+                <div className='validationContainerPersonalID'>
+                    <Button
+                        type='submit'
+                        onClick={(e)=>{
+                            e.preventDefault()
+                            const form = params.personalInfoPartFive.formRef.current
+                            if (form.checkValidity() === false) {
+                                params.personalInfoPartFive.setValidated(true);
+                                e.stopPropagation();
+                                alert('Make sure all required fields are filled out properly')
+                            }else{
+                            params.personalInfoPartFive.setValidationStatusFormID(true)
+                            }
+                        }}
+                    >Validate</Button>
 
+                    {params.personalInfoPartFive.validationStatusFormID===true?(
+                        <DoneIcon/>  
+                    ):null 
+                    }
+                </div>
+                
             </div>
 
     )

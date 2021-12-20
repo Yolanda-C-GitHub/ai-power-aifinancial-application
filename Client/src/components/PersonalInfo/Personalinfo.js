@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 import Axios  from  'axios'
 import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
@@ -247,7 +247,6 @@ export default function Personalinfo({sidemenuState}) {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const[showDischarge, setShowDischarge]=useState();
-    const[validateStatusApplicant, setValidateStatusApplicant]=useState(false);
     const personalInfoNames = {
         firstName,
         lastName,
@@ -266,7 +265,6 @@ export default function Personalinfo({sidemenuState}) {
         declared,
         dischargeDate,
         showDischarge,
-        validateStatusApplicant,
         setLastName,
         setFirstName,
         setEnglishName,
@@ -284,10 +282,6 @@ export default function Personalinfo({sidemenuState}) {
         setDeclared,
         setDischargeDate,
         setShowDischarge,
-        setValidateStatusApplicant,
-
-        formRef,
-        setValidated,
     }
     
     // state control for 4th part address info
@@ -347,9 +341,14 @@ export default function Personalinfo({sidemenuState}) {
             comments:'',
         },
     ]);
+    const [validationStatusFormID, setValidationStatusFormID]=useState(false)
     const personalInfoPartFive ={
         idArray,
         setIdArray,
+        setValidationStatusFormID,
+        validationStatusFormID,
+        formRef,
+        setValidated,
     }
 
 
@@ -691,31 +690,17 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-
-
-    // function handleSubmit(e){
-    //     e.preventDefault()
-    //     const form = e.currentTarget;
-    //     const checkStatus = form.checkValidity()
-    //     console.log(checkStatus)
-        
-    //     if (form.checkValidity() === false) {
-    //         setValidated(true);
-    //         e.stopPropagation();
-    //         alert('Make sure all required fields are filled out properly')
-    //     }else{
-            
-    //     }
     
-    // }
 
 
-    
+
+
+
 
 
 
     function submitData(){
-        if(validateStatusApplicant===true){
+        if(validationStatusFormID===true){
             console.log('submit state info to database')
             console.log('validation passed')
             console.log('---Applicant data---')
@@ -804,8 +789,6 @@ export default function Personalinfo({sidemenuState}) {
         }
 
     }
-
-
 
     return (
         <Form noValidate ref={formRef} validated={validated} >
