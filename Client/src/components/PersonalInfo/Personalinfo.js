@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import Axios  from  'axios'
 import styled from 'styled-components'
 import {Form, Button, Nav, Navbar} from 'react-bootstrap'
@@ -224,8 +224,10 @@ export default function Personalinfo({sidemenuState}) {
     }
 
 
+    // Referrence for Form and validate status
+    const formRef=useRef()
+    const [validated, setValidated] = useState(false)
 
-  
 
     // state control for 1st part main applicant tab
     const[lastName, setLastName] = useState()
@@ -245,6 +247,7 @@ export default function Personalinfo({sidemenuState}) {
     const[declared, setDeclared] = useState('No');
     const[dischargeDate, setDischargeDate]= useState();
     const[showDischarge, setShowDischarge]=useState();
+    const[validateStatusApplicant, setValidateStatusApplicant]=useState(false);
     const personalInfoNames = {
         firstName,
         lastName,
@@ -263,6 +266,7 @@ export default function Personalinfo({sidemenuState}) {
         declared,
         dischargeDate,
         showDischarge,
+        validateStatusApplicant,
         setLastName,
         setFirstName,
         setEnglishName,
@@ -280,6 +284,10 @@ export default function Personalinfo({sidemenuState}) {
         setDeclared,
         setDischargeDate,
         setShowDischarge,
+        setValidateStatusApplicant,
+
+        formRef,
+        setValidated,
     }
     
     // state control for 4th part address info
@@ -685,20 +693,32 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
-
-    const [validated, setValidated] = useState(false)
-
-    function handleSubmit(e){
-        e.preventDefault()
-        const form = e.currentTarget;
-        const checkStatus = form.checkValidity()
-        console.log(checkStatus)
+    // function handleSubmit(e){
+    //     e.preventDefault()
+    //     const form = e.currentTarget;
+    //     const checkStatus = form.checkValidity()
+    //     console.log(checkStatus)
         
-        if (form.checkValidity() === false) {
-            setValidated(true);
-            e.stopPropagation();
-            console.log('no check the form')
-            console.log('-----------applicant data---------')
+    //     if (form.checkValidity() === false) {
+    //         setValidated(true);
+    //         e.stopPropagation();
+    //         alert('Make sure all required fields are filled out properly')
+    //     }else{
+            
+    //     }
+    
+    // }
+
+
+    
+
+
+
+    function submitData(){
+        if(validateStatusApplicant===true){
+            console.log('submit state info to database')
+            console.log('validation passed')
+            console.log('---Applicant data---')
             console.log(
                 firstName,
                 lastName,
@@ -718,7 +738,7 @@ export default function Personalinfo({sidemenuState}) {
                 dischargeDate,
                 idArray,
             )
-            console.log('------------co-applicant data---------------')
+            console.log('---co-applicant data---')
             console.log(
                 colastName,
                 cofirstName,
@@ -739,8 +759,9 @@ export default function Personalinfo({sidemenuState}) {
                 showCoDischarge,
             )
         }else{
-            console.log('validation passed')
-            console.log('------------Applicant data---------')
+            console.log('not all validations are truez')
+            alert('make sure all validations are passed for each tabs')
+            console.log('---applicant data---')
             console.log(
                 firstName,
                 lastName,
@@ -760,7 +781,7 @@ export default function Personalinfo({sidemenuState}) {
                 dischargeDate,
                 idArray,
             )
-            console.log('--------co-applicant data-------------')
+            console.log('---co-applicant data---')
             console.log(
                 colastName,
                 cofirstName,
@@ -781,15 +802,13 @@ export default function Personalinfo({sidemenuState}) {
                 showCoDischarge,
             )
         }
-        
+
     }
 
 
 
-
-
     return (
-        <Form noValidate validated={validated} onSubmit={handleSubmit} >
+        <Form noValidate ref={formRef} validated={validated} >
             <PersonalInfoContainer className='border personalInfoContainer' sideMenuPush={sidemenuState.sidemenu}>
                 
                 <Navbar className='personalInfoNavbarContainer'>
@@ -956,7 +975,10 @@ export default function Personalinfo({sidemenuState}) {
 
 
                 <div className='applicantInfoButton'>
-                    <Button type='submit'>Submit</Button>
+                    <Button
+                        onClick={submitData}
+                    > Submit Data
+                    </Button>
                 </div>
             </PersonalInfoContainer>
 

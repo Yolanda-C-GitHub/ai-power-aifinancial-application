@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-import {Card, Form, FloatingLabel} from 'react-bootstrap';
+import {Card, Form, FloatingLabel, Button} from 'react-bootstrap';
 import './firstpart.css';
 import moment from 'moment'
 
@@ -9,7 +9,7 @@ import moment from 'moment'
 
 
 
-export default function Firstpart(params) {  
+export default function Firstpart(params, onHandleSubmit) {  
     
     const firstName = useRef()
 
@@ -326,7 +326,22 @@ export default function Firstpart(params) {
                     ): null} 
                     
                 </Card>
-
+                
+                <Button
+                    value='hello'
+                    type='submit'
+                    onClick={(e)=>{
+                        e.preventDefault()
+                        const form = params.personalInfoNames.formRef.current
+                        if (form.checkValidity() === false) {
+                            params.personalInfoNames.setValidated(true);
+                            e.stopPropagation();
+                            alert('Make sure all required fields are filled out properly')
+                        }else{
+                           params.personalInfoNames.setValidateStatusApplicant(true)
+                        }
+                    }}
+                >Validate</Button>
             </div>
     )
 }
