@@ -752,7 +752,7 @@ export default function Personalinfo({sidemenuState}) {
                 codeclared,
                 codischargeDate,
                 showCoDischarge,
-            )
+            )  
         }else{
             console.log('not all validations are truez')
             alert('make sure all validations are passed for each tabs')
