@@ -1,9 +1,9 @@
-import React, {useState, useRef} from 'react'
-import {Card, Form, FloatingLabel} from 'react-bootstrap'
+import React, {useRef} from 'react'
+import {Card, Form, FloatingLabel, Button} from 'react-bootstrap'
 import './employmentinfo.css'
 import moment from 'moment'
 import {occupationOptions} from './employmentdata'
-
+import DoneIcon from '@mui/icons-material/Done';
 
 
 export default function EmploymentInfo(params) {
@@ -708,7 +708,29 @@ export default function EmploymentInfo(params) {
                 </Form.Group>
             ):null}
 
-            
+
+            <div className='validationContainerPersonalFamily'>
+                <Button
+                    type='submit'
+                    onClick={(e)=>{
+                        e.preventDefault()
+                        const form = params.personalInfoEmploymentInfo.formRef.current
+                        if (form.checkValidity() === false) {
+                            params.personalInfoEmploymentInfo.setValidated(true);
+                            e.stopPropagation();
+                            alert('Make sure all required fields are filled out properly')
+                        }else{
+                        params.personalInfoEmploymentInfo.setValidationStatusFormEmployment(true)
+                        }
+                    }}
+                >Validate</Button>
+
+                {params.personalInfoEmploymentInfo.validationStatusFormFamily===true?(
+                    <DoneIcon/>  
+                ):null 
+                }
+            </div>      
+                  
         </Card>
     )
 }

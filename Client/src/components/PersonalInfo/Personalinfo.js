@@ -379,6 +379,7 @@ export default function Personalinfo({sidemenuState}) {
     }
 
     // state control employment info
+    const [validationStatusFormEmployment, setValidationStatusFormEmployment]=useState(false)
     const [employmentStatus, setEmploymentStatus]=useState();
     const [annualIncome, setAnnualIncome]=useState();
     const [employerName, setEmployername]=useState();
@@ -428,6 +429,10 @@ export default function Personalinfo({sidemenuState}) {
         currentEmployer,
         showEmployer2,
         otherOccupation,
+        validationStatusFormFamily,
+        setValidationStatusFormEmployment,
+        formRef,
+        setValidated,
     }
     const [employmentStatus2, setEmploymentStatus2]=useState();
     const [annualIncome2, setAnnualIncome2]=useState();
@@ -705,7 +710,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     function submitData(){
-        if(validationStatusFormID===true && validationStatusFormFamily===true){
+        if(validationStatusFormID===true && validationStatusFormFamily===true && validationStatusFormEmployment===true){
             console.log('submit state info to database')
             console.log('validation passed')
             console.log('---Applicant data---')
