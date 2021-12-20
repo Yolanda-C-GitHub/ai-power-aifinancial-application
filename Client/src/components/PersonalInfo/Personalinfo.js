@@ -368,9 +368,14 @@ export default function Personalinfo({sidemenuState}) {
         },    
 
     ])
+    const [validationStatusFormFamily, setValidationStatusFormFamily]=useState(false)
     const personalInfoFamilyArray={
         familyArray,
         setFamilyArray,
+        setValidationStatusFormFamily,
+        validationStatusFormFamily,
+        formRef,
+        setValidated,
     }
 
     // state control employment info
@@ -700,7 +705,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     function submitData(){
-        if(validationStatusFormID===true){
+        if(validationStatusFormID===true && validationStatusFormFamily===true){
             console.log('submit state info to database')
             console.log('validation passed')
             console.log('---Applicant data---')

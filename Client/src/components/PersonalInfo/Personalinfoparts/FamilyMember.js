@@ -1,9 +1,11 @@
 import React,{useRef} from 'react'
-import {Card, Form, FloatingLabel, InputGroup} from 'react-bootstrap'
+import {Card, Form, FloatingLabel, Button} from 'react-bootstrap'
 import './familymember.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import moment from 'moment'
+import DoneIcon from '@mui/icons-material/Done';
+
 
 export default function FamilyMember(params) {
 
@@ -104,6 +106,29 @@ export default function FamilyMember(params) {
                 
                 </Form.Group>
             )}
+
+
+            <div className='validationContainerPersonalFamily'>
+                <Button
+                    type='submit'
+                    onClick={(e)=>{
+                        e.preventDefault()
+                        const form = params.personalInfoFamilyArray.formRef.current
+                        if (form.checkValidity() === false) {
+                            params.personalInfoFamilyArray.setValidated(true);
+                            e.stopPropagation();
+                            alert('Make sure all required fields are filled out properly')
+                        }else{
+                        params.personalInfoFamilyArray.setValidationStatusFormFamily(true)
+                        }
+                    }}
+                >Validate</Button>
+
+                {params.personalInfoFamilyArray.validationStatusFormFamily===true?(
+                    <DoneIcon/>  
+                ):null 
+                }
+            </div>        
          
         </Card>
     )
