@@ -481,6 +481,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     // states for personalinfo cheque
+    const [validationStatusFormCheque, setValidationStatusFormCheque] = useState(false)
     const [chequeArray, setChequeArray] = useState([
         {
             chequeID:'',
@@ -496,6 +497,10 @@ export default function Personalinfo({sidemenuState}) {
     const personalInfoChequeArray = {
         chequeArray,
         setChequeArray,
+        formRef,
+        setValidated,
+        validationStatusFormCheque,
+        setValidationStatusFormCheque,
     }
 
     // states for personalinfo Channel

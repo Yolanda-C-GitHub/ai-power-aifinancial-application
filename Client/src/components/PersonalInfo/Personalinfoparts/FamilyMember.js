@@ -119,7 +119,7 @@ export default function FamilyMember(params) {
                             e.stopPropagation();
                             alert('Make sure all required fields are filled out properly')
                         }else{
-                        params.personalInfoFamilyArray.setValidationStatusFormFamily(true)
+                            params.personalInfoFamilyArray.setValidationStatusFormFamily(true)
                         }
                     }}
                 >Validate</Button>

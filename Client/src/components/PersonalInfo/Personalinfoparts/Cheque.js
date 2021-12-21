@@ -1,8 +1,9 @@
 import React, {useRef} from 'react'
-import {Card, Form, FloatingLabel} from 'react-bootstrap'
+import {Card, Form, FloatingLabel, Button} from 'react-bootstrap'
 import './cheque.css'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
+import DoneIcon from '@mui/icons-material/Done';
 
 export default function Cheque(params) {
 
@@ -135,23 +136,34 @@ export default function Cheque(params) {
                             <AddBoxOutlinedIcon className='chequeArrayDelete' onClick={()=> handleAdd()} />
                         )}  
                     </div>
-                
                 </ Form.Group>
             )}
 
 
 
+            <div className='validationContainerPersonalFamily'>
+                <Button
+                    type='submit'
+                    onClick={(e)=>{
+                        e.preventDefault()
+                        const form = params.personalInfoChequeArray.formRef.current
+                        if(form.checkValidity()===false){
+                            params.personalInfoChequeArray.setValidated(true)
+                            e.stopPropagation()
+                        }else{
+                            params.personalInfoChequeArray.setValidationStatusFormCheque(true)
+                        }
+                    }}
+                >Validate</Button>
+
+                {params.personalInfoChequeArray.validationStatusFormCheque===true?(
+                    <DoneIcon /> 
+                ):null
+                }
+                
 
 
-
-
-
-
-
-
-
-
-
+            </div>
 
 
         </Card>
