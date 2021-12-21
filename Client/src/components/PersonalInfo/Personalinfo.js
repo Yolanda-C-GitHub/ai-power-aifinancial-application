@@ -45,8 +45,14 @@ const PersonalInfoAddress = styled(Nav.Link)`
 const PersonalInfoChannel= styled(Nav.Link)`
     background-color: ${({ channelActive }) => (channelActive? '#202c37' : '#374c5f;')}
 `;
-const PersonalInfoKYC=styled(Nav.Link)`
-    background-color: ${({ KYCActive }) => (KYCActive? '#202c37' : '#374c5f;')}
+const PersonalInfoKYCIA=styled(Nav.Link)`
+    background-color: ${({ KYCIAActive }) => (KYCIAActive? '#202c37' : '#374c5f;')}
+`;
+const PersonalInfoKYCML=styled(Nav.Link)`
+    background-color: ${({KYCMLActive}) => (KYCMLActive? '#202c37':'#374c5f;')}
+`;
+const PersonalInfoKYCCL=styled(Nav.Link)`
+    background-color: ${({KYCCLActive}) =>(KYCCLActive? '#202c37':'#374c5f;')}
 `;
 
 // dynamic tabs for coapplicant
@@ -101,7 +107,9 @@ export default function Personalinfo({sidemenuState}) {
     const [chequeActive, setChequeActive]= useState(false);
     const [addressActive, setAddressActive]=useState(false);  
     const [channelActive, setChannelActive]=useState(false);
-    const [KYCActive, setKYCActive]=useState(false);
+    const [KYCIAActive, setKYCIAActive]=useState(false);
+    const [KYCMLActive, setKYCMLActive]=useState(false )
+    const [KYCCLActive, setKYCCLActive]=useState(false)
     function toggleIDActive(e){
         e.preventDefault();
         setIDActive(true);
@@ -110,7 +118,9 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(false)
         setChannelActive(false)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
     }
     function toggleFamilyActive(e){
         e.preventDefault();
@@ -120,7 +130,9 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(false)
         setChannelActive(false)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
     }
     function toggleEmploymentActive(e){
         e.preventDefault();
@@ -130,7 +142,9 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(false)
         setChannelActive(false)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
     }
     function toggleChequeActive(e){
         e.preventDefault();
@@ -140,7 +154,9 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(true)
         setAddressActive(false)
         setChannelActive(false)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
     }
     function toggleAddressActive(e){
         e.preventDefault();
@@ -150,7 +166,10 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(true)
         setChannelActive(false)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
+        setKYCCLActive(false)
     }
      function toggleChannelActive(e){
         e.preventDefault();
@@ -160,9 +179,11 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(false)
         setChannelActive(true)
-        setKYCActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
     }
-    function toggleKYCActive(e){
+    function toggleKYCIAActive(e){
         e.preventDefault();
         setIDActive(false);
         setFamilyActive(false)
@@ -170,7 +191,34 @@ export default function Personalinfo({sidemenuState}) {
         setChequeActive(false)
         setAddressActive(false)
         setChannelActive(false)
-        setKYCActive(true)
+        setKYCIAActive(true)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
+    }
+    function toggleKYCMLActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(true)
+        setKYCCLActive(false)
+    }
+    function toggleKYCCLActive(e){
+        e.preventDefault();
+        setIDActive(false);
+        setFamilyActive(false)
+        setEmploymentActive(false)
+        setChequeActive(false)
+        setAddressActive(false)
+        setChannelActive(false)
+        setKYCIAActive(false)
+        setKYCMLActive(false)
+        setKYCCLActive(false)
+        setKYCCLActive(true)
     }
 
     // state control for detailed info active styling for coapplicant
@@ -514,6 +562,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     // states for personalinfo Channel
+    const [validationStatusFormChannel, setValidationStatusFormChannel]=useState(false);
     const [wechat, setWechat] = useState()
     const [telegram, setTelegram] =useState()
     const [addtionalEmail, setAddtionalEmail] = useState()
@@ -524,6 +573,10 @@ export default function Personalinfo({sidemenuState}) {
         setWechat,
         setTelegram,
         setAddtionalEmail,
+        validationStatusFormChannel,
+        setValidationStatusFormChannel,
+        formRef,
+        setValidated,
     }
     // const [channelArray, setChannelArray]=useState([
     //     {       
@@ -866,9 +919,22 @@ export default function Personalinfo({sidemenuState}) {
                                     Channel
                                 </PersonalInfoChannel>
 
-                                <PersonalInfoKYC className='applicantAddtionalInfoItem' disabled={KYCActive?true:false} KYCActive={KYCActive} onClick={toggleKYCActive} >
-                                    KYC
-                                </PersonalInfoKYC>
+                                <PersonalInfoKYCIA className='applicantAddtionalInfoItem' disabled={KYCIAActive?true:false} KYCIAActive={KYCIAActive} onClick={toggleKYCIAActive} >
+                                    KYC-AI
+                                </PersonalInfoKYCIA>
+
+                                <PersonalInfoKYCML className='applicantAddtionalInfoItem' disabled={KYCMLActive? true:false} KYCMLActive={KYCMLActive} onClick={toggleKYCMLActive}   >
+                                    KYC-ML
+                                </PersonalInfoKYCML>
+
+                                <PersonalInfoKYCCL className='applicantAddtionalInfoItem' disable={KYCCLActive? true: false} KYCCLActive={KYCCLActive} onClick={toggleKYCCLActive} >
+                                    KYC-CL
+                                </PersonalInfoKYCCL>
+
+
+
+
+
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
@@ -897,7 +963,7 @@ export default function Personalinfo({sidemenuState}) {
                                 <Channel personalInfoChannel={personalInfoChannel} />          
                             ):null}
 
-                            {KYCActive?(
+                            {KYCIAActive?(
                                 <Kyc />       
                             ):null}
                          

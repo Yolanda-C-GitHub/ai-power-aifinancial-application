@@ -1,11 +1,11 @@
 import React from 'react'
 import './channel.css'
-import {Card, Form, FloatingLabel} from 'react-bootstrap'
+import {Card, Form, FloatingLabel,Button} from 'react-bootstrap'
+import DoneIcon from '@mui/icons-material/Done'
+
+
 
 export default function Channel(params) {
-
-
-
 
 
 
@@ -19,7 +19,6 @@ export default function Channel(params) {
                         onChange={(e) => {
                             params.personalInfoChannel.setWechat(e.target.value)
                         }}
-
                     />
                 </FloatingLabel>
 
@@ -44,6 +43,29 @@ export default function Channel(params) {
                     />
                 </FloatingLabel>
             </Form.Group>
+
+            <div className='validationContainerPersonalChannel' >
+                <Button
+                    type='submit'
+                    onClick={(e)=>{
+                        console.log('button is working')
+                        e.preventDefault()
+                        const form = params.personalInfoChannel.formRef.current
+                        if(form.checkValidity()===false){
+                            params.personalInfoChannel.setValidated(true)
+                            e.stopPropagation()
+                            alert('Make sure all required fields are filled out properly')
+                        }else{
+                            params.personalInfoChannel.setValidationStatusFormChannel(true);
+                        }
+                    }}
+                >Validate</Button>
+
+                {params.personalInfoChannel.validationStatusFormChannel===true? (
+                    <DoneIcon />
+                ): null
+                }
+            </div>
         </Card>
     )
 }
