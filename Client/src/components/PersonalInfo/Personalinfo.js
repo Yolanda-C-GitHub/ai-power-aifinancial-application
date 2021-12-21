@@ -933,10 +933,6 @@ export default function Personalinfo({sidemenuState}) {
                                     KYC-CL
                                 </PersonalInfoKYCCL>
 
-
-
-
-
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
