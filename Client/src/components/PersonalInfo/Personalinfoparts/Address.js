@@ -1,7 +1,8 @@
-import React, {useRef, useState} from 'react'
-import {Card, FloatingLabel,Form} from 'react-bootstrap'
+import React, {useRef} from 'react'
+import {Card, FloatingLabel,Form, Button} from 'react-bootstrap'
 import './addressinfo.css'
 import moment from 'moment'
+import DoneIcon from '@mui/icons-material/Done';
 
 export default function Address(params) {
     
@@ -42,6 +43,7 @@ export default function Address(params) {
     return (
         <Card className='fourthPartCard'> 
 
+            <div className='fourthPartAddressContainer'>
             <Form.Group className='fourthPartFormGroup'>
                 <FloatingLabel className='fourthPartHouseNumber' label='House #'>
                     <Form.Control required
@@ -228,8 +230,31 @@ export default function Address(params) {
                     </Form.Group>
                 ):null
             }
+            </div>
+            
+            <div className='validationContainerPersonalAddress' > 
+                <Button
+                    type='submit'
+                    onClick={(e)=>{
+                        e.preventDefault();
+                        const form = params.personalInfoRez.formRef.current
+                        if(form.checkValidity() ===false){
+                            params.personalInfoRez.setValidated(true);
+                            e.stopPropagation() 
+                            alert('Make sure all required fields are filled out properly')
+                        }else{
+                            params.personalInfoFamilyArray.setValidationStatusFormAddress(true)
+                        }
+                    }}
+                >Validate</Button>
 
-
+                {params.personalInfoRez.validationStatusFormAddress===true?(
+                    <DoneIcon/>
+                ):null
+                }
+            </div>
         </Card>
+
+
     )
 }

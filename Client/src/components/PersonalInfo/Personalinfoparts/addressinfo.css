@@ -1,10 +1,16 @@
 .fourthPartCard{
     display:flex;
-    flex-direction:row !important;
+    flex-direction:column !important;
     justify-content: flex-start;
     padding:10px;
 
 }
+.fourthPartAddressContainer{
+    display:flex;
+    flex-direction: row;
+    height: 200px;
+}
+
 .fourthPartSelector{
     width:120px;
 }
@@ -32,4 +38,8 @@
     flex-wrap: wrap;
     padding:5px;
     width:100%;
+}
+
+.validationContainerPersonalAddress{
+    align-self: center;
 }

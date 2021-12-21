@@ -284,51 +284,6 @@ export default function Personalinfo({sidemenuState}) {
         setShowDischarge,
     }
     
-    // state control for 4th part address info
-    const[houseNum, setHouseNum]=useState();
-    const[currentRez, setCurrentRez]=useState();
-    const[aptNum, setAptNum]=useState();
-    const[province, setProvince]=useState('ON');
-    const[postalCode, setPostalCode]=useState();
-    const[rezSince, setRezSince]=useState();
-    const[showRez2, setShowRez2]=useState(false);
-    const personalInfoRez = {
-        setHouseNum, 
-        setCurrentRez, 
-        setAptNum, 
-        setProvince, 
-        setPostalCode,
-        setRezSince,
-        setShowRez2,
-        houseNum,
-        currentRez,
-        aptNum,
-        province,
-        postalCode,
-        rezSince,
-        showRez2
-    }
-    const[houseNum2, setHouseNum2]=useState();
-    const[currentRez2, setCurrentRez2]=useState();
-    const[aptNum2, setAptNum2]=useState();
-    const[province2,setProvince2]=useState();
-    const[postalCode2, setPostalCode2] = useState();
-    const[rezSince2, setRezSince2]=useState();
-    const personalInfoRez2 = {
-        setHouseNum2, 
-        setCurrentRez2, 
-        setAptNum2,
-        setProvince2, 
-        setPostalCode2, 
-        setRezSince2,
-        houseNum2,
-        currentRez2,
-        aptNum2,
-        province2,
-        postalCode2,
-        rezSince2,
-    }
-
     // state control part 5 ID info
     const[idArray, setIdArray] = useState([
         {
@@ -503,8 +458,62 @@ export default function Personalinfo({sidemenuState}) {
         setValidationStatusFormCheque,
     }
 
-    // states for personalinfo Channel
 
+    // state control for 4th part address info
+    const [validationStatusFormAddress, setValidationStatusFormAddress]=useState(false)
+    const[houseNum, setHouseNum]=useState();
+    const[currentRez, setCurrentRez]=useState();
+    const[aptNum, setAptNum]=useState();
+    const[province, setProvince]=useState('ON');
+    const[postalCode, setPostalCode]=useState();
+    const[rezSince, setRezSince]=useState();
+    const[showRez2, setShowRez2]=useState(false);
+    const personalInfoRez = {
+        setHouseNum, 
+        setCurrentRez, 
+        setAptNum, 
+        setProvince, 
+        setPostalCode,
+        setRezSince,
+        setShowRez2,
+        houseNum,
+        currentRez,
+        aptNum,
+        province,
+        postalCode,
+        rezSince,
+        showRez2,
+        formRef,
+        setValidated,
+        validationStatusFormAddress,
+        setValidationStatusFormAddress,
+    }
+    const[houseNum2, setHouseNum2]=useState();
+    const[currentRez2, setCurrentRez2]=useState();
+    const[aptNum2, setAptNum2]=useState();
+    const[province2,setProvince2]=useState();
+    const[postalCode2, setPostalCode2] = useState();
+    const[rezSince2, setRezSince2]=useState();
+    const personalInfoRez2 = {
+        setHouseNum2, 
+        setCurrentRez2, 
+        setAptNum2,
+        setProvince2, 
+        setPostalCode2, 
+        setRezSince2,
+        houseNum2,
+        currentRez2,
+        aptNum2,
+        province2,
+        postalCode2,
+        rezSince2,
+    }
+
+ 
+
+
+
+    // states for personalinfo Channel
     const [wechat, setWechat] = useState()
     const [telegram, setTelegram] =useState()
     const [addtionalEmail, setAddtionalEmail] = useState()
