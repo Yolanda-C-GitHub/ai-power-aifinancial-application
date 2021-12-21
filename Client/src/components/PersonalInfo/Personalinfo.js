@@ -936,7 +936,7 @@ export default function Personalinfo({sidemenuState}) {
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
-                      
+
                         <div className='addtionalInfoElements'> 
                             {iDActive?(
                                 <IDInfo personalInfoPartFive={personalInfoPartFive} />
@@ -972,7 +972,6 @@ export default function Personalinfo({sidemenuState}) {
                             {KYCCLActive?(
                                 <KycCL />
                             ):null}
-
                         </div> 
                         
                     </div>

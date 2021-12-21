@@ -14,7 +14,7 @@ export default function KycIA() {
                         onChange={(e) => {
                            
                         }}
-
+                        
                     />
                 </FloatingLabel>
 
