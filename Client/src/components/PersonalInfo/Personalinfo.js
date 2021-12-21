@@ -11,7 +11,9 @@ import FamilyMember from './Personalinfoparts/FamilyMember'
 import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Cheque from './Personalinfoparts/Cheque'
 import Channel from './Personalinfoparts/Channel'
-import Kyc from './Personalinfoparts/Kyc'
+import KycIA from './Personalinfoparts/KycIA'
+import KycML from './Personalinfoparts/KycML'
+import KycCL from './Personalinfoparts/KycCL'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 import Coidinfo from './Coapplicant/Coidinfo'
@@ -964,9 +966,17 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {KYCIAActive?(
-                                <Kyc />       
+                                <KycIA />       
                             ):null}
                          
+                            {KYCMLActive?(
+                                <KycML />
+                            ):null}
+
+                            {KYCCLActive?(
+                                <KycCL />
+                            ):null}
+
                         </div> 
                         
                     </div>

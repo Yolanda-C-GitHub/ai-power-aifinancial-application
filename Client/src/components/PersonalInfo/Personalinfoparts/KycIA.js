@@ -1,8 +1,8 @@
 import React from 'react'
-import './kyc.css'
+import './kycIA.css'
 import {Card, Form, FloatingLabel} from 'react-bootstrap'
 
-export default function Kyc() {
+export default function KycIA() {
     return (
         <Card className='KycInfoCard'>
             <Form.Group>
