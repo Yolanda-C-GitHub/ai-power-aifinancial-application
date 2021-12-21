@@ -141,7 +141,7 @@ export default function Cheque(params) {
 
 
 
-            <div className='validationContainerPersonalFamily'>
+            <div className='validationContainerPersonalCheque'>
                 <Button
                     type='submit'
                     onClick={(e)=>{

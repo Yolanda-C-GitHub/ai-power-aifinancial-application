@@ -67,4 +67,8 @@
     transform: scale(2.5);
     transition: 0.2s;
 }
+.validationContainerPersonalCheque{
+    align-self: center;
+    padding:5px;
+}
 
