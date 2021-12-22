@@ -6,8 +6,8 @@ export default function KycIA() {
     return (
         <Card className='KycInfoCard'>
             <Form.Group>
-                <Accordion defaultActiveKey="0">
-                    <Accordion.Item>
+                <Accordion>
+                    <Accordion.Item eventKey='0'>
                         <Accordion.Header> IA </Accordion.Header>
                         <Accordion.Body>
                             <FloatingLabel className='kycquestions' label='1. How old are you?'>
@@ -85,10 +85,9 @@ export default function KycIA() {
                             </FloatingLabel>
                         </Accordion.Body>
                     </Accordion.Item>
-                </Accordion>
-                
-                <Accordion defaultActiveKey="0">
-                    <Accordion.Item>
+    
+
+                    <Accordion.Item eventKey='1'>
                         <Accordion.Header>Manual Life</Accordion.Header>
                         <Accordion.Body>            
                             <FloatingLabel className='kycquestions' label='1. What is your investment horizon - when will you want to use your invested money?'>
@@ -170,13 +169,9 @@ export default function KycIA() {
                             </FloatingLabel>
                         </Accordion.Body>
                     </Accordion.Item>
-                </Accordion>
 
 
-
-
-                <Accordion defaultActiveKey='0'>
-                    <Accordion.Item>
+                    <Accordion.Item eventKey='2'>
                         <Accordion.Header>Canada Life</Accordion.Header>                
                         <Accordion.Body>
                             <FloatingLabel className='kycquestions' label='1. Why do you want to start investing?'>

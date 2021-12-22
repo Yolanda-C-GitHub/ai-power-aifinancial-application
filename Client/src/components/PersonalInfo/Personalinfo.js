@@ -12,8 +12,6 @@ import EmploymentInfo from './Personalinfoparts/EmploymentInfo'
 import Cheque from './Personalinfoparts/Cheque'
 import Channel from './Personalinfoparts/Channel'
 import KycIA from './Personalinfoparts/KycIA'
-import KycML from './Personalinfoparts/KycML'
-import KycCL from './Personalinfoparts/KycCL'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 import Coidinfo from './Coapplicant/Coidinfo'
@@ -49,12 +47,6 @@ const PersonalInfoChannel= styled(Nav.Link)`
 `;
 const PersonalInfoKYCIA=styled(Nav.Link)`
     background-color: ${({ KYCIAActive }) => (KYCIAActive? '#202c37' : '#374c5f;')}
-`;
-const PersonalInfoKYCML=styled(Nav.Link)`
-    background-color: ${({KYCMLActive}) => (KYCMLActive? '#202c37':'#374c5f;')}
-`;
-const PersonalInfoKYCCL=styled(Nav.Link)`
-    background-color: ${({KYCCLActive}) =>(KYCCLActive? '#202c37':'#374c5f;')}
 `;
 
 // dynamic tabs for coapplicant
@@ -110,8 +102,6 @@ export default function Personalinfo({sidemenuState}) {
     const [addressActive, setAddressActive]=useState(false);  
     const [channelActive, setChannelActive]=useState(false);
     const [KYCIAActive, setKYCIAActive]=useState(false);
-    const [KYCMLActive, setKYCMLActive]=useState(false )
-    const [KYCCLActive, setKYCCLActive]=useState(false)
     function toggleIDActive(e){
         e.preventDefault();
         setIDActive(true);
@@ -121,8 +111,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(false)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
     function toggleFamilyActive(e){
         e.preventDefault();
@@ -133,8 +121,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(false)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
     function toggleEmploymentActive(e){
         e.preventDefault();
@@ -145,8 +131,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(false)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
     function toggleChequeActive(e){
         e.preventDefault();
@@ -157,8 +141,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(false)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
     function toggleAddressActive(e){
         e.preventDefault();
@@ -169,9 +151,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(true)
         setChannelActive(false)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
-        setKYCCLActive(false)
     }
      function toggleChannelActive(e){
         e.preventDefault();
@@ -182,8 +161,6 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(true)
         setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
     function toggleKYCIAActive(e){
         e.preventDefault();
@@ -194,38 +171,11 @@ export default function Personalinfo({sidemenuState}) {
         setAddressActive(false)
         setChannelActive(false)
         setKYCIAActive(true)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
     }
-    function toggleKYCMLActive(e){
-        e.preventDefault();
-        setIDActive(false);
-        setFamilyActive(false)
-        setEmploymentActive(false)
-        setChequeActive(false)
-        setAddressActive(false)
-        setChannelActive(false)
-        setKYCIAActive(false)
-        setKYCMLActive(true)
-        setKYCCLActive(false)
-    }
-    function toggleKYCCLActive(e){
-        e.preventDefault();
-        setIDActive(false);
-        setFamilyActive(false)
-        setEmploymentActive(false)
-        setChequeActive(false)
-        setAddressActive(false)
-        setChannelActive(false)
-        setKYCIAActive(false)
-        setKYCMLActive(false)
-        setKYCCLActive(false)
-        setKYCCLActive(true)
-    }
+
 
     // state control for detailed info active styling for coapplicant
     const [coiDActive, setCoIDActive]=useState(true)
-
     const [coemploymentActive, setcoEmploymentActive]=useState(false);
     const [coaddressActive, setcoAddressActive]= useState(false);
     const [cochannelActive, setcoChannelActive]=useState(false);
@@ -925,14 +875,6 @@ export default function Personalinfo({sidemenuState}) {
                                     KYC-AI
                                 </PersonalInfoKYCIA>
 
-                                <PersonalInfoKYCML className='applicantAddtionalInfoItem' disabled={KYCMLActive? true:false} KYCMLActive={KYCMLActive} onClick={toggleKYCMLActive}   >
-                                    KYC-ML
-                                </PersonalInfoKYCML>
-
-                                <PersonalInfoKYCCL className='applicantAddtionalInfoItem' disable={KYCCLActive? true: false} KYCCLActive={KYCCLActive} onClick={toggleKYCCLActive} >
-                                    KYC-CL
-                                </PersonalInfoKYCCL>
-
                             </Nav>
                             <Navbar.Brand className='navBarBrand'>Additional Information</Navbar.Brand>
                         </Navbar>
@@ -963,14 +905,6 @@ export default function Personalinfo({sidemenuState}) {
 
                             {KYCIAActive?(
                                 <KycIA />       
-                            ):null}
-                         
-                            {KYCMLActive?(
-                                <KycML />
-                            ):null}
-
-                            {KYCCLActive?(
-                                <KycCL />
                             ):null}
                         </div> 
                         
