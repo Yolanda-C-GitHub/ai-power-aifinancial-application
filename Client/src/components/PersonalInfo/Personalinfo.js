@@ -872,7 +872,7 @@ export default function Personalinfo({sidemenuState}) {
                                 </PersonalInfoChannel>
 
                                 <PersonalInfoKYCIA className='applicantAddtionalInfoItem' disabled={KYCIAActive?true:false} KYCIAActive={KYCIAActive} onClick={toggleKYCIAActive} >
-                                    KYC-AI
+                                    KYC
                                 </PersonalInfoKYCIA>
 
                             </Nav>

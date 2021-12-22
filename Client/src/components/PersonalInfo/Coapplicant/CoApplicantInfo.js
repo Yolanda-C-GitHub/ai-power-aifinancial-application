@@ -16,7 +16,7 @@ export default function Coapp(params) {
         if(params.coAppInfo.declared==='No'){
             params.coAppInfo.setShowDischarge(true)
             params.coAppInfo.setDeclared('Yes')
-          
+    
         } else if(params.coAppInfo.declared==='Yes'){
             params.coAppInfo.setShowDischarge(false)
             params.coAppInfo.setDischargeDate('')
