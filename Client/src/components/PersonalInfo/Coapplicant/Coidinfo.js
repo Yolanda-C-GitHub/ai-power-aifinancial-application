@@ -38,8 +38,11 @@ export default function Coidinfo(params) {
                     </FloatingLabel>
 
                     <FloatingLabel className='coidItems' label='ID Type'>
+                        <Form.Control required>
+                            placeholde='id'
                         
 
+                        </Form.Control>
                     </FloatingLabel>
 
 
