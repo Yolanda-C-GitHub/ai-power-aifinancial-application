@@ -1,0 +1,22 @@
+.coAppIDContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border:1px solid rgb(211, 189, 189);
+    border-radius: 5px;
+    margin-left: 15px;
+}
+
+.coformGroupID{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 15px;
+    flex-wrap: wrap;
+}
+
+.coidItems{
+    margin-right: 5px;
+    margin-top: 10px;
+}

@@ -607,7 +607,7 @@ export default function Personalinfo({sidemenuState}) {
 
 
     // ====================================================================
-    // state control for coapplicant main 
+    // state for coapplicant main 
     const[colastName, setCoLastName] = useState()
     const[cofirstName, setCoFirstName] = useState()
     const[coenglishName, setCoEnglishName] = useState()
@@ -661,6 +661,32 @@ export default function Personalinfo({sidemenuState}) {
         setcoDischargeDate,
         setShowCoDischarge,
     }
+
+
+    
+
+    // co applicant ID
+    const[coidArray, setcoIdArray] = useState([
+        {
+            idType:'',
+            idNum:'',
+            issueDate:'',
+            expiryDate:'',
+            verificationDate:'',
+            issuingProvince:'',
+            comments:'',
+        },
+    ]);
+    const [covalidationStatusFormID, setcoValidationStatusFormID]=useState(false)
+    const copersonalInfoID ={
+        coidArray,
+        setcoIdArray,
+        setcoValidationStatusFormID,
+        covalidationStatusFormID,
+        formRef,
+        setValidated,
+    }
+
 
 
 // coapp Housing Info
@@ -977,7 +1003,7 @@ export default function Personalinfo({sidemenuState}) {
 
                         <div className='addtionalInfoElements'>
                             {coiDActive?(
-                                <Coidinfo/>
+                                <Coidinfo copersonalInfoID={copersonalInfoID} />
                             ): null}
 
                             {coemploymentActive?(

@@ -41,7 +41,7 @@ export default function Partfive(params) {
                 
                     <Form.Group className='formGroupID' key={index} > 
                         <FloatingLabel className='partFiveIDType' label='ID Type'>
-                            <Form.Control required
+                            <Form.Select required
                                 as='select' 
                                 onChange={(e) => handleOnChangeInput(index,e)} 
                                 name='idType'  
@@ -53,7 +53,7 @@ export default function Partfive(params) {
                                 <option value="passport">Passport</option>
                                 <option value="prCard">PR Card</option>
                                 <option value="other">Other</option>
-                            </Form.Control>
+                            </Form.Select>
                             <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                         </FloatingLabel>
 
