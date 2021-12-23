@@ -7,7 +7,7 @@ export default function KycIA(params) {
         <Card className='KycInfoCard'>
             <Form.Group>
                 <Accordion>
-                    <Accordion.Item eventKey='0'>
+                    <Accordion.Item eventKey='4'>
                         <Accordion.Header> IA </Accordion.Header>
                         <Accordion.Body>
                             <FloatingLabel className='kycquestions' label='1. How old are you?'>
@@ -88,7 +88,7 @@ export default function KycIA(params) {
     
 
                     <Accordion.Item eventKey='1'>
-                        <Accordion.Header>Manual Life</Accordion.Header>
+                        <Accordion.Header>ManuLife</Accordion.Header>
                         <Accordion.Body>            
                             <FloatingLabel className='kycquestions' label='1. What is your investment horizon - when will you want to use your invested money?'>
                                 <Form.Control 
