@@ -37,12 +37,15 @@ export default function Coidinfo(params) {
                         </Form.Select>
                     </FloatingLabel>
 
-                    {/* <FloatingLabel className='coidItems' label='ID Type'>
-                        <Form.Control required>
-                            placeholde='id'
+                    <FloatingLabel className='coidItems' label='ID Type'>
+                        <Form.Control required
+                            placeholder='id'
+                            onChange={(e)=>handleOnChangeInput(index,e)}
+                        >
+
                         </Form.Control>
                     </FloatingLabel>
- */}
+
 
 
                 </Form.Group>

@@ -1,0 +1,17 @@
+.cokycquestions{
+    margin: 15px;
+    width: 1400px;
+    
+}
+
+.cokycControlSize{
+    height: 110px !important;
+    display:flex;
+    justify-content: center;
+}
+.CoKycInfoCard{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+}

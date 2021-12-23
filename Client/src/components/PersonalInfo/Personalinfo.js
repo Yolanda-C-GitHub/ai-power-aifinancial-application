@@ -15,6 +15,7 @@ import KycIA from './Personalinfoparts/KycIA'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 import Coidinfo from './Coapplicant/Coidinfo'
+import CoKYC from  './Coapplicant/CoKYC'
 
 
 // dynamic sidemenu & main container
@@ -720,6 +721,55 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
+    // co KYC state
+    const [coIA1, setcoIA1]=useState()
+    const [coIA2, setcoIA2]=useState()
+    const [coIA3, setcoIA3]=useState()
+    const [coIA4, setcoIA4]=useState()
+    const [coIA5, setcoIA5]=useState()
+    const [coIA6, setcoIA6]=useState()
+    const [coIA7, setcoIA7]=useState()
+    const [coIA8, setcoIA8]=useState()
+    const [coML1, setcoML1]=useState()
+    const [coML2, setcoML2]=useState()
+    const [coML3, setcoML3]=useState()  
+    const [coML4, setcoML4]=useState()
+    const [coML5, setcoML5]=useState()
+    const [coML6, setcoML6]=useState()
+    const [coML7, setcoML7]=useState()
+    const [coML8, setcoML8]=useState()
+    const [coCL1, setcoCL1]=useState()
+    const [coCL2, setcoCL2]=useState()
+    const [coCL3, setcoCL3]=useState()
+    const [coCL4, setcoCL4]=useState()
+    const [coCL5, setcoCL5]=useState()
+    const [coCL6, setcoCL6]=useState()
+    const [coCL7, setcoCL7]=useState()
+    const [coCL8, setcoCL8]=useState()
+    const [coCL9, setcoCL9]=useState()
+    const [coCL10, setcoCL10]=useState()
+    const [coCL11, setcoCL11]=useState()
+    const [coCL12, setcoCL12]=useState() 
+    const [coCL13, setcoCL13]=useState()
+    const [coCL14, setcoCL14]=useState()
+    const copersonalInfoKYC={
+        coIA1,coIA2,coIA3,coIA4,coIA5,coIA6,coIA7,coIA8,
+        coML1,coML2,coML3,coML4,coML5,coML6,coML7,coML8,
+        coCL1,coCL2,coCL3,coCL4,coCL5,coCL6,coCL7,coCL8,coCL9,coCL10,coCL11,coCL12,coCL13,coCL14,
+        setcoIA1,setcoIA2,setcoIA3,setcoIA4,setcoIA5,setcoIA6,setcoIA7,setcoIA8,
+        setcoML1,setcoML2,setcoML3,setcoML4,setcoML5,setcoML6,setcoML7,setcoML8,
+        setcoCL1,setcoCL2,setcoCL3,setcoCL4,setcoCL5,setcoCL6,setcoCL7,setcoCL8,
+        setcoCL9,setcoCL10,setcoCL11,setcoCL12,setcoCL13,setcoCL14,
+    }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1019,7 +1069,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {coKYCActive?( 
-                                <h1>yes</h1>
+                                <CoKYC copersonalInfoKYC={copersonalInfoKYC} />
                             ):null}
                         </div>
 
