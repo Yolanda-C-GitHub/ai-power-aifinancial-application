@@ -7,7 +7,7 @@ import DoneIcon from '@mui/icons-material/Done'
 
 export default function CoChannel(params) {
 
-
+ 
 
     return (
         <Card className='cochannelInfoCard'>

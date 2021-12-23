@@ -15,6 +15,27 @@ export default function Coidinfo(params) {
         params.copersonalInfoID.setcoIdArray(value)
     }
 
+    const handleAdd = () =>{
+        params.copersonalInfoID.setcoIdArray(
+            [...params.copersonalInfoID.coidArray,
+                {
+                    idType:'',
+                    idNum:'',
+                    issueDate:'',
+                    expiryDate:'',
+                    verificationDate:'',
+                    issuingProvince:'',
+                    comments:'',
+                }
+            ]
+        )
+    }
+
+    const handleDelete = (index)=>{
+        const values = [...params.copersonalInfoID.coidArray]
+        values.splice(index,1)
+        params.copersonalInfoID.setcoIdArray(values)
+    }
 
 
     return (
@@ -52,11 +73,82 @@ export default function Coidinfo(params) {
                         <Form.Control required
                             placeholder='issueDate'
                             type='date'
-                        >
-
-                        </Form.Control>
+                            onChange={(e)=>handleOnChangeInput(index,e)}
+                            name='issueDate'
+                            value={params.copersonalInfoID.coidArray[index].issueDate}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
+                    </FloatingLabel>
+                    
+                    <FloatingLabel className='coidItems' label='Expiry Date' >
+                        <Form.Control required
+                            placeholder='expiryDate'
+                            type='date'
+                            onChange={(e)=>handleOnChangeInput(index,e)}
+                            name='expiryDate'
+                            value={params.copersonalInfoID.coidArray[index].expiryDate}
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
+                    <FloatingLabel className='partFiveVerificationDate' label="Verification Date">
+                        <Form.Control required
+                            className='verificationDate' 
+                            placeholder='verificationDate' 
+                            type='date' 
+                            name='verificationDate' 
+                            onChange={(e) => handleOnChangeInput(index,e)}
+                            value={params.copersonalInfoID.coidArray[index].verificationDate} 
+                        />
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
+                    </FloatingLabel>
+                
+                    <FloatingLabel className='issuingProvince' label='Issuing Province'>
+                        <Form.Select required
+                            name='issuingProvince' 
+                            onChange={(e) => handleOnChangeInput(index,e)} 
+                            value={params.copersonalInfoID.coidArray[index].issuingProvince} >
+                            <option value=''>Select</option>
+                            <option value='ON'>ON</option>
+                            <option value='AB'>AB</option>
+                            <option value='BC'>BC</option>
+                            <option value='MB'>MB</option>
+                            <option value='NB'>NB</option>
+                            <option value='NL'>NL</option>
+                            <option value="NT">NT</option>
+                            <option value='NS'>NS</option>
+                            <option value='NU'>NU</option>
+                            <option value='PE'>PE</option>
+                            <option value='QC'>QC</option>
+                            <option value='SK'>SK</option>
+                            <option value='YT'>YT</option>
+                        </Form.Select>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
+                    </FloatingLabel>
+
+                    <FloatingLabel className='partFiveComment' label='Comments'>
+                        <Form.Control
+                            type='textarea' 
+                            placeholder='comment'  
+                            onChange={(e) => handleOnChangeInput(index,e)} 
+                            name='comments' 
+                            value={params.copersonalInfoID.coidArray[index].comments}
+                        />
+                    </FloatingLabel>
+
+                    <div className='buttonBox' >
+                        {index === 0?(
+                            <></>
+                        ):(
+                        <DeleteOutlineIcon className='deleteButton' onClick={() => handleDelete(index) } />
+                        )}
+                        
+                        {index > 0?(
+                            <></>
+                        ):(
+                        <AddBoxOutlinedIcon className='addButton' onClick={() => handleAdd()} />
+                        )}    
+                    </div>
 
                 </Form.Group>
             )}
