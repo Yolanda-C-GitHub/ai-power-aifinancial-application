@@ -33,19 +33,29 @@ export default function Coidinfo(params) {
                             <option value="passport">Passport</option>
                             <option value="prCard">PR Card</option>
                             <option value="other">Other</option>
-
                         </Form.Select>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
                     </FloatingLabel>
 
-                    <FloatingLabel className='coidItems' label='ID Type'>
+                    <FloatingLabel className='coidItems' label='ID Number'>
                         <Form.Control required
-                            placeholder='id'
+                            placeholder='idNumber'
                             onChange={(e)=>handleOnChangeInput(index,e)}
+                            name='idNum'
+                            value={params.copersonalInfoID.coidArray[index].idNum}
+                        >
+                        </Form.Control>
+                        <Form.Control.Feedback type='invalid'>Required Field</Form.Control.Feedback>
+                    </FloatingLabel>
+
+                    <FloatingLabel className='coidItems' label='Issue Date' >
+                        <Form.Control required
+                            placeholder='issueDate'
+                            type='date'
                         >
 
                         </Form.Control>
                     </FloatingLabel>
-
 
 
                 </Form.Group>

@@ -15,6 +15,7 @@ import KycIA from './Personalinfoparts/KycIA'
 
 import Coapp from './Coapplicant/CoApplicantInfo'
 import Coidinfo from './Coapplicant/Coidinfo'
+import CoChannel from './Coapplicant/CoChannel'
 import CoKYC from  './Coapplicant/CoKYC'
 
 
@@ -532,6 +533,8 @@ export default function Personalinfo({sidemenuState}) {
         setValidated,
     }
     
+    // Co channel State
+
 
     // state for KYC
     const [IA1, setIA1]=useState()
@@ -721,6 +724,25 @@ export default function Personalinfo({sidemenuState}) {
 
 
 
+    // co Channel state 
+    const [covalidationStatusFormChannel, setcoValidationStatusFormChannel]=useState(false);
+    const [cowechat, setcoWechat] = useState()
+    const [cotelegram, setcoTelegram] =useState()
+    const [coaddtionalEmail, setcoAddtionalEmail] = useState()
+    const copersonalInfoChannel={
+        cowechat,
+        cotelegram,
+        coaddtionalEmail,
+        setcoWechat,
+        setcoTelegram,
+        setcoAddtionalEmail,
+        covalidationStatusFormChannel,
+        setcoValidationStatusFormChannel,
+        formRef,
+        setValidated,
+    }
+
+    
     // co KYC state
     const [coIA1, setcoIA1]=useState()
     const [coIA2, setcoIA2]=useState()
@@ -1065,7 +1087,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {cochannelActive?( 
-                                <h1>hi</h1> 
+                                <CoChannel copersonalInfoChannel={copersonalInfoChannel} />
                             ):null}
 
                             {coKYCActive?( 

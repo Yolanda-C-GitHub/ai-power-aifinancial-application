@@ -1,0 +1,25 @@
+.cochannelInfoCard{
+    margin-left: 20px;
+    margin-right:20px;
+}
+
+
+.coweChatID{
+    margin: 15px;
+    width: 300px;
+}
+
+.cotelegramID{
+    margin: 15px;
+    width: 300px;
+}
+
+.coemailChannel{
+    margin: 15px;
+    width: 300px;
+}
+
+.covalidationContainerPersonalChannel{
+    align-self: center;
+    margin-bottom: 10px;
+}

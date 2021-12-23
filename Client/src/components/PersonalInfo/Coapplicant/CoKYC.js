@@ -18,7 +18,7 @@ export default function CoKycIA(params) {
                                         params.copersonalInfoKYC.setcoIA1(e.target.value)
                                     }}
                                 >
-                                    <option value='' >Select</option>
+                                    <option value=''>Select</option>
                                     <option value='2'>B_2</option>
                                 </Form.Select>
                             </FloatingLabel>
