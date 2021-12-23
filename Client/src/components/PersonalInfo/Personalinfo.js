@@ -530,26 +530,48 @@ export default function Personalinfo({sidemenuState}) {
         formRef,
         setValidated,
     }
-    // const [channelArray, setChannelArray]=useState([
-    //     {       
-    //         channelType:'',
-    //         accountid:'',
-    //         nickName:'',
-    //     },
-    //     {
-    //         channelType:'',
-    //         accountid:'',
-    //         nickName:'',
-    //     },
-        
-    // ])
+    
 
-
-
-
-
-
-
+    // state for KYC
+    const [IA1, setIA1]=useState()
+    const [IA2, setIA2]=useState()
+    const [IA3, setIA3]=useState()
+    const [IA4, setIA4]=useState()
+    const [IA5, setIA5]=useState()
+    const [IA6, setIA6]=useState()
+    const [IA7, setIA7]=useState()
+    const [IA8, setIA8]=useState()
+    const [ML1, setML1]=useState()
+    const [ML2, setML2]=useState()
+    const [ML3, setML3]=useState()  
+    const [ML4, setML4]=useState()
+    const [ML5, setML5]=useState()
+    const [ML6, setML6]=useState()
+    const [ML7, setML7]=useState()
+    const [ML8, setML8]=useState()
+    const [CL1, setCL1]=useState()
+    const [CL2, setCL2]=useState()
+    const [CL3, setCL3]=useState()
+    const [CL4, setCL4]=useState()
+    const [CL5, setCL5]=useState()
+    const [CL6, setCL6]=useState()
+    const [CL7, setCL7]=useState()
+    const [CL8, setCL8]=useState()
+    const [CL9, setCL9]=useState()
+    const [CL10, setCL10]=useState()
+    const [CL11, setCL11]=useState()
+    const [CL12, setCL12]=useState() 
+    const [CL13, setCL13]=useState()
+    const [CL14, setCL14]=useState()
+    const personalInfoKYC={
+        IA1,IA2,IA3,IA4,IA5,IA6,IA7,IA8,
+        ML1,ML2,ML3,ML4,ML5,ML6,ML7,ML8,
+        CL1,CL2,CL3,CL4,CL5,CL6,CL7,CL8,CL9,CL10,CL11,CL12,CL13,CL14,
+        setIA1,setIA2,setIA3,setIA4,setIA5,setIA6,setIA7,setIA8,
+        setML1,setML2,setML3,setML4,setML5,setML6,setML7,setML8,
+        setCL1,setCL2,setCL3,setCL4,setCL5,setCL6,setCL7,setCL8,
+        setCL9,setCL10,setCL11,setCL12,setCL13,setCL14,
+    }
 
 
 
@@ -904,7 +926,7 @@ export default function Personalinfo({sidemenuState}) {
                             ):null}
 
                             {KYCIAActive?(
-                                <KycIA />       
+                                <KycIA personalInfoKYC={personalInfoKYC} />       
                             ):null}
                         </div> 
                         

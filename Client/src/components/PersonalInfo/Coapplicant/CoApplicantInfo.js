@@ -41,7 +41,6 @@ export default function Coapp(params) {
     return (
         <div className='coPersonalInfoForm'>
                 <Card className='firstPartCard'>
-
                     <Form.Group className='firstPartFormGroup' controlId="validationCustom01">
                         <FloatingLabel label='First Name*'>
                             <Form.Control required
